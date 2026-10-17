@@ -1,0 +1,98 @@
+{
+  "kind": "singleType",
+  "collectionName": "home_pages",
+  "info": {
+    "singularName": "home-page",
+    "pluralName": "home-pages",
+    "displayName": "Home Page"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "heroTitle": {
+      "type": "string"
+    },
+    "heroHighlight": {
+      "type": "string"
+    },
+    "heroDescription": {
+      "type": "text"
+    },
+    "primaryButtonText": {
+      "type": "string"
+    },
+    "secondaryButtonText": {
+      "type": "string"
+    },
+    "stats": {
+      "type": "component",
+      "component": "home.stat",
+      "repeatable": true,
+      "min": 0,
+      "max": 4
+    },
+    "trustedByText": {
+      "type": "string"
+    },
+    "trustedByHighlight": {
+      "type": "string"
+    },
+    "clientLogos": {
+      "type": "component",
+      "component": "home.client-logo",
+      "repeatable": true
+    },
+    "whyChooseHeading": {
+      "type": "string"
+    },
+    "whyChooseHighlight": {
+      "type": "string"
+    },
+    "whyChooseSubtitle": {
+      "type": "text"
+    },
+    "whyChooseStats": {
+      "type": "component",
+      "component": "home.stat",
+      "repeatable": true,
+      "min": 0,
+      "max": 5
+    },
+    "whyChooseCertifications": {
+      "type": "component",
+      "component": "home.certification",
+      "repeatable": true,
+      "min": 0,
+      "max": 4
+    },
+    "testimonialsHeading": {
+      "type": "string"
+    },
+    "testimonialsHighlight": {
+      "type": "string"
+    },
+    "testimonialsSubtitle": {
+      "type": "text"
+    },
+    "faqHeading": {
+      "type": "string"
+    },
+    "faqHighlight": {
+      "type": "string"
+    },
+    "faqSubtitle": {
+      "type": "text"
+    },
+    "ctaHeading": {
+      "type": "string"
+    },
+    "ctaDescription": {
+      "type": "text"
+    },
+    "ctaButtonText": {
+      "type": "string"
+    }
+  }
+}
