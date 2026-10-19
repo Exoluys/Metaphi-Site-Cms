@@ -34,7 +34,8 @@
       "max": 4
     },
     "trustedByText": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "trustedByHighlight": {
       "type": "string"
@@ -42,7 +43,9 @@
     "clientLogos": {
       "type": "component",
       "component": "home.client-logo",
-      "repeatable": true
+      "repeatable": true,
+      "required": true,
+      "min": 1
     },
     "whyChooseHeading": {
       "type": "string"

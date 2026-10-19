@@ -524,7 +524,14 @@ export interface ApiHomePageHomePage extends Struct.SingleTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
-    clientLogos: Schema.Attribute.Component<'home.client-logo', true>;
+    clientLogos: Schema.Attribute.Component<'home.client-logo', true> &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMax<
+        {
+          min: 1;
+        },
+        number
+      >;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -558,7 +565,7 @@ export interface ApiHomePageHomePage extends Struct.SingleTypeSchema {
     testimonialsHighlight: Schema.Attribute.String;
     testimonialsSubtitle: Schema.Attribute.Text;
     trustedByHighlight: Schema.Attribute.String;
-    trustedByText: Schema.Attribute.String;
+    trustedByText: Schema.Attribute.String & Schema.Attribute.Required;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
