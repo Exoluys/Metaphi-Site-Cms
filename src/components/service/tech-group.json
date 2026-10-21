@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_service_tech_groups",
+  "info": {
+    "displayName": "Tech Group",
+    "icon": "server",
+    "description": "Technology category and list of technologies (one per line)"
+  },
+  "options": {},
+  "attributes": {
+    "group": {
+      "type": "string",
+      "required": true
+    },
+    "items": {
+      "type": "text",
+      "required": true
+    }
+  }
+}

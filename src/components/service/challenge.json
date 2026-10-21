@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_service_challenges",
+  "info": {
+    "displayName": "Challenge",
+    "icon": "shield-alert",
+    "description": "Technical challenge and solution"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "solution": {
+      "type": "text",
+      "required": true
+    }
+  }
+}

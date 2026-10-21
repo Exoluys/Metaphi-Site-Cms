@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_service_compliance_badges",
+  "info": {
+    "displayName": "Compliance Badge",
+    "icon": "shield",
+    "description": "Compliance or regulatory certification badge"
+  },
+  "options": {},
+  "attributes": {
+    "standard": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_service_process_steps",
+  "info": {
+    "displayName": "Process Step",
+    "icon": "cog",
+    "description": "Step in engineering or delivery methodology"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    }
+  }
+}

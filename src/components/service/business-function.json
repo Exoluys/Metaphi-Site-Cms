@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_service_business_functions",
+  "info": {
+    "displayName": "Business Function",
+    "icon": "briefcase",
+    "description": "Target business department and use case"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    }
+  }
+}

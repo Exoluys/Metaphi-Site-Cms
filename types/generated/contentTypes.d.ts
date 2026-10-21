@@ -477,7 +477,7 @@ export interface ApiCaseStudyCaseStudy extends Struct.CollectionTypeSchema {
       Schema.Attribute.Required &
       Schema.Attribute.Unique;
     summary: Schema.Attribute.Text;
-    title: Schema.Attribute.String;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -628,7 +628,49 @@ export interface ApiIndustryIndustry extends Struct.CollectionTypeSchema {
       Schema.Attribute.Required &
       Schema.Attribute.Unique;
     summary: Schema.Attribute.Text;
-    title: Schema.Attribute.String;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiServiceCategoryServiceCategory
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'service_categories';
+  info: {
+    description: 'Categories for organizing services and navbar navigation';
+    displayName: 'Service Category';
+    pluralName: 'service-categories';
+    singularName: 'service-category';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::service-category.service-category'
+    > &
+      Schema.Attribute.Private;
+    name: Schema.Attribute.String & Schema.Attribute.Required;
+    order: Schema.Attribute.Integer &
+      Schema.Attribute.SetMinMax<
+        {
+          min: 0;
+        },
+        number
+      > &
+      Schema.Attribute.DefaultTo<1>;
+    publishedAt: Schema.Attribute.DateTime;
+    services: Schema.Attribute.Relation<'oneToMany', 'api::service.service'>;
+    slug: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.Unique;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -638,7 +680,7 @@ export interface ApiIndustryIndustry extends Struct.CollectionTypeSchema {
 export interface ApiServiceService extends Struct.CollectionTypeSchema {
   collectionName: 'services';
   info: {
-    description: '';
+    description: 'CMS-driven services for MetaPhi';
     displayName: 'Service';
     pluralName: 'services';
     singularName: 'service';
@@ -647,32 +689,127 @@ export interface ApiServiceService extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
+    assurances: Schema.Attribute.JSON;
+    assurancesList: Schema.Attribute.Component<'service.assurance', true>;
+    benefits: Schema.Attribute.JSON;
+    benefitsList: Schema.Attribute.Component<'service.benefit', true>;
     body: Schema.Attribute.Text;
+    businessFunctions: Schema.Attribute.JSON;
+    businessFunctionsList: Schema.Attribute.Component<
+      'service.business-function',
+      true
+    >;
+    caseStudies: Schema.Attribute.JSON;
+    caseStudiesList: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::case-study.case-study'
+    >;
+    category: Schema.Attribute.Relation<
+      'manyToOne',
+      'api::service-category.service-category'
+    > &
+      Schema.Attribute.Required;
+    categorySlug: Schema.Attribute.String;
+    challenges: Schema.Attribute.JSON;
+    challengesList: Schema.Attribute.Component<'service.challenge', true>;
+    compliance: Schema.Attribute.JSON;
+    complianceList: Schema.Attribute.Component<
+      'service.compliance-badge',
+      true
+    >;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     heroImage: Schema.Attribute.Media<'images'>;
+    icon: Schema.Attribute.Enumeration<
+      [
+        'Bot',
+        'Sparkles',
+        'Cpu',
+        'Layers',
+        'Rocket',
+        'Smartphone',
+        'Globe',
+        'Code2',
+        'Cloud',
+        'CloudRain',
+        'Boxes',
+        'Database',
+        'BarChart3',
+        'PieChart',
+        'TrendingUp',
+        'FileText',
+        'Compass',
+        'Layout',
+        'CheckCircle',
+        'GitBranch',
+        'Users',
+        'FileCode',
+        'Briefcase',
+        'Zap',
+        'Activity',
+        'Building2',
+        'GraduationCap',
+        'Landmark',
+        'ShoppingCart',
+        'Truck',
+      ]
+    > &
+      Schema.Attribute.DefaultTo<'Boxes'>;
+    industries: Schema.Attribute.JSON;
+    industryContextsList: Schema.Attribute.Component<
+      'service.industry-context',
+      true
+    >;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
       'api::service.service'
     > &
       Schema.Attribute.Private;
-    order: Schema.Attribute.Integer;
+    offerings: Schema.Attribute.JSON;
+    offeringsList: Schema.Attribute.Component<'service.offering', true>;
+    offeringsVisual: Schema.Attribute.String;
+    order: Schema.Attribute.Integer &
+      Schema.Attribute.SetMinMax<
+        {
+          min: 0;
+        },
+        number
+      > &
+      Schema.Attribute.DefaultTo<0>;
+    outcomes: Schema.Attribute.JSON;
+    process: Schema.Attribute.JSON;
+    processStepsList: Schema.Attribute.Component<'service.process-step', true>;
     publishedAt: Schema.Attribute.DateTime;
+    relatedServices: Schema.Attribute.JSON;
+    relatedServicesList: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::service.service'
+    >;
     sections: Schema.Attribute.Component<'shared.section', true>;
     seoDescription: Schema.Attribute.String &
       Schema.Attribute.SetMinMaxLength<{
         maxLength: 160;
       }>;
-    slug: Schema.Attribute.String &
-      Schema.Attribute.Required &
-      Schema.Attribute.Unique;
+    slug: Schema.Attribute.String;
+    solutionTypes: Schema.Attribute.JSON;
+    solutionTypesList: Schema.Attribute.Component<
+      'service.solution-type',
+      true
+    >;
+    stats: Schema.Attribute.JSON;
+    statsList: Schema.Attribute.Component<'service.stat', true>;
     summary: Schema.Attribute.Text;
-    title: Schema.Attribute.String;
+    tags: Schema.Attribute.JSON;
+    techGroups: Schema.Attribute.JSON;
+    techGroupsList: Schema.Attribute.Component<'service.tech-group', true>;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    whyUs: Schema.Attribute.JSON;
+    whyUsList: Schema.Attribute.Component<'service.why-us', true>;
   };
 }
 
@@ -1225,6 +1362,7 @@ declare module '@strapi/strapi' {
       'api::faq.faq': ApiFaqFaq;
       'api::home-page.home-page': ApiHomePageHomePage;
       'api::industry.industry': ApiIndustryIndustry;
+      'api::service-category.service-category': ApiServiceCategoryServiceCategory;
       'api::service.service': ApiServiceService;
       'api::testimonial.testimonial': ApiTestimonialTestimonial;
       'plugin::content-releases.release': PluginContentReleasesRelease;

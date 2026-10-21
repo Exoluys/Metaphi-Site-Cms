@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_service_assurances",
+  "info": {
+    "displayName": "Assurance",
+    "icon": "shield-check",
+    "description": "Operational assurance or engineering SLA"
+  },
+  "options": {},
+  "attributes": {
+    "text": {
+      "type": "text",
+      "required": true
+    }
+  }
+}

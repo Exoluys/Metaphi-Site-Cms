@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_service_why_uses",
+  "info": {
+    "displayName": "Why Us",
+    "icon": "star",
+    "description": "Differentiator reason why client should choose Metaphi"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    }
+  }
+}

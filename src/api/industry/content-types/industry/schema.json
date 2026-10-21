@@ -18,7 +18,8 @@
       "unique": true
     },
     "title": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "summary": {
       "type": "text"

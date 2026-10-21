@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_service_industry_contexts",
+  "info": {
+    "displayName": "Industry Context",
+    "icon": "briefcase",
+    "description": "Tailored industry pitch and bullet points (one per line)"
+  },
+  "options": {},
+  "attributes": {
+    "industry": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::industry.industry"
+    },
+    "blurb": {
+      "type": "text",
+      "required": true
+    },
+    "bullets": {
+      "type": "text",
+      "required": true
+    }
+  }
+}

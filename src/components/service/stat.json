@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_service_stats",
+  "info": {
+    "displayName": "Stat",
+    "icon": "chart-bubble",
+    "description": "Key metric or performance indicator"
+  },
+  "options": {},
+  "attributes": {
+    "value": {
+      "type": "string",
+      "required": true
+    },
+    "label": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_service_benefits",
+  "info": {
+    "displayName": "Benefit",
+    "icon": "thumb-up",
+    "description": "Quantifiable benefit or value driver"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    }
+  }
+}

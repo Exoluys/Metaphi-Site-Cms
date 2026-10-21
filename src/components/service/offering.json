@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_service_offerings",
+  "info": {
+    "displayName": "Offering",
+    "icon": "apps",
+    "description": "Core offering or capability"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    }
+  }
+}

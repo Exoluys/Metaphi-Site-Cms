@@ -5,7 +5,7 @@
     "singularName": "service",
     "pluralName": "services",
     "displayName": "Service",
-    "description": ""
+    "description": "CMS-driven services for MetaPhi"
   },
   "options": {
     "draftAndPublish": true
@@ -14,11 +14,22 @@
   "attributes": {
     "slug": {
       "type": "string",
-      "required": true,
-      "unique": true
+      "required": false
     },
     "title": {
-      "type": "string"
+      "type": "string",
+      "required": true
+    },
+    "categorySlug": {
+      "type": "string",
+      "required": false
+    },
+    "category": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::service-category.service-category",
+      "required": true,
+      "inversedBy": "services"
     },
     "summary": {
       "type": "text"
@@ -44,7 +55,166 @@
       "repeatable": true
     },
     "order": {
-      "type": "integer"
+      "type": "integer",
+      "default": 0,
+      "min": 0
+    },
+    "icon": {
+      "type": "enumeration",
+      "default": "Boxes",
+      "enum": [
+        "Bot",
+        "Sparkles",
+        "Cpu",
+        "Layers",
+        "Rocket",
+        "Smartphone",
+        "Globe",
+        "Code2",
+        "Cloud",
+        "CloudRain",
+        "Boxes",
+        "Database",
+        "BarChart3",
+        "PieChart",
+        "TrendingUp",
+        "FileText",
+        "Compass",
+        "Layout",
+        "CheckCircle",
+        "GitBranch",
+        "Users",
+        "FileCode",
+        "Briefcase",
+        "Zap",
+        "Activity",
+        "Building2",
+        "GraduationCap",
+        "Landmark",
+        "ShoppingCart",
+        "Truck"
+      ]
+    },
+    "offeringsVisual": {
+      "type": "string"
+    },
+    "statsList": {
+      "type": "component",
+      "component": "service.stat",
+      "repeatable": true
+    },
+    "challengesList": {
+      "type": "component",
+      "component": "service.challenge",
+      "repeatable": true
+    },
+    "offeringsList": {
+      "type": "component",
+      "component": "service.offering",
+      "repeatable": true
+    },
+    "solutionTypesList": {
+      "type": "component",
+      "component": "service.solution-type",
+      "repeatable": true
+    },
+    "businessFunctionsList": {
+      "type": "component",
+      "component": "service.business-function",
+      "repeatable": true
+    },
+    "processStepsList": {
+      "type": "component",
+      "component": "service.process-step",
+      "repeatable": true
+    },
+    "benefitsList": {
+      "type": "component",
+      "component": "service.benefit",
+      "repeatable": true
+    },
+    "whyUsList": {
+      "type": "component",
+      "component": "service.why-us",
+      "repeatable": true
+    },
+    "assurancesList": {
+      "type": "component",
+      "component": "service.assurance",
+      "repeatable": true
+    },
+    "complianceList": {
+      "type": "component",
+      "component": "service.compliance-badge",
+      "repeatable": true
+    },
+    "techGroupsList": {
+      "type": "component",
+      "component": "service.tech-group",
+      "repeatable": true
+    },
+    "industryContextsList": {
+      "type": "component",
+      "component": "service.industry-context",
+      "repeatable": true
+    },
+    "relatedServicesList": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::service.service"
+    },
+    "caseStudiesList": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::case-study.case-study"
+    },
+    "stats": {
+      "type": "json"
+    },
+    "challenges": {
+      "type": "json"
+    },
+    "offerings": {
+      "type": "json"
+    },
+    "solutionTypes": {
+      "type": "json"
+    },
+    "caseStudies": {
+      "type": "json"
+    },
+    "tags": {
+      "type": "json"
+    },
+    "outcomes": {
+      "type": "json"
+    },
+    "businessFunctions": {
+      "type": "json"
+    },
+    "process": {
+      "type": "json"
+    },
+    "assurances": {
+      "type": "json"
+    },
+    "compliance": {
+      "type": "json"
+    },
+    "techGroups": {
+      "type": "json"
+    },
+    "benefits": {
+      "type": "json"
+    },
+    "industries": {
+      "type": "json"
+    },
+    "whyUs": {
+      "type": "json"
+    },
+    "relatedServices": {
+      "type": "json"
     }
   }
 }
