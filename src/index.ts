@@ -111,7 +111,7 @@ export default {
       }
 
       // 3. Load services-data.json: Seed only if no services exist
-      const existingServiceCount = await strapi.documents('api::service.service').count();
+      const existingServiceCount = await strapi.documents('api::service.service').count({});
       if (existingServiceCount === 0) {
         const dataFilePath = path.resolve(process.cwd(), 'services-data.json');
         if (fs.existsSync(dataFilePath)) {
