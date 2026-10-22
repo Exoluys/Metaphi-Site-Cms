@@ -639,7 +639,7 @@ export interface ApiHomePageHomePage extends Struct.SingleTypeSchema {
 export interface ApiIndustryIndustry extends Struct.CollectionTypeSchema {
   collectionName: 'industries';
   info: {
-    description: '';
+    description: 'CMS-driven industries for MetaPhi';
     displayName: 'Industry';
     pluralName: 'industries';
     singularName: 'industry';
@@ -649,26 +649,49 @@ export interface ApiIndustryIndustry extends Struct.CollectionTypeSchema {
   };
   attributes: {
     body: Schema.Attribute.Text;
+    capabilitiesSection: Schema.Attribute.Component<
+      'industry.capabilities-section',
+      false
+    >;
+    caseStudies: Schema.Attribute.Relation<
+      'manyToMany',
+      'api::case-study.case-study'
+    >;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    engagementSection: Schema.Attribute.Component<
+      'industry.engagement-section',
+      false
+    >;
     heroImage: Schema.Attribute.Media<'images'>;
+    heroSection: Schema.Attribute.Component<'industry.hero-section', false>;
+    icon: Schema.Attribute.String;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
       'api::industry.industry'
     > &
       Schema.Attribute.Private;
-    order: Schema.Attribute.Integer;
+    order: Schema.Attribute.Integer &
+      Schema.Attribute.SetMinMax<
+        {
+          min: 0;
+        },
+        number
+      > &
+      Schema.Attribute.DefaultTo<0>;
     publishedAt: Schema.Attribute.DateTime;
     sections: Schema.Attribute.Component<'shared.section', true>;
     seoDescription: Schema.Attribute.String &
       Schema.Attribute.SetMinMaxLength<{
         maxLength: 160;
       }>;
-    slug: Schema.Attribute.String &
-      Schema.Attribute.Required &
-      Schema.Attribute.Unique;
+    servicesSection: Schema.Attribute.Component<
+      'industry.services-section',
+      false
+    >;
+    slug: Schema.Attribute.String;
     summary: Schema.Attribute.Text;
     title: Schema.Attribute.String & Schema.Attribute.Required;
     updatedAt: Schema.Attribute.DateTime;

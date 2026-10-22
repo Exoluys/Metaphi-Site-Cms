@@ -36,14 +36,42 @@ export default {
     }
     data.title = data.title.trim();
 
-    const baseSlug = generateSlug(data.title);
+    // Validate whole number order (>= 0)
+    if (data.order !== undefined && data.order !== null) {
+      const num = Number(data.order);
+      if (isNaN(num) || !Number.isInteger(num) || num < 0) {
+        throw new errors.ValidationError(`order must be a non-negative whole integer (minimum 0). Received: "${data.order}".`);
+      }
+      data.order = num;
+    } else {
+      data.order = 0;
+    }
 
-    const existing = await strapi.documents('api::industry.industry').findMany({
-      fields: ['slug'],
+    // Check if updating/re-saving an existing document
+    const existing = await resolveExistingIndustry(event.params.where, data);
+    if (existing?.slug) {
+      data.slug = existing.slug;
+      return;
+    }
+
+    // If an explicit slug is provided (e.g. from migration script), preserve it; otherwise generate
+    const currentDocId = existing?.documentId || data.documentId;
+    const allExisting = await strapi.documents('api::industry.industry').findMany({
+      fields: ['slug', 'documentId'],
     });
-    const existingSlugs = new Set<string>(existing.map((i: any) => i.slug).filter(Boolean));
+    const otherSlugs = new Set<string>();
+    for (const item of allExisting) {
+      if (item.slug && item.documentId !== currentDocId) {
+        otherSlugs.add(item.slug);
+      }
+    }
 
-    data.slug = ensureUniqueSlug(baseSlug, existingSlugs);
+    if (data.slug && typeof data.slug === 'string' && data.slug.trim()) {
+      data.slug = ensureUniqueSlug(data.slug.trim(), otherSlugs);
+    } else {
+      const baseSlug = generateSlug(data.title);
+      data.slug = ensureUniqueSlug(baseSlug, otherSlugs);
+    }
   },
 
   async beforeUpdate(event: any) {
@@ -54,6 +82,15 @@ export default {
         throw new errors.ValidationError('Industry title is required and cannot be empty.');
       }
       data.title = data.title.trim();
+    }
+
+    // Validate whole number order (>= 0)
+    if (data.order !== undefined && data.order !== null) {
+      const num = Number(data.order);
+      if (isNaN(num) || !Number.isInteger(num) || num < 0) {
+        throw new errors.ValidationError(`order must be a non-negative whole integer (minimum 0). Received: "${data.order}".`);
+      }
+      data.order = num;
     }
 
     // Keep slug strictly stable once created - resolve by numeric id or documentId

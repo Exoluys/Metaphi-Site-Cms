@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_industry_stats",
+  "info": {
+    "displayName": "Stat",
+    "icon": "chart-pie",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "label": {
+      "type": "string",
+      "required": true
+    },
+    "value": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "string"
+    }
+  }
+}

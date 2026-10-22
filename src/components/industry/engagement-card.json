@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_industry_engagement_cards",
+  "info": {
+    "displayName": "Engagement Card",
+    "icon": "handshake",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "blocks",
+      "required": true
+    },
+    "badge": {
+      "type": "string"
+    }
+  }
+}

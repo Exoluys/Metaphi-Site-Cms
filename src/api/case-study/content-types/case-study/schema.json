@@ -93,7 +93,8 @@
     "industries": {
       "type": "relation",
       "relation": "manyToMany",
-      "target": "api::industry.industry"
+      "target": "api::industry.industry",
+      "inversedBy": "caseStudies"
     }
   }
 }

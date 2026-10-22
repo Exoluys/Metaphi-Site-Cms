@@ -5,7 +5,7 @@
     "singularName": "industry",
     "pluralName": "industries",
     "displayName": "Industry",
-    "description": ""
+    "description": "CMS-driven industries for MetaPhi"
   },
   "options": {
     "draftAndPublish": true
@@ -14,8 +14,7 @@
   "attributes": {
     "slug": {
       "type": "string",
-      "required": true,
-      "unique": true
+      "required": false
     },
     "title": {
       "type": "string",
@@ -26,6 +25,9 @@
     },
     "body": {
       "type": "text"
+    },
+    "icon": {
+      "type": "string"
     },
     "heroImage": {
       "type": "media",
@@ -39,13 +41,41 @@
       "type": "string",
       "maxLength": 160
     },
+    "order": {
+      "type": "integer",
+      "default": 0,
+      "min": 0
+    },
+    "heroSection": {
+      "type": "component",
+      "repeatable": false,
+      "component": "industry.hero-section"
+    },
+    "servicesSection": {
+      "type": "component",
+      "repeatable": false,
+      "component": "industry.services-section"
+    },
+    "capabilitiesSection": {
+      "type": "component",
+      "repeatable": false,
+      "component": "industry.capabilities-section"
+    },
+    "engagementSection": {
+      "type": "component",
+      "repeatable": false,
+      "component": "industry.engagement-section"
+    },
+    "caseStudies": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::case-study.case-study",
+      "mappedBy": "industries"
+    },
     "sections": {
       "type": "component",
       "component": "shared.section",
       "repeatable": true
-    },
-    "order": {
-      "type": "integer"
     }
   }
 }

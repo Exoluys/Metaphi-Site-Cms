@@ -316,6 +316,120 @@ export interface HomeStat extends Struct.ComponentSchema {
   };
 }
 
+export interface IndustryCapabilitiesSection extends Struct.ComponentSchema {
+  collectionName: 'components_industry_capabilities_sections';
+  info: {
+    description: '';
+    displayName: 'Capabilities Section';
+    icon: 'shield-alt';
+  };
+  attributes: {
+    capabilities: Schema.Attribute.Component<'industry.capability-item', true>;
+    heading: Schema.Attribute.String & Schema.Attribute.Required;
+    subtext: Schema.Attribute.Text;
+  };
+}
+
+export interface IndustryCapabilityItem extends Struct.ComponentSchema {
+  collectionName: 'components_industry_capability_items';
+  info: {
+    description: '';
+    displayName: 'Capability Item';
+    icon: 'check-circle';
+  };
+  attributes: {
+    description: Schema.Attribute.Blocks & Schema.Attribute.Required;
+    icon: Schema.Attribute.String;
+    link: Schema.Attribute.String;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
+export interface IndustryEngagementCard extends Struct.ComponentSchema {
+  collectionName: 'components_industry_engagement_cards';
+  info: {
+    description: '';
+    displayName: 'Engagement Card';
+    icon: 'handshake';
+  };
+  attributes: {
+    badge: Schema.Attribute.String;
+    description: Schema.Attribute.Blocks & Schema.Attribute.Required;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
+export interface IndustryEngagementSection extends Struct.ComponentSchema {
+  collectionName: 'components_industry_engagement_sections';
+  info: {
+    description: '';
+    displayName: 'Engagement Section';
+    icon: 'users';
+  };
+  attributes: {
+    cards: Schema.Attribute.Component<'industry.engagement-card', true>;
+    heading: Schema.Attribute.String & Schema.Attribute.Required;
+    subtext: Schema.Attribute.Text;
+  };
+}
+
+export interface IndustryHeroSection extends Struct.ComponentSchema {
+  collectionName: 'components_industry_hero_sections';
+  info: {
+    description: '';
+    displayName: 'Hero Section';
+    icon: 'layer-group';
+  };
+  attributes: {
+    primaryCtaLink: Schema.Attribute.String;
+    primaryCtaText: Schema.Attribute.String;
+    stats: Schema.Attribute.Component<'industry.stat', true>;
+  };
+}
+
+export interface IndustryServiceItem extends Struct.ComponentSchema {
+  collectionName: 'components_industry_service_items';
+  info: {
+    description: '';
+    displayName: 'Service Item';
+    icon: 'cog';
+  };
+  attributes: {
+    description: Schema.Attribute.Blocks & Schema.Attribute.Required;
+    serviceLink: Schema.Attribute.String;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
+export interface IndustryServicesSection extends Struct.ComponentSchema {
+  collectionName: 'components_industry_services_sections';
+  info: {
+    description: '';
+    displayName: 'Services Section';
+    icon: 'grid';
+  };
+  attributes: {
+    centerImage: Schema.Attribute.Media<'images'>;
+    heading: Schema.Attribute.String & Schema.Attribute.Required;
+    services: Schema.Attribute.Component<'industry.service-item', true>;
+    subtext: Schema.Attribute.Text;
+  };
+}
+
+export interface IndustryStat extends Struct.ComponentSchema {
+  collectionName: 'components_industry_stats';
+  info: {
+    description: '';
+    displayName: 'Stat';
+    icon: 'chart-pie';
+  };
+  attributes: {
+    description: Schema.Attribute.String;
+    label: Schema.Attribute.String & Schema.Attribute.Required;
+    value: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
 export interface ServiceAssurance extends Struct.ComponentSchema {
   collectionName: 'components_service_assurances';
   info: {
@@ -507,6 +621,14 @@ declare module '@strapi/strapi' {
       'home.certification': HomeCertification;
       'home.client-logo': HomeClientLogo;
       'home.stat': HomeStat;
+      'industry.capabilities-section': IndustryCapabilitiesSection;
+      'industry.capability-item': IndustryCapabilityItem;
+      'industry.engagement-card': IndustryEngagementCard;
+      'industry.engagement-section': IndustryEngagementSection;
+      'industry.hero-section': IndustryHeroSection;
+      'industry.service-item': IndustryServiceItem;
+      'industry.services-section': IndustryServicesSection;
+      'industry.stat': IndustryStat;
       'service.assurance': ServiceAssurance;
       'service.benefit': ServiceBenefit;
       'service.business-function': ServiceBusinessFunction;

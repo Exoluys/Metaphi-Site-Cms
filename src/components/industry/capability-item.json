@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_industry_capability_items",
+  "info": {
+    "displayName": "Capability Item",
+    "icon": "check-circle",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "blocks",
+      "required": true
+    },
+    "icon": {
+      "type": "string"
+    },
+    "link": {
+      "type": "string"
+    }
+  }
+}

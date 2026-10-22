@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_industry_service_items",
+  "info": {
+    "displayName": "Service Item",
+    "icon": "cog",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "blocks",
+      "required": true
+    },
+    "serviceLink": {
+      "type": "string"
+    }
+  }
+}
