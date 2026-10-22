@@ -1,0 +1,32 @@
+{
+  "collectionName": "components_case_study_project_summaries",
+  "info": {
+    "displayName": "Project Summary Section",
+    "icon": "information",
+    "description": "Project summary section with client logo, summary text, key facts and headline stats"
+  },
+  "options": {},
+  "attributes": {
+    "clientLogo": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "summaryText": {
+      "type": "text"
+    },
+    "keyFacts": {
+      "type": "component",
+      "component": "case-study.key-fact",
+      "repeatable": true
+    },
+    "headlineStats": {
+      "type": "component",
+      "component": "case-study.stat",
+      "repeatable": true
+    }
+  }
+}

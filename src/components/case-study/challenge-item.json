@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_case_study_challenges",
+  "info": {
+    "displayName": "Challenge Item",
+    "icon": "shield-alert",
+    "description": "Specific business or technical challenge"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    }
+  }
+}

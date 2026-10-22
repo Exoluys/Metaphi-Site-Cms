@@ -1,0 +1,36 @@
+{
+  "collectionName": "components_case_study_solution_sections",
+  "info": {
+    "displayName": "Solution Section",
+    "icon": "cog",
+    "description": "Solution and capabilities section with paragraphs, side image, and capabilities list"
+  },
+  "options": {},
+  "attributes": {
+    "eyebrow": {
+      "type": "string"
+    },
+    "heading": {
+      "type": "string"
+    },
+    "paragraphOne": {
+      "type": "text"
+    },
+    "paragraphTwo": {
+      "type": "text"
+    },
+    "sideImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "capabilities": {
+      "type": "component",
+      "component": "case-study.capability-item",
+      "repeatable": true
+    }
+  }
+}

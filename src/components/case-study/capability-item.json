@@ -1,0 +1,55 @@
+{
+  "collectionName": "components_case_study_capabilities",
+  "info": {
+    "displayName": "Capability Item",
+    "icon": "cog",
+    "description": "Solution capability delivered in the case study"
+  },
+  "options": {},
+  "attributes": {
+    "icon": {
+      "type": "enumeration",
+      "default": "Boxes",
+      "enum": [
+        "Bot",
+        "Sparkles",
+        "Cpu",
+        "Layers",
+        "Rocket",
+        "Smartphone",
+        "Globe",
+        "Code2",
+        "Cloud",
+        "CloudRain",
+        "Boxes",
+        "Database",
+        "BarChart3",
+        "PieChart",
+        "TrendingUp",
+        "FileText",
+        "Compass",
+        "Layout",
+        "CheckCircle",
+        "GitBranch",
+        "Users",
+        "FileCode",
+        "Briefcase",
+        "Zap",
+        "Activity",
+        "Building2",
+        "GraduationCap",
+        "Landmark",
+        "ShoppingCart",
+        "Truck"
+      ]
+    },
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    }
+  }
+}

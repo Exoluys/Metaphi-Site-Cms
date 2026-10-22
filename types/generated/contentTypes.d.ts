@@ -446,7 +446,7 @@ export interface AdminUser extends Struct.CollectionTypeSchema {
 export interface ApiCaseStudyCaseStudy extends Struct.CollectionTypeSchema {
   collectionName: 'case_studies';
   info: {
-    description: '';
+    description: 'CMS-driven case studies for MetaPhi';
     displayName: 'Case Study';
     pluralName: 'case-studies';
     singularName: 'case-study';
@@ -456,31 +456,73 @@ export interface ApiCaseStudyCaseStudy extends Struct.CollectionTypeSchema {
   };
   attributes: {
     body: Schema.Attribute.Text;
+    challengeSection: Schema.Attribute.Component<
+      'case-study.challenge-section',
+      false
+    >;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     heroImage: Schema.Attribute.Media<'images'>;
+    impactSection: Schema.Attribute.Component<
+      'case-study.impact-section',
+      false
+    >;
+    industries: Schema.Attribute.Relation<
+      'manyToMany',
+      'api::industry.industry'
+    >;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
       'api::case-study.case-study'
     > &
       Schema.Attribute.Private;
-    order: Schema.Attribute.Integer;
+    order: Schema.Attribute.Integer &
+      Schema.Attribute.SetMinMax<
+        {
+          min: 0;
+        },
+        number
+      > &
+      Schema.Attribute.DefaultTo<0>;
+    projectSummary: Schema.Attribute.Component<
+      'case-study.project-summary-section',
+      false
+    >;
     publishedAt: Schema.Attribute.DateTime;
-    sections: Schema.Attribute.Component<'shared.section', true>;
+    relatedServices: Schema.Attribute.Relation<
+      'manyToMany',
+      'api::service.service'
+    >;
     seoDescription: Schema.Attribute.String &
       Schema.Attribute.SetMinMaxLength<{
         maxLength: 160;
       }>;
-    slug: Schema.Attribute.String &
-      Schema.Attribute.Required &
-      Schema.Attribute.Unique;
+    slug: Schema.Attribute.String;
+    solutionSection: Schema.Attribute.Component<
+      'case-study.solution-section',
+      false
+    >;
+    subtitle: Schema.Attribute.Text;
     summary: Schema.Attribute.Text;
+    tags: Schema.Attribute.Text;
+    takeawaysSection: Schema.Attribute.Component<
+      'case-study.takeaways-section',
+      false
+    >;
+    technologySection: Schema.Attribute.Component<
+      'case-study.technology-section',
+      false
+    >;
     title: Schema.Attribute.String & Schema.Attribute.Required;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    workflowSection: Schema.Attribute.Component<
+      'case-study.workflow-section',
+      false
+    >;
   };
 }
 
@@ -701,7 +743,7 @@ export interface ApiServiceService extends Struct.CollectionTypeSchema {
     >;
     caseStudies: Schema.Attribute.JSON;
     caseStudiesList: Schema.Attribute.Relation<
-      'oneToMany',
+      'manyToMany',
       'api::case-study.case-study'
     >;
     category: Schema.Attribute.Relation<
@@ -787,7 +829,6 @@ export interface ApiServiceService extends Struct.CollectionTypeSchema {
       'oneToMany',
       'api::service.service'
     >;
-    sections: Schema.Attribute.Component<'shared.section', true>;
     seoDescription: Schema.Attribute.String &
       Schema.Attribute.SetMinMaxLength<{
         maxLength: 160;

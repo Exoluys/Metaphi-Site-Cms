@@ -1,12 +1,38 @@
 import { generateSlug, ensureUniqueSlug } from '../../../../utils/slugify';
 import { errors } from '@strapi/utils';
 
+declare const strapi: any;
+
+async function resolveExistingServiceCategory(where: any, data: any): Promise<{ id?: number; documentId?: string; slug?: string } | null> {
+  if (where?.id && typeof where.id === 'number') {
+    const doc = await strapi.db.query('api::service-category.service-category').findOne({
+      where: { id: where.id },
+    });
+    if (doc) return doc;
+  }
+
+  const docId = where?.documentId || (typeof where?.id === 'string' ? where.id : undefined) || data?.documentId;
+  if (docId && typeof docId === 'string') {
+    const doc = await strapi.documents('api::service-category.service-category').findOne({
+      documentId: docId,
+    });
+    if (doc) return doc;
+
+    const byQuery = await strapi.db.query('api::service-category.service-category').findOne({
+      where: { documentId: docId },
+    });
+    if (byQuery) return byQuery;
+  }
+
+  return null;
+}
+
 export default {
   async beforeCreate(event: any) {
     const { data } = event.params;
 
     if (!data.name || typeof data.name !== 'string' || !data.name.trim()) {
-      throw new Error('ServiceCategory name is required and cannot be empty.');
+      throw new errors.ValidationError('ServiceCategory name is required and cannot be empty.');
     }
     data.name = data.name.trim();
 
@@ -35,7 +61,7 @@ export default {
 
     if (data.name !== undefined) {
       if (!data.name || typeof data.name !== 'string' || !data.name.trim()) {
-        throw new Error('ServiceCategory name is required and cannot be empty.');
+        throw new errors.ValidationError('ServiceCategory name is required and cannot be empty.');
       }
       data.name = data.name.trim();
     }
@@ -48,22 +74,10 @@ export default {
       data.order = num;
     }
 
-    // Keep slug stable once created
-    if (where?.id || where?.documentId) {
-      const current = await strapi.documents('api::service-category.service-category').findOne({
-        documentId: where.documentId || where.id,
-      });
-
-      if (current?.slug) {
-        data.slug = current.slug;
-      } else if (data.name) {
-        const baseSlug = generateSlug(data.name);
-        const existing = await strapi.documents('api::service-category.service-category').findMany({
-          fields: ['slug'],
-        });
-        const existingSlugs = new Set<string>(existing.map((c: any) => c.slug).filter(Boolean));
-        data.slug = ensureUniqueSlug(baseSlug, existingSlugs);
-      }
+    // Keep slug strictly stable once created - resolve by numeric id or documentId
+    const existing = await resolveExistingServiceCategory(where, data);
+    if (existing?.slug) {
+      data.slug = existing.slug;
     }
   },
 };

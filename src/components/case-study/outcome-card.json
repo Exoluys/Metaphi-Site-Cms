@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_case_study_outcome_cards",
+  "info": {
+    "displayName": "Outcome Card",
+    "icon": "trophy",
+    "description": "Business impact outcome metric card"
+  },
+  "options": {},
+  "attributes": {
+    "metric": {
+      "type": "string",
+      "required": true
+    },
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text"
+    }
+  }
+}

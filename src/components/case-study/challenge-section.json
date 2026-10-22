@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_case_study_challenge_sections",
+  "info": {
+    "displayName": "Business Challenge Section",
+    "icon": "shield-alert",
+    "description": "Business challenge section with eyebrow, heading, intro text and challenge items"
+  },
+  "options": {},
+  "attributes": {
+    "eyebrow": {
+      "type": "string"
+    },
+    "heading": {
+      "type": "string"
+    },
+    "introText": {
+      "type": "text"
+    },
+    "challenges": {
+      "type": "component",
+      "component": "case-study.challenge-item",
+      "repeatable": true
+    }
+  }
+}

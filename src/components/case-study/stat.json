@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_case_study_stats",
+  "info": {
+    "displayName": "Stat",
+    "icon": "chart-bubble",
+    "description": "Case study headline stat with value and label"
+  },
+  "options": {},
+  "attributes": {
+    "value": {
+      "type": "string",
+      "required": true
+    },
+    "label": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

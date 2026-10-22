@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_case_study_technology_sections",
+  "info": {
+    "displayName": "Technology Section",
+    "icon": "code",
+    "description": "Technology stack section with eyebrow, heading, intro text, and tech groups"
+  },
+  "options": {},
+  "attributes": {
+    "eyebrow": {
+      "type": "string"
+    },
+    "heading": {
+      "type": "string"
+    },
+    "introText": {
+      "type": "text"
+    },
+    "techGroups": {
+      "type": "component",
+      "component": "case-study.tech-group",
+      "repeatable": true
+    }
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "collectionName": "components_case_study_takeaways_sections",
+  "info": {
+    "displayName": "Takeaways Section",
+    "icon": "check",
+    "description": "Takeaways section with paragraphs, numbered takeaways, and side image"
+  },
+  "options": {},
+  "attributes": {
+    "eyebrow": {
+      "type": "string"
+    },
+    "heading": {
+      "type": "string"
+    },
+    "paragraphOne": {
+      "type": "text"
+    },
+    "paragraphTwo": {
+      "type": "text"
+    },
+    "sideImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "takeaways": {
+      "type": "component",
+      "component": "case-study.takeaway-item",
+      "repeatable": true
+    }
+  }
+}

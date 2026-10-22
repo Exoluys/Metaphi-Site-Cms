@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_case_study_workflow_sections",
+  "info": {
+    "displayName": "Workflow Section",
+    "icon": "layer",
+    "description": "Workflow stages section with eyebrow, heading, subtitle, and numbered stages"
+  },
+  "options": {},
+  "attributes": {
+    "eyebrow": {
+      "type": "string"
+    },
+    "heading": {
+      "type": "string"
+    },
+    "subtitle": {
+      "type": "text"
+    },
+    "stages": {
+      "type": "component",
+      "component": "case-study.stage-item",
+      "repeatable": true
+    }
+  }
+}

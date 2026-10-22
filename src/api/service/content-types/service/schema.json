@@ -49,11 +49,6 @@
       "type": "string",
       "maxLength": 160
     },
-    "sections": {
-      "type": "component",
-      "component": "shared.section",
-      "repeatable": true
-    },
     "order": {
       "type": "integer",
       "default": 0,
@@ -165,8 +160,9 @@
     },
     "caseStudiesList": {
       "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::case-study.case-study"
+      "relation": "manyToMany",
+      "target": "api::case-study.case-study",
+      "mappedBy": "relatedServices"
     },
     "stats": {
       "type": "json"

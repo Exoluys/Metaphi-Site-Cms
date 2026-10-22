@@ -5,7 +5,7 @@
     "singularName": "case-study",
     "pluralName": "case-studies",
     "displayName": "Case Study",
-    "description": ""
+    "description": "CMS-driven case studies for MetaPhi"
   },
   "options": {
     "draftAndPublish": true
@@ -14,17 +14,22 @@
   "attributes": {
     "slug": {
       "type": "string",
-      "required": true,
-      "unique": true
+      "required": false
     },
     "title": {
       "type": "string",
       "required": true
     },
+    "subtitle": {
+      "type": "text"
+    },
     "summary": {
       "type": "text"
     },
     "body": {
+      "type": "text"
+    },
+    "tags": {
       "type": "text"
     },
     "heroImage": {
@@ -39,13 +44,56 @@
       "type": "string",
       "maxLength": 160
     },
-    "sections": {
-      "type": "component",
-      "component": "shared.section",
-      "repeatable": true
-    },
     "order": {
-      "type": "integer"
+      "type": "integer",
+      "default": 0,
+      "min": 0
+    },
+    "projectSummary": {
+      "type": "component",
+      "component": "case-study.project-summary-section",
+      "repeatable": false
+    },
+    "challengeSection": {
+      "type": "component",
+      "component": "case-study.challenge-section",
+      "repeatable": false
+    },
+    "solutionSection": {
+      "type": "component",
+      "component": "case-study.solution-section",
+      "repeatable": false
+    },
+    "workflowSection": {
+      "type": "component",
+      "component": "case-study.workflow-section",
+      "repeatable": false
+    },
+    "technologySection": {
+      "type": "component",
+      "component": "case-study.technology-section",
+      "repeatable": false
+    },
+    "impactSection": {
+      "type": "component",
+      "component": "case-study.impact-section",
+      "repeatable": false
+    },
+    "takeawaysSection": {
+      "type": "component",
+      "component": "case-study.takeaways-section",
+      "repeatable": false
+    },
+    "relatedServices": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::service.service",
+      "inversedBy": "caseStudiesList"
+    },
+    "industries": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::industry.industry"
     }
   }
 }

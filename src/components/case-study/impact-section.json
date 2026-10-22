@@ -1,0 +1,33 @@
+{
+  "collectionName": "components_case_study_impact_sections",
+  "info": {
+    "displayName": "Business Impact Section",
+    "icon": "trophy",
+    "description": "Business impact section with outcome cards and flattened comparison table"
+  },
+  "options": {},
+  "attributes": {
+    "eyebrow": {
+      "type": "string"
+    },
+    "heading": {
+      "type": "string"
+    },
+    "outcomeCards": {
+      "type": "component",
+      "component": "case-study.outcome-card",
+      "repeatable": true
+    },
+    "baselineHeader": {
+      "type": "string"
+    },
+    "oursHeader": {
+      "type": "string"
+    },
+    "comparisonRows": {
+      "type": "component",
+      "component": "case-study.comparison-row",
+      "repeatable": true
+    }
+  }
+}

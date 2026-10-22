@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_case_study_tech_groups",
+  "info": {
+    "displayName": "Tech Group",
+    "icon": "code",
+    "description": "Technology category and list of tools/libraries"
+  },
+  "options": {},
+  "attributes": {
+    "group": {
+      "type": "string",
+      "required": true
+    },
+    "items": {
+      "type": "text",
+      "required": true
+    }
+  }
+}

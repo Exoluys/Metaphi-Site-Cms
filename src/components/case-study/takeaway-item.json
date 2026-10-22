@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_case_study_takeaways",
+  "info": {
+    "displayName": "Takeaway Item",
+    "icon": "check",
+    "description": "Numbered key takeaway or strategic learning"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    }
+  }
+}

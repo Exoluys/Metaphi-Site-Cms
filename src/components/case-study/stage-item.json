@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_case_study_stages",
+  "info": {
+    "displayName": "Stage Item",
+    "icon": "layer",
+    "description": "Workflow phase or stage"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    }
+  }
+}

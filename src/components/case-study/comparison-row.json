@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_case_study_comparison_rows",
+  "info": {
+    "displayName": "Comparison Row",
+    "icon": "table",
+    "description": "Baseline vs MetaPhi comparative row"
+  },
+  "options": {},
+  "attributes": {
+    "dimension": {
+      "type": "string",
+      "required": true
+    },
+    "baseline": {
+      "type": "string",
+      "required": true
+    },
+    "ours": {
+      "type": "string",
+      "required": true
+    }
+  }
+}
