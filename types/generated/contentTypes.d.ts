@@ -716,7 +716,6 @@ export interface ApiIndustryIndustry extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
-    body: Schema.Attribute.Text;
     caseStudies: Schema.Attribute.Relation<
       'manyToMany',
       'api::case-study.case-study'
@@ -737,12 +736,12 @@ export interface ApiIndustryIndustry extends Struct.CollectionTypeSchema {
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     ctaBanner: Schema.Attribute.Component<'industry-page.cta-banner', false>;
+    ctaLabel: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'Book a consultation'>;
+    ctaLink: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'/schedule-a-call'>;
     heroImage: Schema.Attribute.Media<'images'>;
-    heroSection: Schema.Attribute.Component<
-      'industry-page.hero-section',
-      false
-    >;
-    icon: Schema.Attribute.String;
+    lastReviewedDate: Schema.Attribute.Date;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',

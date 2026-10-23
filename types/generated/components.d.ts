@@ -382,25 +382,6 @@ export interface IndustryPageCtaBanner extends Struct.ComponentSchema {
   };
 }
 
-export interface IndustryPageHeroSection extends Struct.ComponentSchema {
-  collectionName: 'components_industry_page_hero_sections';
-  info: {
-    description: 'Industry page hero section';
-    displayName: 'Hero Section';
-    icon: 'layer-group';
-  };
-  attributes: {
-    description: Schema.Attribute.Text;
-    heroImage: Schema.Attribute.Media<'images'>;
-    lastReviewedDate: Schema.Attribute.Date;
-    primaryCtaLabel: Schema.Attribute.String &
-      Schema.Attribute.DefaultTo<'Book a consultation'>;
-    primaryCtaLink: Schema.Attribute.String &
-      Schema.Attribute.DefaultTo<'/schedule-a-call'>;
-    title: Schema.Attribute.String;
-  };
-}
-
 export interface IndustryPageServiceTab extends Struct.ComponentSchema {
   collectionName: 'components_industry_page_service_tabs';
   info: {
@@ -741,7 +722,6 @@ declare module '@strapi/strapi' {
       'industry-page.challenge-row': IndustryPageChallengeRow;
       'industry-page.challenges-section': IndustryPageChallengesSection;
       'industry-page.cta-banner': IndustryPageCtaBanner;
-      'industry-page.hero-section': IndustryPageHeroSection;
       'industry-page.service-tab': IndustryPageServiceTab;
       'industry-page.services-section': IndustryPageServicesSection;
       'industry-page.solution-category': IndustryPageSolutionCategory;

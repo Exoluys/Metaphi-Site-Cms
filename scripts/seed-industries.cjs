@@ -1993,13 +1993,9 @@ async function run() {
 
       // Build complete payload
       const payload = {
-        // Hero section
-        heroSection: {
-          title: def.hero.title,
-          description: def.hero.description,
-          primaryCtaLabel: def.hero.primaryCtaLabel,
-          primaryCtaLink: def.hero.primaryCtaLink,
-        },
+        // CTA fields
+        ctaLabel: def.hero.primaryCtaLabel || 'Book a consultation',
+        ctaLink: def.hero.primaryCtaLink || '/schedule-a-call',
         // Reviewers: none for these 11
         reviewers: [],
         // Trust bar: empty
@@ -2076,7 +2072,7 @@ async function run() {
         title: industryDoc.title,
         documentId: industryDoc.documentId,
         sections: {
-          heroSection: 'Filled (title, desc, CTA)',
+          cta: `${payload.ctaLabel} -> ${payload.ctaLink}`,
           reviewers: 'Empty (0 linked - no fake reviews)',
           trustBar: 'Empty (0 logos - suppressed)',
           stats: `${payload.stats.length} item(s) (verifiable, non-numeric)`,
@@ -2120,7 +2116,7 @@ async function run() {
 
     for (const r of reportSummaries) {
       console.log(`INDUSTRY: ${r.slug} ("${r.title}") [${r.documentId}]`);
-      console.log(`  - Hero: ${r.sections.heroSection}`);
+      console.log(`  - CTA: ${r.sections.cta}`);
       console.log(`  - Reviewers: ${r.sections.reviewers}`);
       console.log(`  - Trust Bar: ${r.sections.trustBar}`);
       console.log(`  - Stats: ${r.sections.stats}`);

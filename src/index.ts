@@ -180,6 +180,56 @@ export default {
           }
         }
       }
+
+      // ── 5. Ensure Trust Bar help text is set in Admin Content Manager ──
+      const TRUST_BAR_HELP_TEXT =
+        'Add at least one client logo. If no logos are added, the trust bar will not be shown on the page.';
+
+      // Industry Content Type (clientLogos field)
+      const industryConfigRows = await strapi.db
+        .connection('strapi_core_store_settings')
+        .where({ key: 'plugin_content_manager_configuration_content_types::api::industry.industry' })
+        .select('id', 'value');
+
+      if (industryConfigRows.length > 0) {
+        const config = JSON.parse(industryConfigRows[0].value);
+        if (config?.metadatas?.clientLogos?.edit?.description !== TRUST_BAR_HELP_TEXT) {
+          config.metadatas = config.metadatas || {};
+          config.metadatas.clientLogos = config.metadatas.clientLogos || {};
+          config.metadatas.clientLogos.edit = {
+            ...config.metadatas.clientLogos.edit,
+            description: TRUST_BAR_HELP_TEXT,
+          };
+          await strapi.db
+            .connection('strapi_core_store_settings')
+            .where({ id: industryConfigRows[0].id })
+            .update({ value: JSON.stringify(config) });
+          strapi.log.info('[Bootstrap] Set trust bar help text on Industry clientLogos');
+        }
+      }
+
+      // Trust Bar Component (heading field)
+      const trustBarConfigRows = await strapi.db
+        .connection('strapi_core_store_settings')
+        .where({ key: 'plugin_content_manager_configuration_components::industry-page.trust-bar' })
+        .select('id', 'value');
+
+      if (trustBarConfigRows.length > 0) {
+        const config = JSON.parse(trustBarConfigRows[0].value);
+        if (config?.metadatas?.heading?.edit?.description !== TRUST_BAR_HELP_TEXT) {
+          config.metadatas = config.metadatas || {};
+          config.metadatas.heading = config.metadatas.heading || {};
+          config.metadatas.heading.edit = {
+            ...config.metadatas.heading.edit,
+            description: TRUST_BAR_HELP_TEXT,
+          };
+          await strapi.db
+            .connection('strapi_core_store_settings')
+            .where({ id: trustBarConfigRows[0].id })
+            .update({ value: JSON.stringify(config) });
+          strapi.log.info('[Bootstrap] Set trust bar help text on Trust Bar heading');
+        }
+      }
     } catch (err: any) {
       strapi.log.error(`[Bootstrap Error] ${err.message}`);
     }

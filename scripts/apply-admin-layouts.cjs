@@ -87,14 +87,14 @@ const industryLayout = {
   key: 'plugin_content_manager_configuration_content_types::api::industry.industry',
   editRows: [
     [{ name: 'title', size: 8 }, { name: 'order', size: 4 }],
-    [{ name: 'slug', size: 8 }, { name: 'icon', size: 4 }],
+    [{ name: 'slug', size: 12 }],
     [{ name: 'summary', size: 12 }],
-    [{ name: 'body', size: 12 }],
     [{ name: 'heroImage', size: 12 }],
-    [{ name: 'heroSection', size: 12 }],
+    [{ name: 'ctaLabel', size: 6 }, { name: 'ctaLink', size: 6 }],
+    [{ name: 'lastReviewedDate', size: 6 }],
+    [{ name: 'reviewers', size: 12 }],
     [{ name: 'trustBar', size: 12 }],
     [{ name: 'clientLogos', size: 12 }],
-    [{ name: 'reviewers', size: 12 }],
     [{ name: 'stats', size: 12 }],
     [{ name: 'challengesSection', size: 12 }],
     [{ name: 'caseStudiesSection', size: 12 }],
@@ -108,9 +108,19 @@ const industryLayout = {
   ],
 };
 
-const layouts = [serviceLayout, serviceCategoryLayout, caseStudyLayout, industryLayout];
+const trustBarComponentLayout = {
+  key: 'plugin_content_manager_configuration_components::industry-page.trust-bar',
+  editRows: [
+    [{ name: 'heading', size: 12 }],
+  ],
+};
+
+const layouts = [serviceLayout, serviceCategoryLayout, caseStudyLayout, industryLayout, trustBarComponentLayout];
 
 // ─── Helpers ─────────────────────────────────────────────────────────────────
+
+const TRUST_BAR_HELP_TEXT =
+  'Add at least one client logo. If no logos are added, the trust bar will not be shown on the page.';
 
 /**
  * Build a minimal but valid Strapi content-manager config object.
@@ -118,19 +128,38 @@ const layouts = [serviceLayout, serviceCategoryLayout, caseStudyLayout, industry
  * from the existing row is preserved (or a sensible default is used).
  * Enforces slug.edit.editable = false for locked content types.
  */
-function applyEditLayout(existing, newEditRows, lockSlug = false) {
+function applyEditLayout(existing, newEditRows, lockSlug = false, key = '') {
   const base = existing
     ? JSON.parse(typeof existing === 'string' ? existing : JSON.stringify(existing))
     : { layouts: { edit: [], list: [] }, settings: {}, metadatas: {} };
 
   base.layouts = base.layouts || {};
   base.layouts.edit = newEditRows;
+  base.metadatas = base.metadatas || {};
 
   if (lockSlug && base.metadatas?.slug) {
     base.metadatas.slug.edit = {
       ...base.metadatas.slug.edit,
       editable: false,
       description: 'Automatically generated from title on creation. Never typed, immutable.',
+    };
+  }
+
+  // Help text for clientLogos on Industry
+  if (key.includes('industry.industry')) {
+    base.metadatas.clientLogos = base.metadatas.clientLogos || {};
+    base.metadatas.clientLogos.edit = {
+      ...base.metadatas.clientLogos.edit,
+      description: TRUST_BAR_HELP_TEXT,
+    };
+  }
+
+  // Help text for heading on Trust Bar component
+  if (key.includes('industry-page.trust-bar')) {
+    base.metadatas.heading = base.metadatas.heading || {};
+    base.metadatas.heading.edit = {
+      ...base.metadatas.heading.edit,
+      description: TRUST_BAR_HELP_TEXT,
     };
   }
 
@@ -150,7 +179,7 @@ async function main() {
 
     const existingValue = rows.length ? rows[0].value : null;
     const lockSlug = layout.key.includes('industry') || layout.key.includes('service.service') || layout.key.includes('case-study');
-    const updated = applyEditLayout(existingValue, layout.editRows, lockSlug);
+    const updated = applyEditLayout(existingValue, layout.editRows, lockSlug, layout.key);
     const json = JSON.stringify(updated);
 
     if (rows.length === 0) {

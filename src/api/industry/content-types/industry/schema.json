@@ -23,12 +23,6 @@
     "summary": {
       "type": "text"
     },
-    "body": {
-      "type": "text"
-    },
-    "icon": {
-      "type": "string"
-    },
     "heroImage": {
       "type": "media",
       "multiple": false,
@@ -42,10 +36,16 @@
       "default": 0,
       "min": 0
     },
-    "heroSection": {
-      "type": "component",
-      "repeatable": false,
-      "component": "industry-page.hero-section"
+    "ctaLabel": {
+      "type": "string",
+      "default": "Book a consultation"
+    },
+    "ctaLink": {
+      "type": "string",
+      "default": "/schedule-a-call"
+    },
+    "lastReviewedDate": {
+      "type": "date"
     },
     "reviewers": {
       "type": "relation",

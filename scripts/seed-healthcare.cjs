@@ -279,14 +279,10 @@ async function main() {
     // 8. Build complete Industry payload
     console.log('\n--- 5. BUILDING COMPLETE HEALTHCARE PAYLOAD ---');
     const healthcareDataPayload = {
-      // Hero (compliance & scale, 1-2 sentences, CTA, lastReviewedDate = today, no images)
-      heroSection: {
-        title: 'Healthcare Software Engineering Built for Compliance and Scale',
-        description: 'We architect and build mission-critical digital health solutions, standardized interoperability engines, and modern clinical platforms engineered for patient safety and regulatory resilience.',
-        primaryCtaLabel: 'Talk to a Healthcare Expert',
-        primaryCtaLink: '/schedule-a-call',
-        lastReviewedDate: getTodayDate(),
-      },
+      // CTA & review date
+      ctaLabel: 'Talk to a Healthcare Expert',
+      ctaLink: '/schedule-a-call',
+      lastReviewedDate: getTodayDate(),
 
       // Reviewers
       reviewers: reviewerDocIds,
@@ -521,7 +517,7 @@ async function main() {
     };
 
     console.log('Payload summary:');
-    console.log(`  - heroSection: "${healthcareDataPayload.heroSection.title}"`);
+    console.log(`  - CTA: "${healthcareDataPayload.ctaLabel}" -> ${healthcareDataPayload.ctaLink}`);
     console.log(`  - reviewers: ${healthcareDataPayload.reviewers.length} reviewer(s) linked`);
     console.log(`  - trustBar: heading="${healthcareDataPayload.trustBar.heading}", clientLogos=${healthcareDataPayload.clientLogos.length}`);
     console.log(`  - stats: ${healthcareDataPayload.stats.length} items`);
