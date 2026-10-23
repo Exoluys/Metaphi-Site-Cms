@@ -754,17 +754,13 @@ export interface ApiServiceService extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
-    assurances: Schema.Attribute.JSON;
     assurancesList: Schema.Attribute.Component<'service.assurance', true>;
-    benefits: Schema.Attribute.JSON;
     benefitsList: Schema.Attribute.Component<'service.benefit', true>;
     body: Schema.Attribute.Text;
-    businessFunctions: Schema.Attribute.JSON;
     businessFunctionsList: Schema.Attribute.Component<
       'service.business-function',
       true
     >;
-    caseStudies: Schema.Attribute.JSON;
     caseStudiesList: Schema.Attribute.Relation<
       'manyToMany',
       'api::case-study.case-study'
@@ -775,9 +771,7 @@ export interface ApiServiceService extends Struct.CollectionTypeSchema {
     > &
       Schema.Attribute.Required;
     categorySlug: Schema.Attribute.String;
-    challenges: Schema.Attribute.JSON;
     challengesList: Schema.Attribute.Component<'service.challenge', true>;
-    compliance: Schema.Attribute.JSON;
     complianceList: Schema.Attribute.Component<
       'service.compliance-badge',
       true
@@ -821,7 +815,6 @@ export interface ApiServiceService extends Struct.CollectionTypeSchema {
       ]
     > &
       Schema.Attribute.DefaultTo<'Boxes'>;
-    industries: Schema.Attribute.JSON;
     industryContextsList: Schema.Attribute.Component<
       'service.industry-context',
       true
@@ -832,7 +825,6 @@ export interface ApiServiceService extends Struct.CollectionTypeSchema {
       'api::service.service'
     > &
       Schema.Attribute.Private;
-    offerings: Schema.Attribute.JSON;
     offeringsList: Schema.Attribute.Component<'service.offering', true>;
     offeringsVisual: Schema.Attribute.String;
     order: Schema.Attribute.Integer &
@@ -843,11 +835,8 @@ export interface ApiServiceService extends Struct.CollectionTypeSchema {
         number
       > &
       Schema.Attribute.DefaultTo<0>;
-    outcomes: Schema.Attribute.JSON;
-    process: Schema.Attribute.JSON;
     processStepsList: Schema.Attribute.Component<'service.process-step', true>;
     publishedAt: Schema.Attribute.DateTime;
-    relatedServices: Schema.Attribute.JSON;
     relatedServicesList: Schema.Attribute.Relation<
       'oneToMany',
       'api::service.service'
@@ -857,22 +846,17 @@ export interface ApiServiceService extends Struct.CollectionTypeSchema {
         maxLength: 160;
       }>;
     slug: Schema.Attribute.String;
-    solutionTypes: Schema.Attribute.JSON;
     solutionTypesList: Schema.Attribute.Component<
       'service.solution-type',
       true
     >;
-    stats: Schema.Attribute.JSON;
     statsList: Schema.Attribute.Component<'service.stat', true>;
     summary: Schema.Attribute.Text;
-    tags: Schema.Attribute.JSON;
-    techGroups: Schema.Attribute.JSON;
     techGroupsList: Schema.Attribute.Component<'service.tech-group', true>;
     title: Schema.Attribute.String & Schema.Attribute.Required;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    whyUs: Schema.Attribute.JSON;
     whyUsList: Schema.Attribute.Component<'service.why-us', true>;
   };
 }

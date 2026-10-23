@@ -163,54 +163,6 @@
       "relation": "manyToMany",
       "target": "api::case-study.case-study",
       "mappedBy": "relatedServices"
-    },
-    "stats": {
-      "type": "json"
-    },
-    "challenges": {
-      "type": "json"
-    },
-    "offerings": {
-      "type": "json"
-    },
-    "solutionTypes": {
-      "type": "json"
-    },
-    "caseStudies": {
-      "type": "json"
-    },
-    "tags": {
-      "type": "json"
-    },
-    "outcomes": {
-      "type": "json"
-    },
-    "businessFunctions": {
-      "type": "json"
-    },
-    "process": {
-      "type": "json"
-    },
-    "assurances": {
-      "type": "json"
-    },
-    "compliance": {
-      "type": "json"
-    },
-    "techGroups": {
-      "type": "json"
-    },
-    "benefits": {
-      "type": "json"
-    },
-    "industries": {
-      "type": "json"
-    },
-    "whyUs": {
-      "type": "json"
-    },
-    "relatedServices": {
-      "type": "json"
     }
   }
 }

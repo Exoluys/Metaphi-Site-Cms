@@ -46,14 +46,25 @@ export default {
       data.order = 0;
     }
 
-    const baseSlug = generateSlug(data.name);
-
-    const existing = await strapi.documents('api::service-category.service-category').findMany({
-      fields: ['slug'],
+    // Gather all existing slugs (excluding any sibling of this documentId)
+    const currentDocId = data.documentId || null;
+    const allExisting = await strapi.documents('api::service-category.service-category').findMany({
+      fields: ['slug', 'documentId'],
     });
-    const existingSlugs = new Set<string>(existing.map((c: any) => c.slug).filter(Boolean));
+    const otherSlugs = new Set<string>();
+    for (const item of allExisting) {
+      if (item.slug && item.documentId !== currentDocId) {
+        otherSlugs.add(item.slug);
+      }
+    }
 
-    data.slug = ensureUniqueSlug(baseSlug, existingSlugs);
+    // Honor an explicit slug if provided (e.g. seed scripts), otherwise generate from name
+    if (data.slug && typeof data.slug === 'string' && data.slug.trim()) {
+      data.slug = ensureUniqueSlug(data.slug.trim(), otherSlugs);
+    } else {
+      const baseSlug = generateSlug(data.name);
+      data.slug = ensureUniqueSlug(baseSlug, otherSlugs);
+    }
   },
 
   async beforeUpdate(event: any) {
