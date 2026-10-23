@@ -701,20 +701,6 @@ export interface ServiceWhyUs extends Struct.ComponentSchema {
   };
 }
 
-export interface SharedSection extends Struct.ComponentSchema {
-  collectionName: 'components_shared_sections';
-  info: {
-    description: '';
-    displayName: 'Section';
-    icon: 'layer';
-  };
-  attributes: {
-    anchor: Schema.Attribute.String & Schema.Attribute.Required;
-    content: Schema.Attribute.Text;
-    heading: Schema.Attribute.String & Schema.Attribute.Required;
-  };
-}
-
 export interface SharedSeo extends Struct.ComponentSchema {
   collectionName: 'components_shared_seos';
   info: {
@@ -778,7 +764,6 @@ declare module '@strapi/strapi' {
       'service.stat': ServiceStat;
       'service.tech-group': ServiceTechGroup;
       'service.why-us': ServiceWhyUs;
-      'shared.section': SharedSection;
       'shared.seo': SharedSeo;
     }
   }
