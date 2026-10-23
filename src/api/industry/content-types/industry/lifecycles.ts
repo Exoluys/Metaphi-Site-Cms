@@ -4,27 +4,47 @@ import { errors } from '@strapi/utils';
 declare const strapi: any;
 
 async function resolveExistingIndustry(where: any, data: any): Promise<{ id?: number; documentId?: string; slug?: string } | null> {
+  let doc: any = null;
+
   if (where?.id && typeof where.id === 'number') {
-    const doc = await strapi.db.query('api::industry.industry').findOne({
+    doc = await strapi.db.query('api::industry.industry').findOne({
       where: { id: where.id },
     });
-    if (doc) return doc;
   }
 
   const docId = where?.documentId || (typeof where?.id === 'string' ? where.id : undefined) || data?.documentId;
-  if (docId && typeof docId === 'string') {
-    const doc = await strapi.documents('api::industry.industry').findOne({
+  if (!doc && docId && typeof docId === 'string') {
+    doc = await strapi.documents('api::industry.industry').findOne({
       documentId: docId,
     });
-    if (doc) return doc;
-
-    const byQuery = await strapi.db.query('api::industry.industry').findOne({
-      where: { documentId: docId },
-    });
-    if (byQuery) return byQuery;
+    if (!doc) {
+      doc = await strapi.db.query('api::industry.industry').findOne({
+        where: { documentId: docId },
+      });
+    }
   }
 
-  return null;
+  if (!doc) return null;
+
+  if (doc.slug) {
+    return doc;
+  }
+
+  // If this row has no slug, check sibling row (same documentId, opposite publishedAt state)
+  if (doc.documentId) {
+    const isPublished = Boolean(doc.publishedAt);
+    const sibling = await strapi.db.query('api::industry.industry').findOne({
+      where: {
+        documentId: doc.documentId,
+        publishedAt: isPublished ? { $null: true } : { $notNull: true },
+      },
+    });
+    if (sibling?.slug) {
+      return sibling;
+    }
+  }
+
+  return doc;
 }
 
 export default {
@@ -54,7 +74,8 @@ export default {
       return;
     }
 
-    // If an explicit slug is provided (e.g. from migration script), preserve it; otherwise generate
+    // Slug generation: ALWAYS generated from title on create (manually typed slugs are ignored)
+    const baseSlug = generateSlug(data.title);
     const currentDocId = existing?.documentId || data.documentId;
     const allExisting = await strapi.documents('api::industry.industry').findMany({
       fields: ['slug', 'documentId'],
@@ -66,12 +87,7 @@ export default {
       }
     }
 
-    if (data.slug && typeof data.slug === 'string' && data.slug.trim()) {
-      data.slug = ensureUniqueSlug(data.slug.trim(), otherSlugs);
-    } else {
-      const baseSlug = generateSlug(data.title);
-      data.slug = ensureUniqueSlug(baseSlug, otherSlugs);
-    }
+    data.slug = ensureUniqueSlug(baseSlug, otherSlugs);
   },
 
   async beforeUpdate(event: any) {

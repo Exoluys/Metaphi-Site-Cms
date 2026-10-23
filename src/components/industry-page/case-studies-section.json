@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_industry_page_case_studies_sections",
+  "info": {
+    "displayName": "Case Studies Section",
+    "icon": "briefcase",
+    "description": "Case studies section header and copy"
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "string",
+      "required": true
+    },
+    "intro": {
+      "type": "text"
+    },
+    "ctaLabel": {
+      "type": "string"
+    }
+  }
+}

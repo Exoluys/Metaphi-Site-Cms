@@ -33,6 +33,10 @@ export default {
           'api::industry.industry.findOne',
           'api::case-study.case-study.find',
           'api::case-study.case-study.findOne',
+          'api::reviewer.reviewer.find',
+          'api::reviewer.reviewer.findOne',
+          'api::client-logo.client-logo.find',
+          'api::client-logo.client-logo.findOne',
         ];
 
         for (const action of requiredActions) {
@@ -146,6 +150,34 @@ export default {
             });
           }
           strapi.log.info(`[Bootstrap] Completed initial service seed!`);
+        }
+      }
+
+      // ── 4. Ensure slug fields are read-only in Admin Content Manager ────
+      const lockedContentTypes = [
+        'plugin_content_manager_configuration_content_types::api::industry.industry',
+        'plugin_content_manager_configuration_content_types::api::service.service',
+        'plugin_content_manager_configuration_content_types::api::case-study.case-study',
+      ];
+
+      for (const key of lockedContentTypes) {
+        const rows = await strapi.db
+          .connection('strapi_core_store_settings')
+          .where({ key })
+          .select('id', 'value');
+
+        if (rows.length > 0) {
+          const config = JSON.parse(rows[0].value);
+          if (config?.metadatas?.slug?.edit && config.metadatas.slug.edit.editable !== false) {
+            config.metadatas.slug.edit.editable = false;
+            config.metadatas.slug.edit.description =
+              'Automatically generated from title on creation. Never typed, immutable.';
+            await strapi.db
+              .connection('strapi_core_store_settings')
+              .where({ id: rows[0].id })
+              .update({ value: JSON.stringify(config) });
+            strapi.log.info(`[Bootstrap] Locked slug field (read-only) for ${key}`);
+          }
         }
       }
     } catch (err: any) {

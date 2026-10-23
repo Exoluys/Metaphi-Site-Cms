@@ -316,117 +316,233 @@ export interface HomeStat extends Struct.ComponentSchema {
   };
 }
 
-export interface IndustryCapabilitiesSection extends Struct.ComponentSchema {
-  collectionName: 'components_industry_capabilities_sections';
+export interface IndustryPageCaseStudiesSection extends Struct.ComponentSchema {
+  collectionName: 'components_industry_page_case_studies_sections';
   info: {
-    description: '';
-    displayName: 'Capabilities Section';
-    icon: 'shield-alt';
+    description: 'Case studies section header and copy';
+    displayName: 'Case Studies Section';
+    icon: 'briefcase';
   };
   attributes: {
-    capabilities: Schema.Attribute.Component<'industry.capability-item', true>;
+    ctaLabel: Schema.Attribute.String;
     heading: Schema.Attribute.String & Schema.Attribute.Required;
-    subtext: Schema.Attribute.Text;
+    intro: Schema.Attribute.Text;
   };
 }
 
-export interface IndustryCapabilityItem extends Struct.ComponentSchema {
-  collectionName: 'components_industry_capability_items';
+export interface IndustryPageChallengeRow extends Struct.ComponentSchema {
+  collectionName: 'components_industry_page_challenge_rows';
   info: {
-    description: '';
-    displayName: 'Capability Item';
-    icon: 'check-circle';
+    description: 'Industry problem, cost to client, solution label and linked service';
+    displayName: 'Challenge Row';
+    icon: 'shield-alert';
   };
   attributes: {
-    description: Schema.Attribute.Blocks & Schema.Attribute.Required;
-    icon: Schema.Attribute.String;
+    challenge: Schema.Attribute.Text & Schema.Attribute.Required;
+    costToClient: Schema.Attribute.Text & Schema.Attribute.Required;
+    linkedService: Schema.Attribute.Relation<
+      'manyToOne',
+      'api::service.service'
+    >;
+    solutionLabel: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
+export interface IndustryPageChallengesSection extends Struct.ComponentSchema {
+  collectionName: 'components_industry_page_challenges_sections';
+  info: {
+    description: 'Challenges grid with cost to client and solution service links';
+    displayName: 'Challenges Section';
+    icon: 'shield-alt';
+  };
+  attributes: {
+    challenges: Schema.Attribute.Component<'industry-page.challenge-row', true>;
+    ctaLabel: Schema.Attribute.String;
+    ctaLink: Schema.Attribute.String;
+    heading: Schema.Attribute.String & Schema.Attribute.Required;
+    sideImage: Schema.Attribute.Media<'images'>;
+  };
+}
+
+export interface IndustryPageCtaBanner extends Struct.ComponentSchema {
+  collectionName: 'components_industry_page_cta_banners';
+  info: {
+    description: 'Bottom CTA banner above footer';
+    displayName: 'CTA Banner';
+    icon: 'flag';
+  };
+  attributes: {
+    buttonLabel: Schema.Attribute.String & Schema.Attribute.Required;
+    buttonLink: Schema.Attribute.String & Schema.Attribute.Required;
+    heading: Schema.Attribute.String & Schema.Attribute.Required;
+    image: Schema.Attribute.Media<'images'>;
+    text: Schema.Attribute.Text;
+    themeVariant: Schema.Attribute.Enumeration<['dark', 'light', 'gradient']> &
+      Schema.Attribute.DefaultTo<'dark'>;
+  };
+}
+
+export interface IndustryPageHeroSection extends Struct.ComponentSchema {
+  collectionName: 'components_industry_page_hero_sections';
+  info: {
+    description: 'Industry page hero section';
+    displayName: 'Hero Section';
+    icon: 'layer-group';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    heroImage: Schema.Attribute.Media<'images'>;
+    lastReviewedDate: Schema.Attribute.Date;
+    primaryCtaLabel: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'Book a consultation'>;
+    primaryCtaLink: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'/schedule-a-call'>;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface IndustryPageServiceTab extends Struct.ComponentSchema {
+  collectionName: 'components_industry_page_service_tabs';
+  info: {
+    description: 'Linked service with industry-specific copy and highlights';
+    displayName: 'Service Tab';
+    icon: 'cog';
+  };
+  attributes: {
+    highlightTags: Schema.Attribute.String;
+    image: Schema.Attribute.Media<'images'>;
+    industryDescription: Schema.Attribute.Text & Schema.Attribute.Required;
+    order: Schema.Attribute.Integer & Schema.Attribute.DefaultTo<0>;
+    service: Schema.Attribute.Relation<'manyToOne', 'api::service.service'> &
+      Schema.Attribute.Required;
+  };
+}
+
+export interface IndustryPageServicesSection extends Struct.ComponentSchema {
+  collectionName: 'components_industry_page_services_sections';
+  info: {
+    description: 'Services we offer tabs section';
+    displayName: 'Services Section';
+    icon: 'layer-group';
+  };
+  attributes: {
+    ctaLabel: Schema.Attribute.String;
+    ctaLink: Schema.Attribute.String;
+    heading: Schema.Attribute.String & Schema.Attribute.Required;
+    services: Schema.Attribute.Component<'industry-page.service-tab', true>;
+  };
+}
+
+export interface IndustryPageSolutionCategory extends Struct.ComponentSchema {
+  collectionName: 'components_industry_page_solution_categories';
+  info: {
+    description: 'Category tab grouping solutions';
+    displayName: 'Solution Category';
+    icon: 'folder';
+  };
+  attributes: {
+    categoryName: Schema.Attribute.String & Schema.Attribute.Required;
+    items: Schema.Attribute.Component<'industry-page.solution-item', true>;
+  };
+}
+
+export interface IndustryPageSolutionItem extends Struct.ComponentSchema {
+  collectionName: 'components_industry_page_solution_items';
+  info: {
+    description: 'Specific solution item inside category';
+    displayName: 'Solution Item';
+    icon: 'lightbulb';
+  };
+  attributes: {
+    description: Schema.Attribute.Text & Schema.Attribute.Required;
+    image: Schema.Attribute.Media<'images'>;
     link: Schema.Attribute.String;
     title: Schema.Attribute.String & Schema.Attribute.Required;
   };
 }
 
-export interface IndustryEngagementCard extends Struct.ComponentSchema {
-  collectionName: 'components_industry_engagement_cards';
+export interface IndustryPageSolutionsSection extends Struct.ComponentSchema {
+  collectionName: 'components_industry_page_solutions_sections';
   info: {
-    description: '';
-    displayName: 'Engagement Card';
-    icon: 'handshake';
+    description: 'Categorized solutions tabs section';
+    displayName: 'Solutions Section';
+    icon: 'puzzle-piece';
   };
   attributes: {
-    badge: Schema.Attribute.String;
-    description: Schema.Attribute.Blocks & Schema.Attribute.Required;
-    title: Schema.Attribute.String & Schema.Attribute.Required;
-  };
-}
-
-export interface IndustryEngagementSection extends Struct.ComponentSchema {
-  collectionName: 'components_industry_engagement_sections';
-  info: {
-    description: '';
-    displayName: 'Engagement Section';
-    icon: 'users';
-  };
-  attributes: {
-    cards: Schema.Attribute.Component<'industry.engagement-card', true>;
+    categories: Schema.Attribute.Component<
+      'industry-page.solution-category',
+      true
+    >;
     heading: Schema.Attribute.String & Schema.Attribute.Required;
-    subtext: Schema.Attribute.Text;
+    intro: Schema.Attribute.Text;
   };
 }
 
-export interface IndustryHeroSection extends Struct.ComponentSchema {
-  collectionName: 'components_industry_hero_sections';
+export interface IndustryPageStatItem extends Struct.ComponentSchema {
+  collectionName: 'components_industry_page_stat_items';
   info: {
-    description: '';
-    displayName: 'Hero Section';
-    icon: 'layer-group';
-  };
-  attributes: {
-    primaryCtaLink: Schema.Attribute.String;
-    primaryCtaText: Schema.Attribute.String;
-    stats: Schema.Attribute.Component<'industry.stat', true>;
-  };
-}
-
-export interface IndustryServiceItem extends Struct.ComponentSchema {
-  collectionName: 'components_industry_service_items';
-  info: {
-    description: '';
-    displayName: 'Service Item';
-    icon: 'cog';
-  };
-  attributes: {
-    description: Schema.Attribute.Blocks & Schema.Attribute.Required;
-    serviceLink: Schema.Attribute.String;
-    title: Schema.Attribute.String & Schema.Attribute.Required;
-  };
-}
-
-export interface IndustryServicesSection extends Struct.ComponentSchema {
-  collectionName: 'components_industry_services_sections';
-  info: {
-    description: '';
-    displayName: 'Services Section';
-    icon: 'grid';
-  };
-  attributes: {
-    centerImage: Schema.Attribute.Media<'images'>;
-    heading: Schema.Attribute.String & Schema.Attribute.Required;
-    services: Schema.Attribute.Component<'industry.service-item', true>;
-    subtext: Schema.Attribute.Text;
-  };
-}
-
-export interface IndustryStat extends Struct.ComponentSchema {
-  collectionName: 'components_industry_stats';
-  info: {
-    description: '';
-    displayName: 'Stat';
+    description: 'Quantifiable industry stat or metric';
+    displayName: 'Stat Item';
     icon: 'chart-pie';
   };
   attributes: {
-    description: Schema.Attribute.String;
-    label: Schema.Attribute.String & Schema.Attribute.Required;
+    description: Schema.Attribute.Text;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
     value: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
+export interface IndustryPageTechStackSection extends Struct.ComponentSchema {
+  collectionName: 'components_industry_page_tech_stack_sections';
+  info: {
+    description: 'Tech stack section grouped by category';
+    displayName: 'Tech Stack Section';
+    icon: 'code';
+  };
+  attributes: {
+    groups: Schema.Attribute.Component<'service.tech-group', true>;
+    heading: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
+export interface IndustryPageTrustBar extends Struct.ComponentSchema {
+  collectionName: 'components_industry_page_trust_bars';
+  info: {
+    description: 'Trust bar header with client logos';
+    displayName: 'Trust Bar';
+    icon: 'handshake';
+  };
+  attributes: {
+    heading: Schema.Attribute.String;
+  };
+}
+
+export interface IndustryPageVerticalCard extends Struct.ComponentSchema {
+  collectionName: 'components_industry_page_vertical_cards';
+  info: {
+    description: 'Sub-vertical card with icon or uploaded SVG';
+    displayName: 'Vertical Card';
+    icon: 'shapes';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    icon: Schema.Attribute.String;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+    uploadedIcon: Schema.Attribute.Media<'images'>;
+  };
+}
+
+export interface IndustryPageVerticalsSection extends Struct.ComponentSchema {
+  collectionName: 'components_industry_page_verticals_sections';
+  info: {
+    description: 'Sub-verticals and focus areas grid';
+    displayName: 'Verticals Section';
+    icon: 'th-large';
+  };
+  attributes: {
+    heading: Schema.Attribute.String & Schema.Attribute.Required;
+    intro: Schema.Attribute.Text;
+    verticals: Schema.Attribute.Component<'industry-page.vertical-card', true>;
   };
 }
 
@@ -599,6 +715,20 @@ export interface SharedSection extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedSeo extends Struct.ComponentSchema {
+  collectionName: 'components_shared_seos';
+  info: {
+    description: 'Metadata for SEO and social sharing';
+    displayName: 'SEO';
+    icon: 'search';
+  };
+  attributes: {
+    keywords: Schema.Attribute.String;
+    metaDescription: Schema.Attribute.Text;
+    metaTitle: Schema.Attribute.String;
+  };
+}
+
 declare module '@strapi/strapi' {
   export namespace Public {
     export interface ComponentSchemas {
@@ -621,14 +751,21 @@ declare module '@strapi/strapi' {
       'home.certification': HomeCertification;
       'home.client-logo': HomeClientLogo;
       'home.stat': HomeStat;
-      'industry.capabilities-section': IndustryCapabilitiesSection;
-      'industry.capability-item': IndustryCapabilityItem;
-      'industry.engagement-card': IndustryEngagementCard;
-      'industry.engagement-section': IndustryEngagementSection;
-      'industry.hero-section': IndustryHeroSection;
-      'industry.service-item': IndustryServiceItem;
-      'industry.services-section': IndustryServicesSection;
-      'industry.stat': IndustryStat;
+      'industry-page.case-studies-section': IndustryPageCaseStudiesSection;
+      'industry-page.challenge-row': IndustryPageChallengeRow;
+      'industry-page.challenges-section': IndustryPageChallengesSection;
+      'industry-page.cta-banner': IndustryPageCtaBanner;
+      'industry-page.hero-section': IndustryPageHeroSection;
+      'industry-page.service-tab': IndustryPageServiceTab;
+      'industry-page.services-section': IndustryPageServicesSection;
+      'industry-page.solution-category': IndustryPageSolutionCategory;
+      'industry-page.solution-item': IndustryPageSolutionItem;
+      'industry-page.solutions-section': IndustryPageSolutionsSection;
+      'industry-page.stat-item': IndustryPageStatItem;
+      'industry-page.tech-stack-section': IndustryPageTechStackSection;
+      'industry-page.trust-bar': IndustryPageTrustBar;
+      'industry-page.vertical-card': IndustryPageVerticalCard;
+      'industry-page.verticals-section': IndustryPageVerticalsSection;
       'service.assurance': ServiceAssurance;
       'service.benefit': ServiceBenefit;
       'service.business-function': ServiceBusinessFunction;
@@ -642,6 +779,7 @@ declare module '@strapi/strapi' {
       'service.tech-group': ServiceTechGroup;
       'service.why-us': ServiceWhyUs;
       'shared.section': SharedSection;
+      'shared.seo': SharedSeo;
     }
   }
 }

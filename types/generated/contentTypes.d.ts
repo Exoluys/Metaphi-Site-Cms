@@ -526,6 +526,74 @@ export interface ApiCaseStudyCaseStudy extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiClientLogoClientLogo extends Struct.CollectionTypeSchema {
+  collectionName: 'client_logos';
+  info: {
+    description: 'Client logos displayed across trust bars and home page';
+    displayName: 'Client Logo';
+    pluralName: 'client-logos';
+    singularName: 'client-logo';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::client-logo.client-logo'
+    > &
+      Schema.Attribute.Private;
+    logo: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
+    name: Schema.Attribute.String & Schema.Attribute.Required;
+    order: Schema.Attribute.Integer & Schema.Attribute.DefaultTo<0>;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    url: Schema.Attribute.String;
+  };
+}
+
+export interface ApiDefaultCtaBannerDefaultCtaBanner
+  extends Struct.SingleTypeSchema {
+  collectionName: 'default_cta_banners';
+  info: {
+    description: 'Global default bottom CTA banner used when an industry banner is empty';
+    displayName: 'Default CTA Banner';
+    pluralName: 'default-cta-banners';
+    singularName: 'default-cta-banner';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    buttonLabel: Schema.Attribute.String & Schema.Attribute.Required;
+    buttonLink: Schema.Attribute.String & Schema.Attribute.Required;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    heading: Schema.Attribute.String & Schema.Attribute.Required;
+    image: Schema.Attribute.Media<'images'>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::default-cta-banner.default-cta-banner'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    text: Schema.Attribute.Text;
+    themeVariant: Schema.Attribute.Enumeration<['dark', 'light', 'gradient']> &
+      Schema.Attribute.DefaultTo<'dark'>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiFaqFaq extends Struct.CollectionTypeSchema {
   collectionName: 'faqs';
   info: {
@@ -649,23 +717,31 @@ export interface ApiIndustryIndustry extends Struct.CollectionTypeSchema {
   };
   attributes: {
     body: Schema.Attribute.Text;
-    capabilitiesSection: Schema.Attribute.Component<
-      'industry.capabilities-section',
-      false
-    >;
     caseStudies: Schema.Attribute.Relation<
       'manyToMany',
       'api::case-study.case-study'
     >;
+    caseStudiesSection: Schema.Attribute.Component<
+      'industry-page.case-studies-section',
+      false
+    >;
+    challengesSection: Schema.Attribute.Component<
+      'industry-page.challenges-section',
+      false
+    >;
+    clientLogos: Schema.Attribute.Relation<
+      'manyToMany',
+      'api::client-logo.client-logo'
+    >;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    engagementSection: Schema.Attribute.Component<
-      'industry.engagement-section',
+    ctaBanner: Schema.Attribute.Component<'industry-page.cta-banner', false>;
+    heroImage: Schema.Attribute.Media<'images'>;
+    heroSection: Schema.Attribute.Component<
+      'industry-page.hero-section',
       false
     >;
-    heroImage: Schema.Attribute.Media<'images'>;
-    heroSection: Schema.Attribute.Component<'industry.hero-section', false>;
     icon: Schema.Attribute.String;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
@@ -682,18 +758,64 @@ export interface ApiIndustryIndustry extends Struct.CollectionTypeSchema {
       > &
       Schema.Attribute.DefaultTo<0>;
     publishedAt: Schema.Attribute.DateTime;
-    sections: Schema.Attribute.Component<'shared.section', true>;
-    seoDescription: Schema.Attribute.String &
-      Schema.Attribute.SetMinMaxLength<{
-        maxLength: 160;
-      }>;
+    reviewers: Schema.Attribute.Relation<
+      'manyToMany',
+      'api::reviewer.reviewer'
+    >;
+    seo: Schema.Attribute.Component<'shared.seo', false>;
     servicesSection: Schema.Attribute.Component<
-      'industry.services-section',
+      'industry-page.services-section',
       false
     >;
     slug: Schema.Attribute.String;
+    solutionsSection: Schema.Attribute.Component<
+      'industry-page.solutions-section',
+      false
+    >;
+    stats: Schema.Attribute.Component<'industry-page.stat-item', true>;
     summary: Schema.Attribute.Text;
+    techStackSection: Schema.Attribute.Component<
+      'industry-page.tech-stack-section',
+      false
+    >;
     title: Schema.Attribute.String & Schema.Attribute.Required;
+    trustBar: Schema.Attribute.Component<'industry-page.trust-bar', false>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    verticalsSection: Schema.Attribute.Component<
+      'industry-page.verticals-section',
+      false
+    >;
+  };
+}
+
+export interface ApiReviewerReviewer extends Struct.CollectionTypeSchema {
+  collectionName: 'reviewers';
+  info: {
+    description: 'Subject matter experts and industry page reviewers';
+    displayName: 'Reviewer';
+    pluralName: 'reviewers';
+    singularName: 'reviewer';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    linkedinUrl: Schema.Attribute.String;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::reviewer.reviewer'
+    > &
+      Schema.Attribute.Private;
+    name: Schema.Attribute.String & Schema.Attribute.Required;
+    photo: Schema.Attribute.Media<'images'>;
+    publishedAt: Schema.Attribute.DateTime;
+    role: Schema.Attribute.String & Schema.Attribute.Required;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1407,9 +1529,12 @@ declare module '@strapi/strapi' {
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
       'api::case-study.case-study': ApiCaseStudyCaseStudy;
+      'api::client-logo.client-logo': ApiClientLogoClientLogo;
+      'api::default-cta-banner.default-cta-banner': ApiDefaultCtaBannerDefaultCtaBanner;
       'api::faq.faq': ApiFaqFaq;
       'api::home-page.home-page': ApiHomePageHomePage;
       'api::industry.industry': ApiIndustryIndustry;
+      'api::reviewer.reviewer': ApiReviewerReviewer;
       'api::service-category.service-category': ApiServiceCategoryServiceCategory;
       'api::service.service': ApiServiceService;
       'api::testimonial.testimonial': ApiTestimonialTestimonial;

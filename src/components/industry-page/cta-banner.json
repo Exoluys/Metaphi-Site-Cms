@@ -1,0 +1,43 @@
+{
+  "collectionName": "components_industry_page_cta_banners",
+  "info": {
+    "displayName": "CTA Banner",
+    "icon": "flag",
+    "description": "Bottom CTA banner above footer"
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "string",
+      "required": true
+    },
+    "text": {
+      "type": "text"
+    },
+    "buttonLabel": {
+      "type": "string",
+      "required": true
+    },
+    "buttonLink": {
+      "type": "string",
+      "required": true
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "themeVariant": {
+      "type": "enumeration",
+      "enum": [
+        "dark",
+        "light",
+        "gradient"
+      ],
+      "default": "dark"
+    }
+  }
+}

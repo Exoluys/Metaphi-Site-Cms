@@ -1,22 +1,22 @@
 {
-  "collectionName": "components_industry_stats",
+  "collectionName": "components_industry_page_stat_items",
   "info": {
-    "displayName": "Stat",
+    "displayName": "Stat Item",
     "icon": "chart-pie",
-    "description": ""
+    "description": "Quantifiable industry stat or metric"
   },
   "options": {},
   "attributes": {
-    "label": {
-      "type": "string",
-      "required": true
-    },
     "value": {
       "type": "string",
       "required": true
     },
+    "title": {
+      "type": "string",
+      "required": true
+    },
     "description": {
-      "type": "string"
+      "type": "text"
     }
   }
 }

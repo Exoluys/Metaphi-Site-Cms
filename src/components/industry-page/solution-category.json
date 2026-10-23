@@ -1,0 +1,20 @@
+{
+  "collectionName": "components_industry_page_solution_categories",
+  "info": {
+    "displayName": "Solution Category",
+    "icon": "folder",
+    "description": "Category tab grouping solutions"
+  },
+  "options": {},
+  "attributes": {
+    "categoryName": {
+      "type": "string",
+      "required": true
+    },
+    "items": {
+      "type": "component",
+      "repeatable": true,
+      "component": "industry-page.solution-item"
+    }
+  }
+}

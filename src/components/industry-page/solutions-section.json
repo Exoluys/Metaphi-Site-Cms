@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_industry_page_solutions_sections",
+  "info": {
+    "displayName": "Solutions Section",
+    "icon": "puzzle-piece",
+    "description": "Categorized solutions tabs section"
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "string",
+      "required": true
+    },
+    "intro": {
+      "type": "text"
+    },
+    "categories": {
+      "type": "component",
+      "repeatable": true,
+      "component": "industry-page.solution-category"
+    }
+  }
+}

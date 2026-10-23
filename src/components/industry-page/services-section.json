@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_industry_page_services_sections",
+  "info": {
+    "displayName": "Services Section",
+    "icon": "layer-group",
+    "description": "Services we offer tabs section"
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "string",
+      "required": true
+    },
+    "ctaLabel": {
+      "type": "string"
+    },
+    "ctaLink": {
+      "type": "string"
+    },
+    "services": {
+      "type": "component",
+      "repeatable": true,
+      "component": "industry-page.service-tab"
+    }
+  }
+}

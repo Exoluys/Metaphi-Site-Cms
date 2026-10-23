@@ -1,0 +1,48 @@
+{
+  "kind": "singleType",
+  "collectionName": "default_cta_banners",
+  "info": {
+    "singularName": "default-cta-banner",
+    "pluralName": "default-cta-banners",
+    "displayName": "Default CTA Banner",
+    "description": "Global default bottom CTA banner used when an industry banner is empty"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "heading": {
+      "type": "string",
+      "required": true
+    },
+    "text": {
+      "type": "text"
+    },
+    "buttonLabel": {
+      "type": "string",
+      "required": true
+    },
+    "buttonLink": {
+      "type": "string",
+      "required": true
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "themeVariant": {
+      "type": "enumeration",
+      "enum": [
+        "dark",
+        "light",
+        "gradient"
+      ],
+      "default": "dark"
+    }
+  }
+}

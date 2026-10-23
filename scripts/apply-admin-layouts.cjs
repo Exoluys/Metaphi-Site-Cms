@@ -81,14 +81,21 @@ const industryLayout = {
     [{ name: 'slug', size: 8 }, { name: 'icon', size: 4 }],
     [{ name: 'summary', size: 12 }],
     [{ name: 'body', size: 12 }],
-    [{ name: 'heroImage', size: 6 }, { name: 'seoDescription', size: 6 }],
+    [{ name: 'heroImage', size: 12 }],
     [{ name: 'heroSection', size: 12 }],
+    [{ name: 'trustBar', size: 12 }],
+    [{ name: 'clientLogos', size: 12 }],
+    [{ name: 'reviewers', size: 12 }],
+    [{ name: 'stats', size: 12 }],
+    [{ name: 'challengesSection', size: 12 }],
+    [{ name: 'caseStudiesSection', size: 12 }],
+    [{ name: 'solutionsSection', size: 12 }],
     [{ name: 'servicesSection', size: 12 }],
-    [{ name: 'capabilitiesSection', size: 12 }],
-    [{ name: 'engagementSection', size: 12 }],
+    [{ name: 'verticalsSection', size: 12 }],
+    [{ name: 'techStackSection', size: 12 }],
+    [{ name: 'ctaBanner', size: 12 }],
     [{ name: 'caseStudies', size: 12 }],
-    // 'sections' (legacy shared.section) is intentionally omitted —
-    // all entries are placeholder content; field stays in schema until Phase 3.
+    [{ name: 'seo', size: 12 }],
   ],
 };
 
@@ -100,14 +107,23 @@ const layouts = [serviceLayout, serviceCategoryLayout, caseStudyLayout, industry
  * Build a minimal but valid Strapi content-manager config object.
  * We only force-overwrite the `layouts.edit` key; everything else
  * from the existing row is preserved (or a sensible default is used).
+ * Enforces slug.edit.editable = false for locked content types.
  */
-function applyEditLayout(existing, newEditRows) {
+function applyEditLayout(existing, newEditRows, lockSlug = false) {
   const base = existing
     ? JSON.parse(typeof existing === 'string' ? existing : JSON.stringify(existing))
     : { layouts: { edit: [], list: [] }, settings: {}, metadatas: {} };
 
   base.layouts = base.layouts || {};
   base.layouts.edit = newEditRows;
+
+  if (lockSlug && base.metadatas?.slug) {
+    base.metadatas.slug.edit = {
+      ...base.metadatas.slug.edit,
+      editable: false,
+      description: 'Automatically generated from title on creation. Never typed, immutable.',
+    };
+  }
 
   return base;
 }
@@ -124,7 +140,8 @@ async function main() {
     );
 
     const existingValue = rows.length ? rows[0].value : null;
-    const updated = applyEditLayout(existingValue, layout.editRows);
+    const lockSlug = layout.key.includes('industry') || layout.key.includes('service.service') || layout.key.includes('case-study');
+    const updated = applyEditLayout(existingValue, layout.editRows, lockSlug);
     const json = JSON.stringify(updated);
 
     if (rows.length === 0) {

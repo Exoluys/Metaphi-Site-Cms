@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_industry_page_challenge_rows",
+  "info": {
+    "displayName": "Challenge Row",
+    "icon": "shield-alert",
+    "description": "Industry problem, cost to client, solution label and linked service"
+  },
+  "options": {},
+  "attributes": {
+    "challenge": {
+      "type": "text",
+      "required": true
+    },
+    "costToClient": {
+      "type": "text",
+      "required": true
+    },
+    "solutionLabel": {
+      "type": "string",
+      "required": true
+    },
+    "linkedService": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::service.service"
+    }
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_industry_page_trust_bars",
+  "info": {
+    "displayName": "Trust Bar",
+    "icon": "handshake",
+    "description": "Trust bar header with client logos"
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "string"
+    }
+  }
+}

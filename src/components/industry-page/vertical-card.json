@@ -1,0 +1,29 @@
+{
+  "collectionName": "components_industry_page_vertical_cards",
+  "info": {
+    "displayName": "Vertical Card",
+    "icon": "shapes",
+    "description": "Sub-vertical card with icon or uploaded SVG"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text"
+    },
+    "icon": {
+      "type": "string"
+    },
+    "uploadedIcon": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    }
+  }
+}

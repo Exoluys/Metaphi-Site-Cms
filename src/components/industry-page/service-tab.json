@@ -1,0 +1,36 @@
+{
+  "collectionName": "components_industry_page_service_tabs",
+  "info": {
+    "displayName": "Service Tab",
+    "icon": "cog",
+    "description": "Linked service with industry-specific copy and highlights"
+  },
+  "options": {},
+  "attributes": {
+    "service": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::service.service",
+      "required": true
+    },
+    "industryDescription": {
+      "type": "text",
+      "required": true
+    },
+    "highlightTags": {
+      "type": "string"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "order": {
+      "type": "integer",
+      "default": 0
+    }
+  }
+}
