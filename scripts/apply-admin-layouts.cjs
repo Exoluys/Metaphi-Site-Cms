@@ -12,9 +12,18 @@
  * Run: node apply-admin-layouts.cjs
  */
 
+require('dotenv').config({ path: require('path').resolve(__dirname, '..', '.env') });
 const { Client } = require('pg');
 
-const DB = 'postgres://postgres:J%40i123987@localhost:5432/metaphi_cms';
+const clientConfig = process.env.DATABASE_URL
+  ? { connectionString: process.env.DATABASE_URL }
+  : {
+      host: process.env.DATABASE_HOST || process.env.PGHOST || '127.0.0.1',
+      port: parseInt(process.env.DATABASE_PORT || process.env.PGPORT || '5432', 10),
+      database: process.env.DATABASE_NAME || process.env.PGDATABASE || 'metaphi_cms',
+      user: process.env.DATABASE_USERNAME || process.env.PGUSER || 'postgres',
+      password: process.env.DATABASE_PASSWORD || process.env.PGPASSWORD || '',
+    };
 
 // ─── Layout definitions ──────────────────────────────────────────────────────
 
@@ -129,7 +138,7 @@ function applyEditLayout(existing, newEditRows, lockSlug = false) {
 }
 
 async function main() {
-  const client = new Client({ connectionString: DB });
+  const client = new Client(clientConfig);
   await client.connect();
 
   for (const layout of layouts) {
