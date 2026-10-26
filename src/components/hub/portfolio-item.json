@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_hub_portfolio_items",
+  "info": {
+    "displayName": "Portfolio Item",
+    "icon": "layer",
+    "description": "Item in solution portfolio with title, optional description, and optional link"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "required": false
+    },
+    "link": {
+      "type": "string",
+      "required": false
+    }
+  }
+}

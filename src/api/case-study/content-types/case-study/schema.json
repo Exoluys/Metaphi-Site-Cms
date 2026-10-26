@@ -95,6 +95,19 @@
       "relation": "manyToMany",
       "target": "api::industry.industry",
       "inversedBy": "caseStudies"
+    },
+    "solutionModel": {
+      "type": "enumeration",
+      "enum": [
+        "custom",
+        "ready-to-configure",
+        "saas"
+      ]
+    },
+    "solutions": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::solution.solution"
     }
   }
 }

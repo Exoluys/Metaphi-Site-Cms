@@ -1,0 +1,48 @@
+{
+  "kind": "singleType",
+  "collectionName": "solutions_hubs",
+  "info": {
+    "singularName": "solutions-hub",
+    "pluralName": "solutions-hubs",
+    "displayName": "Solutions Hub"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "seo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.seo"
+    },
+    "heroHeading": {
+      "type": "string",
+      "required": true
+    },
+    "heroSubtext": {
+      "type": "text",
+      "required": false
+    },
+    "models": {
+      "type": "component",
+      "repeatable": true,
+      "component": "hub.solution-model"
+    },
+    "howToChoose": {
+      "type": "component",
+      "repeatable": false,
+      "component": "hub.how-to-choose"
+    },
+    "proof": {
+      "type": "component",
+      "repeatable": false,
+      "component": "hub.proof-block"
+    },
+    "finalCta": {
+      "type": "component",
+      "repeatable": false,
+      "component": "hub.final-cta"
+    }
+  }
+}

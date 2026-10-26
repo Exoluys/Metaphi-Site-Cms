@@ -1,0 +1,58 @@
+{
+  "kind": "singleType",
+  "collectionName": "industries_hubs",
+  "info": {
+    "singularName": "industries-hub",
+    "pluralName": "industries-hubs",
+    "displayName": "Industries Hub"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "seo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.seo"
+    },
+    "heroHeading": {
+      "type": "string",
+      "required": true
+    },
+    "heroSubtext": {
+      "type": "text",
+      "required": false
+    },
+    "industryCardsCta": {
+      "type": "component",
+      "repeatable": false,
+      "component": "hub.info-block"
+    },
+    "transformationThemes": {
+      "type": "component",
+      "repeatable": false,
+      "component": "hub.checklist"
+    },
+    "relevantSolutions": {
+      "type": "component",
+      "repeatable": false,
+      "component": "hub.info-block"
+    },
+    "proof": {
+      "type": "component",
+      "repeatable": false,
+      "component": "hub.proof-block"
+    },
+    "resources": {
+      "type": "component",
+      "repeatable": false,
+      "component": "hub.info-block"
+    },
+    "finalCta": {
+      "type": "component",
+      "repeatable": false,
+      "component": "hub.final-cta"
+    }
+  }
+}

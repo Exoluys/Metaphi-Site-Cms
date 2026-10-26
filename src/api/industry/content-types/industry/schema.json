@@ -36,6 +36,19 @@
       "default": 0,
       "min": 0
     },
+    "featuredOnHub": {
+      "type": "boolean",
+      "default": false
+    },
+    "hubTitle": {
+      "type": "string"
+    },
+    "hubSummary": {
+      "type": "text"
+    },
+    "hubOrder": {
+      "type": "integer"
+    },
     "ctaLabel": {
       "type": "string",
       "default": "Book a consultation"

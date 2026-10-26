@@ -1,0 +1,63 @@
+{
+  "kind": "singleType",
+  "collectionName": "custom_solutions_hubs",
+  "info": {
+    "singularName": "custom-solutions-hub",
+    "pluralName": "custom-solutions-hubs",
+    "displayName": "Custom Solutions Hub"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "seo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.seo"
+    },
+    "heroHeading": {
+      "type": "string",
+      "required": true
+    },
+    "heroSubtext": {
+      "type": "text",
+      "required": false
+    },
+    "whenCustomMakesSense": {
+      "type": "component",
+      "repeatable": false,
+      "component": "hub.checklist"
+    },
+    "capabilities": {
+      "type": "component",
+      "repeatable": true,
+      "component": "hub.capability-card"
+    },
+    "businessOutcomes": {
+      "type": "component",
+      "repeatable": false,
+      "component": "hub.checklist"
+    },
+    "industriesBlock": {
+      "type": "component",
+      "repeatable": false,
+      "component": "hub.info-block"
+    },
+    "deliveryProcess": {
+      "type": "component",
+      "repeatable": false,
+      "component": "hub.process-flow"
+    },
+    "proof": {
+      "type": "component",
+      "repeatable": false,
+      "component": "hub.proof-block"
+    },
+    "finalCta": {
+      "type": "component",
+      "repeatable": false,
+      "component": "hub.final-cta"
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_hub_process_flows",
+  "info": {
+    "displayName": "Process Flow",
+    "icon": "cog",
+    "description": "Process or delivery flow section with repeatable steps"
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "string",
+      "required": false
+    },
+    "subtext": {
+      "type": "text",
+      "required": false
+    },
+    "steps": {
+      "type": "component",
+      "repeatable": true,
+      "component": "hub.step-item"
+    }
+  }
+}

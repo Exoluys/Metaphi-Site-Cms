@@ -1,0 +1,58 @@
+{
+  "kind": "singleType",
+  "collectionName": "ready_to_configure_hubs",
+  "info": {
+    "singularName": "ready-to-configure-hub",
+    "pluralName": "ready-to-configure-hubs",
+    "displayName": "Ready to Configure Hub"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "seo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.seo"
+    },
+    "heroHeading": {
+      "type": "string",
+      "required": true
+    },
+    "heroSubtext": {
+      "type": "text",
+      "required": false
+    },
+    "whatItMeans": {
+      "type": "component",
+      "repeatable": true,
+      "component": "hub.title-description"
+    },
+    "comparisonMatrix": {
+      "type": "component",
+      "repeatable": false,
+      "component": "hub.comparison-matrix"
+    },
+    "solutionPortfolio": {
+      "type": "component",
+      "repeatable": false,
+      "component": "hub.solution-portfolio"
+    },
+    "implementationFlow": {
+      "type": "component",
+      "repeatable": false,
+      "component": "hub.process-flow"
+    },
+    "proof": {
+      "type": "component",
+      "repeatable": false,
+      "component": "hub.proof-block"
+    },
+    "finalCta": {
+      "type": "component",
+      "repeatable": false,
+      "component": "hub.final-cta"
+    }
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_hub_link_items",
+  "info": {
+    "displayName": "Link Item",
+    "icon": "link",
+    "description": "Repeatable link item with text, label and URL"
+  },
+  "options": {},
+  "attributes": {
+    "text": {
+      "type": "string",
+      "required": false
+    },
+    "linkLabel": {
+      "type": "string",
+      "required": true
+    },
+    "linkUrl": {
+      "type": "string",
+      "required": false
+    }
+  }
+}

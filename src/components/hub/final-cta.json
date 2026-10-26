@@ -1,0 +1,35 @@
+{
+  "collectionName": "components_hub_final_ctas",
+  "info": {
+    "displayName": "Final CTA",
+    "icon": "cursor",
+    "description": "Standard bottom final CTA section for hub pages"
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "string",
+      "required": false
+    },
+    "subtext": {
+      "type": "text",
+      "required": false
+    },
+    "ctaLabel": {
+      "type": "string",
+      "required": true
+    },
+    "ctaLink": {
+      "type": "string",
+      "required": false
+    },
+    "secondaryCtaLabel": {
+      "type": "string",
+      "required": false
+    },
+    "secondaryCtaLink": {
+      "type": "string",
+      "required": false
+    }
+  }
+}

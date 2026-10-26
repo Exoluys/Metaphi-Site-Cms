@@ -1,0 +1,43 @@
+{
+  "kind": "singleType",
+  "collectionName": "saas_products_hubs",
+  "info": {
+    "singularName": "saas-products-hub",
+    "pluralName": "saas-products-hubs",
+    "displayName": "SaaS Products Hub"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "seo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.seo"
+    },
+    "heroHeading": {
+      "type": "string",
+      "required": true
+    },
+    "heroSubtext": {
+      "type": "text",
+      "required": false
+    },
+    "products": {
+      "type": "component",
+      "repeatable": true,
+      "component": "hub.saas-product"
+    },
+    "otherModels": {
+      "type": "component",
+      "repeatable": false,
+      "component": "hub.other-models"
+    },
+    "finalCta": {
+      "type": "component",
+      "repeatable": false,
+      "component": "hub.final-cta"
+    }
+  }
+}

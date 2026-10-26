@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_hub_other_models",
+  "info": {
+    "displayName": "Other Models Block",
+    "icon": "apps",
+    "description": "Block listing other solution models"
+  },
+  "options": {},
+  "attributes": {
+    "items": {
+      "type": "component",
+      "repeatable": true,
+      "component": "hub.link-item"
+    }
+  }
+}

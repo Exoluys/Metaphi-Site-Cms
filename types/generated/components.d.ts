@@ -316,6 +316,281 @@ export interface HomeStat extends Struct.ComponentSchema {
   };
 }
 
+export interface HubCapabilityCard extends Struct.ComponentSchema {
+  collectionName: 'components_hub_capability_cards';
+  info: {
+    description: 'Card representing a custom capability';
+    displayName: 'Capability Card';
+    icon: 'layer';
+  };
+  attributes: {
+    ctaLabel: Schema.Attribute.String;
+    ctaLink: Schema.Attribute.String;
+    description: Schema.Attribute.Text;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
+export interface HubChecklist extends Struct.ComponentSchema {
+  collectionName: 'components_hub_checklists';
+  info: {
+    description: 'Checklist section with optional heading and repeatable string items';
+    displayName: 'Checklist Section';
+    icon: 'checkCircle';
+  };
+  attributes: {
+    heading: Schema.Attribute.String;
+    items: Schema.Attribute.Component<'hub.string-item', true>;
+  };
+}
+
+export interface HubComparisonMatrix extends Struct.ComponentSchema {
+  collectionName: 'components_hub_comparison_matrices';
+  info: {
+    description: 'Comparison matrix section (e.g. SaaS vs Ready-to-Configure vs Custom)';
+    displayName: 'Comparison Matrix';
+    icon: 'apps';
+  };
+  attributes: {
+    heading: Schema.Attribute.String;
+    rows: Schema.Attribute.Component<'hub.comparison-row', true>;
+  };
+}
+
+export interface HubComparisonRow extends Struct.ComponentSchema {
+  collectionName: 'components_hub_comparison_rows';
+  info: {
+    description: 'Row in comparison matrix with label and description';
+    displayName: 'Comparison Row';
+    icon: 'layer';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    label: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
+export interface HubFeaturedCaseStudy extends Struct.ComponentSchema {
+  collectionName: 'components_hub_featured_case_studies';
+  info: {
+    description: 'Featured case study blurb card on homepage';
+    displayName: 'Featured Case Study Card';
+    icon: 'file';
+  };
+  attributes: {
+    blurb: Schema.Attribute.Text;
+    caseStudy: Schema.Attribute.Relation<
+      'oneToOne',
+      'api::case-study.case-study'
+    >;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
+export interface HubFinalCta extends Struct.ComponentSchema {
+  collectionName: 'components_hub_final_ctas';
+  info: {
+    description: 'Standard bottom final CTA section for hub pages';
+    displayName: 'Final CTA';
+    icon: 'cursor';
+  };
+  attributes: {
+    ctaLabel: Schema.Attribute.String & Schema.Attribute.Required;
+    ctaLink: Schema.Attribute.String;
+    heading: Schema.Attribute.String;
+    secondaryCtaLabel: Schema.Attribute.String;
+    secondaryCtaLink: Schema.Attribute.String;
+    subtext: Schema.Attribute.Text;
+  };
+}
+
+export interface HubHowToChoose extends Struct.ComponentSchema {
+  collectionName: 'components_hub_how_to_chooses';
+  info: {
+    description: 'Guidance on how to choose between solution models';
+    displayName: 'How to Choose Section';
+    icon: 'question';
+  };
+  attributes: {
+    ctaLabel: Schema.Attribute.String;
+    ctaLink: Schema.Attribute.String;
+    heading: Schema.Attribute.String;
+    rules: Schema.Attribute.Component<'hub.string-item', true>;
+    subtext: Schema.Attribute.Text;
+  };
+}
+
+export interface HubInfoBlock extends Struct.ComponentSchema {
+  collectionName: 'components_hub_info_blocks';
+  info: {
+    description: 'General section block with heading, subtext, and CTA';
+    displayName: 'Info Block';
+    icon: 'information';
+  };
+  attributes: {
+    ctaLabel: Schema.Attribute.String;
+    ctaLink: Schema.Attribute.String;
+    heading: Schema.Attribute.String;
+    secondaryCtaLabel: Schema.Attribute.String;
+    secondaryCtaLink: Schema.Attribute.String;
+    subtext: Schema.Attribute.Text;
+  };
+}
+
+export interface HubLinkItem extends Struct.ComponentSchema {
+  collectionName: 'components_hub_link_items';
+  info: {
+    description: 'Repeatable link item with text, label and URL';
+    displayName: 'Link Item';
+    icon: 'link';
+  };
+  attributes: {
+    linkLabel: Schema.Attribute.String & Schema.Attribute.Required;
+    linkUrl: Schema.Attribute.String;
+    text: Schema.Attribute.String;
+  };
+}
+
+export interface HubOtherModels extends Struct.ComponentSchema {
+  collectionName: 'components_hub_other_models';
+  info: {
+    description: 'Block listing other solution models';
+    displayName: 'Other Models Block';
+    icon: 'apps';
+  };
+  attributes: {
+    items: Schema.Attribute.Component<'hub.link-item', true>;
+  };
+}
+
+export interface HubPortfolioItem extends Struct.ComponentSchema {
+  collectionName: 'components_hub_portfolio_items';
+  info: {
+    description: 'Item in solution portfolio with title, optional description, and optional link';
+    displayName: 'Portfolio Item';
+    icon: 'layer';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    link: Schema.Attribute.String;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
+export interface HubProcessFlow extends Struct.ComponentSchema {
+  collectionName: 'components_hub_process_flows';
+  info: {
+    description: 'Process or delivery flow section with repeatable steps';
+    displayName: 'Process Flow';
+    icon: 'cog';
+  };
+  attributes: {
+    heading: Schema.Attribute.String;
+    steps: Schema.Attribute.Component<'hub.step-item', true>;
+    subtext: Schema.Attribute.Text;
+  };
+}
+
+export interface HubProofBlock extends Struct.ComponentSchema {
+  collectionName: 'components_hub_proof_blocks';
+  info: {
+    description: 'Proof / case study CTA block on hub pages';
+    displayName: 'Proof Block';
+    icon: 'shield';
+  };
+  attributes: {
+    ctaLabel: Schema.Attribute.String & Schema.Attribute.Required;
+    ctaLink: Schema.Attribute.String;
+    heading: Schema.Attribute.String;
+  };
+}
+
+export interface HubSaasProduct extends Struct.ComponentSchema {
+  collectionName: 'components_hub_saas_products';
+  info: {
+    description: 'SaaS product card item';
+    displayName: 'SaaS Product Item';
+    icon: 'shoppingCart';
+  };
+  attributes: {
+    ctaLabel: Schema.Attribute.String;
+    ctaLink: Schema.Attribute.String;
+    description: Schema.Attribute.Text;
+    logo: Schema.Attribute.Media<'images'>;
+    name: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
+export interface HubSolutionModel extends Struct.ComponentSchema {
+  collectionName: 'components_hub_solution_models';
+  info: {
+    description: 'Card representing an engagement model on the Solutions Hub';
+    displayName: 'Solution Model Card';
+    icon: 'apps';
+  };
+  attributes: {
+    ctaLabel: Schema.Attribute.String;
+    ctaLink: Schema.Attribute.String;
+    description: Schema.Attribute.Text;
+    tagline: Schema.Attribute.String;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+    typicalNeeds: Schema.Attribute.Component<'hub.string-item', true>;
+  };
+}
+
+export interface HubSolutionPortfolio extends Struct.ComponentSchema {
+  collectionName: 'components_hub_solution_portfolios';
+  info: {
+    description: 'Solution portfolio section with repeatable items and CTA';
+    displayName: 'Solution Portfolio';
+    icon: 'apps';
+  };
+  attributes: {
+    ctaLabel: Schema.Attribute.String;
+    ctaLink: Schema.Attribute.String;
+    heading: Schema.Attribute.String;
+    items: Schema.Attribute.Component<'hub.portfolio-item', true>;
+  };
+}
+
+export interface HubStepItem extends Struct.ComponentSchema {
+  collectionName: 'components_hub_step_items';
+  info: {
+    description: 'Step item for process and implementation flows';
+    displayName: 'Step Item';
+    icon: 'bulletList';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
+export interface HubStringItem extends Struct.ComponentSchema {
+  collectionName: 'components_hub_string_items';
+  info: {
+    description: 'Simple repeatable string item for checklists, rules, and outcomes';
+    displayName: 'String Item';
+    icon: 'bulletList';
+  };
+  attributes: {
+    text: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
+export interface HubTitleDescription extends Struct.ComponentSchema {
+  collectionName: 'components_hub_title_descriptions';
+  info: {
+    description: 'Item with title and description';
+    displayName: 'Title Description Item';
+    icon: 'layer';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
 export interface IndustryPageCaseStudiesSection extends Struct.ComponentSchema {
   collectionName: 'components_industry_page_case_studies_sections';
   info: {
@@ -718,6 +993,25 @@ declare module '@strapi/strapi' {
       'home.certification': HomeCertification;
       'home.client-logo': HomeClientLogo;
       'home.stat': HomeStat;
+      'hub.capability-card': HubCapabilityCard;
+      'hub.checklist': HubChecklist;
+      'hub.comparison-matrix': HubComparisonMatrix;
+      'hub.comparison-row': HubComparisonRow;
+      'hub.featured-case-study': HubFeaturedCaseStudy;
+      'hub.final-cta': HubFinalCta;
+      'hub.how-to-choose': HubHowToChoose;
+      'hub.info-block': HubInfoBlock;
+      'hub.link-item': HubLinkItem;
+      'hub.other-models': HubOtherModels;
+      'hub.portfolio-item': HubPortfolioItem;
+      'hub.process-flow': HubProcessFlow;
+      'hub.proof-block': HubProofBlock;
+      'hub.saas-product': HubSaasProduct;
+      'hub.solution-model': HubSolutionModel;
+      'hub.solution-portfolio': HubSolutionPortfolio;
+      'hub.step-item': HubStepItem;
+      'hub.string-item': HubStringItem;
+      'hub.title-description': HubTitleDescription;
       'industry-page.case-studies-section': IndustryPageCaseStudiesSection;
       'industry-page.challenge-row': IndustryPageChallengeRow;
       'industry-page.challenges-section': IndustryPageChallengesSection;

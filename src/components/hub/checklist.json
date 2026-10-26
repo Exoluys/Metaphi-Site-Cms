@@ -1,0 +1,20 @@
+{
+  "collectionName": "components_hub_checklists",
+  "info": {
+    "displayName": "Checklist Section",
+    "icon": "checkCircle",
+    "description": "Checklist section with optional heading and repeatable string items"
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "string",
+      "required": false
+    },
+    "items": {
+      "type": "component",
+      "repeatable": true,
+      "component": "hub.string-item"
+    }
+  }
+}

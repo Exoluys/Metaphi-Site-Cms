@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_hub_title_descriptions",
+  "info": {
+    "displayName": "Title Description Item",
+    "icon": "layer",
+    "description": "Item with title and description"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "required": false
+    }
+  }
+}

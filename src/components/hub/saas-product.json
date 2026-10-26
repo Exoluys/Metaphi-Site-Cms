@@ -1,0 +1,35 @@
+{
+  "collectionName": "components_hub_saas_products",
+  "info": {
+    "displayName": "SaaS Product Item",
+    "icon": "shoppingCart",
+    "description": "SaaS product card item"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "required": false
+    },
+    "ctaLabel": {
+      "type": "string",
+      "required": false
+    },
+    "ctaLink": {
+      "type": "string",
+      "required": false
+    },
+    "logo": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "collectionName": "components_hub_comparison_matrices",
+  "info": {
+    "displayName": "Comparison Matrix",
+    "icon": "apps",
+    "description": "Comparison matrix section (e.g. SaaS vs Ready-to-Configure vs Custom)"
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "string",
+      "required": false
+    },
+    "rows": {
+      "type": "component",
+      "repeatable": true,
+      "component": "hub.comparison-row"
+    }
+  }
+}

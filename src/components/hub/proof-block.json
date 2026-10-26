@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_hub_proof_blocks",
+  "info": {
+    "displayName": "Proof Block",
+    "icon": "shield",
+    "description": "Proof / case study CTA block on hub pages"
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "string",
+      "required": false
+    },
+    "ctaLabel": {
+      "type": "string",
+      "required": true
+    },
+    "ctaLink": {
+      "type": "string",
+      "required": false
+    }
+  }
+}

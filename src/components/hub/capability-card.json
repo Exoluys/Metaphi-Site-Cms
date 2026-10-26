@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_hub_capability_cards",
+  "info": {
+    "displayName": "Capability Card",
+    "icon": "layer",
+    "description": "Card representing a custom capability"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "required": false
+    },
+    "ctaLabel": {
+      "type": "string",
+      "required": false
+    },
+    "ctaLink": {
+      "type": "string",
+      "required": false
+    }
+  }
+}

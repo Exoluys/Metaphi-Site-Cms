@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_hub_string_items",
+  "info": {
+    "displayName": "String Item",
+    "icon": "bulletList",
+    "description": "Simple repeatable string item for checklists, rules, and outcomes"
+  },
+  "options": {},
+  "attributes": {
+    "text": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

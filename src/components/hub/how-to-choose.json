@@ -1,0 +1,32 @@
+{
+  "collectionName": "components_hub_how_to_chooses",
+  "info": {
+    "displayName": "How to Choose Section",
+    "icon": "question",
+    "description": "Guidance on how to choose between solution models"
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "string",
+      "required": false
+    },
+    "subtext": {
+      "type": "text",
+      "required": false
+    },
+    "rules": {
+      "type": "component",
+      "repeatable": true,
+      "component": "hub.string-item"
+    },
+    "ctaLabel": {
+      "type": "string",
+      "required": false
+    },
+    "ctaLink": {
+      "type": "string",
+      "required": false
+    }
+  }
+}

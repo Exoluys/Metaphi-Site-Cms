@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_hub_comparison_rows",
+  "info": {
+    "displayName": "Comparison Row",
+    "icon": "layer",
+    "description": "Row in comparison matrix with label and description"
+  },
+  "options": {},
+  "attributes": {
+    "label": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "required": false
+    }
+  }
+}

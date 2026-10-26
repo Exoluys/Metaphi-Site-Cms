@@ -1,0 +1,75 @@
+{
+  "kind": "collectionType",
+  "collectionName": "solutions",
+  "info": {
+    "singularName": "solution",
+    "pluralName": "solutions",
+    "displayName": "Solution",
+    "description": "CMS-driven solutions and capabilities across Custom, Ready-to-Configure, and SaaS models"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title",
+      "required": true
+    },
+    "modelType": {
+      "type": "enumeration",
+      "enum": [
+        "custom",
+        "ready-to-configure",
+        "saas"
+      ],
+      "required": true
+    },
+    "summary": {
+      "type": "text",
+      "required": false
+    },
+    "body": {
+      "type": "text",
+      "required": false
+    },
+    "icon": {
+      "type": "string",
+      "required": false
+    },
+    "order": {
+      "type": "integer",
+      "default": 0,
+      "min": 0,
+      "required": false
+    },
+    "featuredOnHome": {
+      "type": "boolean",
+      "default": false
+    },
+    "homeTitle": {
+      "type": "string"
+    },
+    "homeSummary": {
+      "type": "text"
+    },
+    "ctaLabel": {
+      "type": "string"
+    },
+    "seo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.seo"
+    },
+    "industries": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::industry.industry"
+    }
+  }
+}

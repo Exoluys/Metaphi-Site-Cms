@@ -96,6 +96,104 @@
     },
     "ctaButtonText": {
       "type": "string"
+    },
+    "seo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.seo"
+    },
+    "heroMicrocopy": {
+      "type": "string"
+    },
+    "trustHeading": {
+      "type": "string"
+    },
+    "trustSubtext": {
+      "type": "text"
+    },
+    "trustPills": {
+      "type": "component",
+      "repeatable": true,
+      "component": "hub.string-item"
+    },
+    "businessProblemsHeading": {
+      "type": "string"
+    },
+    "businessProblemsSubtext": {
+      "type": "text"
+    },
+    "businessProblems": {
+      "type": "component",
+      "repeatable": true,
+      "component": "hub.title-description"
+    },
+    "solutionModelsHeading": {
+      "type": "string"
+    },
+    "solutionModelsSubtext": {
+      "type": "text"
+    },
+    "solutionModels": {
+      "type": "component",
+      "repeatable": true,
+      "component": "hub.solution-model"
+    },
+    "customCapabilitiesSection": {
+      "type": "component",
+      "repeatable": false,
+      "component": "hub.info-block"
+    },
+    "industriesSection": {
+      "type": "component",
+      "repeatable": false,
+      "component": "hub.info-block"
+    },
+    "readyToConfigureSection": {
+      "type": "component",
+      "repeatable": false,
+      "component": "hub.info-block"
+    },
+    "featuredCaseStudiesSection": {
+      "type": "component",
+      "repeatable": false,
+      "component": "hub.info-block"
+    },
+    "featuredCaseStudies": {
+      "type": "component",
+      "repeatable": true,
+      "component": "hub.featured-case-study"
+    },
+    "whyMetaphiHeading": {
+      "type": "string"
+    },
+    "whyMetaphiSubtext": {
+      "type": "text"
+    },
+    "whyMetaphiPillars": {
+      "type": "component",
+      "repeatable": true,
+      "component": "hub.title-description"
+    },
+    "deliveryApproachHeading": {
+      "type": "string"
+    },
+    "deliveryApproachSubtext": {
+      "type": "text"
+    },
+    "deliveryApproachSteps": {
+      "type": "component",
+      "repeatable": true,
+      "component": "hub.step-item"
+    },
+    "insightsResourcesSection": {
+      "type": "component",
+      "repeatable": false,
+      "component": "hub.info-block"
+    },
+    "finalCta": {
+      "type": "component",
+      "repeatable": false,
+      "component": "hub.final-cta"
     }
   }
 }

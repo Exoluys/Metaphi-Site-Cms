@@ -1,0 +1,36 @@
+{
+  "collectionName": "components_hub_solution_models",
+  "info": {
+    "displayName": "Solution Model Card",
+    "icon": "apps",
+    "description": "Card representing an engagement model on the Solutions Hub"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "tagline": {
+      "type": "string",
+      "required": false
+    },
+    "description": {
+      "type": "text",
+      "required": false
+    },
+    "typicalNeeds": {
+      "type": "component",
+      "repeatable": true,
+      "component": "hub.string-item"
+    },
+    "ctaLabel": {
+      "type": "string",
+      "required": false
+    },
+    "ctaLink": {
+      "type": "string",
+      "required": false
+    }
+  }
+}
