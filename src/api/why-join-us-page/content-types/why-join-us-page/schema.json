@@ -1,0 +1,33 @@
+{
+  "kind": "singleType",
+  "collectionName": "why_join_us_pages",
+  "info": {
+    "singularName": "why-join-us-page",
+    "pluralName": "why-join-us-pages",
+    "displayName": "Why Join Us Page"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "seo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.seo"
+    },
+    "heroHeading": {
+      "type": "string",
+      "required": true
+    },
+    "heroSubtext": {
+      "type": "text",
+      "required": false
+    },
+    "finalCta": {
+      "type": "component",
+      "repeatable": false,
+      "component": "hub.final-cta"
+    }
+  }
+}

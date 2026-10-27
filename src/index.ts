@@ -37,6 +37,13 @@ export default {
           'api::reviewer.reviewer.findOne',
           'api::client-logo.client-logo.find',
           'api::client-logo.client-logo.findOne',
+          'api::team-page.team-page.find',
+          'api::team-member.team-member.find',
+          'api::team-member.team-member.findOne',
+          'api::partners-page.partners-page.find',
+          'api::partner.partner.find',
+          'api::partner.partner.findOne',
+          'api::compliance-page.compliance-page.find',
         ];
 
         for (const action of requiredActions) {

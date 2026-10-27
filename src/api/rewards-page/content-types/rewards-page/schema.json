@@ -1,0 +1,33 @@
+{
+  "kind": "singleType",
+  "collectionName": "rewards_pages",
+  "info": {
+    "singularName": "rewards-page",
+    "pluralName": "rewards-pages",
+    "displayName": "Rewards Page"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "seo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.seo"
+    },
+    "heroHeading": {
+      "type": "string",
+      "required": true
+    },
+    "heroSubtext": {
+      "type": "text",
+      "required": false
+    },
+    "finalCta": {
+      "type": "component",
+      "repeatable": false,
+      "component": "hub.final-cta"
+    }
+  }
+}
