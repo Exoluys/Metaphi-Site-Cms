@@ -1027,57 +1027,6 @@ export interface ApiIndustryIndustry extends Struct.CollectionTypeSchema {
   };
 }
 
-export interface ApiInsightInsight extends Struct.CollectionTypeSchema {
-  collectionName: 'insights';
-  info: {
-    description: 'Insights, blog posts, news, whitepapers, podcasts and media';
-    displayName: 'Insight';
-    pluralName: 'insights';
-    singularName: 'insight';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    author: Schema.Attribute.String &
-      Schema.Attribute.DefaultTo<'[DUMMY] Author'>;
-    body: Schema.Attribute.RichText;
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    excerpt: Schema.Attribute.Text;
-    externalUrl: Schema.Attribute.String;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::insight.insight'
-    > &
-      Schema.Attribute.Private;
-    order: Schema.Attribute.Integer & Schema.Attribute.DefaultTo<0>;
-    publishedAt: Schema.Attribute.DateTime;
-    publishedDate: Schema.Attribute.Date;
-    readTime: Schema.Attribute.String;
-    seo: Schema.Attribute.Component<'shared.seo', false>;
-    slug: Schema.Attribute.UID<'title'> & Schema.Attribute.Required;
-    title: Schema.Attribute.String & Schema.Attribute.Required;
-    type: Schema.Attribute.Enumeration<
-      [
-        'blog',
-        'news',
-        'expert-opinion',
-        'whitepaper',
-        'infographic',
-        'podcast',
-        'video',
-      ]
-    > &
-      Schema.Attribute.Required;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-  };
-}
-
 export interface ApiJobOpeningJobOpening extends Struct.CollectionTypeSchema {
   collectionName: 'job_openings';
   info: {
@@ -2308,7 +2257,6 @@ declare module '@strapi/strapi' {
       'api::home-page.home-page': ApiHomePageHomePage;
       'api::industries-hub.industries-hub': ApiIndustriesHubIndustriesHub;
       'api::industry.industry': ApiIndustryIndustry;
-      'api::insight.insight': ApiInsightInsight;
       'api::job-opening.job-opening': ApiJobOpeningJobOpening;
       'api::life-at-metaphi-page.life-at-metaphi-page': ApiLifeAtMetaphiPageLifeAtMetaphiPage;
       'api::partner.partner': ApiPartnerPartner;
