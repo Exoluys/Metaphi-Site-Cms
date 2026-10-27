@@ -24,6 +24,26 @@
       "type": "text",
       "required": false
     },
+    "heroEyebrow": {
+      "type": "string",
+      "required": false
+    },
+    "directoryEyebrow": {
+      "type": "string",
+      "required": false
+    },
+    "directoryHeading": {
+      "type": "string",
+      "required": false
+    },
+    "directorySubtext": {
+      "type": "text",
+      "required": false
+    },
+    "emptyStateText": {
+      "type": "text",
+      "required": false
+    },
     "finalCta": {
       "type": "component",
       "repeatable": false,

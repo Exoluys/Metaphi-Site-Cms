@@ -24,6 +24,27 @@
       "type": "text",
       "required": false
     },
+    "heroEyebrow": {
+      "type": "string",
+      "required": false
+    },
+    "sectionEyebrow": {
+      "type": "string",
+      "required": false
+    },
+    "sectionHeading": {
+      "type": "string",
+      "required": false
+    },
+    "sectionSubtext": {
+      "type": "text",
+      "required": false
+    },
+    "values": {
+      "type": "component",
+      "repeatable": true,
+      "component": "hub.title-description"
+    },
     "finalCta": {
       "type": "component",
       "repeatable": false,

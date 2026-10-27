@@ -1,0 +1,62 @@
+{
+  "kind": "singleType",
+  "collectionName": "about_pages",
+  "info": {
+    "singularName": "about-page",
+    "pluralName": "about-pages",
+    "displayName": "About Page"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "seo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.seo"
+    },
+    "heroHeading": {
+      "type": "string",
+      "required": true
+    },
+    "heroSubtext": {
+      "type": "text",
+      "required": false
+    },
+    "heroEyebrow": {
+      "type": "string",
+      "required": false
+    },
+    "missionHeading": {
+      "type": "string",
+      "required": false
+    },
+    "missionText": {
+      "type": "text",
+      "required": false
+    },
+    "pillarsEyebrow": {
+      "type": "string",
+      "required": false
+    },
+    "pillarsHeading": {
+      "type": "string",
+      "required": false
+    },
+    "pillarsSubtext": {
+      "type": "text",
+      "required": false
+    },
+    "pillars": {
+      "type": "component",
+      "repeatable": true,
+      "component": "hub.title-description"
+    },
+    "finalCta": {
+      "type": "component",
+      "repeatable": false,
+      "component": "hub.final-cta"
+    }
+  }
+}

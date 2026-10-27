@@ -443,6 +443,44 @@ export interface AdminUser extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiAboutPageAboutPage extends Struct.SingleTypeSchema {
+  collectionName: 'about_pages';
+  info: {
+    displayName: 'About Page';
+    pluralName: 'about-pages';
+    singularName: 'about-page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    finalCta: Schema.Attribute.Component<'hub.final-cta', false>;
+    heroEyebrow: Schema.Attribute.String;
+    heroHeading: Schema.Attribute.String & Schema.Attribute.Required;
+    heroSubtext: Schema.Attribute.Text;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::about-page.about-page'
+    > &
+      Schema.Attribute.Private;
+    missionHeading: Schema.Attribute.String;
+    missionText: Schema.Attribute.Text;
+    pillars: Schema.Attribute.Component<'hub.title-description', true>;
+    pillarsEyebrow: Schema.Attribute.String;
+    pillarsHeading: Schema.Attribute.String;
+    pillarsSubtext: Schema.Attribute.Text;
+    publishedAt: Schema.Attribute.DateTime;
+    seo: Schema.Attribute.Component<'shared.seo', false>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiCareersPageCareersPage extends Struct.SingleTypeSchema {
   collectionName: 'careers_pages';
   info: {
@@ -457,7 +495,12 @@ export interface ApiCareersPageCareersPage extends Struct.SingleTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    directoryEyebrow: Schema.Attribute.String;
+    directoryHeading: Schema.Attribute.String;
+    directorySubtext: Schema.Attribute.Text;
+    emptyStateText: Schema.Attribute.Text;
     finalCta: Schema.Attribute.Component<'hub.final-cta', false>;
+    heroEyebrow: Schema.Attribute.String;
     heroHeading: Schema.Attribute.String & Schema.Attribute.Required;
     heroSubtext: Schema.Attribute.Text;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
@@ -612,8 +655,10 @@ export interface ApiCompliancePageCompliancePage
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     finalCta: Schema.Attribute.Component<'hub.final-cta', false>;
+    heroEyebrow: Schema.Attribute.String;
     heroHeading: Schema.Attribute.String & Schema.Attribute.Required;
     heroSubtext: Schema.Attribute.Text;
+    items: Schema.Attribute.Component<'hub.title-description', true>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -621,6 +666,9 @@ export interface ApiCompliancePageCompliancePage
     > &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
+    sectionEyebrow: Schema.Attribute.String;
+    sectionHeading: Schema.Attribute.String;
+    sectionSubtext: Schema.Attribute.Text;
     seo: Schema.Attribute.Component<'shared.seo', false>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -979,6 +1027,57 @@ export interface ApiIndustryIndustry extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiInsightInsight extends Struct.CollectionTypeSchema {
+  collectionName: 'insights';
+  info: {
+    description: 'Insights, blog posts, news, whitepapers, podcasts and media';
+    displayName: 'Insight';
+    pluralName: 'insights';
+    singularName: 'insight';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    author: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'[DUMMY] Author'>;
+    body: Schema.Attribute.RichText;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    excerpt: Schema.Attribute.Text;
+    externalUrl: Schema.Attribute.String;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::insight.insight'
+    > &
+      Schema.Attribute.Private;
+    order: Schema.Attribute.Integer & Schema.Attribute.DefaultTo<0>;
+    publishedAt: Schema.Attribute.DateTime;
+    publishedDate: Schema.Attribute.Date;
+    readTime: Schema.Attribute.String;
+    seo: Schema.Attribute.Component<'shared.seo', false>;
+    slug: Schema.Attribute.UID<'title'> & Schema.Attribute.Required;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+    type: Schema.Attribute.Enumeration<
+      [
+        'blog',
+        'news',
+        'expert-opinion',
+        'whitepaper',
+        'infographic',
+        'podcast',
+        'video',
+      ]
+    > &
+      Schema.Attribute.Required;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiJobOpeningJobOpening extends Struct.CollectionTypeSchema {
   collectionName: 'job_openings';
   info: {
@@ -1029,6 +1128,7 @@ export interface ApiLifeAtMetaphiPageLifeAtMetaphiPage
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     finalCta: Schema.Attribute.Component<'hub.final-cta', false>;
+    heroEyebrow: Schema.Attribute.String;
     heroHeading: Schema.Attribute.String & Schema.Attribute.Required;
     heroSubtext: Schema.Attribute.Text;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
@@ -1038,10 +1138,14 @@ export interface ApiLifeAtMetaphiPageLifeAtMetaphiPage
     > &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
+    sectionEyebrow: Schema.Attribute.String;
+    sectionHeading: Schema.Attribute.String;
+    sectionSubtext: Schema.Attribute.Text;
     seo: Schema.Attribute.Component<'shared.seo', false>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    values: Schema.Attribute.Component<'hub.title-description', true>;
   };
 }
 
@@ -1090,7 +1194,12 @@ export interface ApiPartnersPagePartnersPage extends Struct.SingleTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    directoryEyebrow: Schema.Attribute.String;
+    directoryHeading: Schema.Attribute.String;
+    directorySubtext: Schema.Attribute.Text;
+    emptyStateText: Schema.Attribute.Text;
     finalCta: Schema.Attribute.Component<'hub.final-cta', false>;
+    heroEyebrow: Schema.Attribute.String;
     heroHeading: Schema.Attribute.String & Schema.Attribute.Required;
     heroSubtext: Schema.Attribute.Text;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
@@ -1197,6 +1306,7 @@ export interface ApiRewardsPageRewardsPage extends Struct.SingleTypeSchema {
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     finalCta: Schema.Attribute.Component<'hub.final-cta', false>;
+    heroEyebrow: Schema.Attribute.String;
     heroHeading: Schema.Attribute.String & Schema.Attribute.Required;
     heroSubtext: Schema.Attribute.Text;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
@@ -1206,6 +1316,10 @@ export interface ApiRewardsPageRewardsPage extends Struct.SingleTypeSchema {
     > &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
+    rewards: Schema.Attribute.Component<'hub.title-description', true>;
+    sectionEyebrow: Schema.Attribute.String;
+    sectionHeading: Schema.Attribute.String;
+    sectionSubtext: Schema.Attribute.Text;
     seo: Schema.Attribute.Component<'shared.seo', false>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -1543,7 +1657,12 @@ export interface ApiTeamPageTeamPage extends Struct.SingleTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    directoryEyebrow: Schema.Attribute.String;
+    directoryHeading: Schema.Attribute.String;
+    directorySubtext: Schema.Attribute.Text;
+    emptyStateText: Schema.Attribute.Text;
     finalCta: Schema.Attribute.Component<'hub.final-cta', false>;
+    heroEyebrow: Schema.Attribute.String;
     heroHeading: Schema.Attribute.String & Schema.Attribute.Required;
     heroSubtext: Schema.Attribute.Text;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
@@ -1594,6 +1713,43 @@ export interface ApiTestimonialTestimonial extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiTestimonialsPageTestimonialsPage
+  extends Struct.SingleTypeSchema {
+  collectionName: 'testimonials_pages';
+  info: {
+    displayName: 'Testimonials Page';
+    pluralName: 'testimonials-pages';
+    singularName: 'testimonials-page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    directoryEyebrow: Schema.Attribute.String;
+    directoryHeading: Schema.Attribute.String;
+    directorySubtext: Schema.Attribute.Text;
+    emptyStateText: Schema.Attribute.Text;
+    finalCta: Schema.Attribute.Component<'hub.final-cta', false>;
+    heroEyebrow: Schema.Attribute.String;
+    heroHeading: Schema.Attribute.String & Schema.Attribute.Required;
+    heroSubtext: Schema.Attribute.Text;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::testimonials-page.testimonials-page'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    seo: Schema.Attribute.Component<'shared.seo', false>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiWhyJoinUsPageWhyJoinUsPage extends Struct.SingleTypeSchema {
   collectionName: 'why_join_us_pages';
   info: {
@@ -1609,6 +1765,7 @@ export interface ApiWhyJoinUsPageWhyJoinUsPage extends Struct.SingleTypeSchema {
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     finalCta: Schema.Attribute.Component<'hub.final-cta', false>;
+    heroEyebrow: Schema.Attribute.String;
     heroHeading: Schema.Attribute.String & Schema.Attribute.Required;
     heroSubtext: Schema.Attribute.Text;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
@@ -1617,7 +1774,11 @@ export interface ApiWhyJoinUsPageWhyJoinUsPage extends Struct.SingleTypeSchema {
       'api::why-join-us-page.why-join-us-page'
     > &
       Schema.Attribute.Private;
+    pillars: Schema.Attribute.Component<'hub.title-description', true>;
     publishedAt: Schema.Attribute.DateTime;
+    sectionEyebrow: Schema.Attribute.String;
+    sectionHeading: Schema.Attribute.String;
+    sectionSubtext: Schema.Attribute.Text;
     seo: Schema.Attribute.Component<'shared.seo', false>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -2136,6 +2297,7 @@ declare module '@strapi/strapi' {
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
+      'api::about-page.about-page': ApiAboutPageAboutPage;
       'api::careers-page.careers-page': ApiCareersPageCareersPage;
       'api::case-study.case-study': ApiCaseStudyCaseStudy;
       'api::client-logo.client-logo': ApiClientLogoClientLogo;
@@ -2146,6 +2308,7 @@ declare module '@strapi/strapi' {
       'api::home-page.home-page': ApiHomePageHomePage;
       'api::industries-hub.industries-hub': ApiIndustriesHubIndustriesHub;
       'api::industry.industry': ApiIndustryIndustry;
+      'api::insight.insight': ApiInsightInsight;
       'api::job-opening.job-opening': ApiJobOpeningJobOpening;
       'api::life-at-metaphi-page.life-at-metaphi-page': ApiLifeAtMetaphiPageLifeAtMetaphiPage;
       'api::partner.partner': ApiPartnerPartner;
@@ -2161,6 +2324,7 @@ declare module '@strapi/strapi' {
       'api::team-member.team-member': ApiTeamMemberTeamMember;
       'api::team-page.team-page': ApiTeamPageTeamPage;
       'api::testimonial.testimonial': ApiTestimonialTestimonial;
+      'api::testimonials-page.testimonials-page': ApiTestimonialsPageTestimonialsPage;
       'api::why-join-us-page.why-join-us-page': ApiWhyJoinUsPageWhyJoinUsPage;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
