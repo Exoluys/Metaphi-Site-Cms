@@ -1,4 +1,5 @@
 require('dotenv').config();
+const { Client } = require('pg');
 
 async function grantPermissions() {
   const client = new Client({
@@ -15,13 +16,24 @@ async function grantPermissions() {
   const roleId = roleRes.rows[0].id;
 
   const actions = [
+    // 9 Company Single Types
+    'api::about-page.about-page.find',
+    'api::careers-page.careers-page.find',
+    'api::why-join-us-page.why-join-us-page.find',
+    'api::rewards-page.rewards-page.find',
+    'api::life-at-metaphi-page.life-at-metaphi-page.find',
+    'api::compliance-page.compliance-page.find',
+    'api::partners-page.partners-page.find',
     'api::team-page.team-page.find',
+    'api::testimonials-page.testimonials-page.find',
+
+    // Related collections
     'api::team-member.team-member.find',
     'api::team-member.team-member.findOne',
-    'api::partners-page.partners-page.find',
     'api::partner.partner.find',
     'api::partner.partner.findOne',
-    'api::compliance-page.compliance-page.find',
+    'api::job-opening.job-opening.find',
+    'api::job-opening.job-opening.findOne',
   ];
 
   for (const action of actions) {
@@ -33,11 +45,18 @@ async function grantPermissions() {
     );
 
     if (ex.rows.length === 0) {
-      const ins = await client.query(
-        "INSERT INTO up_permissions (action, created_at, updated_at) VALUES ($1, NOW(), NOW()) RETURNING id",
-        [action]
-      );
-      const permId = ins.rows[0].id;
+      let permId;
+      const permRes = await client.query("SELECT id FROM up_permissions WHERE action = $1", [action]);
+      if (permRes.rows.length > 0) {
+        permId = permRes.rows[0].id;
+      } else {
+        const ins = await client.query(
+          "INSERT INTO up_permissions (action, created_at, updated_at) VALUES ($1, NOW(), NOW()) RETURNING id",
+          [action]
+        );
+        permId = ins.rows[0].id;
+      }
+
       await client.query(
         "INSERT INTO up_permissions_role_lnk (permission_id, role_id) VALUES ($1, $2)",
         [permId, roleId]
@@ -49,6 +68,7 @@ async function grantPermissions() {
   }
 
   await client.end();
+  console.log('Public permissions update complete.');
 }
 
 grantPermissions().catch(console.error);

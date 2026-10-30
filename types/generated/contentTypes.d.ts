@@ -474,7 +474,6 @@ export interface ApiAboutPageAboutPage extends Struct.SingleTypeSchema {
     pillarsHeading: Schema.Attribute.String;
     pillarsSubtext: Schema.Attribute.Text;
     publishedAt: Schema.Attribute.DateTime;
-    seo: Schema.Attribute.Component<'shared.seo', false>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -510,7 +509,6 @@ export interface ApiCareersPageCareersPage extends Struct.SingleTypeSchema {
     > &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
-    seo: Schema.Attribute.Component<'shared.seo', false>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -636,7 +634,6 @@ export interface ApiCompliancePageCompliancePage
     sectionEyebrow: Schema.Attribute.String;
     sectionHeading: Schema.Attribute.String;
     sectionSubtext: Schema.Attribute.Text;
-    seo: Schema.Attribute.Component<'shared.seo', false>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1042,7 +1039,6 @@ export interface ApiLifeAtMetaphiPageLifeAtMetaphiPage
     sectionEyebrow: Schema.Attribute.String;
     sectionHeading: Schema.Attribute.String;
     sectionSubtext: Schema.Attribute.Text;
-    seo: Schema.Attribute.Component<'shared.seo', false>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1110,7 +1106,6 @@ export interface ApiPartnersPagePartnersPage extends Struct.SingleTypeSchema {
     > &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
-    seo: Schema.Attribute.Component<'shared.seo', false>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1226,7 +1221,6 @@ export interface ApiRewardsPageRewardsPage extends Struct.SingleTypeSchema {
     sectionEyebrow: Schema.Attribute.String;
     sectionHeading: Schema.Attribute.String;
     sectionSubtext: Schema.Attribute.Text;
-    seo: Schema.Attribute.Component<'shared.seo', false>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1578,7 +1572,6 @@ export interface ApiTeamPageTeamPage extends Struct.SingleTypeSchema {
     > &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
-    seo: Schema.Attribute.Component<'shared.seo', false>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1649,7 +1642,6 @@ export interface ApiTestimonialsPageTestimonialsPage
     > &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
-    seo: Schema.Attribute.Component<'shared.seo', false>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1685,7 +1677,6 @@ export interface ApiWhyJoinUsPageWhyJoinUsPage extends Struct.SingleTypeSchema {
     sectionEyebrow: Schema.Attribute.String;
     sectionHeading: Schema.Attribute.String;
     sectionSubtext: Schema.Attribute.Text;
-    seo: Schema.Attribute.Component<'shared.seo', false>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
