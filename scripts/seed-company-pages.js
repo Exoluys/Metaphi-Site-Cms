@@ -1,17 +1,19 @@
 const { Client } = require('pg');
 const crypto = require('crypto');
 
+require('dotenv').config();
+
 function randomDocId() {
   return crypto.randomBytes(12).toString('hex');
 }
 
 async function seedPagesAndDrafts() {
   const client = new Client({
-    host: '127.0.0.1',
-    port: 5432,
-    database: 'metaphi_cms',
-    user: 'postgres',
-    password: 'J@i123987',
+    host: process.env.DATABASE_HOST || '127.0.0.1',
+    port: parseInt(process.env.DATABASE_PORT || '5432', 10),
+    database: process.env.DATABASE_NAME || 'metaphi_cms',
+    user: process.env.DATABASE_USERNAME || 'postgres',
+    password: process.env.DATABASE_PASSWORD,
   });
 
   await client.connect();

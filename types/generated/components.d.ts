@@ -657,8 +657,6 @@ export interface IndustryPageCtaBanner extends Struct.ComponentSchema {
     heading: Schema.Attribute.String & Schema.Attribute.Required;
     image: Schema.Attribute.Media<'images'>;
     text: Schema.Attribute.Text;
-    themeVariant: Schema.Attribute.Enumeration<['dark', 'light', 'gradient']> &
-      Schema.Attribute.DefaultTo<'dark'>;
   };
 }
 

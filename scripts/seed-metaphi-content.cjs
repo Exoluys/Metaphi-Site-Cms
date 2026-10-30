@@ -460,14 +460,35 @@ async function seed() {
         heading: 'Structured enough for control. Flexible enough for reality.',
         subtext: 'Discover → Define → Design → Build → Integrate → Launch → Evolve',
         steps: [
-          { title: 'Discover' },
-          { title: 'Define' },
-          { title: 'Design' },
-          { title: 'Build' },
-          { title: 'Integrate' },
-          { title: 'Launch' },
-          { title: 'Evolve' }
-        ]
+            {
+                      "title": "Discover",
+                      "description": "Understand the business, users, processes, constraints and desired outcomes."
+            },
+            {
+                      "title": "Define",
+                      "description": "Translate requirements into priorities, workflows, architecture and implementation scope."
+            },
+            {
+                      "title": "Design",
+                      "description": "Shape the experience, system behaviour and solution architecture."
+            },
+            {
+                      "title": "Build",
+                      "description": "Engineer the platform using an iterative, quality-controlled development process."
+            },
+            {
+                      "title": "Integrate",
+                      "description": "Connect the solution with existing business systems, data and external services."
+            },
+            {
+                      "title": "Launch",
+                      "description": "Validate, migrate, train and deploy with production-readiness checks."
+            },
+            {
+                      "title": "Evolve",
+                      "description": "Support, improve and extend the solution as business requirements change."
+            }
+  ]
       },
       proof: {
         heading: 'Explore Custom Solution Case Studies',
@@ -728,15 +749,6 @@ async function seed() {
       ],
       deliveryApproachHeading: 'From business problem to working technology.',
       deliveryApproachSubtext: 'A structured, transparent engineering process designed to deliver predictable outcomes from discovery through to post-launch evolution.',
-      deliveryApproachSteps: [
-        { stepNumber: 1, title: 'Discover', description: 'Understand the business, users, processes, constraints and desired outcomes.' },
-        { stepNumber: 2, title: 'Define', description: 'Translate requirements into priorities, workflows, architecture and implementation scope.' },
-        { stepNumber: 3, title: 'Design', description: 'Shape the experience, system behaviour and solution architecture.' },
-        { stepNumber: 4, title: 'Build', description: 'Engineer the platform using an iterative, quality-controlled development process.' },
-        { stepNumber: 5, title: 'Integrate', description: 'Connect the solution with existing business systems, data and external services.' },
-        { stepNumber: 6, title: 'Launch', description: 'Validate, migrate, train and deploy with production-readiness checks.' },
-        { stepNumber: 7, title: 'Evolve', description: 'Support, improve and extend the solution as business requirements change.' }
-      ],
       insightsResourcesSection: {
         heading: 'Practical thinking for better technology decisions.',
         subtext: 'Explore industry playbooks, implementation guides and perspectives on enterprise software, product engineering, AI and digital transformation.',
@@ -804,8 +816,7 @@ async function seed() {
       heading: 'Ready to Turn Your Idea into Reality?',
       text: 'Tell us what you are building. We will come back within one business day with next steps.',
       buttonLabel: 'Book a Call',
-      buttonLink: '/schedule-a-call',
-      themeVariant: 'dark'
+      buttonLink: '/schedule-a-call'
     };
 
     if (!existingBanner) {

@@ -743,8 +743,6 @@ export interface ApiDefaultCtaBannerDefaultCtaBanner
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
     text: Schema.Attribute.Text;
-    themeVariant: Schema.Attribute.Enumeration<['dark', 'light', 'gradient']> &
-      Schema.Attribute.DefaultTo<'dark'>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -803,7 +801,6 @@ export interface ApiHomePageHomePage extends Struct.SingleTypeSchema {
       false
     >;
     deliveryApproachHeading: Schema.Attribute.String;
-    deliveryApproachSteps: Schema.Attribute.Component<'hub.step-item', true>;
     deliveryApproachSubtext: Schema.Attribute.Text;
     faqHeading: Schema.Attribute.String;
     faqHighlight: Schema.Attribute.String;
@@ -843,7 +840,6 @@ export interface ApiHomePageHomePage extends Struct.SingleTypeSchema {
       false
     >;
     secondaryButtonText: Schema.Attribute.String;
-    solutionModels: Schema.Attribute.Component<'hub.solution-model', true>;
     solutionModelsHeading: Schema.Attribute.String;
     solutionModelsSubtext: Schema.Attribute.Text;
     stats: Schema.Attribute.Component<'home.stat', true> &

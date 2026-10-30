@@ -29,15 +29,6 @@
       "allowedTypes": [
         "images"
       ]
-    },
-    "themeVariant": {
-      "type": "enumeration",
-      "enum": [
-        "dark",
-        "light",
-        "gradient"
-      ],
-      "default": "dark"
     }
   }
 }

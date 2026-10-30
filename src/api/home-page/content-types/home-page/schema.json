@@ -117,11 +117,6 @@
     "solutionModelsSubtext": {
       "type": "text"
     },
-    "solutionModels": {
-      "type": "component",
-      "repeatable": true,
-      "component": "hub.solution-model"
-    },
     "customCapabilitiesSection": {
       "type": "component",
       "repeatable": false,
@@ -163,11 +158,6 @@
     },
     "deliveryApproachSubtext": {
       "type": "text"
-    },
-    "deliveryApproachSteps": {
-      "type": "component",
-      "repeatable": true,
-      "component": "hub.step-item"
     },
     "insightsResourcesSection": {
       "type": "component",

@@ -1,12 +1,12 @@
-const { Client } = require('pg');
+require('dotenv').config();
 
 async function grantPermissions() {
   const client = new Client({
-    host: '127.0.0.1',
-    port: 5432,
-    database: 'metaphi_cms',
-    user: 'postgres',
-    password: 'J@i123987',
+    host: process.env.DATABASE_HOST || '127.0.0.1',
+    port: parseInt(process.env.DATABASE_PORT || '5432', 10),
+    database: process.env.DATABASE_NAME || 'metaphi_cms',
+    user: process.env.DATABASE_USERNAME || 'postgres',
+    password: process.env.DATABASE_PASSWORD,
   });
 
   await client.connect();
