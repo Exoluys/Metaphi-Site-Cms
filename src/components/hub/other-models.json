@@ -10,7 +10,7 @@
     "items": {
       "type": "component",
       "repeatable": true,
-      "component": "hub.link-item"
+      "component": "hub.string-item"
     }
   }
 }

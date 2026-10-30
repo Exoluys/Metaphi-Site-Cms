@@ -13,8 +13,9 @@
   "pluginOptions": {},
   "attributes": {
     "slug": {
-      "type": "string",
-      "required": false
+      "type": "uid",
+      "targetField": "title",
+      "required": true
     },
     "title": {
       "type": "string",

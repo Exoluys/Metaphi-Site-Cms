@@ -35,7 +35,7 @@
     },
     "trustedByText": {
       "type": "string",
-      "required": true
+      "required": false
     },
     "trustedByHighlight": {
       "type": "string"
@@ -43,9 +43,7 @@
     "clientLogos": {
       "type": "component",
       "component": "home.client-logo",
-      "repeatable": true,
-      "required": true,
-      "min": 1
+      "repeatable": true
     },
     "whyChooseHeading": {
       "type": "string"
@@ -87,20 +85,6 @@
     },
     "faqSubtitle": {
       "type": "text"
-    },
-    "ctaHeading": {
-      "type": "string"
-    },
-    "ctaDescription": {
-      "type": "text"
-    },
-    "ctaButtonText": {
-      "type": "string"
-    },
-    "seo": {
-      "type": "component",
-      "repeatable": false,
-      "component": "shared.seo"
     },
     "heroMicrocopy": {
       "type": "string"
@@ -194,6 +178,11 @@
       "type": "component",
       "repeatable": false,
       "component": "hub.final-cta"
+    },
+    "industries": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::industry.industry"
     }
   }
 }

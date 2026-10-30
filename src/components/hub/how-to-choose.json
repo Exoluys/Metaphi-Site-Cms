@@ -15,16 +15,19 @@
       "type": "text",
       "required": false
     },
-    "rules": {
-      "type": "component",
-      "repeatable": true,
-      "component": "hub.string-item"
-    },
-    "ctaLabel": {
-      "type": "string",
+    "customRule": {
+      "type": "text",
       "required": false
     },
-    "ctaLink": {
+    "readyRule": {
+      "type": "text",
+      "required": false
+    },
+    "saasRule": {
+      "type": "text",
+      "required": false
+    },
+    "ctaLabel": {
       "type": "string",
       "required": false
     }

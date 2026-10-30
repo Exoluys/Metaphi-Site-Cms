@@ -34,14 +34,6 @@
       "type": "text",
       "required": false
     },
-    "body": {
-      "type": "text",
-      "required": false
-    },
-    "icon": {
-      "type": "string",
-      "required": false
-    },
     "order": {
       "type": "integer",
       "default": 0,
@@ -60,11 +52,6 @@
     },
     "ctaLabel": {
       "type": "string"
-    },
-    "seo": {
-      "type": "component",
-      "repeatable": false,
-      "component": "shared.seo"
     },
     "industries": {
       "type": "relation",

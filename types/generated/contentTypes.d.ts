@@ -537,6 +537,8 @@ export interface ApiCaseStudyCaseStudy extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    featuredOnShowcase: Schema.Attribute.Boolean &
+      Schema.Attribute.DefaultTo<false>;
     heroImage: Schema.Attribute.Media<'images'>;
     impactSection: Schema.Attribute.Component<
       'case-study.impact-section',
@@ -706,7 +708,6 @@ export interface ApiCustomSolutionsHubCustomSolutionsHub
       Schema.Attribute.Private;
     proof: Schema.Attribute.Component<'hub.proof-block', false>;
     publishedAt: Schema.Attribute.DateTime;
-    seo: Schema.Attribute.Component<'shared.seo', false>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -793,20 +794,10 @@ export interface ApiHomePageHomePage extends Struct.SingleTypeSchema {
     businessProblems: Schema.Attribute.Component<'hub.title-description', true>;
     businessProblemsHeading: Schema.Attribute.String;
     businessProblemsSubtext: Schema.Attribute.Text;
-    clientLogos: Schema.Attribute.Component<'home.client-logo', true> &
-      Schema.Attribute.Required &
-      Schema.Attribute.SetMinMax<
-        {
-          min: 1;
-        },
-        number
-      >;
+    clientLogos: Schema.Attribute.Component<'home.client-logo', true>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    ctaButtonText: Schema.Attribute.String;
-    ctaDescription: Schema.Attribute.Text;
-    ctaHeading: Schema.Attribute.String;
     customCapabilitiesSection: Schema.Attribute.Component<
       'hub.info-block',
       false
@@ -830,6 +821,10 @@ export interface ApiHomePageHomePage extends Struct.SingleTypeSchema {
     heroHighlight: Schema.Attribute.String;
     heroMicrocopy: Schema.Attribute.String;
     heroTitle: Schema.Attribute.String;
+    industries: Schema.Attribute.Relation<
+      'manyToMany',
+      'api::industry.industry'
+    >;
     industriesSection: Schema.Attribute.Component<'hub.info-block', false>;
     insightsResourcesSection: Schema.Attribute.Component<
       'hub.info-block',
@@ -848,7 +843,6 @@ export interface ApiHomePageHomePage extends Struct.SingleTypeSchema {
       false
     >;
     secondaryButtonText: Schema.Attribute.String;
-    seo: Schema.Attribute.Component<'shared.seo', false>;
     solutionModels: Schema.Attribute.Component<'hub.solution-model', true>;
     solutionModelsHeading: Schema.Attribute.String;
     solutionModelsSubtext: Schema.Attribute.Text;
@@ -864,7 +858,7 @@ export interface ApiHomePageHomePage extends Struct.SingleTypeSchema {
     testimonialsHighlight: Schema.Attribute.String;
     testimonialsSubtitle: Schema.Attribute.Text;
     trustedByHighlight: Schema.Attribute.String;
-    trustedByText: Schema.Attribute.String & Schema.Attribute.Required;
+    trustedByText: Schema.Attribute.String;
     trustHeading: Schema.Attribute.String;
     trustPills: Schema.Attribute.Component<'hub.string-item', true>;
     trustSubtext: Schema.Attribute.Text;
@@ -930,7 +924,6 @@ export interface ApiIndustriesHubIndustriesHub extends Struct.SingleTypeSchema {
     publishedAt: Schema.Attribute.DateTime;
     relevantSolutions: Schema.Attribute.Component<'hub.info-block', false>;
     resources: Schema.Attribute.Component<'hub.info-block', false>;
-    seo: Schema.Attribute.Component<'shared.seo', false>;
     transformationThemes: Schema.Attribute.Component<'hub.checklist', false>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -1004,7 +997,7 @@ export interface ApiIndustryIndustry extends Struct.CollectionTypeSchema {
       'industry-page.services-section',
       false
     >;
-    slug: Schema.Attribute.String;
+    slug: Schema.Attribute.UID<'title'> & Schema.Attribute.Required;
     solutionsSection: Schema.Attribute.Component<
       'industry-page.solutions-section',
       false
@@ -1196,7 +1189,6 @@ export interface ApiReadyToConfigureHubReadyToConfigureHub
       Schema.Attribute.Private;
     proof: Schema.Attribute.Component<'hub.proof-block', false>;
     publishedAt: Schema.Attribute.DateTime;
-    seo: Schema.Attribute.Component<'shared.seo', false>;
     solutionPortfolio: Schema.Attribute.Component<
       'hub.solution-portfolio',
       false
@@ -1301,9 +1293,7 @@ export interface ApiSaasProductsHubSaasProductsHub
     > &
       Schema.Attribute.Private;
     otherModels: Schema.Attribute.Component<'hub.other-models', false>;
-    products: Schema.Attribute.Component<'hub.saas-product', true>;
     publishedAt: Schema.Attribute.DateTime;
-    seo: Schema.Attribute.Component<'shared.seo', false>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1483,7 +1473,6 @@ export interface ApiSolutionSolution extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
-    body: Schema.Attribute.Text;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1492,7 +1481,6 @@ export interface ApiSolutionSolution extends Struct.CollectionTypeSchema {
       Schema.Attribute.DefaultTo<false>;
     homeSummary: Schema.Attribute.Text;
     homeTitle: Schema.Attribute.String;
-    icon: Schema.Attribute.String;
     industries: Schema.Attribute.Relation<
       'manyToMany',
       'api::industry.industry'
@@ -1516,7 +1504,6 @@ export interface ApiSolutionSolution extends Struct.CollectionTypeSchema {
       > &
       Schema.Attribute.DefaultTo<0>;
     publishedAt: Schema.Attribute.DateTime;
-    seo: Schema.Attribute.Component<'shared.seo', false>;
     slug: Schema.Attribute.UID<'title'> & Schema.Attribute.Required;
     summary: Schema.Attribute.Text;
     title: Schema.Attribute.String & Schema.Attribute.Required;
@@ -1540,6 +1527,7 @@ export interface ApiSolutionsHubSolutionsHub extends Struct.SingleTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    customModel: Schema.Attribute.Component<'hub.solution-model', false>;
     finalCta: Schema.Attribute.Component<'hub.final-cta', false>;
     heroHeading: Schema.Attribute.String & Schema.Attribute.Required;
     heroSubtext: Schema.Attribute.Text;
@@ -1550,10 +1538,10 @@ export interface ApiSolutionsHubSolutionsHub extends Struct.SingleTypeSchema {
       'api::solutions-hub.solutions-hub'
     > &
       Schema.Attribute.Private;
-    models: Schema.Attribute.Component<'hub.solution-model', true>;
     proof: Schema.Attribute.Component<'hub.proof-block', false>;
     publishedAt: Schema.Attribute.DateTime;
-    seo: Schema.Attribute.Component<'shared.seo', false>;
+    readyModel: Schema.Attribute.Component<'hub.solution-model', false>;
+    saasModel: Schema.Attribute.Component<'hub.solution-model', false>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;

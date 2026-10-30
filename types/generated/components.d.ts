@@ -296,7 +296,7 @@ export interface HomeClientLogo extends Struct.ComponentSchema {
     icon: 'alien';
   };
   attributes: {
-    logo: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
+    logo: Schema.Attribute.Media<'images'>;
     name: Schema.Attribute.String & Schema.Attribute.Required;
     order: Schema.Attribute.Integer;
   };
@@ -352,8 +352,11 @@ export interface HubComparisonMatrix extends Struct.ComponentSchema {
     icon: 'apps';
   };
   attributes: {
+    customColumn: Schema.Attribute.Text;
     heading: Schema.Attribute.String;
-    rows: Schema.Attribute.Component<'hub.comparison-row', true>;
+    readyColumn: Schema.Attribute.Text;
+    saasColumn: Schema.Attribute.Text;
+    subtext: Schema.Attribute.Text;
   };
 }
 
@@ -413,9 +416,10 @@ export interface HubHowToChoose extends Struct.ComponentSchema {
   };
   attributes: {
     ctaLabel: Schema.Attribute.String;
-    ctaLink: Schema.Attribute.String;
+    customRule: Schema.Attribute.Text;
     heading: Schema.Attribute.String;
-    rules: Schema.Attribute.Component<'hub.string-item', true>;
+    readyRule: Schema.Attribute.Text;
+    saasRule: Schema.Attribute.Text;
     subtext: Schema.Attribute.Text;
   };
 }
@@ -459,7 +463,7 @@ export interface HubOtherModels extends Struct.ComponentSchema {
     icon: 'apps';
   };
   attributes: {
-    items: Schema.Attribute.Component<'hub.link-item', true>;
+    items: Schema.Attribute.Component<'hub.string-item', true>;
   };
 }
 
@@ -532,6 +536,7 @@ export interface HubSolutionModel extends Struct.ComponentSchema {
     ctaLabel: Schema.Attribute.String;
     ctaLink: Schema.Attribute.String;
     description: Schema.Attribute.Text;
+    homeDescription: Schema.Attribute.Text;
     tagline: Schema.Attribute.String;
     title: Schema.Attribute.String & Schema.Attribute.Required;
     typicalNeeds: Schema.Attribute.Component<'hub.string-item', true>;

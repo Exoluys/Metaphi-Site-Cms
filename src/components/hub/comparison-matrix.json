@@ -11,10 +11,21 @@
       "type": "string",
       "required": false
     },
-    "rows": {
-      "type": "component",
-      "repeatable": true,
-      "component": "hub.comparison-row"
+    "subtext": {
+      "type": "text",
+      "required": false
+    },
+    "saasColumn": {
+      "type": "text",
+      "required": false
+    },
+    "readyColumn": {
+      "type": "text",
+      "required": false
+    },
+    "customColumn": {
+      "type": "text",
+      "required": false
     }
   }
 }

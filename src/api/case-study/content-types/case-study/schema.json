@@ -49,6 +49,10 @@
       "default": 0,
       "min": 0
     },
+    "featuredOnShowcase": {
+      "type": "boolean",
+      "default": false
+    },
     "projectSummary": {
       "type": "component",
       "component": "case-study.project-summary-section",

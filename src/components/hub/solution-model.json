@@ -19,6 +19,10 @@
       "type": "text",
       "required": false
     },
+    "homeDescription": {
+      "type": "text",
+      "required": false
+    },
     "typicalNeeds": {
       "type": "component",
       "repeatable": true,
