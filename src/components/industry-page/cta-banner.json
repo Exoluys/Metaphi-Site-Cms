@@ -18,10 +18,6 @@
       "type": "string",
       "required": true
     },
-    "buttonLink": {
-      "type": "string",
-      "required": true
-    },
     "image": {
       "type": "media",
       "multiple": false,

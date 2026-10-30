@@ -31,10 +31,6 @@
     "ctaLabel": {
       "type": "string",
       "required": false
-    },
-    "ctaLink": {
-      "type": "string",
-      "required": false
     }
   }
 }

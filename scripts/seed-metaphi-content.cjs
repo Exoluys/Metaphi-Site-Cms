@@ -304,8 +304,7 @@ async function seed() {
             hubSummary: ind.hubSummary,
             hubOrder: ind.order,
             ctaLabel: 'Explore Your Industry',
-            ctaLink: `/industries/${ind.slug}`
-          },
+                      },
           status: 'published'
         });
         seededIndustryDocIds.push(created.documentId);
@@ -321,8 +320,7 @@ async function seed() {
             hubSummary: ind.hubSummary,
             hubOrder: ind.order,
             ctaLabel: 'Explore Your Industry',
-            ctaLink: `/industries/${ind.slug}`
-          },
+                      },
           status: 'published'
         });
         seededIndustryDocIds.push(existing.documentId);
@@ -402,8 +400,7 @@ async function seed() {
         heading: 'Discuss Your Technology Initiative',
         subtext: 'Whether you need a custom platform, a configurable solution or strategic engineering support, our team is ready to discuss your initiative.',
         ctaLabel: 'Discuss Your Initiative',
-        ctaLink: '/contact'
-      }
+              }
     };
 
     const exSolutionsHub = await app.documents('api::solutions-hub.solutions-hub').findFirst({});
@@ -504,8 +501,7 @@ async function seed() {
         heading: 'Discuss Your Custom Software Requirement',
         subtext: 'Whether you need a custom platform, a configurable solution or strategic engineering support, our team is ready to discuss your initiative.',
         ctaLabel: 'Discuss Your Custom Software Requirement',
-        ctaLink: '/contact'
-      }
+              }
     };
 
     const exCustomHub = await app.documents('api::custom-solutions-hub.custom-solutions-hub').findFirst({});
@@ -572,8 +568,7 @@ async function seed() {
         heading: 'Request a Solution Walkthrough',
         subtext: 'Whether you need a custom platform, a configurable solution or strategic engineering support, our team is ready to discuss your initiative.',
         ctaLabel: 'Request a Solution Walkthrough',
-        ctaLink: '/contact'
-      }
+              }
     };
 
     const exRtcHub = await app.documents('api::ready-to-configure-hub.ready-to-configure-hub').findFirst({});
@@ -610,8 +605,7 @@ async function seed() {
         heading: 'Explore Metaphi Products',
         subtext: 'Whether you need a custom platform, a configurable solution or strategic engineering support, our team is ready to discuss your initiative.',
         ctaLabel: 'Explore Metaphi Products',
-        ctaLink: '/contact'
-      }
+              }
     };
 
     const exSaasHub = await app.documents('api::saas-products-hub.saas-products-hub').findFirst({});
@@ -669,8 +663,7 @@ async function seed() {
         heading: 'Discuss Your Industry Technology Initiative',
         subtext: 'Whether you need a custom platform, a configurable solution or strategic engineering support, our team is ready to discuss your initiative.',
         ctaLabel: 'Discuss Your Industry Technology Initiative',
-        ctaLink: '/contact'
-      }
+              }
     };
 
     const exIndHub = await app.documents('api::industries-hub.industries-hub').findFirst({});
@@ -726,26 +719,22 @@ async function seed() {
       customCapabilitiesSection: {
         heading: 'From business systems to intelligent digital products.',
         ctaLabel: 'Explore Custom Solutions',
-        ctaLink: '/solutions/custom-solutions'
-      },
+              },
       industriesSection: {
         heading: 'Technology grounded in industry context.',
         subtext: 'Technology decisions work better when they reflect how an industry actually operates. Metaphi combines engineering capability with practical understanding of business workflows across ten industry groups.',
         ctaLabel: 'Explore Industries',
-        ctaLink: '/industries'
-      },
+              },
       readyToConfigureSection: {
         heading: 'Move faster without forcing your business into generic software.',
         subtext: 'Where we have already solved similar operational problems, Metaphi can begin with a reusable solution foundation and configure it around your workflows, integrations and operating model.',
         ctaLabel: 'View Ready-to-Configure Solutions',
-        ctaLink: '/solutions/ready-to-configure'
-      },
+              },
       featuredCaseStudiesSection: {
         heading: 'Proof through execution.',
         subtext: 'Explore how we have translated complex operational and digital requirements into working business platforms.',
         ctaLabel: 'Explore All Case Studies',
-        ctaLink: '/work'
-      },
+              },
       featuredCaseStudies: [
         { title: 'Agrochemical Manufacturing Digital Transformation', blurb: 'Connecting core workflows across a growing manufacturing business.' },
         { title: 'Food Testing Laboratory Information Management System', blurb: 'Digitising the laboratory lifecycle from sample registration to reporting.' },
@@ -767,10 +756,8 @@ async function seed() {
         heading: 'Have a technology initiative you’re trying to move forward?',
         subtext: 'Tell us what you are trying to improve, automate, build or scale. We’ll help you evaluate the right technology approach.',
         ctaLabel: 'Discuss Your Technology Initiative',
-        ctaLink: '/contact',
-        secondaryCtaLabel: 'Book a Discovery Call',
-        secondaryCtaLink: '/schedule-a-call'
-      },
+                secondaryCtaLabel: 'Book a Discovery Call',
+              },
       stats: [],
       whyChooseStats: [],
       whyChooseCertifications: [],
@@ -822,8 +809,7 @@ async function seed() {
       heading: 'Ready to Turn Your Idea into Reality?',
       text: 'Tell us what you are building. We will come back within one business day with next steps.',
       buttonLabel: 'Book a Call',
-      buttonLink: '/schedule-a-call'
-    };
+          };
 
     if (!existingBanner) {
       await app.documents('api::default-cta-banner.default-cta-banner').create({

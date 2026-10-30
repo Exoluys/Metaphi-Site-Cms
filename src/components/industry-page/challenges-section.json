@@ -14,9 +14,6 @@
     "ctaLabel": {
       "type": "string"
     },
-    "ctaLink": {
-      "type": "string"
-    },
     "sideImage": {
       "type": "media",
       "multiple": false,

@@ -14,9 +14,6 @@
     "ctaLabel": {
       "type": "string"
     },
-    "ctaLink": {
-      "type": "string"
-    },
     "services": {
       "type": "component",
       "repeatable": true,

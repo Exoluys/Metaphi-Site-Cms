@@ -325,7 +325,6 @@ export interface HubCapabilityCard extends Struct.ComponentSchema {
   };
   attributes: {
     ctaLabel: Schema.Attribute.String;
-    ctaLink: Schema.Attribute.String;
     description: Schema.Attribute.Text;
     title: Schema.Attribute.String & Schema.Attribute.Required;
   };
@@ -399,10 +398,8 @@ export interface HubFinalCta extends Struct.ComponentSchema {
   };
   attributes: {
     ctaLabel: Schema.Attribute.String & Schema.Attribute.Required;
-    ctaLink: Schema.Attribute.String;
     heading: Schema.Attribute.String;
     secondaryCtaLabel: Schema.Attribute.String;
-    secondaryCtaLink: Schema.Attribute.String;
     subtext: Schema.Attribute.Text;
   };
 }
@@ -433,10 +430,8 @@ export interface HubInfoBlock extends Struct.ComponentSchema {
   };
   attributes: {
     ctaLabel: Schema.Attribute.String;
-    ctaLink: Schema.Attribute.String;
     heading: Schema.Attribute.String;
     secondaryCtaLabel: Schema.Attribute.String;
-    secondaryCtaLink: Schema.Attribute.String;
     subtext: Schema.Attribute.Text;
   };
 }
@@ -512,7 +507,6 @@ export interface HubProofBlock extends Struct.ComponentSchema {
   };
   attributes: {
     ctaLabel: Schema.Attribute.String & Schema.Attribute.Required;
-    ctaLink: Schema.Attribute.String;
     heading: Schema.Attribute.String;
   };
 }
@@ -526,7 +520,6 @@ export interface HubSaasProduct extends Struct.ComponentSchema {
   };
   attributes: {
     ctaLabel: Schema.Attribute.String;
-    ctaLink: Schema.Attribute.String;
     description: Schema.Attribute.Text;
     logo: Schema.Attribute.Media<'images'>;
     name: Schema.Attribute.String & Schema.Attribute.Required;
@@ -542,7 +535,6 @@ export interface HubSolutionModel extends Struct.ComponentSchema {
   };
   attributes: {
     ctaLabel: Schema.Attribute.String;
-    ctaLink: Schema.Attribute.String;
     description: Schema.Attribute.Text;
     homeDescription: Schema.Attribute.Text;
     tagline: Schema.Attribute.String;
@@ -560,7 +552,6 @@ export interface HubSolutionPortfolio extends Struct.ComponentSchema {
   };
   attributes: {
     ctaLabel: Schema.Attribute.String;
-    ctaLink: Schema.Attribute.String;
     heading: Schema.Attribute.String;
     items: Schema.Attribute.Component<'hub.portfolio-item', true>;
   };
@@ -646,7 +637,6 @@ export interface IndustryPageChallengesSection extends Struct.ComponentSchema {
   attributes: {
     challenges: Schema.Attribute.Component<'industry-page.challenge-row', true>;
     ctaLabel: Schema.Attribute.String;
-    ctaLink: Schema.Attribute.String;
     heading: Schema.Attribute.String & Schema.Attribute.Required;
     sideImage: Schema.Attribute.Media<'images'>;
   };
@@ -661,7 +651,6 @@ export interface IndustryPageCtaBanner extends Struct.ComponentSchema {
   };
   attributes: {
     buttonLabel: Schema.Attribute.String & Schema.Attribute.Required;
-    buttonLink: Schema.Attribute.String & Schema.Attribute.Required;
     heading: Schema.Attribute.String & Schema.Attribute.Required;
     image: Schema.Attribute.Media<'images'>;
     text: Schema.Attribute.Text;
@@ -694,7 +683,6 @@ export interface IndustryPageServicesSection extends Struct.ComponentSchema {
   };
   attributes: {
     ctaLabel: Schema.Attribute.String;
-    ctaLink: Schema.Attribute.String;
     heading: Schema.Attribute.String & Schema.Attribute.Required;
     services: Schema.Attribute.Component<'industry-page.service-tab', true>;
   };

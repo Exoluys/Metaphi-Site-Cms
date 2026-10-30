@@ -19,10 +19,6 @@
       "type": "string",
       "required": false
     },
-    "ctaLink": {
-      "type": "string",
-      "required": false
-    },
     "logo": {
       "type": "media",
       "multiple": false,

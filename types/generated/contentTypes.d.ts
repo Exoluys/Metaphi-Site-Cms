@@ -695,7 +695,6 @@ export interface ApiDefaultCtaBannerDefaultCtaBanner
   };
   attributes: {
     buttonLabel: Schema.Attribute.String & Schema.Attribute.Required;
-    buttonLink: Schema.Attribute.String & Schema.Attribute.Required;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -921,8 +920,6 @@ export interface ApiIndustryIndustry extends Struct.CollectionTypeSchema {
     ctaBanner: Schema.Attribute.Component<'industry-page.cta-banner', false>;
     ctaLabel: Schema.Attribute.String &
       Schema.Attribute.DefaultTo<'Book a consultation'>;
-    ctaLink: Schema.Attribute.String &
-      Schema.Attribute.DefaultTo<'/schedule-a-call'>;
     featuredOnHub: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
     heroImage: Schema.Attribute.Media<'images'>;
     hubOrder: Schema.Attribute.Integer;

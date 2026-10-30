@@ -54,10 +54,6 @@
       "type": "string",
       "default": "Book a consultation"
     },
-    "ctaLink": {
-      "type": "string",
-      "default": "/schedule-a-call"
-    },
     "lastReviewedDate": {
       "type": "date"
     },
