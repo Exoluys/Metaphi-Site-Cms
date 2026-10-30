@@ -71,11 +71,6 @@
       "repeatable": false,
       "component": "industry-page.trust-bar"
     },
-    "clientLogos": {
-      "type": "relation",
-      "relation": "manyToMany",
-      "target": "api::client-logo.client-logo"
-    },
     "stats": {
       "type": "component",
       "repeatable": true,

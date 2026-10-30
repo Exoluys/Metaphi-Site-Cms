@@ -35,8 +35,6 @@ export default {
           'api::case-study.case-study.findOne',
           'api::reviewer.reviewer.find',
           'api::reviewer.reviewer.findOne',
-          'api::client-logo.client-logo.find',
-          'api::client-logo.client-logo.findOne',
           'api::team-page.team-page.find',
           'api::team-member.team-member.find',
           'api::team-member.team-member.findOne',

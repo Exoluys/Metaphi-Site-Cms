@@ -576,9 +576,6 @@ export interface ApiCaseStudyCaseStudy extends Struct.CollectionTypeSchema {
         maxLength: 160;
       }>;
     slug: Schema.Attribute.String;
-    solutionModel: Schema.Attribute.Enumeration<
-      ['custom', 'ready-to-configure', 'saas']
-    >;
     solutions: Schema.Attribute.Relation<
       'manyToMany',
       'api::solution.solution'
@@ -606,38 +603,6 @@ export interface ApiCaseStudyCaseStudy extends Struct.CollectionTypeSchema {
       'case-study.workflow-section',
       false
     >;
-  };
-}
-
-export interface ApiClientLogoClientLogo extends Struct.CollectionTypeSchema {
-  collectionName: 'client_logos';
-  info: {
-    description: 'Client logos displayed across trust bars and home page';
-    displayName: 'Client Logo';
-    pluralName: 'client-logos';
-    singularName: 'client-logo';
-  };
-  options: {
-    draftAndPublish: false;
-  };
-  attributes: {
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::client-logo.client-logo'
-    > &
-      Schema.Attribute.Private;
-    logo: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
-    name: Schema.Attribute.String & Schema.Attribute.Required;
-    order: Schema.Attribute.Integer & Schema.Attribute.DefaultTo<0>;
-    publishedAt: Schema.Attribute.DateTime;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    url: Schema.Attribute.String;
   };
 }
 
@@ -952,10 +917,6 @@ export interface ApiIndustryIndustry extends Struct.CollectionTypeSchema {
     challengesSection: Schema.Attribute.Component<
       'industry-page.challenges-section',
       false
-    >;
-    clientLogos: Schema.Attribute.Relation<
-      'manyToMany',
-      'api::client-logo.client-logo'
     >;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -2245,7 +2206,6 @@ declare module '@strapi/strapi' {
       'api::about-page.about-page': ApiAboutPageAboutPage;
       'api::careers-page.careers-page': ApiCareersPageCareersPage;
       'api::case-study.case-study': ApiCaseStudyCaseStudy;
-      'api::client-logo.client-logo': ApiClientLogoClientLogo;
       'api::compliance-page.compliance-page': ApiCompliancePageCompliancePage;
       'api::custom-solutions-hub.custom-solutions-hub': ApiCustomSolutionsHubCustomSolutionsHub;
       'api::default-cta-banner.default-cta-banner': ApiDefaultCtaBannerDefaultCtaBanner;
