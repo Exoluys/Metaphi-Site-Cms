@@ -364,6 +364,8 @@ async function seed() {
     const solutionsHubData = {
       heroHeading: 'Three Ways to Solve Your Technology Challenge',
       heroSubtext: 'The right solution depends on how unique your requirements are, how quickly you need to implement and how much control your business needs over the resulting technology.',
+      modelsHeading: 'Solution Models',
+      modelsSubtext: 'The right solution depends on how unique your requirements are, how quickly you need to implement and how much control your business needs over the resulting technology.',
       customModel: {
         title: 'Custom Solutions',
         tagline: 'Build around your requirements',
@@ -427,6 +429,10 @@ async function seed() {
     const customHubData = {
       heroHeading: 'Technology Designed Around the Way Your Business Works',
       heroSubtext: 'When standard software cannot accommodate your processes, product strategy or integration requirements, Metaphi designs and engineers technology around your business instead of forcing your business around the software.',
+      capabilitiesHeading: 'Capabilities',
+      capabilitiesSubtext: 'From business systems to intelligent digital products.',
+      deliveryHeading: 'Delivery',
+      deliverySubtext: 'Structured enough for control. Flexible enough for reality.',
       whenCustomMakesSense: {
         heading: 'When Custom Makes Sense',
         items: [
@@ -525,6 +531,12 @@ async function seed() {
     const rtcHubData = {
       heroHeading: 'Start With a Proven Foundation. Configure It Around Your Business.',
       heroSubtext: 'Not every implementation needs to begin from zero. Metaphi’s Ready-to-Configure solutions combine reusable software foundations with the flexibility to adapt workflows, modules, integrations and reporting around your operating model.',
+      whatItMeansHeading: 'What It Means',
+      whatItMeansSubtext: 'Not every implementation needs to begin from zero. Metaphi’s Ready-to-Configure solutions combine reusable software foundations with the flexibility to adapt workflows, modules, integrations and reporting around your operating model.',
+      portfolioHeading: 'Ready-to-Configure Solutions Portfolio',
+      portfolioSubtext: 'Accelerated platforms ready to be configured and deployed across core operational functions.',
+      implementationHeading: 'Implementation',
+      implementationSubtext: 'Configure. Integrate. Validate. Launch.',
       whatItMeans: [
         { title: 'Already Available', description: 'Core workflows, modules and system foundations based on previous implementation experience.' },
         { title: 'Configurable', description: 'Business rules, workflows, roles, reports and user journeys can be aligned to your organisation.' },
@@ -532,6 +544,8 @@ async function seed() {
         { title: 'Integrable', description: 'The solution can connect with your existing applications, devices and external platforms.' }
       ],
       comparisonMatrix: {
+        heading: 'How Ready-to-Configure Compares',
+        subtext: 'Understanding the right balance between velocity, cost and customization.',
         heading: 'More flexible than SaaS. Faster than starting completely from scratch.',
         subtext: 'Different From SaaS',
         saasColumn: 'Standard product with limited configuration.',
@@ -588,8 +602,8 @@ async function seed() {
       otherModels: {
         heading: 'SaaS vs Other Metaphi Models',
         items: [
-          { text: 'Need substantial tailoring? Explore Ready-to-Configure Solutions.' },
-          { text: 'Building something strategically unique? Explore Custom Solutions.' }
+          { title: 'Need substantial tailoring?', description: 'Explore Ready-to-Configure Solutions.' },
+          { title: 'Building something strategically unique?', description: 'Explore Custom Solutions.' }
         ]
       },
       finalCta: {
@@ -749,14 +763,6 @@ async function seed() {
       ],
       deliveryApproachHeading: 'From business problem to working technology.',
       deliveryApproachSubtext: 'A structured, transparent engineering process designed to deliver predictable outcomes from discovery through to post-launch evolution.',
-      insightsResourcesSection: {
-        heading: 'Practical thinking for better technology decisions.',
-        subtext: 'Explore industry playbooks, implementation guides and perspectives on enterprise software, product engineering, AI and digital transformation.',
-        ctaLabel: 'Explore Insights',
-        ctaLink: '',
-        secondaryCtaLabel: 'Browse Resources',
-        secondaryCtaLink: ''
-      },
       finalCta: {
         heading: 'Have a technology initiative you’re trying to move forward?',
         subtext: 'Tell us what you are trying to improve, automate, build or scale. We’ll help you evaluate the right technology approach.',
@@ -839,7 +845,7 @@ async function seed() {
     console.log('==========================================\n');
 
   } catch (err) {
-    console.error('CRITICAL SEED ERROR:', err);
+    console.error('CRITICAL SEED ERROR:', JSON.stringify(err.details || err, null, 2));
     process.exit(1);
   } finally {
     await app.destroy();

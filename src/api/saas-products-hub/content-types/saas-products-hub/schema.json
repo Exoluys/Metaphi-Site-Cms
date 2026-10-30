@@ -28,6 +28,12 @@
       "type": "component",
       "repeatable": false,
       "component": "hub.final-cta"
+    },
+    "productsHeading": {
+      "type": "string"
+    },
+    "productsSubtext": {
+      "type": "text"
     }
   }
 }

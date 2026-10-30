@@ -463,7 +463,15 @@ export interface HubOtherModels extends Struct.ComponentSchema {
     icon: 'apps';
   };
   attributes: {
-    items: Schema.Attribute.Component<'hub.string-item', true>;
+    heading: Schema.Attribute.String;
+    items: Schema.Attribute.Component<'hub.title-description', true> &
+      Schema.Attribute.SetMinMax<
+        {
+          max: 2;
+          min: 2;
+        },
+        number
+      >;
   };
 }
 

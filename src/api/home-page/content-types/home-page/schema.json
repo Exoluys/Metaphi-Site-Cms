@@ -159,11 +159,6 @@
     "deliveryApproachSubtext": {
       "type": "text"
     },
-    "insightsResourcesSection": {
-      "type": "component",
-      "repeatable": false,
-      "component": "hub.info-block"
-    },
     "finalCta": {
       "type": "component",
       "repeatable": false,

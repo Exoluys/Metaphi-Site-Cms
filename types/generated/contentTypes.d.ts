@@ -692,10 +692,14 @@ export interface ApiCustomSolutionsHubCustomSolutionsHub
   attributes: {
     businessOutcomes: Schema.Attribute.Component<'hub.checklist', false>;
     capabilities: Schema.Attribute.Component<'hub.capability-card', true>;
+    capabilitiesHeading: Schema.Attribute.String;
+    capabilitiesSubtext: Schema.Attribute.Text;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    deliveryHeading: Schema.Attribute.String;
     deliveryProcess: Schema.Attribute.Component<'hub.process-flow', false>;
+    deliverySubtext: Schema.Attribute.Text;
     finalCta: Schema.Attribute.Component<'hub.final-cta', false>;
     heroHeading: Schema.Attribute.String & Schema.Attribute.Required;
     heroSubtext: Schema.Attribute.Text;
@@ -823,10 +827,6 @@ export interface ApiHomePageHomePage extends Struct.SingleTypeSchema {
       'api::industry.industry'
     >;
     industriesSection: Schema.Attribute.Component<'hub.info-block', false>;
-    insightsResourcesSection: Schema.Attribute.Component<
-      'hub.info-block',
-      false
-    >;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -907,6 +907,8 @@ export interface ApiIndustriesHubIndustriesHub extends Struct.SingleTypeSchema {
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     finalCta: Schema.Attribute.Component<'hub.final-cta', false>;
+    gridHeading: Schema.Attribute.String;
+    gridSubtext: Schema.Attribute.Text;
     heroHeading: Schema.Attribute.String & Schema.Attribute.Required;
     heroSubtext: Schema.Attribute.Text;
     industryCardsCta: Schema.Attribute.Component<'hub.info-block', false>;
@@ -1177,12 +1179,16 @@ export interface ApiReadyToConfigureHubReadyToConfigureHub
     heroHeading: Schema.Attribute.String & Schema.Attribute.Required;
     heroSubtext: Schema.Attribute.Text;
     implementationFlow: Schema.Attribute.Component<'hub.process-flow', false>;
+    implementationHeading: Schema.Attribute.String;
+    implementationSubtext: Schema.Attribute.Text;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
       'api::ready-to-configure-hub.ready-to-configure-hub'
     > &
       Schema.Attribute.Private;
+    portfolioHeading: Schema.Attribute.String;
+    portfolioSubtext: Schema.Attribute.Text;
     proof: Schema.Attribute.Component<'hub.proof-block', false>;
     publishedAt: Schema.Attribute.DateTime;
     solutionPortfolio: Schema.Attribute.Component<
@@ -1193,6 +1199,8 @@ export interface ApiReadyToConfigureHubReadyToConfigureHub
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     whatItMeans: Schema.Attribute.Component<'hub.title-description', true>;
+    whatItMeansHeading: Schema.Attribute.String;
+    whatItMeansSubtext: Schema.Attribute.Text;
   };
 }
 
@@ -1289,6 +1297,8 @@ export interface ApiSaasProductsHubSaasProductsHub
     > &
       Schema.Attribute.Private;
     otherModels: Schema.Attribute.Component<'hub.other-models', false>;
+    productsHeading: Schema.Attribute.String;
+    productsSubtext: Schema.Attribute.Text;
     publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -1534,6 +1544,8 @@ export interface ApiSolutionsHubSolutionsHub extends Struct.SingleTypeSchema {
       'api::solutions-hub.solutions-hub'
     > &
       Schema.Attribute.Private;
+    modelsHeading: Schema.Attribute.String;
+    modelsSubtext: Schema.Attribute.Text;
     proof: Schema.Attribute.Component<'hub.proof-block', false>;
     publishedAt: Schema.Attribute.DateTime;
     readyModel: Schema.Attribute.Component<'hub.solution-model', false>;

@@ -48,6 +48,24 @@
       "type": "component",
       "repeatable": false,
       "component": "hub.final-cta"
+    },
+    "whatItMeansHeading": {
+      "type": "string"
+    },
+    "whatItMeansSubtext": {
+      "type": "text"
+    },
+    "portfolioHeading": {
+      "type": "string"
+    },
+    "portfolioSubtext": {
+      "type": "text"
+    },
+    "implementationHeading": {
+      "type": "string"
+    },
+    "implementationSubtext": {
+      "type": "text"
     }
   }
 }

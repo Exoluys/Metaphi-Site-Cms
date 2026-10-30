@@ -48,6 +48,12 @@
       "type": "component",
       "repeatable": false,
       "component": "hub.final-cta"
+    },
+    "modelsHeading": {
+      "type": "string"
+    },
+    "modelsSubtext": {
+      "type": "text"
     }
   }
 }

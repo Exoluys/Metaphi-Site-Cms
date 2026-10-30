@@ -53,6 +53,18 @@
       "type": "component",
       "repeatable": false,
       "component": "hub.final-cta"
+    },
+    "capabilitiesHeading": {
+      "type": "string"
+    },
+    "capabilitiesSubtext": {
+      "type": "text"
+    },
+    "deliveryHeading": {
+      "type": "string"
+    },
+    "deliverySubtext": {
+      "type": "text"
     }
   }
 }
