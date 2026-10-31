@@ -63,6 +63,9 @@
     "testimonialsSubtitle": {
       "type": "text"
     },
+    "testimonialsCtaLabel": {
+      "type": "string"
+    },
     "faqHeading": {
       "type": "string"
     },

@@ -837,6 +837,7 @@ export interface ApiHomePageHomePage extends Struct.SingleTypeSchema {
     secondaryButtonText: Schema.Attribute.String;
     solutionModelsHeading: Schema.Attribute.String;
     solutionModelsSubtext: Schema.Attribute.Text;
+    testimonialsCtaLabel: Schema.Attribute.String;
     testimonialsEmptyStateText: Schema.Attribute.Text;
     testimonialsHeading: Schema.Attribute.String;
     testimonialsHighlight: Schema.Attribute.String;
