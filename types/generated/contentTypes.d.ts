@@ -1680,6 +1680,37 @@ export interface ApiWhyJoinUsPageWhyJoinUsPage extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiWorkPageWorkPage extends Struct.SingleTypeSchema {
+  collectionName: 'work_pages';
+  info: {
+    displayName: 'Work Page';
+    pluralName: 'work-pages';
+    singularName: 'work-page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    emptyStateText: Schema.Attribute.Text;
+    heading: Schema.Attribute.String;
+    highlight: Schema.Attribute.String;
+    intro: Schema.Attribute.Text;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::work-page.work-page'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface PluginContentReleasesRelease
   extends Struct.CollectionTypeSchema {
   collectionName: 'strapi_releases';
@@ -2218,6 +2249,7 @@ declare module '@strapi/strapi' {
       'api::testimonial.testimonial': ApiTestimonialTestimonial;
       'api::testimonials-page.testimonials-page': ApiTestimonialsPageTestimonialsPage;
       'api::why-join-us-page.why-join-us-page': ApiWhyJoinUsPageWhyJoinUsPage;
+      'api::work-page.work-page': ApiWorkPageWorkPage;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;

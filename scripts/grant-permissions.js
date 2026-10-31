@@ -26,6 +26,7 @@ async function grantPermissions() {
     'api::partners-page.partners-page.find',
     'api::team-page.team-page.find',
     'api::testimonials-page.testimonials-page.find',
+    'api::work-page.work-page.find',
 
     // Related collections
     'api::team-member.team-member.find',
