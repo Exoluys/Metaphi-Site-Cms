@@ -14,7 +14,8 @@
     "items": {
       "type": "component",
       "repeatable": true,
-      "component": "hub.string-item"
+      "component": "hub.string-item",
+      "max": 9
     }
   }
 }
