@@ -817,7 +817,6 @@ export interface ApiHomePageHomePage extends Struct.SingleTypeSchema {
     finalCta: Schema.Attribute.Component<'hub.final-cta', false>;
     heroDescription: Schema.Attribute.Text;
     heroHighlight: Schema.Attribute.String;
-    heroMicrocopy: Schema.Attribute.String;
     heroTitle: Schema.Attribute.String;
     industries: Schema.Attribute.Relation<
       'manyToMany',
