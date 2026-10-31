@@ -56,3 +56,45 @@ Before deploying to production (e.g. Railway, Render, DigitalOcean):
 4. **Security**:
    - No database credentials or secrets are committed to version control.
    - Keep Strapi Admin user credentials separate and securely stored in environment password managers.
+
+5. **Locked Fields & Admin Layout Synchronization**:
+   - Admin layout configurations (e.g. `editable: false`, field descriptions, and ordering) reside in the database table `strapi_core_store_settings`.
+   - The following keys enforce locked, immutable fields:
+     - `plugin_content_manager_configuration_content_types::api::industry.industry`: `slug` (locked: `editable: false`, description: `"Automatically generated from title on creation. Never typed, immutable."`)
+     - `plugin_content_manager_configuration_components::hub.solution-model`: `title` (locked: `editable: false`, description: `"Fixed solution type name. Immutable."`)
+     - `plugin_content_manager_configuration_components::hub.how-to-choose`: `customRuleTitle`, `readyRuleTitle`, `saasRuleTitle` (locked: `editable: false`, description: `"Fixed decision title. Immutable."`)
+   - **How to carry these settings to hosted Strapi on deployment**:
+     - Option A (Automatic on bootstrap): `src/index.ts` automatically runs on Strapi server start and ensures `editable: false` and description metadata are populated in `strapi_core_store_settings`.
+     - Option B (Seed script): Running `node scripts/seed-metaphi-content.cjs` seeds canonical values (`Custom Solutions`, `Ready-to-Configure Solutions`, `SaaS Products`, and `Choose ...` rule titles).
+     - Option C (Strapi Config Transfer / SQL): Use Strapi CLI transfer or export:
+       ```bash
+       npm run strapi transfer -- --to <hosted-strapi-url> --only config
+       ```
+       Or execute the core-store sync SQL against the hosted PostgreSQL database:
+       ```sql
+       -- Lock solution model title
+       UPDATE strapi_core_store_settings
+       SET value = jsonb_set(
+         value::jsonb,
+         '{metadatas,title,edit}',
+         '{"label":"title","description":"Fixed solution type name. Immutable.","placeholder":"","visible":true,"editable":false}'::jsonb
+       )::text
+       WHERE key = 'plugin_content_manager_configuration_components::hub.solution-model';
+
+       -- Lock how-to-choose titles
+       UPDATE strapi_core_store_settings
+       SET value = jsonb_set(
+         jsonb_set(
+           jsonb_set(
+             value::jsonb,
+             '{metadatas,customRuleTitle,edit}',
+             '{"label":"customRuleTitle","description":"Fixed decision title. Immutable.","placeholder":"","visible":true,"editable":false}'::jsonb
+           ),
+           '{metadatas,readyRuleTitle,edit}',
+           '{"label":"readyRuleTitle","description":"Fixed decision title. Immutable.","placeholder":"","visible":true,"editable":false}'::jsonb
+         ),
+         '{metadatas,saasRuleTitle,edit}',
+         '{"label":"saasRuleTitle","description":"Fixed decision title. Immutable.","placeholder":"","visible":true,"editable":false}'::jsonb
+       )::text
+       WHERE key = 'plugin_content_manager_configuration_components::hub.how-to-choose';
+       ```

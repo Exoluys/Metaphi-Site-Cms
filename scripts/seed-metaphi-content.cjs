@@ -387,9 +387,12 @@ async function seed() {
       },
       howToChoose: {
         heading: 'Not sure which model fits?',
-        customRule: 'Choose Custom when your process or product is strategically unique.',
-        readyRule: 'Choose Ready-to-Configure when you want faster implementation but still need significant business configuration.',
-        saasRule: 'Choose SaaS when your requirement is standard and speed/simplicity matter more than deep customisation.',
+        customRuleTitle: 'Choose Custom',
+        customRule: 'when your process or product is strategically unique.',
+        readyRuleTitle: 'Choose Ready-to-Configure',
+        readyRule: 'when you want faster implementation but still need significant business configuration.',
+        saasRuleTitle: 'Choose SaaS',
+        saasRule: 'when your requirement is standard and speed/simplicity matter more than deep customisation.',
         ctaLabel: 'Discuss the Right Approach'
       },
       proof: {

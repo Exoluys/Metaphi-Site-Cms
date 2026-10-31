@@ -15,12 +15,24 @@
       "type": "text",
       "required": false
     },
+    "customRuleTitle": {
+      "type": "string",
+      "required": false
+    },
     "customRule": {
       "type": "text",
       "required": false
     },
+    "readyRuleTitle": {
+      "type": "string",
+      "required": false
+    },
     "readyRule": {
       "type": "text",
+      "required": false
+    },
+    "saasRuleTitle": {
+      "type": "string",
       "required": false
     },
     "saasRule": {

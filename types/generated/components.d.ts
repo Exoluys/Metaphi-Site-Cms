@@ -414,9 +414,12 @@ export interface HubHowToChoose extends Struct.ComponentSchema {
   attributes: {
     ctaLabel: Schema.Attribute.String;
     customRule: Schema.Attribute.Text;
+    customRuleTitle: Schema.Attribute.String;
     heading: Schema.Attribute.String;
     readyRule: Schema.Attribute.Text;
+    readyRuleTitle: Schema.Attribute.String;
     saasRule: Schema.Attribute.Text;
+    saasRuleTitle: Schema.Attribute.String;
     subtext: Schema.Attribute.Text;
   };
 }
