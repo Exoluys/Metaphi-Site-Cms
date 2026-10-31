@@ -1,0 +1,29 @@
+{
+  "kind": "singleType",
+  "collectionName": "faq_pages",
+  "info": {
+    "singularName": "faq-page",
+    "pluralName": "faq-pages",
+    "displayName": "FAQ Page",
+    "description": "FAQ page configuration and empty state text"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "heroHeading": {
+      "type": "string",
+      "required": false
+    },
+    "heroSubtext": {
+      "type": "text",
+      "required": false
+    },
+    "emptyStateText": {
+      "type": "text",
+      "required": false
+    }
+  }
+}
+

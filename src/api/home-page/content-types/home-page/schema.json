@@ -26,13 +26,6 @@
     "secondaryButtonText": {
       "type": "string"
     },
-    "stats": {
-      "type": "component",
-      "component": "home.stat",
-      "repeatable": true,
-      "min": 0,
-      "max": 4
-    },
     "trustedByText": {
       "type": "string",
       "required": false
@@ -53,13 +46,6 @@
     },
     "whyChooseSubtitle": {
       "type": "text"
-    },
-    "whyChooseStats": {
-      "type": "component",
-      "component": "home.stat",
-      "repeatable": true,
-      "min": 0,
-      "max": 5
     },
     "whyChooseCertifications": {
       "type": "component",
@@ -168,6 +154,26 @@
       "type": "relation",
       "relation": "manyToMany",
       "target": "api::industry.industry"
+    },
+    "companyStats": {
+      "type": "component",
+      "component": "home.stat",
+      "repeatable": true,
+      "required": true,
+      "min": 4,
+      "max": 4
+    },
+    "certificationsEmptyStateText": {
+      "type": "text",
+      "required": false
+    },
+    "testimonialsEmptyStateText": {
+      "type": "text",
+      "required": false
+    },
+    "faqEmptyStateText": {
+      "type": "text",
+      "required": false
     }
   }
 }

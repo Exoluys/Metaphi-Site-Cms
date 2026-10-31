@@ -305,14 +305,21 @@ export interface HomeClientLogo extends Struct.ComponentSchema {
 export interface HomeStat extends Struct.ComponentSchema {
   collectionName: 'components_home_stats';
   info: {
-    description: '';
+    description: 'Company stat with integer value and label';
     displayName: 'Stat';
     icon: 'connector';
   };
   attributes: {
-    label: Schema.Attribute.String;
+    label: Schema.Attribute.String & Schema.Attribute.Required;
     suffix: Schema.Attribute.String;
-    value: Schema.Attribute.Integer;
+    value: Schema.Attribute.Integer &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMax<
+        {
+          min: 0;
+        },
+        number
+      >;
   };
 }
 

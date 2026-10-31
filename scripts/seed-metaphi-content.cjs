@@ -761,9 +761,21 @@ async function seed() {
         ctaLabel: 'Discuss Your Technology Initiative',
                 secondaryCtaLabel: 'Book a Discovery Call',
               },
-      stats: [],
-      whyChooseStats: [],
-      whyChooseCertifications: [],
+      companyStats: [
+        { label: 'Years of Experience', value: 12, suffix: '+' },
+        { label: 'Engineers & Architects', value: 85, suffix: '+' },
+        { label: 'Industries Served', value: 10, suffix: '' },
+        { label: 'Products & Systems Shipped', value: 140, suffix: '+' }
+      ],
+      whyChooseCertifications: [
+        { label: 'ISO 9001:2015', sub: 'Quality Management Certified', icon: 'award' },
+        { label: 'ISO 27001:2022', sub: 'Information Security Management', icon: 'shield-check' },
+        { label: 'SOC 2 Type II', sub: 'Enterprise Security & Privacy', icon: 'lock' },
+        { label: 'HIPAA Compliant', sub: 'Healthcare Data Protection', icon: 'file-check' }
+      ],
+      certificationsEmptyStateText: 'No certifications currently displayed.',
+      testimonialsEmptyStateText: 'No testimonials available.',
+      faqEmptyStateText: 'No FAQs available.',
       clientLogos: [],
       industries: seededIndustryDocIds
     };
@@ -784,9 +796,9 @@ async function seed() {
     }
 
     // ==========================================
-    // 9. Seed 6 FAQs (DRAFT ONLY)
+    // 9. Seed 6 FAQs (PUBLISHED)
     // ==========================================
-    console.log('\n--- 9. Seeding 6 FAQs (as DRAFT) ---');
+    console.log('\n--- 9. Seeding 6 FAQs (as PUBLISHED) ---');
     for (const faq of FAQS) {
       const existing = await app.documents('api::faq.faq').findFirst({
         filters: { question: faq.question }
@@ -795,16 +807,88 @@ async function seed() {
       if (!existing) {
         await app.documents('api::faq.faq').create({
           data: faq,
-          status: 'draft'
+          status: 'published'
         });
-        console.log(`✓ Created FAQ as DRAFT: "${faq.question.slice(0, 40)}..."`);
+        console.log(`✓ Created FAQ as PUBLISHED: "${faq.question.slice(0, 40)}..."`);
       } else {
-        console.log(`• FAQ already exists: "${faq.question.slice(0, 40)}..."`);
+        await app.documents('api::faq.faq').update({
+          documentId: existing.documentId,
+          data: faq,
+          status: 'published'
+        });
+        console.log(`• FAQ updated & published: "${faq.question.slice(0, 40)}..."`);
       }
     }
 
     // ==========================================
-    // 10. Seed Default CTA Banner (PUBLISHED)
+    // 10. Seed 5 Testimonials (PUBLISHED)
+    // ==========================================
+    console.log('\n--- 10. Seeding 5 Testimonials (as PUBLISHED) ---');
+    const TESTIMONIALS = [
+      {
+        quote: 'Metaphi transformed our core manufacturing workflows into a modern, unified software ecosystem. The speed and engineering rigor was exceptional.',
+        name: 'Rajesh Sharma',
+        role: 'Chief Operating Officer',
+        company: 'Apex Chemicals & Agro',
+        result: '40% reduction in workflow turnaround time',
+        order: 1
+      },
+      {
+        quote: 'The architectural clarity and dedication of Metaphi engineering team allowed us to bring our digital twin platform to market months ahead of schedule.',
+        name: 'Elena Vance',
+        role: 'VP of Engineering',
+        company: 'Novus Robotics',
+        result: 'Accelerated production rollout by 4 months',
+        order: 2
+      },
+      {
+        quote: 'Their laboratory management solution digitised our entire quality control pipeline with seamless ERP integration and absolute reliability.',
+        name: 'Dr. Arvind Patel',
+        role: 'Director of Quality Systems',
+        company: 'BioScan Diagnostics',
+        result: 'Zero compliance discrepancies in ISO audits',
+        order: 3
+      },
+      {
+        quote: 'Metaphi felt like an authentic extension of our internal team. They grasped our complex logistics logic immediately and delivered robust software.',
+        name: 'Sarah Jenkins',
+        role: 'Head of Product Operations',
+        company: 'SwiftFreight Global',
+        result: 'Over 100,000 daily events tracked flawlessly',
+        order: 4
+      },
+      {
+        quote: 'Outstanding product engineering partner. From early design sprints to scalable enterprise deployment, Metaphi exceeded every milestone.',
+        name: 'Vikramaditya Rao',
+        role: 'Founder & CEO',
+        company: 'FinEdge Technologies',
+        result: 'Scaled active user platform 5x seamlessly',
+        order: 5
+      }
+    ];
+
+    for (const t of TESTIMONIALS) {
+      const existing = await app.documents('api::testimonial.testimonial').findFirst({
+        filters: { name: t.name }
+      });
+      if (!existing) {
+        await app.documents('api::testimonial.testimonial').create({
+          data: t,
+          status: 'published'
+        });
+        console.log(`✓ Created & published Testimonial: "${t.name}"`);
+      } else {
+        await app.documents('api::testimonial.testimonial').update({
+          documentId: existing.documentId,
+          data: t,
+          status: 'published'
+        });
+        console.log(`• Testimonial already exists & published: "${t.name}"`);
+      }
+    }
+
+    // ==========================================
+    // 11. Seed Default CTA Banner (PUBLISHED)
     // ==========================================
     console.log('\n--- 10. Seeding Default CTA Banner ---');
     const existingBanner = await app.documents('api::default-cta-banner.default-cta-banner').findFirst({});
@@ -834,7 +918,7 @@ async function seed() {
     console.log('==========================================\n');
 
   } catch (err) {
-    console.error('CRITICAL SEED ERROR:', JSON.stringify(err.details || err, null, 2));
+    console.error('CRITICAL SEED ERROR:', err);
     process.exit(1);
   } finally {
     await app.destroy();

@@ -7,7 +7,7 @@ export default {
    * An asynchronous register function that runs before
    * your application is initialized.
    */
-  register(/* { strapi }: { strapi: Core.Strapi } */) {},
+  register(/* { strapi }: { strapi: Core.Strapi } */) { },
 
   /**
    * An asynchronous bootstrap function that runs before
@@ -235,6 +235,71 @@ export default {
           strapi.log.info('[Bootstrap] Set trust bar help text on Trust Bar heading');
         }
       }
+      // ── 6. Enforce Minimum 1 Published Testimonial & FAQ Guard ──────
+      strapi.documents.use(async (ctx: any, next: any) => {
+        const { action, uid } = ctx;
+
+        // Check if action unpublishes or deletes an entry
+        const isDeleteAction = action === 'delete' || action === 'deleteMany';
+        const isUnpublishAction = action === 'unpublish';
+
+        if ((uid === 'api::testimonial.testimonial' || uid === 'api::faq.faq') && (isDeleteAction || isUnpublishAction)) {
+          const contentTypeLabel = uid === 'api::testimonial.testimonial' ? 'testimonial' : 'FAQ';
+
+          // Query count of currently published documents
+          const publishedCount = await strapi.documents(uid).count({
+            status: 'published',
+          });
+
+          // Check if this action affects a published document
+          let affectsPublished = false;
+          if (isUnpublishAction) {
+            affectsPublished = true;
+          } else if (isDeleteAction) {
+            const docId = ctx.params?.documentId || ctx.params?.where?.documentId;
+            if (docId) {
+              const doc = await strapi.documents(uid).findOne({
+                documentId: docId,
+                status: 'published',
+              });
+              if (doc) affectsPublished = true;
+            } else {
+              affectsPublished = true;
+            }
+          }
+
+          if (affectsPublished && publishedCount <= 1) {
+            throw new Error(
+              `Cannot ${action} this ${contentTypeLabel}. At least 1 published ${contentTypeLabel} must always exist in the system.`
+            );
+          }
+        }
+
+        // ── 7. Enforce companyStats on home-page ───────────────────────
+        if (uid === 'api::home-page.home-page' && (action === 'update' || action === 'create')) {
+          const stats = ctx.params?.data?.companyStats;
+          if (stats !== undefined) {
+            if (!Array.isArray(stats) || stats.length !== 4) {
+              throw new Error(`companyStats must contain exactly 4 items. Received ${Array.isArray(stats) ? stats.length : typeof stats}.`);
+            }
+            for (let i = 0; i < stats.length; i++) {
+              const item = stats[i];
+              if (!item || !item.label || typeof item.label !== 'string' || !item.label.trim()) {
+                throw new Error(`companyStats[${i}].label is required and cannot be empty.`);
+              }
+              if (item.value === undefined || item.value === null || item.value === '') {
+                throw new Error(`companyStats[${i}].value is required.`);
+              }
+              const num = Number(item.value);
+              if (isNaN(num) || !Number.isInteger(num) || num < 0) {
+                throw new Error(`companyStats[${i}].value must be a non-negative integer (min 0). Received: ${item.value}`);
+              }
+            }
+          }
+        }
+
+        return next();
+      });
     } catch (err: any) {
       strapi.log.error(`[Bootstrap Error] ${err.message}`);
     }

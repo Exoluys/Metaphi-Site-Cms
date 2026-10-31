@@ -714,6 +714,37 @@ export interface ApiDefaultCtaBannerDefaultCtaBanner
   };
 }
 
+export interface ApiFaqPageFaqPage extends Struct.SingleTypeSchema {
+  collectionName: 'faq_pages';
+  info: {
+    description: 'FAQ page configuration and empty state text';
+    displayName: 'FAQ Page';
+    pluralName: 'faq-pages';
+    singularName: 'faq-page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    emptyStateText: Schema.Attribute.Text;
+    heroHeading: Schema.Attribute.String;
+    heroSubtext: Schema.Attribute.Text;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::faq-page.faq-page'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiFaqFaq extends Struct.CollectionTypeSchema {
   collectionName: 'faqs';
   info: {
@@ -757,7 +788,17 @@ export interface ApiHomePageHomePage extends Struct.SingleTypeSchema {
     businessProblems: Schema.Attribute.Component<'hub.title-description', true>;
     businessProblemsHeading: Schema.Attribute.String;
     businessProblemsSubtext: Schema.Attribute.Text;
+    certificationsEmptyStateText: Schema.Attribute.Text;
     clientLogos: Schema.Attribute.Component<'home.client-logo', true>;
+    companyStats: Schema.Attribute.Component<'home.stat', true> &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMax<
+        {
+          max: 4;
+          min: 4;
+        },
+        number
+      >;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -767,6 +808,7 @@ export interface ApiHomePageHomePage extends Struct.SingleTypeSchema {
     >;
     deliveryApproachHeading: Schema.Attribute.String;
     deliveryApproachSubtext: Schema.Attribute.Text;
+    faqEmptyStateText: Schema.Attribute.Text;
     faqHeading: Schema.Attribute.String;
     faqHighlight: Schema.Attribute.String;
     faqSubtitle: Schema.Attribute.Text;
@@ -803,14 +845,7 @@ export interface ApiHomePageHomePage extends Struct.SingleTypeSchema {
     secondaryButtonText: Schema.Attribute.String;
     solutionModelsHeading: Schema.Attribute.String;
     solutionModelsSubtext: Schema.Attribute.Text;
-    stats: Schema.Attribute.Component<'home.stat', true> &
-      Schema.Attribute.SetMinMax<
-        {
-          max: 4;
-          min: 0;
-        },
-        number
-      >;
+    testimonialsEmptyStateText: Schema.Attribute.Text;
     testimonialsHeading: Schema.Attribute.String;
     testimonialsHighlight: Schema.Attribute.String;
     testimonialsSubtitle: Schema.Attribute.Text;
@@ -835,14 +870,6 @@ export interface ApiHomePageHomePage extends Struct.SingleTypeSchema {
       >;
     whyChooseHeading: Schema.Attribute.String;
     whyChooseHighlight: Schema.Attribute.String;
-    whyChooseStats: Schema.Attribute.Component<'home.stat', true> &
-      Schema.Attribute.SetMinMax<
-        {
-          max: 5;
-          min: 0;
-        },
-        number
-      >;
     whyChooseSubtitle: Schema.Attribute.Text;
     whyMetaphiHeading: Schema.Attribute.String;
     whyMetaphiPillars: Schema.Attribute.Component<
@@ -2231,6 +2258,7 @@ declare module '@strapi/strapi' {
       'api::compliance-page.compliance-page': ApiCompliancePageCompliancePage;
       'api::custom-solutions-hub.custom-solutions-hub': ApiCustomSolutionsHubCustomSolutionsHub;
       'api::default-cta-banner.default-cta-banner': ApiDefaultCtaBannerDefaultCtaBanner;
+      'api::faq-page.faq-page': ApiFaqPageFaqPage;
       'api::faq.faq': ApiFaqFaq;
       'api::home-page.home-page': ApiHomePageHomePage;
       'api::industries-hub.industries-hub': ApiIndustriesHubIndustriesHub;

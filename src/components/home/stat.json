@@ -3,18 +3,22 @@
   "info": {
     "displayName": "Stat",
     "icon": "connector",
-    "description": ""
+    "description": "Company stat with integer value and label"
   },
   "options": {},
   "attributes": {
+    "label": {
+      "type": "string",
+      "required": true
+    },
     "value": {
-      "type": "integer"
+      "type": "integer",
+      "required": true,
+      "min": 0
     },
     "suffix": {
-      "type": "string"
-    },
-    "label": {
-      "type": "string"
+      "type": "string",
+      "required": false
     }
   },
   "config": {}
