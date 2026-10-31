@@ -346,7 +346,13 @@ export interface HubChecklist extends Struct.ComponentSchema {
   };
   attributes: {
     heading: Schema.Attribute.String;
-    items: Schema.Attribute.Component<'hub.string-item', true>;
+    items: Schema.Attribute.Component<'hub.string-item', true> &
+      Schema.Attribute.SetMinMax<
+        {
+          max: 9;
+        },
+        number
+      >;
   };
 }
 
