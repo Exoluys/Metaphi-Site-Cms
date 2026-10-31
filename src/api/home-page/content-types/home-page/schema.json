@@ -81,6 +81,9 @@
     "trustHeading": {
       "type": "string"
     },
+    "trustHighlight": {
+      "type": "string"
+    },
     "trustSubtext": {
       "type": "text"
     },
@@ -92,6 +95,9 @@
     "businessProblemsHeading": {
       "type": "string"
     },
+    "businessProblemsHighlight": {
+      "type": "string"
+    },
     "businessProblemsSubtext": {
       "type": "text"
     },
@@ -101,6 +107,9 @@
       "component": "hub.title-description"
     },
     "solutionModelsHeading": {
+      "type": "string"
+    },
+    "solutionModelsHighlight": {
       "type": "string"
     },
     "solutionModelsSubtext": {
@@ -124,6 +133,9 @@
     "whyMetaphiHeading": {
       "type": "string"
     },
+    "whyMetaphiHighlight": {
+      "type": "string"
+    },
     "whyMetaphiSubtext": {
       "type": "text"
     },
@@ -133,6 +145,9 @@
       "component": "hub.title-description"
     },
     "deliveryApproachHeading": {
+      "type": "string"
+    },
+    "deliveryApproachHighlight": {
       "type": "string"
     },
     "deliveryApproachSubtext": {

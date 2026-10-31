@@ -787,6 +787,7 @@ export interface ApiHomePageHomePage extends Struct.SingleTypeSchema {
   attributes: {
     businessProblems: Schema.Attribute.Component<'hub.title-description', true>;
     businessProblemsHeading: Schema.Attribute.String;
+    businessProblemsHighlight: Schema.Attribute.String;
     businessProblemsSubtext: Schema.Attribute.Text;
     certificationsEmptyStateText: Schema.Attribute.Text;
     clientLogos: Schema.Attribute.Component<'home.client-logo', true>;
@@ -807,6 +808,7 @@ export interface ApiHomePageHomePage extends Struct.SingleTypeSchema {
       false
     >;
     deliveryApproachHeading: Schema.Attribute.String;
+    deliveryApproachHighlight: Schema.Attribute.String;
     deliveryApproachSubtext: Schema.Attribute.Text;
     faqEmptyStateText: Schema.Attribute.Text;
     faqHeading: Schema.Attribute.String;
@@ -836,6 +838,7 @@ export interface ApiHomePageHomePage extends Struct.SingleTypeSchema {
     >;
     secondaryButtonText: Schema.Attribute.String;
     solutionModelsHeading: Schema.Attribute.String;
+    solutionModelsHighlight: Schema.Attribute.String;
     solutionModelsSubtext: Schema.Attribute.Text;
     testimonialsCtaLabel: Schema.Attribute.String;
     testimonialsEmptyStateText: Schema.Attribute.Text;
@@ -845,6 +848,7 @@ export interface ApiHomePageHomePage extends Struct.SingleTypeSchema {
     trustedByHighlight: Schema.Attribute.String;
     trustedByText: Schema.Attribute.String;
     trustHeading: Schema.Attribute.String;
+    trustHighlight: Schema.Attribute.String;
     trustPills: Schema.Attribute.Component<'hub.string-item', true>;
     trustSubtext: Schema.Attribute.Text;
     updatedAt: Schema.Attribute.DateTime;
@@ -865,6 +869,7 @@ export interface ApiHomePageHomePage extends Struct.SingleTypeSchema {
     whyChooseHighlight: Schema.Attribute.String;
     whyChooseSubtitle: Schema.Attribute.Text;
     whyMetaphiHeading: Schema.Attribute.String;
+    whyMetaphiHighlight: Schema.Attribute.String;
     whyMetaphiPillars: Schema.Attribute.Component<
       'hub.title-description',
       true

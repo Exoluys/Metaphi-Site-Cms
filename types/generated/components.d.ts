@@ -424,6 +424,7 @@ export interface HubInfoBlock extends Struct.ComponentSchema {
   attributes: {
     ctaLabel: Schema.Attribute.String;
     heading: Schema.Attribute.String;
+    highlight: Schema.Attribute.String;
     secondaryCtaLabel: Schema.Attribute.String;
     subtext: Schema.Attribute.Text;
   };
