@@ -235,31 +235,6 @@ export default {
           strapi.log.info('[Bootstrap] Set trust bar help text on Trust Bar heading');
         }
       }
-      // Lock other-model-item title in Content Manager Layout
-      const OTHER_MODEL_HELP_TEXT = 'Fixed other model title. Immutable.';
-      const otherModelConfigRows = await strapi.db
-        .connection('strapi_core_store_settings')
-        .where({ key: 'plugin_content_manager_configuration_components::hub.other-model-item' })
-        .select('id', 'value');
-
-      if (otherModelConfigRows.length > 0) {
-        const config = JSON.parse(otherModelConfigRows[0].value);
-        if (config?.metadatas?.title?.edit?.editable !== false) {
-          config.metadatas = config.metadatas || {};
-          config.metadatas.title = config.metadatas.title || {};
-          config.metadatas.title.edit = {
-            ...config.metadatas.title.edit,
-            editable: false,
-            description: OTHER_MODEL_HELP_TEXT,
-          };
-          await strapi.db
-            .connection('strapi_core_store_settings')
-            .where({ id: otherModelConfigRows[0].id })
-            .update({ value: JSON.stringify(config) });
-          strapi.log.info('[Bootstrap] Set locked title on hub.other-model-item');
-        }
-      }
-
       // ── 6. Enforce Minimum 1 Published Testimonial & FAQ Guard ──────
       strapi.documents.use(async (ctx: any, next: any) => {
         const { action, uid } = ctx;
@@ -323,19 +298,24 @@ export default {
           }
         }
 
-        // ── 8. Enforce locked titles on saas-products-hub otherModels ──
-        if (uid === 'api::saas-products-hub.saas-products-hub' && (action === 'update' || action === 'create')) {
-          const LOCKED_OTHER_TITLES = [
-            'Need substantial tailoring?',
-            'Building something strategically unique?',
-          ];
-          const items = ctx.params?.data?.otherModels?.items;
-          if (Array.isArray(items)) {
-            items.forEach((item: any, idx: number) => {
-              if (item && LOCKED_OTHER_TITLES[idx]) {
-                item.title = LOCKED_OTHER_TITLES[idx];
-              }
+        // ── 8. Enforce fixed names on Stockiphi & Taskiphi solutions ──
+        if (uid === 'api::solution.solution' && (action === 'update' || action === 'create')) {
+          const FIXED_SAAS_NAMES: Record<string, string> = {
+            stockiphi: 'Stockiphi',
+            taskiphi: 'Taskiphi',
+          };
+          let slug = ctx.params?.data?.slug;
+          if (!slug && ctx.params?.documentId) {
+            const existing = await strapi.documents('api::solution.solution').findOne({
+              documentId: ctx.params.documentId,
+              fields: ['slug'],
             });
+            slug = existing?.slug;
+          }
+          if (slug && FIXED_SAAS_NAMES[slug]) {
+            if (ctx.params?.data && ctx.params.data.title !== undefined) {
+              ctx.params.data.title = FIXED_SAAS_NAMES[slug];
+            }
           }
         }
 
