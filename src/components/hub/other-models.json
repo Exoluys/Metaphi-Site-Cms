@@ -13,7 +13,7 @@
     "items": {
       "type": "component",
       "repeatable": true,
-      "component": "hub.title-description",
+      "component": "hub.other-model-item",
       "min": 2,
       "max": 2
     }

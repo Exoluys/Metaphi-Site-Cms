@@ -235,6 +235,31 @@ export default {
           strapi.log.info('[Bootstrap] Set trust bar help text on Trust Bar heading');
         }
       }
+      // Lock other-model-item title in Content Manager Layout
+      const OTHER_MODEL_HELP_TEXT = 'Fixed other model title. Immutable.';
+      const otherModelConfigRows = await strapi.db
+        .connection('strapi_core_store_settings')
+        .where({ key: 'plugin_content_manager_configuration_components::hub.other-model-item' })
+        .select('id', 'value');
+
+      if (otherModelConfigRows.length > 0) {
+        const config = JSON.parse(otherModelConfigRows[0].value);
+        if (config?.metadatas?.title?.edit?.editable !== false) {
+          config.metadatas = config.metadatas || {};
+          config.metadatas.title = config.metadatas.title || {};
+          config.metadatas.title.edit = {
+            ...config.metadatas.title.edit,
+            editable: false,
+            description: OTHER_MODEL_HELP_TEXT,
+          };
+          await strapi.db
+            .connection('strapi_core_store_settings')
+            .where({ id: otherModelConfigRows[0].id })
+            .update({ value: JSON.stringify(config) });
+          strapi.log.info('[Bootstrap] Set locked title on hub.other-model-item');
+        }
+      }
+
       // ── 6. Enforce Minimum 1 Published Testimonial & FAQ Guard ──────
       strapi.documents.use(async (ctx: any, next: any) => {
         const { action, uid } = ctx;
@@ -295,6 +320,22 @@ export default {
                 throw new Error(`companyStats[${i}].value must be a non-negative integer (min 0). Received: ${item.value}`);
               }
             }
+          }
+        }
+
+        // ── 8. Enforce locked titles on saas-products-hub otherModels ──
+        if (uid === 'api::saas-products-hub.saas-products-hub' && (action === 'update' || action === 'create')) {
+          const LOCKED_OTHER_TITLES = [
+            'Need substantial tailoring?',
+            'Building something strategically unique?',
+          ];
+          const items = ctx.params?.data?.otherModels?.items;
+          if (Array.isArray(items)) {
+            items.forEach((item: any, idx: number) => {
+              if (item && LOCKED_OTHER_TITLES[idx]) {
+                item.title = LOCKED_OTHER_TITLES[idx];
+              }
+            });
           }
         }
 

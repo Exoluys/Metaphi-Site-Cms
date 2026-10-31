@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_hub_other_model_items",
+  "info": {
+    "displayName": "Other Model Item",
+    "icon": "layer",
+    "description": "Fixed other model item for SaaS hub"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "required": false
+    }
+  }
+}

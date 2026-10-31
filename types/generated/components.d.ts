@@ -460,6 +460,19 @@ export interface HubLinkItem extends Struct.ComponentSchema {
   };
 }
 
+export interface HubOtherModelItem extends Struct.ComponentSchema {
+  collectionName: 'components_hub_other_model_items';
+  info: {
+    description: 'Fixed other model item for SaaS hub';
+    displayName: 'Other Model Item';
+    icon: 'layer';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
 export interface HubOtherModels extends Struct.ComponentSchema {
   collectionName: 'components_hub_other_models';
   info: {
@@ -469,7 +482,7 @@ export interface HubOtherModels extends Struct.ComponentSchema {
   };
   attributes: {
     heading: Schema.Attribute.String;
-    items: Schema.Attribute.Component<'hub.title-description', true> &
+    items: Schema.Attribute.Component<'hub.other-model-item', true> &
       Schema.Attribute.SetMinMax<
         {
           max: 2;
@@ -1011,6 +1024,7 @@ declare module '@strapi/strapi' {
       'hub.how-to-choose': HubHowToChoose;
       'hub.info-block': HubInfoBlock;
       'hub.link-item': HubLinkItem;
+      'hub.other-model-item': HubOtherModelItem;
       'hub.other-models': HubOtherModels;
       'hub.portfolio-item': HubPortfolioItem;
       'hub.process-flow': HubProcessFlow;

@@ -63,6 +63,7 @@ Before deploying to production (e.g. Railway, Render, DigitalOcean):
      - `plugin_content_manager_configuration_content_types::api::industry.industry`: `slug` (locked: `editable: false`, description: `"Automatically generated from title on creation. Never typed, immutable."`)
      - `plugin_content_manager_configuration_components::hub.solution-model`: `title` (locked: `editable: false`, description: `"Fixed solution type name. Immutable."`)
      - `plugin_content_manager_configuration_components::hub.how-to-choose`: `customRuleTitle`, `readyRuleTitle`, `saasRuleTitle` (locked: `editable: false`, description: `"Fixed decision title. Immutable."`)
+     - `plugin_content_manager_configuration_components::hub.other-model-item`: `title` (locked: `editable: false`, description: `"Fixed other model title. Immutable."`)
    - **How to carry these settings to hosted Strapi on deployment**:
      - Option A (Automatic on bootstrap): `src/index.ts` automatically runs on Strapi server start and ensures `editable: false` and description metadata are populated in `strapi_core_store_settings`.
      - Option B (Seed script): Running `node scripts/seed-metaphi-content.cjs` seeds canonical values (`Custom Solutions`, `Ready-to-Configure Solutions`, `SaaS Products`, and `Choose ...` rule titles).
@@ -97,4 +98,13 @@ Before deploying to production (e.g. Railway, Render, DigitalOcean):
          '{"label":"saasRuleTitle","description":"Fixed decision title. Immutable.","placeholder":"","visible":true,"editable":false}'::jsonb
        )::text
        WHERE key = 'plugin_content_manager_configuration_components::hub.how-to-choose';
+
+       -- Lock SaaS other-model-item title
+       UPDATE strapi_core_store_settings
+       SET value = jsonb_set(
+         value::jsonb,
+         '{metadatas,title,edit}',
+         '{"label":"title","description":"Fixed other model title. Immutable.","placeholder":"","visible":true,"editable":false}'::jsonb
+       )::text
+       WHERE key = 'plugin_content_manager_configuration_components::hub.other-model-item';
        ```
