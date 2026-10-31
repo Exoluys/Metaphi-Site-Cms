@@ -1022,6 +1022,7 @@ export interface ApiLifeAtMetaphiPageLifeAtMetaphiPage
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    emptyStateText: Schema.Attribute.Text;
     finalCta: Schema.Attribute.Component<'hub.final-cta', false>;
     heroEyebrow: Schema.Attribute.String;
     heroHeading: Schema.Attribute.String & Schema.Attribute.Required;
@@ -1203,6 +1204,7 @@ export interface ApiRewardsPageRewardsPage extends Struct.SingleTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    emptyStateText: Schema.Attribute.Text;
     finalCta: Schema.Attribute.Component<'hub.final-cta', false>;
     heroEyebrow: Schema.Attribute.String;
     heroHeading: Schema.Attribute.String & Schema.Attribute.Required;
@@ -1659,6 +1661,7 @@ export interface ApiWhyJoinUsPageWhyJoinUsPage extends Struct.SingleTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    emptyStateText: Schema.Attribute.Text;
     finalCta: Schema.Attribute.Component<'hub.final-cta', false>;
     heroEyebrow: Schema.Attribute.String;
     heroHeading: Schema.Attribute.String & Schema.Attribute.Required;

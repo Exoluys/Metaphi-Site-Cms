@@ -44,6 +44,10 @@
       "type": "component",
       "repeatable": false,
       "component": "hub.final-cta"
+    },
+    "emptyStateText": {
+      "type": "text",
+      "required": false
     }
   }
 }
