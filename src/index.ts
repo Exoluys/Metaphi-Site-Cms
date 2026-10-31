@@ -319,6 +319,35 @@ export default {
           }
         }
 
+        // ── 9. Enforce fixed names on 10 Canonical Industries ─────────
+        if (uid === 'api::industry.industry' && (action === 'update' || action === 'create')) {
+          const CANONICAL_INDUSTRY_TITLES: Record<string, string> = {
+            'manufacturing': 'Manufacturing',
+            'healthcare': 'Healthcare & Diagnostics',
+            'logistics': 'Logistics & 3PL',
+            'finance': 'Financial Services & FinTech',
+            'professional-services': 'Professional Services',
+            'retail-and-ecommerce': 'Retail & Ecommerce',
+            'consumer-platforms-and-marketplaces': 'Consumer Platforms & Marketplaces',
+            'associations-and-communities': 'Associations & Communities',
+            'education': 'Education & Training',
+            'government-and-public-sector': 'Government & Public Sector',
+          };
+          let slug = ctx.params?.data?.slug;
+          if (!slug && ctx.params?.documentId) {
+            const existing = await strapi.documents('api::industry.industry').findOne({
+              documentId: ctx.params.documentId,
+              fields: ['slug'],
+            });
+            slug = existing?.slug;
+          }
+          if (slug && CANONICAL_INDUSTRY_TITLES[slug]) {
+            if (ctx.params?.data && ctx.params.data.title !== undefined) {
+              ctx.params.data.title = CANONICAL_INDUSTRY_TITLES[slug];
+            }
+          }
+        }
+
         return next();
       });
     } catch (err: any) {

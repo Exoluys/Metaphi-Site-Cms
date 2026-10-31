@@ -3,6 +3,19 @@ import { errors } from '@strapi/utils';
 
 declare const strapi: any;
 
+export const CANONICAL_INDUSTRY_TITLES: Record<string, string> = {
+  'manufacturing': 'Manufacturing',
+  'healthcare': 'Healthcare & Diagnostics',
+  'logistics': 'Logistics & 3PL',
+  'finance': 'Financial Services & FinTech',
+  'professional-services': 'Professional Services',
+  'retail-and-ecommerce': 'Retail & Ecommerce',
+  'consumer-platforms-and-marketplaces': 'Consumer Platforms & Marketplaces',
+  'associations-and-communities': 'Associations & Communities',
+  'education': 'Education & Training',
+  'government-and-public-sector': 'Government & Public Sector',
+};
+
 async function resolveExistingIndustry(where: any, data: any): Promise<{ id?: number; documentId?: string; slug?: string } | null> {
   let doc: any = null;
 
@@ -113,6 +126,12 @@ export default {
     const existing = await resolveExistingIndustry(where, data);
     if (existing?.slug) {
       data.slug = existing.slug;
+    }
+
+    // Lock canonical industry names
+    const resolvedSlug = data.slug || existing?.slug;
+    if (resolvedSlug && CANONICAL_INDUSTRY_TITLES[resolvedSlug]) {
+      data.title = CANONICAL_INDUSTRY_TITLES[resolvedSlug];
     }
   },
 };
