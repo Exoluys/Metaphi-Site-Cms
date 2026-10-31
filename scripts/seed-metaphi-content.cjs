@@ -299,12 +299,8 @@ async function seed() {
             title: ind.title,
             slug: ind.slug,
             order: ind.order,
-            featuredOnHub: true,
-            hubTitle: ind.hubTitle,
-            hubSummary: ind.hubSummary,
-            hubOrder: ind.order,
-            ctaLabel: 'Explore Your Industry',
-                      },
+            summary: ind.hubSummary,
+          },
           status: 'published'
         });
         seededIndustryDocIds.push(created.documentId);
@@ -315,12 +311,8 @@ async function seed() {
           data: {
             title: ind.title,
             order: ind.order,
-            featuredOnHub: true,
-            hubTitle: ind.hubTitle,
-            hubSummary: ind.hubSummary,
-            hubOrder: ind.order,
-            ctaLabel: 'Explore Your Industry',
-                      },
+            summary: ind.hubSummary,
+          },
           status: 'published'
         });
         seededIndustryDocIds.push(existing.documentId);

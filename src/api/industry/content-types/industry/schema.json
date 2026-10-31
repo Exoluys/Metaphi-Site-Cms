@@ -4,7 +4,7 @@
   "info": {
     "singularName": "industry",
     "pluralName": "industries",
-    "displayName": "Industry",
+    "displayName": "Industries",
     "description": "CMS-driven industries for MetaPhi"
   },
   "options": {
@@ -36,23 +36,6 @@
       "type": "integer",
       "default": 0,
       "min": 0
-    },
-    "featuredOnHub": {
-      "type": "boolean",
-      "default": false
-    },
-    "hubTitle": {
-      "type": "string"
-    },
-    "hubSummary": {
-      "type": "text"
-    },
-    "hubOrder": {
-      "type": "integer"
-    },
-    "ctaLabel": {
-      "type": "string",
-      "default": "Book a consultation"
     },
     "lastReviewedDate": {
       "type": "date"
@@ -112,11 +95,6 @@
       "type": "component",
       "repeatable": false,
       "component": "industry-page.cta-banner"
-    },
-    "seo": {
-      "type": "component",
-      "repeatable": false,
-      "component": "shared.seo"
     }
   }
 }

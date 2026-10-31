@@ -921,7 +921,7 @@ export interface ApiIndustryIndustry extends Struct.CollectionTypeSchema {
   collectionName: 'industries';
   info: {
     description: 'CMS-driven industries for MetaPhi';
-    displayName: 'Industry';
+    displayName: 'Industries';
     pluralName: 'industries';
     singularName: 'industry';
   };
@@ -945,13 +945,7 @@ export interface ApiIndustryIndustry extends Struct.CollectionTypeSchema {
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     ctaBanner: Schema.Attribute.Component<'industry-page.cta-banner', false>;
-    ctaLabel: Schema.Attribute.String &
-      Schema.Attribute.DefaultTo<'Book a consultation'>;
-    featuredOnHub: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
     heroImage: Schema.Attribute.Media<'images'>;
-    hubOrder: Schema.Attribute.Integer;
-    hubSummary: Schema.Attribute.Text;
-    hubTitle: Schema.Attribute.String;
     lastReviewedDate: Schema.Attribute.Date;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
@@ -972,7 +966,6 @@ export interface ApiIndustryIndustry extends Struct.CollectionTypeSchema {
       'manyToMany',
       'api::reviewer.reviewer'
     >;
-    seo: Schema.Attribute.Component<'shared.seo', false>;
     servicesSection: Schema.Attribute.Component<
       'industry-page.services-section',
       false
