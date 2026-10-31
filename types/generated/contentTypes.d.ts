@@ -877,6 +877,9 @@ export interface ApiHomePageHomePage extends Struct.SingleTypeSchema {
       true
     >;
     whyMetaphiSubtext: Schema.Attribute.Text;
+    workShowcaseHeading: Schema.Attribute.String;
+    workShowcaseHighlight: Schema.Attribute.String;
+    workShowcaseIntro: Schema.Attribute.Text;
   };
 }
 

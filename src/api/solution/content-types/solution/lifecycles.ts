@@ -25,3 +25,4 @@ export default {
     enforceFixedSaasNames(data, where);
   },
 };
+
