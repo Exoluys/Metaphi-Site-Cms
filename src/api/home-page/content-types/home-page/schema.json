@@ -118,16 +118,6 @@
       "repeatable": false,
       "component": "hub.info-block"
     },
-    "featuredCaseStudiesSection": {
-      "type": "component",
-      "repeatable": false,
-      "component": "hub.info-block"
-    },
-    "featuredCaseStudies": {
-      "type": "component",
-      "repeatable": true,
-      "component": "hub.featured-case-study"
-    },
     "whyMetaphiHeading": {
       "type": "string"
     },

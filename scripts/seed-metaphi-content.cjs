@@ -733,17 +733,6 @@ async function seed() {
         subtext: 'Where we have already solved similar operational problems, Metaphi can begin with a reusable solution foundation and configure it around your workflows, integrations and operating model.',
         ctaLabel: 'View Ready-to-Configure Solutions',
               },
-      featuredCaseStudiesSection: {
-        heading: 'Proof through execution.',
-        subtext: 'Explore how we have translated complex operational and digital requirements into working business platforms.',
-        ctaLabel: 'Explore All Case Studies',
-              },
-      featuredCaseStudies: [
-        { title: 'Agrochemical Manufacturing Digital Transformation', blurb: 'Connecting core workflows across a growing manufacturing business.' },
-        { title: 'Food Testing Laboratory Information Management System', blurb: 'Digitising the laboratory lifecycle from sample registration to reporting.' },
-        { title: 'Capital Markets Partner & Branch Management Platform', blurb: 'Creating a connected operating platform for partner-led financial services.' },
-        { title: 'Metal Industry B2B Marketplace', blurb: 'Engineering a digital marketplace connecting buyers and sellers in a specialised industrial ecosystem.' }
-      ],
       whyMetaphiHeading: 'A technology partner—not another development vendor.',
       whyMetaphiSubtext: 'We partner with growing businesses and enterprise teams who need more than extra development hands.',
       whyMetaphiPillars: [

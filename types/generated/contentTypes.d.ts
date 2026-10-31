@@ -812,14 +812,6 @@ export interface ApiHomePageHomePage extends Struct.SingleTypeSchema {
     faqHeading: Schema.Attribute.String;
     faqHighlight: Schema.Attribute.String;
     faqSubtitle: Schema.Attribute.Text;
-    featuredCaseStudies: Schema.Attribute.Component<
-      'hub.featured-case-study',
-      true
-    >;
-    featuredCaseStudiesSection: Schema.Attribute.Component<
-      'hub.info-block',
-      false
-    >;
     finalCta: Schema.Attribute.Component<'hub.final-cta', false>;
     heroDescription: Schema.Attribute.Text;
     heroHighlight: Schema.Attribute.String;

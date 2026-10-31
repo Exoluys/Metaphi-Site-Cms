@@ -379,23 +379,6 @@ export interface HubComparisonRow extends Struct.ComponentSchema {
   };
 }
 
-export interface HubFeaturedCaseStudy extends Struct.ComponentSchema {
-  collectionName: 'components_hub_featured_case_studies';
-  info: {
-    description: 'Featured case study blurb card on homepage';
-    displayName: 'Featured Case Study Card';
-    icon: 'file';
-  };
-  attributes: {
-    blurb: Schema.Attribute.Text;
-    caseStudy: Schema.Attribute.Relation<
-      'oneToOne',
-      'api::case-study.case-study'
-    >;
-    title: Schema.Attribute.String & Schema.Attribute.Required;
-  };
-}
-
 export interface HubFinalCta extends Struct.ComponentSchema {
   collectionName: 'components_hub_final_ctas';
   info: {
@@ -1019,7 +1002,6 @@ declare module '@strapi/strapi' {
       'hub.checklist': HubChecklist;
       'hub.comparison-matrix': HubComparisonMatrix;
       'hub.comparison-row': HubComparisonRow;
-      'hub.featured-case-study': HubFeaturedCaseStudy;
       'hub.final-cta': HubFinalCta;
       'hub.how-to-choose': HubHowToChoose;
       'hub.info-block': HubInfoBlock;
