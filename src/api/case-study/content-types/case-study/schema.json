@@ -94,12 +94,6 @@
       "target": "api::service.service",
       "inversedBy": "caseStudiesList"
     },
-    "industries": {
-      "type": "relation",
-      "relation": "manyToMany",
-      "target": "api::industry.industry",
-      "inversedBy": "caseStudies"
-    },
     "solutions": {
       "type": "relation",
       "relation": "manyToMany",

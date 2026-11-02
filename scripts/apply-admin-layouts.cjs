@@ -90,32 +90,10 @@ const industryLayout = {
     [{ name: 'slug', size: 12 }],
     [{ name: 'summary', size: 12 }],
     [{ name: 'heroImage', size: 12 }],
-    [{ name: 'ctaLabel', size: 6 }, { name: 'ctaLink', size: 6 }],
-    [{ name: 'lastReviewedDate', size: 6 }],
-    [{ name: 'reviewers', size: 12 }],
-    [{ name: 'trustBar', size: 12 }],
-    [{ name: 'clientLogos', size: 12 }],
-    [{ name: 'stats', size: 12 }],
-    [{ name: 'challengesSection', size: 12 }],
-    [{ name: 'caseStudiesSection', size: 12 }],
-    [{ name: 'solutionsSection', size: 12 }],
-    [{ name: 'servicesSection', size: 12 }],
-    [{ name: 'verticalsSection', size: 12 }],
-    [{ name: 'techStackSection', size: 12 }],
-    [{ name: 'ctaBanner', size: 12 }],
-    [{ name: 'caseStudies', size: 12 }],
-    [{ name: 'seo', size: 12 }],
   ],
 };
 
-const trustBarComponentLayout = {
-  key: 'plugin_content_manager_configuration_components::industry-page.trust-bar',
-  editRows: [
-    [{ name: 'heading', size: 12 }],
-  ],
-};
-
-const layouts = [serviceLayout, serviceCategoryLayout, caseStudyLayout, industryLayout, trustBarComponentLayout];
+const layouts = [serviceLayout, serviceCategoryLayout, caseStudyLayout, industryLayout];
 
 // ─── Helpers ─────────────────────────────────────────────────────────────────
 

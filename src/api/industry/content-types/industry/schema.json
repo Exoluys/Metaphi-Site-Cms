@@ -36,65 +36,6 @@
       "type": "integer",
       "required": true,
       "min": 1
-    },
-    "lastReviewedDate": {
-      "type": "date"
-    },
-    "reviewers": {
-      "type": "relation",
-      "relation": "manyToMany",
-      "target": "api::reviewer.reviewer"
-    },
-    "trustBar": {
-      "type": "component",
-      "repeatable": false,
-      "component": "industry-page.trust-bar"
-    },
-    "stats": {
-      "type": "component",
-      "repeatable": true,
-      "component": "industry-page.stat-item"
-    },
-    "challengesSection": {
-      "type": "component",
-      "repeatable": false,
-      "component": "industry-page.challenges-section"
-    },
-    "caseStudiesSection": {
-      "type": "component",
-      "repeatable": false,
-      "component": "industry-page.case-studies-section"
-    },
-    "caseStudies": {
-      "type": "relation",
-      "relation": "manyToMany",
-      "target": "api::case-study.case-study",
-      "mappedBy": "industries"
-    },
-    "solutionsSection": {
-      "type": "component",
-      "repeatable": false,
-      "component": "industry-page.solutions-section"
-    },
-    "servicesSection": {
-      "type": "component",
-      "repeatable": false,
-      "component": "industry-page.services-section"
-    },
-    "verticalsSection": {
-      "type": "component",
-      "repeatable": false,
-      "component": "industry-page.verticals-section"
-    },
-    "techStackSection": {
-      "type": "component",
-      "repeatable": false,
-      "component": "industry-page.tech-stack-section"
-    },
-    "ctaBanner": {
-      "type": "component",
-      "repeatable": false,
-      "component": "industry-page.cta-banner"
     }
   }
 }

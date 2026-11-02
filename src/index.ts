@@ -187,11 +187,7 @@ export default {
         }
       }
 
-      // ── 5. Ensure Trust Bar help text is set in Admin Content Manager ──
-      const TRUST_BAR_HELP_TEXT =
-        'Add at least one client logo. If no logos are added, the trust bar will not be shown on the page.';
-
-      // Industry Content Type (clientLogos & order field)
+      // ── 5. Ensure Order hint is set on Industry in Admin Content Manager ──
       const industryConfigRows = await strapi.db
         .connection('strapi_core_store_settings')
         .where({ key: 'plugin_content_manager_configuration_content_types::api::industry.industry' })
@@ -200,18 +196,6 @@ export default {
       if (industryConfigRows.length > 0) {
         const config = JSON.parse(industryConfigRows[0].value);
         let updated = false;
-
-        if (config?.metadatas?.clientLogos?.edit?.description !== TRUST_BAR_HELP_TEXT) {
-          config.metadatas = config.metadatas || {};
-          config.metadatas.clientLogos = config.metadatas.clientLogos || {};
-          config.metadatas.clientLogos.edit = {
-            ...config.metadatas.clientLogos.edit,
-            description: TRUST_BAR_HELP_TEXT,
-          };
-          updated = true;
-          strapi.log.info('[Bootstrap] Set trust bar help text on Industry clientLogos');
-        }
-
         const ORDER_HINT = 'Lower number shows first. Navbar and footer show the first 10; the Industries page shows all.';
         if (config?.metadatas?.order?.edit?.description !== ORDER_HINT) {
           config.metadatas = config.metadatas || {};
@@ -223,35 +207,11 @@ export default {
           updated = true;
           strapi.log.info('[Bootstrap] Set order hint on Industry order field');
         }
-
         if (updated) {
           await strapi.db
             .connection('strapi_core_store_settings')
             .where({ id: industryConfigRows[0].id })
             .update({ value: JSON.stringify(config) });
-        }
-      }
-
-      // Trust Bar Component (heading field)
-      const trustBarConfigRows = await strapi.db
-        .connection('strapi_core_store_settings')
-        .where({ key: 'plugin_content_manager_configuration_components::industry-page.trust-bar' })
-        .select('id', 'value');
-
-      if (trustBarConfigRows.length > 0) {
-        const config = JSON.parse(trustBarConfigRows[0].value);
-        if (config?.metadatas?.heading?.edit?.description !== TRUST_BAR_HELP_TEXT) {
-          config.metadatas = config.metadatas || {};
-          config.metadatas.heading = config.metadatas.heading || {};
-          config.metadatas.heading.edit = {
-            ...config.metadatas.heading.edit,
-            description: TRUST_BAR_HELP_TEXT,
-          };
-          await strapi.db
-            .connection('strapi_core_store_settings')
-            .where({ id: trustBarConfigRows[0].id })
-            .update({ value: JSON.stringify(config) });
-          strapi.log.info('[Bootstrap] Set trust bar help text on Trust Bar heading');
         }
       }
       // ── 6. Enforce Minimum 1 Published Testimonial & FAQ Guard ──────
