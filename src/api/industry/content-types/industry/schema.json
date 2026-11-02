@@ -36,6 +36,12 @@
       "type": "integer",
       "required": true,
       "min": 1
+    },
+    "solutions": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::solution.solution",
+      "inversedBy": "industries"
     }
   }
 }

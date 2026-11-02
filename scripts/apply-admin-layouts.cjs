@@ -90,10 +90,23 @@ const industryLayout = {
     [{ name: 'slug', size: 12 }],
     [{ name: 'summary', size: 12 }],
     [{ name: 'heroImage', size: 12 }],
+    [{ name: 'solutions', size: 12 }],
   ],
 };
 
-const layouts = [serviceLayout, serviceCategoryLayout, caseStudyLayout, industryLayout];
+const solutionLayout = {
+  key: 'plugin_content_manager_configuration_content_types::api::solution.solution',
+  editRows: [
+    [{ name: 'title', size: 6 }, { name: 'slug', size: 6 }],
+    [{ name: 'modelType', size: 6 }, { name: 'summary', size: 6 }],
+    [{ name: 'order', size: 4 }, { name: 'featuredOnHome', size: 4 }],
+    [{ name: 'homeTitle', size: 6 }, { name: 'homeSummary', size: 6 }],
+    [{ name: 'ctaLabel', size: 6 }],
+    [{ name: 'industries', size: 12 }],
+  ],
+};
+
+const layouts = [serviceLayout, serviceCategoryLayout, caseStudyLayout, industryLayout, solutionLayout];
 
 // ─── Helpers ─────────────────────────────────────────────────────────────────
 

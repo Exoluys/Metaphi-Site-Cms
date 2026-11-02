@@ -107,3 +107,11 @@ Before deploying to production (e.g. Railway, Render, DigitalOcean):
 6. **Repeatable Component Fixed Count Validation Rules**:
    - `home-page` (`companyStats`): Exactly 4 items required (`min: 4`, `max: 4`). Enforced in schema and Document Service middleware (`src/index.ts`).
    - `industries-hub` (`transformationThemes.items`): Exactly 9 items required. Enforced in lifecycle hook (`src/api/industries-hub/content-types/industries-hub/lifecycles.ts`) and Document Service middleware (`src/index.ts`).
+
+7. **Industry <-> Solution Many-to-Many Relation**:
+   - `Industry` has a bidirectional manyToMany relation to `Solution` (`Industry.solutions` <-> `Solution.industries`, with `mappedBy: "solutions"` on Solution and `inversedBy: "industries"` on Industry).
+   - Admin content manager layouts for both types expose the relationship field full-width (`size: 12`).
+   - The `industries-hub` single type provides two CMS-editable headings:
+     - `relatedSolutionsHeading`: Heading for linked solutions block on industry detail pages (e.g. `"Related Solutions"`).
+     - `servedIndustriesHeading`: Heading for linked industries block on solution detail pages (e.g. `"Industries We Serve"`).
+   - Rendering Rule: If nothing is linked or headings are empty, no section, heading, gap, or empty DOM element is rendered. Only published entries are rendered.

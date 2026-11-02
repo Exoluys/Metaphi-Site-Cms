@@ -904,8 +904,10 @@ export interface ApiIndustriesHubIndustriesHub extends Struct.SingleTypeSchema {
       Schema.Attribute.Private;
     proof: Schema.Attribute.Component<'hub.proof-block', false>;
     publishedAt: Schema.Attribute.DateTime;
+    relatedSolutionsHeading: Schema.Attribute.String;
     relevantSolutions: Schema.Attribute.Component<'hub.info-block', false>;
     resources: Schema.Attribute.Component<'hub.info-block', false>;
+    servedIndustriesHeading: Schema.Attribute.String;
     transformationThemes: Schema.Attribute.Component<'hub.checklist', false>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -945,6 +947,10 @@ export interface ApiIndustryIndustry extends Struct.CollectionTypeSchema {
       >;
     publishedAt: Schema.Attribute.DateTime;
     slug: Schema.Attribute.UID<'title'> & Schema.Attribute.Required;
+    solutions: Schema.Attribute.Relation<
+      'manyToMany',
+      'api::solution.solution'
+    >;
     summary: Schema.Attribute.Text;
     title: Schema.Attribute.String & Schema.Attribute.Required;
     updatedAt: Schema.Attribute.DateTime;

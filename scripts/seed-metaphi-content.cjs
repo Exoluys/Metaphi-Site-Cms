@@ -658,7 +658,9 @@ async function seed() {
         heading: 'Discuss Your Industry Technology Initiative',
         subtext: 'Whether you need a custom platform, a configurable solution or strategic engineering support, our team is ready to discuss your initiative.',
         ctaLabel: 'Discuss Your Industry Technology Initiative',
-              }
+      },
+      relatedSolutionsHeading: 'Related Solutions',
+      servedIndustriesHeading: 'Industries We Serve'
     };
 
     const exIndHub = await app.documents('api::industries-hub.industries-hub').findFirst({});
