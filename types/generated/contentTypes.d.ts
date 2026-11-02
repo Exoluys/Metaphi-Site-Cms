@@ -542,10 +542,6 @@ export interface ApiCaseStudyCaseStudy extends Struct.CollectionTypeSchema {
       'case-study.impact-section',
       false
     >;
-    industries: Schema.Attribute.Relation<
-      'manyToMany',
-      'api::industry.industry'
-    >;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -929,24 +925,10 @@ export interface ApiIndustryIndustry extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
-    caseStudies: Schema.Attribute.Relation<
-      'manyToMany',
-      'api::case-study.case-study'
-    >;
-    caseStudiesSection: Schema.Attribute.Component<
-      'industry-page.case-studies-section',
-      false
-    >;
-    challengesSection: Schema.Attribute.Component<
-      'industry-page.challenges-section',
-      false
-    >;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    ctaBanner: Schema.Attribute.Component<'industry-page.cta-banner', false>;
     heroImage: Schema.Attribute.Media<'images'>;
-    lastReviewedDate: Schema.Attribute.Date;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -962,34 +944,12 @@ export interface ApiIndustryIndustry extends Struct.CollectionTypeSchema {
         number
       >;
     publishedAt: Schema.Attribute.DateTime;
-    reviewers: Schema.Attribute.Relation<
-      'manyToMany',
-      'api::reviewer.reviewer'
-    >;
-    servicesSection: Schema.Attribute.Component<
-      'industry-page.services-section',
-      false
-    >;
     slug: Schema.Attribute.UID<'title'> & Schema.Attribute.Required;
-    solutionsSection: Schema.Attribute.Component<
-      'industry-page.solutions-section',
-      false
-    >;
-    stats: Schema.Attribute.Component<'industry-page.stat-item', true>;
     summary: Schema.Attribute.Text;
-    techStackSection: Schema.Attribute.Component<
-      'industry-page.tech-stack-section',
-      false
-    >;
     title: Schema.Attribute.String & Schema.Attribute.Required;
-    trustBar: Schema.Attribute.Component<'industry-page.trust-bar', false>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    verticalsSection: Schema.Attribute.Component<
-      'industry-page.verticals-section',
-      false
-    >;
   };
 }
 
