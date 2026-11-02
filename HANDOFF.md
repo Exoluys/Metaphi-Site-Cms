@@ -120,3 +120,14 @@ Before deploying to production (e.g. Railway, Render, DigitalOcean):
      - `relatedSolutionsHeading`: Heading for linked solutions block on industry detail pages (e.g. `"Related Solutions"`).
      - `servedIndustriesHeading`: Heading for linked industries block on solution detail pages (e.g. `"Industries We Serve"`).
    - Rendering Rule: If nothing is linked or headings are empty, no section, heading, gap, or empty DOM element is rendered. Only published entries are rendered.
+
+8. **CMS Outage Graceful Degradation & Unavailable Fallbacks**:
+   - Dedicated component: <CmsUnavailable /> (metaphi/app/components/ui/CmsUnavailable.tsx).
+   - Standard user message: "We couldn't load this page right now. Please wait a moment and reload." with a Reload button (window.location.reload()) and a link to Home (/).
+   - When Strapi is unreachable or returns a 5xx error:
+     - Pages render <CmsUnavailable /> in the page body instead of empty middle sections, mock strings, or 404s.
+     - Failed fetches throw CmsUnavailableError and are never cached as valid responses. Successful fetches maintain 60s revalidation.
+     - Detail routes (/solutions/*/[slug], /industries/[slug], /work/[slug]) differentiate outages from missing items: Strapi outage displays <CmsUnavailable />; missing slug when Strapi is responsive triggers 
+otFound().
+     - Navbar & Footer: When CMS items fail to load, the Industries dropdown converts cleanly to a direct link /industries, and footer columns omit empty categories without leaving gaps.
+     - When Strapi recovers, pages reload and render full content immediately without rebuilding Next.js.
