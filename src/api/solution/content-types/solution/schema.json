@@ -52,11 +52,6 @@
     },
     "ctaLabel": {
       "type": "string"
-    },
-    "industries": {
-      "type": "relation",
-      "relation": "manyToMany",
-      "target": "api::industry.industry"
     }
   }
 }
