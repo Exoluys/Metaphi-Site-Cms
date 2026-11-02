@@ -317,6 +317,23 @@ export default {
           }
         }
 
+        // ── 7b. Enforce transformationThemes on industries-hub ─────────
+        if (uid === 'api::industries-hub.industries-hub' && (action === 'update' || action === 'create')) {
+          const tt = ctx.params?.data?.transformationThemes;
+          if (tt && tt.items !== undefined) {
+            const items = tt.items;
+            if (!Array.isArray(items) || items.length !== 9) {
+              throw new Error(`transformationThemes.items must contain exactly 9 items. Received ${Array.isArray(items) ? items.length : typeof items}.`);
+            }
+            for (let i = 0; i < items.length; i++) {
+              const item = items[i];
+              if (!item || !item.text || typeof item.text !== 'string' || !item.text.trim()) {
+                throw new Error(`transformationThemes.items[${i}].text is required and cannot be empty.`);
+              }
+            }
+          }
+        }
+
         // ── 8. Enforce fixed names on Stockiphi & Taskiphi solutions ──
         if (uid === 'api::solution.solution' && (action === 'update' || action === 'create')) {
           const FIXED_SAAS_NAMES: Record<string, string> = {

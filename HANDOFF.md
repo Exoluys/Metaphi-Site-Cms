@@ -103,3 +103,7 @@ Before deploying to production (e.g. Railway, Render, DigitalOcean):
        WHERE key = 'plugin_content_manager_configuration_components::hub.how-to-choose';
 
        ```
+
+6. **Repeatable Component Fixed Count Validation Rules**:
+   - `home-page` (`companyStats`): Exactly 4 items required (`min: 4`, `max: 4`). Enforced in schema and Document Service middleware (`src/index.ts`).
+   - `industries-hub` (`transformationThemes.items`): Exactly 9 items required. Enforced in lifecycle hook (`src/api/industries-hub/content-types/industries-hub/lifecycles.ts`) and Document Service middleware (`src/index.ts`).
