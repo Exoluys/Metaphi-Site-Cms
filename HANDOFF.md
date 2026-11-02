@@ -121,13 +121,17 @@ Before deploying to production (e.g. Railway, Render, DigitalOcean):
      - `servedIndustriesHeading`: Heading for linked industries block on solution detail pages (e.g. `"Industries We Serve"`).
    - Rendering Rule: If nothing is linked or headings are empty, no section, heading, gap, or empty DOM element is rendered. Only published entries are rendered.
 
-8. **CMS Outage Graceful Degradation & Unavailable Fallbacks**:
-   - Dedicated component: <CmsUnavailable /> (metaphi/app/components/ui/CmsUnavailable.tsx).
-   - Standard user message: "We couldn't load this page right now. Please wait a moment and reload." with a Reload button (window.location.reload()) and a link to Home (/).
-   - When Strapi is unreachable or returns a 5xx error:
-     - Pages render <CmsUnavailable /> in the page body instead of empty middle sections, mock strings, or 404s.
-     - Failed fetches throw CmsUnavailableError and are never cached as valid responses. Successful fetches maintain 60s revalidation.
-     - Detail routes (/solutions/*/[slug], /industries/[slug], /work/[slug]) differentiate outages from missing items: Strapi outage displays <CmsUnavailable />; missing slug when Strapi is responsive triggers 
-otFound().
-     - Navbar & Footer: When CMS items fail to load, the Industries dropdown converts cleanly to a direct link /industries, and footer columns omit empty categories without leaving gaps.
-     - When Strapi recovers, pages reload and render full content immediately without rebuilding Next.js.
+8. **CMS Outage Error Propagation & Stale-Page Preservation**:
+   - Error Propagation Architecture:
+     - Pages (home, hubs, detail routes, company pages, work, industries, solutions, faq, testimonials, careers) let `CmsUnavailableError` propagate naturally rather than catching it and returning `<CmsUnavailable />` as successful JSX (HTTP 200).
+     - When Strapi is responsive and a slug is not found, `notFound()` is explicitly invoked to render the 404 page.
+     - When Strapi responds with empty lists, editable empty states render normally with HTTP 200.
+   - Next.js ISR Stale-While-Revalidate Behavior (Production `next start`):
+     - For pre-rendered pages with revalidation (`export const revalidate = 60`), when Strapi is down and the 60-second window expires, background revalidations fail because `CmsUnavailableError` is thrown.
+     - In Next.js App Router ISR, failed revalidations do NOT overwrite or replace the valid cached HTML. Next.js continues serving the last good cached page with `200 OK` (`s-maxage=..., stale-while-revalidate=...`). Outage error states never overwrite good cached pages.
+   - Uncached / Never-Built Routes & Dev Behavior:
+     - For never-built routes (dynamic routes rendered on demand or routes requested before Strapi is started) or in development (`next dev`):
+     - When Strapi is unreachable, the uncaught `CmsUnavailableError` propagates to Next.js route error boundaries (`app/error.tsx`), returning `500 Internal Server Error` with `Cache-Control: private, no-cache, no-store, max-age=0, must-revalidate`.
+     - Route-level error boundaries (`app/error.tsx`) catch the error and render `<CmsUnavailable />` within the normal layout, preserving the navbar and footer. The Reload button triggers both `reset()` and `window.location.reload()`.
+   - Recovery:
+     - As soon as Strapi is restored, all pages immediately resume normal rendering and revalidation without requiring a rebuild of Next.js.
