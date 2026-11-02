@@ -26,8 +26,6 @@ export default {
 
       if (publicRole) {
         const requiredActions = [
-          'api::service.service.find',
-          'api::service.service.findOne',
           'api::industry.industry.find',
           'api::industry.industry.findOne',
           'api::case-study.case-study.find',
@@ -57,7 +55,6 @@ export default {
       // ── 2. Ensure slug fields are read-only in Admin Content Manager ────
       const lockedContentTypes = [
         'plugin_content_manager_configuration_content_types::api::industry.industry',
-        'plugin_content_manager_configuration_content_types::api::service.service',
         'plugin_content_manager_configuration_content_types::api::case-study.case-study',
       ];
 

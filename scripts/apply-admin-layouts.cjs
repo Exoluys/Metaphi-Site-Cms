@@ -27,33 +27,6 @@ const clientConfig = process.env.DATABASE_URL
 
 // ─── Layout definitions ──────────────────────────────────────────────────────
 
-const serviceLayout = {
-  key: 'plugin_content_manager_configuration_content_types::api::service.service',
-  editRows: [
-    [{ name: 'title', size: 12 }],
-    [{ name: 'slug', size: 4 }, { name: 'order', size: 4 }, { name: 'icon', size: 4 }],
-    [{ name: 'summary', size: 12 }],
-    [{ name: 'body', size: 12 }],
-    [{ name: 'heroImage', size: 6 }, { name: 'seoDescription', size: 6 }],
-    // Component repeatable zones — each on its own row
-    [{ name: 'statsList', size: 12 }],
-    [{ name: 'challengesList', size: 12 }],
-    [{ name: 'offeringsList', size: 12 }],
-    [{ name: 'solutionTypesList', size: 12 }],
-    [{ name: 'businessFunctionsList', size: 12 }],
-    [{ name: 'processStepsList', size: 12 }],
-    [{ name: 'benefitsList', size: 12 }],
-    [{ name: 'whyUsList', size: 12 }],
-    [{ name: 'assurancesList', size: 12 }],
-    [{ name: 'complianceList', size: 12 }],
-    [{ name: 'techGroupsList', size: 12 }],
-    [{ name: 'industryContextsList', size: 12 }],
-    [{ name: 'relatedServicesList', size: 6 }, { name: 'caseStudiesList', size: 6 }],
-    // Legacy JSON fields are intentionally omitted here — they stay in the
-    // schema for backward compat but should not appear in the edit form.
-  ],
-};
-
 const caseStudyLayout = {
   key: 'plugin_content_manager_configuration_content_types::api::case-study.case-study',
   editRows: [
@@ -71,7 +44,7 @@ const caseStudyLayout = {
     [{ name: 'technologySection', size: 12 }],
     [{ name: 'impactSection', size: 12 }],
     [{ name: 'takeawaysSection', size: 12 }],
-    [{ name: 'relatedServices', size: 6 }, { name: 'industries', size: 6 }],
+    [{ name: 'industries', size: 12 }],
   ],
 };
 
@@ -98,7 +71,7 @@ const solutionLayout = {
   ],
 };
 
-const layouts = [serviceLayout, caseStudyLayout, industryLayout, solutionLayout];
+const layouts = [caseStudyLayout, industryLayout, solutionLayout];
 
 // ─── Helpers ─────────────────────────────────────────────────────────────────
 
@@ -161,7 +134,7 @@ async function main() {
     );
 
     const existingValue = rows.length ? rows[0].value : null;
-    const lockSlug = layout.key.includes('industry') || layout.key.includes('service.service') || layout.key.includes('case-study');
+    const lockSlug = layout.key.includes('industry') || layout.key.includes('case-study');
     const updated = applyEditLayout(existingValue, layout.editRows, lockSlug, layout.key);
     const json = JSON.stringify(updated);
 

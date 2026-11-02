@@ -561,10 +561,6 @@ export interface ApiCaseStudyCaseStudy extends Struct.CollectionTypeSchema {
       false
     >;
     publishedAt: Schema.Attribute.DateTime;
-    relatedServices: Schema.Attribute.Relation<
-      'manyToMany',
-      'api::service.service'
-    >;
     seoDescription: Schema.Attribute.String &
       Schema.Attribute.SetMinMaxLength<{
         maxLength: 160;
@@ -1211,120 +1207,6 @@ export interface ApiSaasProductsHubSaasProductsHub
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-  };
-}
-
-export interface ApiServiceService extends Struct.CollectionTypeSchema {
-  collectionName: 'services';
-  info: {
-    description: 'CMS-driven services for MetaPhi';
-    displayName: 'Service';
-    pluralName: 'services';
-    singularName: 'service';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    assurancesList: Schema.Attribute.Component<'service.assurance', true>;
-    benefitsList: Schema.Attribute.Component<'service.benefit', true>;
-    body: Schema.Attribute.Text;
-    businessFunctionsList: Schema.Attribute.Component<
-      'service.business-function',
-      true
-    >;
-    caseStudiesList: Schema.Attribute.Relation<
-      'manyToMany',
-      'api::case-study.case-study'
-    >;
-    categorySlug: Schema.Attribute.String;
-    challengesList: Schema.Attribute.Component<'service.challenge', true>;
-    complianceList: Schema.Attribute.Component<
-      'service.compliance-badge',
-      true
-    >;
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    heroImage: Schema.Attribute.Media<'images'>;
-    icon: Schema.Attribute.Enumeration<
-      [
-        'Bot',
-        'Sparkles',
-        'Cpu',
-        'Layers',
-        'Rocket',
-        'Smartphone',
-        'Globe',
-        'Code2',
-        'Cloud',
-        'CloudRain',
-        'Boxes',
-        'Database',
-        'BarChart3',
-        'PieChart',
-        'TrendingUp',
-        'FileText',
-        'Compass',
-        'Layout',
-        'CheckCircle',
-        'GitBranch',
-        'Users',
-        'FileCode',
-        'Briefcase',
-        'Zap',
-        'Activity',
-        'Building2',
-        'GraduationCap',
-        'Landmark',
-        'ShoppingCart',
-        'Truck',
-      ]
-    > &
-      Schema.Attribute.DefaultTo<'Boxes'>;
-    industryContextsList: Schema.Attribute.Component<
-      'service.industry-context',
-      true
-    >;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::service.service'
-    > &
-      Schema.Attribute.Private;
-    offeringsList: Schema.Attribute.Component<'service.offering', true>;
-    offeringsVisual: Schema.Attribute.String;
-    order: Schema.Attribute.Integer &
-      Schema.Attribute.SetMinMax<
-        {
-          min: 0;
-        },
-        number
-      > &
-      Schema.Attribute.DefaultTo<0>;
-    processStepsList: Schema.Attribute.Component<'service.process-step', true>;
-    publishedAt: Schema.Attribute.DateTime;
-    relatedServicesList: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::service.service'
-    >;
-    seoDescription: Schema.Attribute.String &
-      Schema.Attribute.SetMinMaxLength<{
-        maxLength: 160;
-      }>;
-    slug: Schema.Attribute.String;
-    solutionTypesList: Schema.Attribute.Component<
-      'service.solution-type',
-      true
-    >;
-    statsList: Schema.Attribute.Component<'service.stat', true>;
-    summary: Schema.Attribute.Text;
-    techGroupsList: Schema.Attribute.Component<'service.tech-group', true>;
-    title: Schema.Attribute.String & Schema.Attribute.Required;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    whyUsList: Schema.Attribute.Component<'service.why-us', true>;
   };
 }
 
@@ -2150,7 +2032,6 @@ declare module '@strapi/strapi' {
       'api::ready-to-configure-hub.ready-to-configure-hub': ApiReadyToConfigureHubReadyToConfigureHub;
       'api::rewards-page.rewards-page': ApiRewardsPageRewardsPage;
       'api::saas-products-hub.saas-products-hub': ApiSaasProductsHubSaasProductsHub;
-      'api::service.service': ApiServiceService;
       'api::solution.solution': ApiSolutionSolution;
       'api::solutions-hub.solutions-hub': ApiSolutionsHubSolutionsHub;
       'api::team-member.team-member': ApiTeamMemberTeamMember;

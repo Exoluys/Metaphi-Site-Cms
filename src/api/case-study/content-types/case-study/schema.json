@@ -88,12 +88,6 @@
       "component": "case-study.takeaways-section",
       "repeatable": false
     },
-    "relatedServices": {
-      "type": "relation",
-      "relation": "manyToMany",
-      "target": "api::service.service",
-      "inversedBy": "caseStudiesList"
-    },
     "solutions": {
       "type": "relation",
       "relation": "manyToMany",

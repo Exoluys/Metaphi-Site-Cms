@@ -4,7 +4,7 @@
 The Metaphi CMS is a Headless Strapi v5 installation powering the Metaphi marketing website.
 Content architecture:
 - **Single Types**: Home Page (`home-page`), Default CTA Banner (`default-cta-banner`), 5 Hub Pages (`solutions-hub`, `custom-solutions-hub`, `ready-to-configure-hub`, `saas-products-hub`, `industries-hub`), and 9 Company Pages (`about-page`, `careers-page`, `why-join-us-page`, `rewards-page`, `life-at-metaphi-page`, `compliance-page`, `partners-page`, `team-page`, `testimonials-page`).
-- **Collection Types**: Solutions (`solution`), Industries (`industry`), Services (`service`), Case Studies (`case-study`), Testimonials (`testimonial`), FAQs (`faq`), Team Members (`team-member`), Partners (`partner`), Job Openings (`job-opening`).
+- **Collection Types**: Solutions (`solution`), Industries (`industry`), Case Studies (`case-study`), Testimonials (`testimonial`), FAQs (`faq`), Team Members (`team-member`), Partners (`partner`), Job Openings (`job-opening`).
 
 ---
 
@@ -46,8 +46,9 @@ Before deploying to production (e.g. Railway, Render, DigitalOcean):
    - Confirm removal of `seo` components across all 9 company page schemas.
    - Confirm deletion of legacy `api::client-logo` collection and `case-study.solutionModel`.
 4. **Deleted Content Types**:
+   - `api::service.service`: Legacy Service collection deleted completely along with all `components/service/*` components, `relatedServices` relation on Case Study, lifecycles, and permissions.
    - `api::reviewer.reviewer`: Unused subject matter expert reviewer collection deleted.
-   - `api::service-category.service-category`: Unused service category collection deleted; dangling `category` relation attribute removed from `api::service.service`.
+   - `api::service-category.service-category`: Unused service category collection deleted.
 
 2. **Environment Variables**:
    - `DATABASE_CLIENT`: `postgres`
