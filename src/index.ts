@@ -1,4 +1,5 @@
 import type { Core } from '@strapi/strapi';
+import { errors } from '@strapi/utils';
 import fs from 'fs';
 import path from 'path';
 
@@ -190,7 +191,7 @@ export default {
       const TRUST_BAR_HELP_TEXT =
         'Add at least one client logo. If no logos are added, the trust bar will not be shown on the page.';
 
-      // Industry Content Type (clientLogos field)
+      // Industry Content Type (clientLogos & order field)
       const industryConfigRows = await strapi.db
         .connection('strapi_core_store_settings')
         .where({ key: 'plugin_content_manager_configuration_content_types::api::industry.industry' })
@@ -198,6 +199,8 @@ export default {
 
       if (industryConfigRows.length > 0) {
         const config = JSON.parse(industryConfigRows[0].value);
+        let updated = false;
+
         if (config?.metadatas?.clientLogos?.edit?.description !== TRUST_BAR_HELP_TEXT) {
           config.metadatas = config.metadatas || {};
           config.metadatas.clientLogos = config.metadatas.clientLogos || {};
@@ -205,11 +208,27 @@ export default {
             ...config.metadatas.clientLogos.edit,
             description: TRUST_BAR_HELP_TEXT,
           };
+          updated = true;
+          strapi.log.info('[Bootstrap] Set trust bar help text on Industry clientLogos');
+        }
+
+        const ORDER_HINT = 'Extra industries: use 11 or higher';
+        if (config?.metadatas?.order?.edit?.description !== ORDER_HINT) {
+          config.metadatas = config.metadatas || {};
+          config.metadatas.order = config.metadatas.order || {};
+          config.metadatas.order.edit = {
+            ...config.metadatas.order.edit,
+            description: ORDER_HINT,
+          };
+          updated = true;
+          strapi.log.info('[Bootstrap] Set order hint on Industry order field');
+        }
+
+        if (updated) {
           await strapi.db
             .connection('strapi_core_store_settings')
             .where({ id: industryConfigRows[0].id })
             .update({ value: JSON.stringify(config) });
-          strapi.log.info('[Bootstrap] Set trust bar help text on Industry clientLogos');
         }
       }
 
@@ -319,7 +338,7 @@ export default {
           }
         }
 
-        // ── 9. Enforce fixed names on 10 Canonical Industries ─────────
+        // ── 9. Enforce fixed names and order validation on Industries ──
         if (uid === 'api::industry.industry' && (action === 'update' || action === 'create')) {
           const CANONICAL_INDUSTRY_TITLES: Record<string, string> = {
             'manufacturing': 'Manufacturing',
@@ -334,9 +353,10 @@ export default {
             'government-and-public-sector': 'Government & Public Sector',
           };
           let slug = ctx.params?.data?.slug;
-          if (!slug && ctx.params?.documentId) {
+          const currentDocId = ctx.params?.documentId || ctx.params?.where?.documentId;
+          if (!slug && currentDocId) {
             const existing = await strapi.documents('api::industry.industry').findOne({
-              documentId: ctx.params.documentId,
+              documentId: currentDocId,
               fields: ['slug'],
             });
             slug = existing?.slug;
@@ -344,6 +364,40 @@ export default {
           if (slug && CANONICAL_INDUSTRY_TITLES[slug]) {
             if (ctx.params?.data && ctx.params.data.title !== undefined) {
               ctx.params.data.title = CANONICAL_INDUSTRY_TITLES[slug];
+            }
+          }
+
+          // Order validation in Document Service
+          if (action === 'create' || (ctx.params?.data && ctx.params.data.order !== undefined)) {
+            const orderVal = ctx.params?.data?.order;
+            if (orderVal === undefined || orderVal === null || orderVal === '') {
+              if (action === 'create') {
+                throw new errors.ValidationError('Industry order is required and cannot be empty.');
+              }
+            } else {
+              const num = Number(orderVal);
+              if (isNaN(num) || !Number.isInteger(num) || num < 1) {
+                throw new errors.ValidationError(`order must be a positive whole integer (minimum 1). Received: "${orderVal}".`);
+              }
+              const isCanonical = Boolean(slug && CANONICAL_INDUSTRY_TITLES[slug]);
+              if (!isCanonical && num <= 10) {
+                throw new errors.ValidationError(
+                  `Order 1 to 10 is reserved for the 10 canonical industries. Extra industries must use order 11 or higher. Received order: ${num}`
+                );
+              }
+
+              // Check for duplicate order
+              const allDocs = await strapi.documents('api::industry.industry').findMany({
+                fields: ['order', 'documentId', 'title', 'slug'],
+              });
+              const duplicate = allDocs.find(
+                (item: any) => item.order === num && item.documentId !== currentDocId
+              );
+              if (duplicate) {
+                throw new errors.ValidationError(
+                  `Duplicate order detected: order ${num} is already assigned to industry "${duplicate.title}" (${duplicate.slug}). Each industry must have a unique order.`
+                );
+              }
             }
           }
         }

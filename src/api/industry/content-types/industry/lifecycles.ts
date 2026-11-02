@@ -69,38 +69,58 @@ export default {
     }
     data.title = data.title.trim();
 
-    // Validate whole number order (>= 0)
-    if (data.order !== undefined && data.order !== null) {
-      const num = Number(data.order);
-      if (isNaN(num) || !Number.isInteger(num) || num < 0) {
-        throw new errors.ValidationError(`order must be a non-negative whole integer (minimum 0). Received: "${data.order}".`);
-      }
-      data.order = num;
-    } else {
-      data.order = 0;
+    // Validate whole number order (required, >= 1)
+    if (data.order === undefined || data.order === null || data.order === '') {
+      throw new errors.ValidationError('Industry order is required and cannot be empty.');
     }
+    const num = Number(data.order);
+    if (isNaN(num) || !Number.isInteger(num) || num < 1) {
+      throw new errors.ValidationError(`order must be a positive whole integer (minimum 1). Received: "${data.order}".`);
+    }
+    data.order = num;
 
     // Check if updating/re-saving an existing document
     const existing = await resolveExistingIndustry(event.params.where, data);
     if (existing?.slug) {
       data.slug = existing.slug;
-      return;
-    }
-
-    // Slug generation: ALWAYS generated from title on create (manually typed slugs are ignored)
-    const baseSlug = generateSlug(data.title);
-    const currentDocId = existing?.documentId || data.documentId;
-    const allExisting = await strapi.documents('api::industry.industry').findMany({
-      fields: ['slug', 'documentId'],
-    });
-    const otherSlugs = new Set<string>();
-    for (const item of allExisting) {
-      if (item.slug && item.documentId !== currentDocId) {
-        otherSlugs.add(item.slug);
+    } else {
+      // Slug generation: ALWAYS generated from title on create (manually typed slugs are ignored)
+      const baseSlug = generateSlug(data.title);
+      const currentDocId = existing?.documentId || data.documentId;
+      const allExisting = await strapi.documents('api::industry.industry').findMany({
+        fields: ['slug', 'documentId'],
+      });
+      const otherSlugs = new Set<string>();
+      for (const item of allExisting) {
+        if (item.slug && item.documentId !== currentDocId) {
+          otherSlugs.add(item.slug);
+        }
       }
+      data.slug = ensureUniqueSlug(baseSlug, otherSlugs);
     }
 
-    data.slug = ensureUniqueSlug(baseSlug, otherSlugs);
+    const resolvedSlug = data.slug;
+    const isCanonical = Boolean(resolvedSlug && CANONICAL_INDUSTRY_TITLES[resolvedSlug]);
+
+    if (!isCanonical && data.order <= 10) {
+      throw new errors.ValidationError(
+        `Order 1 to 10 is reserved for the 10 canonical industries. Extra industries must use order 11 or higher. Received order: ${data.order}`
+      );
+    }
+
+    // Check for duplicate order across industries
+    const currentDocId = existing?.documentId || data.documentId;
+    const allDocs = await strapi.documents('api::industry.industry').findMany({
+      fields: ['order', 'documentId', 'title', 'slug'],
+    });
+    const duplicate = allDocs.find(
+      (item: any) => item.order === data.order && item.documentId !== currentDocId
+    );
+    if (duplicate) {
+      throw new errors.ValidationError(
+        `Duplicate order detected: order ${data.order} is already assigned to industry "${duplicate.title}" (${duplicate.slug}). Each industry must have a unique order.`
+      );
+    }
   },
 
   async beforeUpdate(event: any) {
@@ -113,15 +133,6 @@ export default {
       data.title = data.title.trim();
     }
 
-    // Validate whole number order (>= 0)
-    if (data.order !== undefined && data.order !== null) {
-      const num = Number(data.order);
-      if (isNaN(num) || !Number.isInteger(num) || num < 0) {
-        throw new errors.ValidationError(`order must be a non-negative whole integer (minimum 0). Received: "${data.order}".`);
-      }
-      data.order = num;
-    }
-
     // Keep slug strictly stable once created - resolve by numeric id or documentId
     const existing = await resolveExistingIndustry(where, data);
     if (existing?.slug) {
@@ -132,6 +143,39 @@ export default {
     const resolvedSlug = data.slug || existing?.slug;
     if (resolvedSlug && CANONICAL_INDUSTRY_TITLES[resolvedSlug]) {
       data.title = CANONICAL_INDUSTRY_TITLES[resolvedSlug];
+    }
+
+    // Validate whole number order if present
+    if (data.order !== undefined) {
+      if (data.order === null || data.order === '') {
+        throw new errors.ValidationError('Industry order is required and cannot be empty.');
+      }
+      const num = Number(data.order);
+      if (isNaN(num) || !Number.isInteger(num) || num < 1) {
+        throw new errors.ValidationError(`order must be a positive whole integer (minimum 1). Received: "${data.order}".`);
+      }
+      data.order = num;
+
+      const isCanonical = Boolean(resolvedSlug && CANONICAL_INDUSTRY_TITLES[resolvedSlug]);
+      if (!isCanonical && data.order <= 10) {
+        throw new errors.ValidationError(
+          `Order 1 to 10 is reserved for the 10 canonical industries. Extra industries must use order 11 or higher. Received order: ${data.order}`
+        );
+      }
+
+      // Check for duplicate order
+      const currentDocId = existing?.documentId || data.documentId;
+      const allDocs = await strapi.documents('api::industry.industry').findMany({
+        fields: ['order', 'documentId', 'title', 'slug'],
+      });
+      const duplicate = allDocs.find(
+        (item: any) => item.order === data.order && item.documentId !== currentDocId
+      );
+      if (duplicate) {
+        throw new errors.ValidationError(
+          `Duplicate order detected: order ${data.order} is already assigned to industry "${duplicate.title}" (${duplicate.slug}). Each industry must have a unique order.`
+        );
+      }
     }
   },
 };

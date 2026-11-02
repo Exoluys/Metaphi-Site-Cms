@@ -60,8 +60,10 @@ Before deploying to production (e.g. Railway, Render, DigitalOcean):
 5. **Locked Fields & Admin Layout Synchronization**:
    - Admin layout configurations (e.g. `editable: false`, field descriptions, and ordering) reside in the database table `strapi_core_store_settings`.
    - The following keys enforce locked, immutable fields:
-     - `plugin_content_manager_configuration_content_types::api::industry.industry`: `slug` (locked: `editable: false`, description: `"Automatically generated from title on creation. Never typed, immutable."`)
-     - Canonical 10 Industries (`manufacturing`, `healthcare`, `logistics`, `finance`, `professional-services`, `retail-and-ecommerce`, `consumer-platforms-and-marketplaces`, `associations-and-communities`, `education`, `government-and-public-sector`): Titles and slugs are strictly locked and reset to canonical names via lifecycle hooks (`lifecycles.ts`) and document service middleware (`src/index.ts`). Additional sub-industries with custom slugs retain fully editable titles.
+     - `plugin_content_manager_configuration_content_types::api::industry.industry`: 
+       - `slug` (locked: `editable: false`, description: `"Automatically generated from title on creation. Never typed, immutable."`)
+       - `order` (description: `"Extra industries: use 11 or higher"`, validation: required positive integer >= 1, unique per industry, orders 1-10 reserved strictly for canonical industries)
+     - Canonical 10 Industries (`manufacturing`, `healthcare`, `logistics`, `finance`, `professional-services`, `retail-and-ecommerce`, `consumer-platforms-and-marketplaces`, `associations-and-communities`, `education`, `government-and-public-sector`): Titles and slugs are strictly locked and reset to canonical names via lifecycle hooks (`lifecycles.ts`) and document service middleware (`src/index.ts`). Additional sub-industries with custom slugs retain fully editable titles, but must use order 11 or higher without collisions.
      - `plugin_content_manager_configuration_components::hub.solution-model`: `title` (locked: `editable: false`, description: `"Fixed solution type name. Immutable."`)
      - `plugin_content_manager_configuration_components::hub.how-to-choose`: `customRuleTitle`, `readyRuleTitle`, `saasRuleTitle` (locked: `editable: false`, description: `"Fixed decision title. Immutable."`)
    - **How to carry these settings to hosted Strapi on deployment**:

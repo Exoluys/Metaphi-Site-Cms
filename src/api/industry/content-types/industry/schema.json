@@ -34,8 +34,8 @@
     },
     "order": {
       "type": "integer",
-      "default": 0,
-      "min": 0
+      "required": true,
+      "min": 1
     },
     "lastReviewedDate": {
       "type": "date"
