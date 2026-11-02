@@ -689,7 +689,6 @@ async function seed() {
       heroDescription: 'We design, engineer and evolve custom software, digital products and enterprise AI solutions that solve real operational problems, connect fragmented workflows and create the technology foundation for growth.',
       primaryButtonText: 'Discuss Your Technology Initiative',
       secondaryButtonText: 'Explore Case Studies',
-      heroMicrocopy: 'Custom Solutions · Ready-to-Configure Solutions · SaaS Products',
       trustHeading: 'Business-first thinking. Engineering-led execution.',
       trustSubtext: 'From operational systems and digital products to AI-enabled workflows and connected business platforms, Metaphi works at the intersection of technology, process and business outcomes.',
       trustPills: [
