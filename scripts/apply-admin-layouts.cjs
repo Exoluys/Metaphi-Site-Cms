@@ -30,7 +30,7 @@ const clientConfig = process.env.DATABASE_URL
 const serviceLayout = {
   key: 'plugin_content_manager_configuration_content_types::api::service.service',
   editRows: [
-    [{ name: 'title', size: 6 }, { name: 'category', size: 6 }],
+    [{ name: 'title', size: 12 }],
     [{ name: 'slug', size: 4 }, { name: 'order', size: 4 }, { name: 'icon', size: 4 }],
     [{ name: 'summary', size: 12 }],
     [{ name: 'body', size: 12 }],
@@ -51,14 +51,6 @@ const serviceLayout = {
     [{ name: 'relatedServicesList', size: 6 }, { name: 'caseStudiesList', size: 6 }],
     // Legacy JSON fields are intentionally omitted here — they stay in the
     // schema for backward compat but should not appear in the edit form.
-  ],
-};
-
-const serviceCategoryLayout = {
-  key: 'plugin_content_manager_configuration_content_types::api::service-category.service-category',
-  editRows: [
-    [{ name: 'name', size: 8 }, { name: 'order', size: 4 }],
-    [{ name: 'slug', size: 12 }],
   ],
 };
 
@@ -106,7 +98,7 @@ const solutionLayout = {
   ],
 };
 
-const layouts = [serviceLayout, serviceCategoryLayout, caseStudyLayout, industryLayout, solutionLayout];
+const layouts = [serviceLayout, caseStudyLayout, industryLayout, solutionLayout];
 
 // ─── Helpers ─────────────────────────────────────────────────────────────────
 

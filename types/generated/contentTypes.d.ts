@@ -1144,38 +1144,6 @@ export interface ApiReadyToConfigureHubReadyToConfigureHub
   };
 }
 
-export interface ApiReviewerReviewer extends Struct.CollectionTypeSchema {
-  collectionName: 'reviewers';
-  info: {
-    description: 'Subject matter experts and industry page reviewers';
-    displayName: 'Reviewer';
-    pluralName: 'reviewers';
-    singularName: 'reviewer';
-  };
-  options: {
-    draftAndPublish: false;
-  };
-  attributes: {
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    linkedinUrl: Schema.Attribute.String;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::reviewer.reviewer'
-    > &
-      Schema.Attribute.Private;
-    name: Schema.Attribute.String & Schema.Attribute.Required;
-    photo: Schema.Attribute.Media<'images'>;
-    publishedAt: Schema.Attribute.DateTime;
-    role: Schema.Attribute.String & Schema.Attribute.Required;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-  };
-}
-
 export interface ApiRewardsPageRewardsPage extends Struct.SingleTypeSchema {
   collectionName: 'rewards_pages';
   info: {
@@ -1246,48 +1214,6 @@ export interface ApiSaasProductsHubSaasProductsHub
   };
 }
 
-export interface ApiServiceCategoryServiceCategory
-  extends Struct.CollectionTypeSchema {
-  collectionName: 'service_categories';
-  info: {
-    description: 'Categories for organizing services and navbar navigation';
-    displayName: 'Service Category';
-    pluralName: 'service-categories';
-    singularName: 'service-category';
-  };
-  options: {
-    draftAndPublish: false;
-  };
-  attributes: {
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::service-category.service-category'
-    > &
-      Schema.Attribute.Private;
-    name: Schema.Attribute.String & Schema.Attribute.Required;
-    order: Schema.Attribute.Integer &
-      Schema.Attribute.SetMinMax<
-        {
-          min: 0;
-        },
-        number
-      > &
-      Schema.Attribute.DefaultTo<1>;
-    publishedAt: Schema.Attribute.DateTime;
-    services: Schema.Attribute.Relation<'oneToMany', 'api::service.service'>;
-    slug: Schema.Attribute.String &
-      Schema.Attribute.Required &
-      Schema.Attribute.Unique;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-  };
-}
-
 export interface ApiServiceService extends Struct.CollectionTypeSchema {
   collectionName: 'services';
   info: {
@@ -1311,11 +1237,6 @@ export interface ApiServiceService extends Struct.CollectionTypeSchema {
       'manyToMany',
       'api::case-study.case-study'
     >;
-    category: Schema.Attribute.Relation<
-      'manyToOne',
-      'api::service-category.service-category'
-    > &
-      Schema.Attribute.Required;
     categorySlug: Schema.Attribute.String;
     challengesList: Schema.Attribute.Component<'service.challenge', true>;
     complianceList: Schema.Attribute.Component<
@@ -2227,10 +2148,8 @@ declare module '@strapi/strapi' {
       'api::partner.partner': ApiPartnerPartner;
       'api::partners-page.partners-page': ApiPartnersPagePartnersPage;
       'api::ready-to-configure-hub.ready-to-configure-hub': ApiReadyToConfigureHubReadyToConfigureHub;
-      'api::reviewer.reviewer': ApiReviewerReviewer;
       'api::rewards-page.rewards-page': ApiRewardsPageRewardsPage;
       'api::saas-products-hub.saas-products-hub': ApiSaasProductsHubSaasProductsHub;
-      'api::service-category.service-category': ApiServiceCategoryServiceCategory;
       'api::service.service': ApiServiceService;
       'api::solution.solution': ApiSolutionSolution;
       'api::solutions-hub.solutions-hub': ApiSolutionsHubSolutionsHub;

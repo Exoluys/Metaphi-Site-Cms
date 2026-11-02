@@ -24,13 +24,6 @@
       "type": "string",
       "required": false
     },
-    "category": {
-      "type": "relation",
-      "relation": "manyToOne",
-      "target": "api::service-category.service-category",
-      "required": true,
-      "inversedBy": "services"
-    },
     "summary": {
       "type": "text"
     },
