@@ -98,29 +98,6 @@ export default {
       }
       data.slug = ensureUniqueSlug(baseSlug, otherSlugs);
     }
-
-    const resolvedSlug = data.slug;
-    const isCanonical = Boolean(resolvedSlug && CANONICAL_INDUSTRY_TITLES[resolvedSlug]);
-
-    if (!isCanonical && data.order <= 10) {
-      throw new errors.ValidationError(
-        `Order 1 to 10 is reserved for the 10 canonical industries. Extra industries must use order 11 or higher. Received order: ${data.order}`
-      );
-    }
-
-    // Check for duplicate order across industries
-    const currentDocId = existing?.documentId || data.documentId;
-    const allDocs = await strapi.documents('api::industry.industry').findMany({
-      fields: ['order', 'documentId', 'title', 'slug'],
-    });
-    const duplicate = allDocs.find(
-      (item: any) => item.order === data.order && item.documentId !== currentDocId
-    );
-    if (duplicate) {
-      throw new errors.ValidationError(
-        `Duplicate order detected: order ${data.order} is already assigned to industry "${duplicate.title}" (${duplicate.slug}). Each industry must have a unique order.`
-      );
-    }
   },
 
   async beforeUpdate(event: any) {
@@ -155,27 +132,6 @@ export default {
         throw new errors.ValidationError(`order must be a positive whole integer (minimum 1). Received: "${data.order}".`);
       }
       data.order = num;
-
-      const isCanonical = Boolean(resolvedSlug && CANONICAL_INDUSTRY_TITLES[resolvedSlug]);
-      if (!isCanonical && data.order <= 10) {
-        throw new errors.ValidationError(
-          `Order 1 to 10 is reserved for the 10 canonical industries. Extra industries must use order 11 or higher. Received order: ${data.order}`
-        );
-      }
-
-      // Check for duplicate order
-      const currentDocId = existing?.documentId || data.documentId;
-      const allDocs = await strapi.documents('api::industry.industry').findMany({
-        fields: ['order', 'documentId', 'title', 'slug'],
-      });
-      const duplicate = allDocs.find(
-        (item: any) => item.order === data.order && item.documentId !== currentDocId
-      );
-      if (duplicate) {
-        throw new errors.ValidationError(
-          `Duplicate order detected: order ${data.order} is already assigned to industry "${duplicate.title}" (${duplicate.slug}). Each industry must have a unique order.`
-        );
-      }
     }
   },
 };

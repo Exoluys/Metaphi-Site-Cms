@@ -212,7 +212,7 @@ export default {
           strapi.log.info('[Bootstrap] Set trust bar help text on Industry clientLogos');
         }
 
-        const ORDER_HINT = 'Extra industries: use 11 or higher';
+        const ORDER_HINT = 'Lower number shows first. Navbar and footer show the first 10; the Industries page shows all.';
         if (config?.metadatas?.order?.edit?.description !== ORDER_HINT) {
           config.metadatas = config.metadatas || {};
           config.metadatas.order = config.metadatas.order || {};
@@ -378,25 +378,6 @@ export default {
               const num = Number(orderVal);
               if (isNaN(num) || !Number.isInteger(num) || num < 1) {
                 throw new errors.ValidationError(`order must be a positive whole integer (minimum 1). Received: "${orderVal}".`);
-              }
-              const isCanonical = Boolean(slug && CANONICAL_INDUSTRY_TITLES[slug]);
-              if (!isCanonical && num <= 10) {
-                throw new errors.ValidationError(
-                  `Order 1 to 10 is reserved for the 10 canonical industries. Extra industries must use order 11 or higher. Received order: ${num}`
-                );
-              }
-
-              // Check for duplicate order
-              const allDocs = await strapi.documents('api::industry.industry').findMany({
-                fields: ['order', 'documentId', 'title', 'slug'],
-              });
-              const duplicate = allDocs.find(
-                (item: any) => item.order === num && item.documentId !== currentDocId
-              );
-              if (duplicate) {
-                throw new errors.ValidationError(
-                  `Duplicate order detected: order ${num} is already assigned to industry "${duplicate.title}" (${duplicate.slug}). Each industry must have a unique order.`
-                );
               }
             }
           }

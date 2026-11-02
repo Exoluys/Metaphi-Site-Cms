@@ -954,13 +954,13 @@ export interface ApiIndustryIndustry extends Struct.CollectionTypeSchema {
     > &
       Schema.Attribute.Private;
     order: Schema.Attribute.Integer &
+      Schema.Attribute.Required &
       Schema.Attribute.SetMinMax<
         {
-          min: 0;
+          min: 1;
         },
         number
-      > &
-      Schema.Attribute.DefaultTo<0>;
+      >;
     publishedAt: Schema.Attribute.DateTime;
     reviewers: Schema.Attribute.Relation<
       'manyToMany',
