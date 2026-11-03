@@ -11,19 +11,11 @@
       "type": "string",
       "required": false
     },
-    "highlight": {
-      "type": "string",
-      "required": false
-    },
     "subtext": {
       "type": "text",
       "required": false
     },
     "ctaLabel": {
-      "type": "string",
-      "required": false
-    },
-    "secondaryCtaLabel": {
       "type": "string",
       "required": false
     }

@@ -54,12 +54,6 @@
     },
     "capabilitiesSubtext": {
       "type": "text"
-    },
-    "deliveryHeading": {
-      "type": "string"
-    },
-    "deliverySubtext": {
-      "type": "text"
     }
   }
 }
