@@ -24,11 +24,6 @@
       "repeatable": false,
       "component": "hub.checklist"
     },
-    "capabilities": {
-      "type": "component",
-      "repeatable": true,
-      "component": "hub.capability-card"
-    },
     "businessOutcomes": {
       "type": "component",
       "repeatable": false,
