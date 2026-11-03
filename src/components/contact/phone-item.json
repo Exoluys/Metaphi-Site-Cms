@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_contact_phone_items",
+  "info": {
+    "displayName": "Phone Item",
+    "icon": "phone",
+    "description": "Phone label and number"
+  },
+  "options": {},
+  "attributes": {
+    "label": {
+      "type": "string",
+      "required": true
+    },
+    "value": {
+      "type": "string",
+      "required": true
+    },
+    "href": {
+      "type": "string",
+      "required": false
+    }
+  }
+}

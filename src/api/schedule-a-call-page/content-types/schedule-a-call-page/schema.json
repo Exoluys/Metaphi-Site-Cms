@@ -1,0 +1,67 @@
+{
+  "kind": "singleType",
+  "collectionName": "schedule_a_call_pages",
+  "info": {
+    "singularName": "schedule-a-call-page",
+    "pluralName": "schedule-a-call-pages",
+    "displayName": "Schedule A Call Page",
+    "description": "Content for the Book / Schedule a Call page"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "heroHeading": {
+      "type": "string",
+      "required": true
+    },
+    "heroHighlight": {
+      "type": "string"
+    },
+    "heroSubtext": {
+      "type": "text"
+    },
+    "durationText": {
+      "type": "string"
+    },
+    "videoCallText": {
+      "type": "string"
+    },
+    "promisesHeading": {
+      "type": "string"
+    },
+    "promises": {
+      "type": "component",
+      "repeatable": true,
+      "component": "hub.string-item"
+    },
+    "selectTimezoneLabel": {
+      "type": "string"
+    },
+    "availableSlotsLabel": {
+      "type": "string"
+    },
+    "confirmButtonTemplate": {
+      "type": "string"
+    },
+    "emptySlotButtonLabel": {
+      "type": "string"
+    },
+    "confirmationHeading": {
+      "type": "string"
+    },
+    "confirmationSubtext": {
+      "type": "text"
+    },
+    "calendarInviteNote": {
+      "type": "string"
+    },
+    "rescheduleButtonLabel": {
+      "type": "string"
+    },
+    "returnHomeButtonLabel": {
+      "type": "string"
+    }
+  }
+}

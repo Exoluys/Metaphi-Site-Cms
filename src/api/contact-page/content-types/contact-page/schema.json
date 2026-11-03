@@ -1,0 +1,104 @@
+{
+  "kind": "singleType",
+  "collectionName": "contact_pages",
+  "info": {
+    "singularName": "contact-page",
+    "pluralName": "contact-pages",
+    "displayName": "Contact Page",
+    "description": "Content and form configuration for the Contact page and global footer"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "heroHeading": {
+      "type": "string",
+      "required": true
+    },
+    "heroHighlight": {
+      "type": "string"
+    },
+    "heroSubtext": {
+      "type": "text"
+    },
+    "email": {
+      "type": "email"
+    },
+    "emailLabel": {
+      "type": "string"
+    },
+    "phoneLabel": {
+      "type": "string"
+    },
+    "phones": {
+      "type": "component",
+      "repeatable": true,
+      "component": "contact.phone-item"
+    },
+    "address": {
+      "type": "text"
+    },
+    "addressLabel": {
+      "type": "string"
+    },
+    "firstNameLabel": {
+      "type": "string",
+      "required": true
+    },
+    "firstNamePlaceholder": {
+      "type": "string"
+    },
+    "lastNameLabel": {
+      "type": "string",
+      "required": true
+    },
+    "lastNamePlaceholder": {
+      "type": "string"
+    },
+    "emailFieldLabel": {
+      "type": "string",
+      "required": true
+    },
+    "emailFieldPlaceholder": {
+      "type": "string"
+    },
+    "countryCodeLabel": {
+      "type": "string",
+      "required": true
+    },
+    "phoneFieldLabel": {
+      "type": "string",
+      "required": true
+    },
+    "phoneFieldPlaceholder": {
+      "type": "string"
+    },
+    "messageFieldLabel": {
+      "type": "string",
+      "required": true
+    },
+    "messageFieldPlaceholder": {
+      "type": "string"
+    },
+    "submitButtonLabel": {
+      "type": "string",
+      "required": true
+    },
+    "submittingButtonLabel": {
+      "type": "string"
+    },
+    "successHeading": {
+      "type": "string"
+    },
+    "successMessage": {
+      "type": "text"
+    },
+    "sendAnotherLabel": {
+      "type": "string"
+    },
+    "errorMessage": {
+      "type": "text"
+    }
+  }
+}

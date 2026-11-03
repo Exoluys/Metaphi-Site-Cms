@@ -37,6 +37,8 @@ export default {
           'api::partner.partner.find',
           'api::partner.partner.findOne',
           'api::compliance-page.compliance-page.find',
+          'api::contact-page.contact-page.find',
+          'api::schedule-a-call-page.schedule-a-call-page.find',
         ];
 
         for (const action of requiredActions) {

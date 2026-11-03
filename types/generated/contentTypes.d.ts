@@ -632,6 +632,60 @@ export interface ApiCompliancePageCompliancePage
   };
 }
 
+export interface ApiContactPageContactPage extends Struct.SingleTypeSchema {
+  collectionName: 'contact_pages';
+  info: {
+    description: 'Content and form configuration for the Contact page and global footer';
+    displayName: 'Contact Page';
+    pluralName: 'contact-pages';
+    singularName: 'contact-page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    address: Schema.Attribute.Text;
+    addressLabel: Schema.Attribute.String;
+    countryCodeLabel: Schema.Attribute.String & Schema.Attribute.Required;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    email: Schema.Attribute.Email;
+    emailFieldLabel: Schema.Attribute.String & Schema.Attribute.Required;
+    emailFieldPlaceholder: Schema.Attribute.String;
+    emailLabel: Schema.Attribute.String;
+    errorMessage: Schema.Attribute.Text;
+    firstNameLabel: Schema.Attribute.String & Schema.Attribute.Required;
+    firstNamePlaceholder: Schema.Attribute.String;
+    heroHeading: Schema.Attribute.String & Schema.Attribute.Required;
+    heroHighlight: Schema.Attribute.String;
+    heroSubtext: Schema.Attribute.Text;
+    lastNameLabel: Schema.Attribute.String & Schema.Attribute.Required;
+    lastNamePlaceholder: Schema.Attribute.String;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::contact-page.contact-page'
+    > &
+      Schema.Attribute.Private;
+    messageFieldLabel: Schema.Attribute.String & Schema.Attribute.Required;
+    messageFieldPlaceholder: Schema.Attribute.String;
+    phoneFieldLabel: Schema.Attribute.String & Schema.Attribute.Required;
+    phoneFieldPlaceholder: Schema.Attribute.String;
+    phoneLabel: Schema.Attribute.String;
+    phones: Schema.Attribute.Component<'contact.phone-item', true>;
+    publishedAt: Schema.Attribute.DateTime;
+    sendAnotherLabel: Schema.Attribute.String;
+    submitButtonLabel: Schema.Attribute.String & Schema.Attribute.Required;
+    submittingButtonLabel: Schema.Attribute.String;
+    successHeading: Schema.Attribute.String;
+    successMessage: Schema.Attribute.Text;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiCustomSolutionsHubCustomSolutionsHub
   extends Struct.SingleTypeSchema {
   collectionName: 'custom_solutions_hubs';
@@ -1216,6 +1270,51 @@ export interface ApiSaasProductsHubSaasProductsHub
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+  };
+}
+
+export interface ApiScheduleACallPageScheduleACallPage
+  extends Struct.SingleTypeSchema {
+  collectionName: 'schedule_a_call_pages';
+  info: {
+    description: 'Content for the Book / Schedule a Call page';
+    displayName: 'Schedule A Call Page';
+    pluralName: 'schedule-a-call-pages';
+    singularName: 'schedule-a-call-page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    availableSlotsLabel: Schema.Attribute.String;
+    calendarInviteNote: Schema.Attribute.String;
+    confirmationHeading: Schema.Attribute.String;
+    confirmationSubtext: Schema.Attribute.Text;
+    confirmButtonTemplate: Schema.Attribute.String;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    durationText: Schema.Attribute.String;
+    emptySlotButtonLabel: Schema.Attribute.String;
+    heroHeading: Schema.Attribute.String & Schema.Attribute.Required;
+    heroHighlight: Schema.Attribute.String;
+    heroSubtext: Schema.Attribute.Text;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::schedule-a-call-page.schedule-a-call-page'
+    > &
+      Schema.Attribute.Private;
+    promises: Schema.Attribute.Component<'hub.string-item', true>;
+    promisesHeading: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
+    rescheduleButtonLabel: Schema.Attribute.String;
+    returnHomeButtonLabel: Schema.Attribute.String;
+    selectTimezoneLabel: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    videoCallText: Schema.Attribute.String;
   };
 }
 
@@ -2027,6 +2126,7 @@ declare module '@strapi/strapi' {
       'api::careers-page.careers-page': ApiCareersPageCareersPage;
       'api::case-study.case-study': ApiCaseStudyCaseStudy;
       'api::compliance-page.compliance-page': ApiCompliancePageCompliancePage;
+      'api::contact-page.contact-page': ApiContactPageContactPage;
       'api::custom-solutions-hub.custom-solutions-hub': ApiCustomSolutionsHubCustomSolutionsHub;
       'api::default-cta-banner.default-cta-banner': ApiDefaultCtaBannerDefaultCtaBanner;
       'api::faq-page.faq-page': ApiFaqPageFaqPage;
@@ -2041,6 +2141,7 @@ declare module '@strapi/strapi' {
       'api::ready-to-configure-hub.ready-to-configure-hub': ApiReadyToConfigureHubReadyToConfigureHub;
       'api::rewards-page.rewards-page': ApiRewardsPageRewardsPage;
       'api::saas-products-hub.saas-products-hub': ApiSaasProductsHubSaasProductsHub;
+      'api::schedule-a-call-page.schedule-a-call-page': ApiScheduleACallPageScheduleACallPage;
       'api::solution.solution': ApiSolutionSolution;
       'api::solutions-hub.solutions-hub': ApiSolutionsHubSolutionsHub;
       'api::team-member.team-member': ApiTeamMemberTeamMember;

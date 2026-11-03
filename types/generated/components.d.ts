@@ -271,6 +271,20 @@ export interface CaseStudyWorkflowSection extends Struct.ComponentSchema {
   };
 }
 
+export interface ContactPhoneItem extends Struct.ComponentSchema {
+  collectionName: 'components_contact_phone_items';
+  info: {
+    description: 'Phone label and number';
+    displayName: 'Phone Item';
+    icon: 'phone';
+  };
+  attributes: {
+    href: Schema.Attribute.String;
+    label: Schema.Attribute.String & Schema.Attribute.Required;
+    value: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
 export interface HomeCertification extends Struct.ComponentSchema {
   collectionName: 'components_home_certifications';
   info: {
@@ -641,6 +655,7 @@ declare module '@strapi/strapi' {
       'case-study.tech-group': CaseStudyTechGroup;
       'case-study.technology-section': CaseStudyTechnologySection;
       'case-study.workflow-section': CaseStudyWorkflowSection;
+      'contact.phone-item': ContactPhoneItem;
       'home.certification': HomeCertification;
       'home.client-logo': HomeClientLogo;
       'home.stat': HomeStat;

@@ -388,7 +388,44 @@ const homePageLayout = {
 ],
 };
 
-const layouts = [caseStudyLayout, industryLayout, solutionLayout, homePageLayout];
+const contactPageLayout = {
+  key: 'plugin_content_manager_configuration_content_types::api::contact-page.contact-page',
+  editRows: [
+    [{ name: 'heroHeading', size: 6 }, { name: 'heroHighlight', size: 6 }],
+    [{ name: 'heroSubtext', size: 12 }],
+    [{ name: 'email', size: 6 }, { name: 'emailLabel', size: 6 }],
+    [{ name: 'phoneLabel', size: 6 }, { name: 'addressLabel', size: 6 }],
+    [{ name: 'address', size: 12 }],
+    [{ name: 'phones', size: 12 }],
+    [{ name: 'firstNameLabel', size: 6 }, { name: 'firstNamePlaceholder', size: 6 }],
+    [{ name: 'lastNameLabel', size: 6 }, { name: 'lastNamePlaceholder', size: 6 }],
+    [{ name: 'emailFieldLabel', size: 6 }, { name: 'emailFieldPlaceholder', size: 6 }],
+    [{ name: 'countryCodeLabel', size: 6 }, { name: 'phoneFieldLabel', size: 6 }],
+    [{ name: 'phoneFieldPlaceholder', size: 6 }, { name: 'submitButtonLabel', size: 6 }],
+    [{ name: 'submittingButtonLabel', size: 6 }, { name: 'sendAnotherLabel', size: 6 }],
+    [{ name: 'messageFieldLabel', size: 6 }, { name: 'messageFieldPlaceholder', size: 6 }],
+    [{ name: 'successHeading', size: 6 }, { name: 'errorMessage', size: 6 }],
+    [{ name: 'successMessage', size: 12 }]
+  ]
+};
+
+const scheduleACallPageLayout = {
+  key: 'plugin_content_manager_configuration_content_types::api::schedule-a-call-page.schedule-a-call-page',
+  editRows: [
+    [{ name: 'heroHeading', size: 6 }, { name: 'heroHighlight', size: 6 }],
+    [{ name: 'heroSubtext', size: 12 }],
+    [{ name: 'durationText', size: 6 }, { name: 'videoCallText', size: 6 }],
+    [{ name: 'promisesHeading', size: 6 }, { name: 'selectTimezoneLabel', size: 6 }],
+    [{ name: 'availableSlotsLabel', size: 6 }, { name: 'emptySlotButtonLabel', size: 6 }],
+    [{ name: 'confirmButtonTemplate', size: 12 }],
+    [{ name: 'promises', size: 12 }],
+    [{ name: 'confirmationHeading', size: 6 }, { name: 'calendarInviteNote', size: 6 }],
+    [{ name: 'rescheduleButtonLabel', size: 6 }, { name: 'returnHomeButtonLabel', size: 6 }],
+    [{ name: 'confirmationSubtext', size: 12 }]
+  ]
+};
+
+const layouts = [caseStudyLayout, industryLayout, solutionLayout, homePageLayout, contactPageLayout, scheduleACallPageLayout];
 
 // ─── Helpers ─────────────────────────────────────────────────────────────────
 

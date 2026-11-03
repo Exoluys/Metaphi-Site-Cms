@@ -27,7 +27,8 @@
 
 const { createStrapi } = require('@strapi/strapi');
 const path = require('path');
-require('dotenv').config();
+const appDir = path.resolve(__dirname, '..');
+require('dotenv').config({ path: path.join(appDir, '.env') });
 
 // 1. Strict Environment Safety Guardrail
 const strapiUrl = process.env.STRAPI_URL || 'http://localhost:1337';
@@ -277,7 +278,9 @@ const FAQS = [
 
 async function seed() {
   console.log('Initializing Strapi instance...');
-  const app = await createStrapi({ distDir: path.join(__dirname, '..', 'dist') }).load();
+  const appDir = path.resolve(__dirname, '..');
+  require('dotenv').config({ path: path.join(appDir, '.env') });
+  const app = await createStrapi({ appDir, distDir: path.join(appDir, 'dist') }).load();
 
   try {
     console.log('Strapi loaded successfully. Beginning idempotent seed...\n');
@@ -1015,6 +1018,101 @@ async function seed() {
       console.log('✓ Updated & published Default CTA Banner');
     }
 
+    // ==========================================
+    // 13. Seed Contact Page (PUBLISHED)
+    // ==========================================
+    console.log('\n--- 13. Seeding Contact Page ---');
+    const existingContact = await app.documents('api::contact-page.contact-page').findFirst({});
+    const contactData = {
+      heroHeading: 'Contact',
+      heroHighlight: 'Us.',
+      heroSubtext: 'Have an inquiry or project idea? Connect directly with our team to explore technical solutions.',
+      email: 'hello@metaphi.example',
+      emailLabel: 'Email Us',
+      phoneLabel: 'Call Us',
+      phones: [
+        { label: 'India', value: '+91 00000 00000', href: '+910000000000' },
+        { label: 'USA', value: '+1 000 000 0000', href: '+10000000000' }
+      ],
+      firstNameLabel: 'First Name',
+      firstNamePlaceholder: 'First Name *',
+      lastNameLabel: 'Last Name',
+      lastNamePlaceholder: 'Last Name *',
+      emailFieldLabel: 'Email Address',
+      emailFieldPlaceholder: 'Email Address *',
+      countryCodeLabel: 'Country Code',
+      phoneFieldLabel: 'Contact Number',
+      phoneFieldPlaceholder: 'Contact Number *',
+      messageFieldLabel: 'Your Message',
+      messageFieldPlaceholder: 'Type your message here... *',
+      submitButtonLabel: 'Submit Now',
+      submittingButtonLabel: 'Submitting...',
+      successHeading: 'Message Received',
+      successMessage: 'Thank you for reaching out. A senior member of our engineering team will review your requirements and respond within one business day.',
+      sendAnotherLabel: 'Send Another Message',
+      errorMessage: 'Failed to submit. Please check your information and try again.'
+    };
+
+    if (!existingContact) {
+      await app.documents('api::contact-page.contact-page').create({
+        data: contactData,
+        status: 'published'
+      });
+      console.log('✓ Created & published Contact Page');
+    } else {
+      await app.documents('api::contact-page.contact-page').update({
+        documentId: existingContact.documentId,
+        data: contactData,
+        status: 'published'
+      });
+      console.log('✓ Updated & published Contact Page');
+    }
+
+    // ==========================================
+    // 14. Seed Schedule A Call Page (PUBLISHED)
+    // ==========================================
+    console.log('\n--- 14. Seeding Schedule A Call Page ---');
+    const existingSchedule = await app.documents('api::schedule-a-call-page.schedule-a-call-page').findFirst({});
+    const scheduleData = {
+      heroHeading: 'Book a Technical',
+      heroHighlight: 'Consultation',
+      heroSubtext: 'Speak directly with our solutions architects to evaluate technical feasibility, project scope, and system design tailored to your organization.',
+      durationText: '30 Min Session',
+      videoCallText: 'Google Meet / Zoom',
+      promisesHeading: 'What you can expect from us:',
+      promises: [
+        { text: 'Tailored Solutions for Complex Challenges' },
+        { text: 'End-to-End Development Support' },
+        { text: '100% In-house Engineering Team' },
+        { text: 'Proven Track Record with Industry Leaders' },
+        { text: 'Transparent Milestone & Payment Policies' }
+      ],
+      selectTimezoneLabel: 'Time zone:',
+      availableSlotsLabel: 'Available slots for:',
+      confirmButtonTemplate: 'Confirm 30-Minute Meeting for {month} {day} at {slot}',
+      emptySlotButtonLabel: 'Select a time slot above to continue',
+      confirmationHeading: 'Meeting Confirmed!',
+      confirmationSubtext: 'Your 30-minute technical discovery session has been successfully booked with our architecture team.',
+      calendarInviteNote: 'A calendar invitation with video conference credentials has been forwarded to your email address.',
+      rescheduleButtonLabel: 'Schedule Another Time',
+      returnHomeButtonLabel: 'Return to Homepage'
+    };
+
+    if (!existingSchedule) {
+      await app.documents('api::schedule-a-call-page.schedule-a-call-page').create({
+        data: scheduleData,
+        status: 'published'
+      });
+      console.log('✓ Created & published Schedule A Call Page');
+    } else {
+      await app.documents('api::schedule-a-call-page.schedule-a-call-page').update({
+        documentId: existingSchedule.documentId,
+        data: scheduleData,
+        status: 'published'
+      });
+      console.log('✓ Updated & published Schedule A Call Page');
+    }
+
     console.log('\n==========================================');
     console.log('✓ SEED COMPLETED SUCCESSFULLY');
     console.log('==========================================\n');
@@ -1023,7 +1121,9 @@ async function seed() {
     console.error('CRITICAL SEED ERROR:', err);
     process.exit(1);
   } finally {
-    await app.destroy();
+    try {
+      await app.destroy();
+    } catch (_) {}
     process.exit(0);
   }
 }

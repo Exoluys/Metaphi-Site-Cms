@@ -36,6 +36,8 @@ async function grantPublicPermissions() {
     'api::saas-products-hub.saas-products-hub.find',
     'api::industries-hub.industries-hub.find',
     'api::default-cta-banner.default-cta-banner.find',
+    'api::contact-page.contact-page.find',
+    'api::schedule-a-call-page.schedule-a-call-page.find',
 
     // Collection Types (find and findOne)
     'api::industry.industry.find',
