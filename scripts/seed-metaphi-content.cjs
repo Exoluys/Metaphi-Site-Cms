@@ -729,6 +729,9 @@ async function seed() {
         subtext: 'Where we have already solved similar operational problems, Metaphi can begin with a reusable solution foundation and configure it around your workflows, integrations and operating model.',
         ctaLabel: 'View Ready-to-Configure Solutions',
               },
+      workShowcaseHeading: "Results We're Accountable for.",
+      workShowcaseHighlight: 'Work You Can Verify.',
+      workShowcaseIntro: 'Metaphi delivers proven, production-grade systems across industries—from high-fidelity digital twins to HIPAA-compliant clinical platforms and autonomous agent workflows. Every project was engineered from strategy to post-launch impact.',
       whyMetaphiHeading: 'A technology partner—',
       whyMetaphiHighlight: 'not another development vendor.',
       whyMetaphiSubtext: 'We partner with growing businesses and enterprise teams who need more than extra development hands.',
@@ -875,9 +878,104 @@ async function seed() {
     }
 
     // ==========================================
-    // 11. Seed Default CTA Banner (PUBLISHED)
+    // 11. Seed Case Studies (PUBLISHED)
     // ==========================================
-    console.log('\n--- 10. Seeding Default CTA Banner ---');
+    console.log('\n--- 11. Seeding 3 Showcase Case Studies (as PUBLISHED) ---');
+    const CASE_STUDIES = [
+      {
+        slug: 'wind-farm-digital-twin',
+        title: 'Accelerated Wind Farm Planning By 35% Through Digital Twin Solutions',
+        subtitle: 'Simulating turbine layouts and real-time aerodynamics to improve forecasting and feasibility.',
+        summary: 'We built a high-fidelity wind farm digital twin that enabled renewable energy planners to simulate turbine layouts, improve energy forecasting, validate feasibility, and estimate ROI before capital investment decisions.',
+        tags: 'Digital Twin Solution, Unreal Engine Development, AI Development',
+        order: 1,
+        featuredOnShowcase: true,
+        heroImageFileName: 'showcase_wind_farm_f99d4fd26d.jpg',
+        outcomeCards: [
+          { metric: '35%', title: 'Faster Planning' },
+          { metric: '2x', title: 'Operational Efficiency' },
+          { metric: '12+', title: 'Projects Delivered' }
+        ]
+      },
+      {
+        slug: 'ai-medical-diagnostics',
+        title: 'Streamlined Clinical Diagnostics & Reduced Scan Review Times by 45%',
+        subtitle: 'HIPAA-compliant diagnostic copilot accelerating MRI/CT scan segmentation and review.',
+        summary: 'Developed a HIPAA-compliant medical AI diagnostic co-pilot that assists radiologists in segmenting MRI/CT scans with sub-millimeter precision, prioritizing critical findings and cutting patient turnaround time.',
+        tags: 'Healthcare IT Solution, Computer Vision, HIPAA Architecture',
+        order: 2,
+        featuredOnShowcase: true,
+        heroImageFileName: 'showcase_healthcare_ai_73f26654ab.jpg',
+        outcomeCards: [
+          { metric: '45%', title: 'Faster Review' },
+          { metric: '99.2%', title: 'Segmentation Precision' },
+          { metric: '100%', title: 'HIPAA Compliant' }
+        ]
+      },
+      {
+        slug: 'autonomous-agent-logistics',
+        title: 'Engineered Real-Time Autonomous Fleet Dispatch for Next-Gen Warehouses',
+        subtitle: 'Distributed multi-agent coordination optimizing 500+ AGVs in dynamic fulfillment centers.',
+        summary: 'Implemented distributed autonomous agent swarms coordinating 500+ AGVs across dynamic fulfillment floors, optimizing package routing and eliminating warehouse traffic bottlenecks in real time.',
+        tags: 'Autonomous Agents, Enterprise Automation, IoT & Telemetry',
+        order: 3,
+        featuredOnShowcase: true,
+        heroImageFileName: 'showcase_logistics_ai_f8c09b461a.jpg',
+        outcomeCards: [
+          { metric: '28%', title: 'Fuel & Route Optimization' },
+          { metric: '99.9%', title: 'On-Time Dispatch' },
+          { metric: '3.2x', title: 'Throughput Multiplier' }
+        ]
+      }
+    ];
+
+    for (const cs of CASE_STUDIES) {
+      let heroImageId = null;
+      if (cs.heroImageFileName) {
+        const fileRecord = await app.db.query('plugin::upload.file').findOne({
+          where: { name: cs.heroImageFileName }
+        });
+        if (fileRecord) heroImageId = fileRecord.id;
+      }
+
+      const csPayload = {
+        slug: cs.slug,
+        title: cs.title,
+        subtitle: cs.subtitle,
+        summary: cs.summary,
+        tags: cs.tags,
+        order: cs.order,
+        featuredOnShowcase: cs.featuredOnShowcase,
+        ...(heroImageId ? { heroImage: heroImageId } : {}),
+        impactSection: {
+          outcomeCards: cs.outcomeCards
+        }
+      };
+
+      const existing = await app.documents('api::case-study.case-study').findFirst({
+        filters: { slug: cs.slug }
+      });
+
+      if (!existing) {
+        await app.documents('api::case-study.case-study').create({
+          data: csPayload,
+          status: 'published'
+        });
+        console.log(`✓ Created & published Case Study: "${cs.slug}"`);
+      } else {
+        await app.documents('api::case-study.case-study').update({
+          documentId: existing.documentId,
+          data: csPayload,
+          status: 'published'
+        });
+        console.log(`• Updated & published Case Study: "${cs.slug}"`);
+      }
+    }
+
+    // ==========================================
+    // 12. Seed Default CTA Banner (PUBLISHED)
+    // ==========================================
+    console.log('\n--- 12. Seeding Default CTA Banner ---');
     const existingBanner = await app.documents('api::default-cta-banner.default-cta-banner').findFirst({});
     const bannerData = {
       heading: 'Ready to Turn Your Idea into Reality?',
