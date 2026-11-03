@@ -691,7 +691,8 @@ async function seed() {
       heroDescription: 'We design, engineer and evolve custom software, digital products and enterprise AI solutions that solve real operational problems, connect fragmented workflows and create the technology foundation for growth.',
       primaryButtonText: 'Discuss Your Technology Initiative',
       secondaryButtonText: 'Explore Case Studies',
-      trustHeading: 'Business-first thinking. Engineering-led execution.',
+      trustHeading: 'Business-first thinking.',
+      trustHighlight: 'Engineering-led execution.',
       trustSubtext: 'From operational systems and digital products to AI-enabled workflows and connected business platforms, Metaphi works at the intersection of technology, process and business outcomes.',
       trustPills: [
         { text: 'Business Applications' },
@@ -700,7 +701,8 @@ async function seed() {
         { text: 'Cloud, Data & Integrations' },
         { text: 'Managed Services' }
       ],
-      businessProblemsHeading: 'Technology should remove complexity—not add another layer of it.',
+      businessProblemsHeading: 'Technology should remove complexity—',
+      businessProblemsHighlight: 'not add another layer of it.',
       businessProblemsSubtext: 'Businesses typically come to us when existing tools, manual processes or disconnected systems begin limiting visibility, productivity or growth.',
       businessProblems: [
         { title: 'Fragmented Operations', description: 'Critical workflows spread across spreadsheets, disconnected applications and manual coordination.' },
@@ -710,7 +712,8 @@ async function seed() {
         { title: 'Growing Beyond Existing Systems', description: 'Standard software no longer fits the way the business operates.' },
         { title: 'Technology Without Business Visibility', description: 'Data exists across systems, but management still lacks timely, actionable information.' }
       ],
-      solutionModelsHeading: 'Choose the technology model that fits your business.',
+      solutionModelsHeading: 'Choose the technology model that',
+      solutionModelsHighlight: 'fits your business.',
       solutionModelsSubtext: 'Not every technology problem should be solved the same way. Metaphi offers three engagement models depending on how unique your requirements are, how quickly you need to move and how much configuration your business requires.',
       customCapabilitiesSection: {
         heading: 'From business systems to intelligent digital products.',
@@ -726,7 +729,8 @@ async function seed() {
         subtext: 'Where we have already solved similar operational problems, Metaphi can begin with a reusable solution foundation and configure it around your workflows, integrations and operating model.',
         ctaLabel: 'View Ready-to-Configure Solutions',
               },
-      whyMetaphiHeading: 'A technology partner—not another development vendor.',
+      whyMetaphiHeading: 'A technology partner—',
+      whyMetaphiHighlight: 'not another development vendor.',
       whyMetaphiSubtext: 'We partner with growing businesses and enterprise teams who need more than extra development hands.',
       whyMetaphiPillars: [
         { title: 'Business Before Technology', description: 'We begin by understanding the operating problem, not by prescribing a technology stack.' },
@@ -735,7 +739,8 @@ async function seed() {
         { title: 'Built for Evolution', description: 'Solutions are designed so that new workflows, integrations and capabilities can be introduced as the business changes.' },
         { title: 'Long-Term Partnership', description: 'We can continue supporting, improving and extending the technology after launch.' }
       ],
-      deliveryApproachHeading: 'From business problem to working technology.',
+      deliveryApproachHeading: 'From business problem to',
+      deliveryApproachHighlight: 'working technology.',
       deliveryApproachSubtext: 'A structured, transparent engineering process designed to deliver predictable outcomes from discovery through to post-launch evolution.',
       finalCta: {
         heading: 'Have a technology initiative you’re trying to move forward?',
