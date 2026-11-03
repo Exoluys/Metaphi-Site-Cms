@@ -685,6 +685,14 @@ async function seed() {
     console.log('\n--- 8. Seeding Home Page ---');
     const existingHome = await app.documents('api::home-page.home-page').findFirst({});
 
+    let solutionModelsImageId = null;
+    const teamFileRecord = await app.db.query('plugin::upload.file').findOne({
+      where: { name: 'hero-team.jpg' }
+    });
+    if (teamFileRecord) {
+      solutionModelsImageId = teamFileRecord.id;
+    }
+
     const homeData = {
       heroTitle: 'Technology Built Around',
       heroHighlight: 'Your Business',
@@ -774,6 +782,7 @@ async function seed() {
       faqEyebrow: 'QUICK ANSWERS',
       faqLinkLabel: 'Browse all FAQs',
       faqEmptyStateText: 'No FAQs available.',
+      ...(solutionModelsImageId ? { solutionModelsImage: solutionModelsImageId } : {}),
       clientLogos: [],
       industries: seededIndustryDocIds
     };

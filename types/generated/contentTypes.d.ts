@@ -803,8 +803,10 @@ export interface ApiHomePageHomePage extends Struct.SingleTypeSchema {
     deliveryApproachHighlight: Schema.Attribute.String;
     deliveryApproachSubtext: Schema.Attribute.Text;
     faqEmptyStateText: Schema.Attribute.Text;
+    faqEyebrow: Schema.Attribute.String;
     faqHeading: Schema.Attribute.String;
     faqHighlight: Schema.Attribute.String;
+    faqLinkLabel: Schema.Attribute.String;
     faqSubtitle: Schema.Attribute.Text;
     finalCta: Schema.Attribute.Component<'hub.final-cta', false>;
     heroDescription: Schema.Attribute.Text;
@@ -828,11 +830,15 @@ export interface ApiHomePageHomePage extends Struct.SingleTypeSchema {
       false
     >;
     secondaryButtonText: Schema.Attribute.String;
+    solutionModelsEyebrow: Schema.Attribute.String;
     solutionModelsHeading: Schema.Attribute.String;
     solutionModelsHighlight: Schema.Attribute.String;
+    solutionModelsImage: Schema.Attribute.Media<'images'>;
+    solutionModelsLinkLabel: Schema.Attribute.String;
     solutionModelsSubtext: Schema.Attribute.Text;
     testimonialsCtaLabel: Schema.Attribute.String;
     testimonialsEmptyStateText: Schema.Attribute.Text;
+    testimonialsEyebrow: Schema.Attribute.String;
     testimonialsHeading: Schema.Attribute.String;
     testimonialsHighlight: Schema.Attribute.String;
     testimonialsSubtitle: Schema.Attribute.Text;
@@ -856,6 +862,7 @@ export interface ApiHomePageHomePage extends Struct.SingleTypeSchema {
         },
         number
       >;
+    whyChooseEyebrow: Schema.Attribute.String;
     whyChooseHeading: Schema.Attribute.String;
     whyChooseHighlight: Schema.Attribute.String;
     whyChooseSubtitle: Schema.Attribute.Text;
@@ -866,9 +873,11 @@ export interface ApiHomePageHomePage extends Struct.SingleTypeSchema {
       true
     >;
     whyMetaphiSubtext: Schema.Attribute.Text;
+    workShowcaseEyebrow: Schema.Attribute.String;
     workShowcaseHeading: Schema.Attribute.String;
     workShowcaseHighlight: Schema.Attribute.String;
     workShowcaseIntro: Schema.Attribute.Text;
+    workShowcaseLinkLabel: Schema.Attribute.String;
   };
 }
 
