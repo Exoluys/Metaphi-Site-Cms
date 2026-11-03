@@ -355,50 +355,49 @@ async function seed() {
     // ==========================================
     console.log('\n--- 3. Seeding Solutions Hub ---');
     const solutionsHubData = {
-      heroHeading: 'Three Ways to Solve Your Technology Challenge',
-      heroSubtext: 'The right solution depends on how unique your requirements are, how quickly you need to implement and how much control your business needs over the resulting technology.',
-      modelsHeading: 'Solution Models',
-      modelsSubtext: 'The right solution depends on how unique your requirements are, how quickly you need to implement and how much control your business needs over the resulting technology.',
+      heroHeading: 'Three Paths to Fix Your Operations Problem',
+      heroSubtext: 'Your best option depends on budget, timeline and how much control you want over the final product.',
+      modelsHeading: 'Engagement Options',
+      modelsSubtext: 'Compare how each approach handles cost, speed and flexibility, before you decide.',
+      howToChoose: {
+        heading: 'Unsure where to begin?',
+        subtext: 'Answer three quick questions about uniqueness, speed and budget, and the right model usually becomes obvious.',
+        customRuleTitle: 'Choose Custom',
+        customRule: 'If no existing product matches how your team works.',
+        readyRuleTitle: 'Choose Ready-to-Configure',
+        readyRule: 'If you want speed but still need meaningful configuration.',
+        saasRuleTitle: 'Choose SaaS',
+        saasRule: 'If your needs are standard and you value simplicity over customisation.',
+        ctaLabel: 'Get a Recommendation'
+      },
+      proof: {
+        heading: 'Watch each model turn into real delivery.',
+        ctaLabel: 'Browse Our Projects'
+      },
+      finalCta: {
+        heading: "Let's Shape Your Project",
+        subtext: "Tell us your goal and deadline. We'll respond within one business day with a practical plan.",
+        ctaLabel: 'Request a Proposal',
+        secondaryCtaLabel: 'Book a 30-Minute Call'
+      },
       customModel: {
         title: 'Custom Solutions',
-        tagline: 'Build around your requirements',
-        description: 'Choose Custom Solutions when your business processes, product vision, integrations or competitive requirements demand bespoke technology. Typical needs include bespoke ERP or operational software, new SaaS or digital products, AI-enabled workflows, legacy modernisation and complex system integrations.',
-        homeDescription: 'Built around your business. When your workflows, product vision or technology requirements are unique, we design and engineer the solution around them.',
-        ctaLabel: 'Explore Custom Solutions'
+        tagline: 'Designed for your exact workflow',
+        description: 'Choose this route when your processes, integrations or product vision are too specific for packaged software. Typical projects include internal platforms, customer portals, workflow automation and legacy system replacement.',
+        ctaLabel: 'View Bespoke Engineering'
       },
       readyModel: {
         title: 'Ready-to-Configure Solutions',
-        tagline: 'Start from a proven foundation',
-        description: 'Choose Ready-to-Configure when Metaphi has already built significant reusable capability for the problem you are trying to solve. You gain a faster starting point, configurable workflows, bespoke extensions, integration flexibility and lower implementation uncertainty.',
-        homeDescription: 'Start with a proven foundation. Accelerate implementation using Metaphi solution foundations that can be configured, extended and integrated around your business.',
-        ctaLabel: 'Explore Ready-to-Configure Solutions'
+        tagline: 'Launch in weeks, not quarters',
+        description: 'Choose this route when we already have tested components for your problem, such as onboarding, scheduling, billing or reporting. We configure them to your rules and expand only where you need something unique.',
+        ctaLabel: 'View Pre-Built Modules'
       },
       saasModel: {
         title: 'SaaS Products',
-        tagline: 'Use a standardised product',
-        description: 'Choose SaaS where the business requirement is common enough to be addressed through a subscription product without significant custom engineering.',
-        homeDescription: 'Subscribe and start using. Purpose-built software for common business needs where extensive customisation is not required.',
-        ctaLabel: 'Explore SaaS Products'
-      },
-      howToChoose: {
-        heading: 'Not sure which model fits?',
-        customRuleTitle: 'Choose Custom',
-        customRule: 'when your process or product is strategically unique.',
-        readyRuleTitle: 'Choose Ready-to-Configure',
-        readyRule: 'when you want faster implementation but still need significant business configuration.',
-        saasRuleTitle: 'Choose SaaS',
-        saasRule: 'when your requirement is standard and speed/simplicity matter more than deep customisation.',
-        ctaLabel: 'Discuss the Right Approach'
-      },
-      proof: {
-        heading: 'See how different technology models translate into execution.',
-        ctaLabel: 'Explore Case Studies'
-      },
-      finalCta: {
-        heading: 'Discuss Your Technology Initiative',
-        subtext: 'Whether you need a custom platform, a configurable solution or strategic engineering support, our team is ready to discuss your initiative.',
-        ctaLabel: 'Discuss Your Initiative',
-              }
+        tagline: 'Pay monthly, scale on demand',
+        description: 'Choose this route when your need is common enough that a renowned product covers it with light setup and no custom development.',
+        ctaLabel: 'View Subscription Platforms'
+      }
     };
 
     const exSolutionsHub = await app.documents('api::solutions-hub.solutions-hub').findFirst({});
