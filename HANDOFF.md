@@ -64,6 +64,13 @@ Before deploying to production (e.g. Railway, Render, DigitalOcean):
 
 5. **Locked Fields & Admin Layout Synchronization**:
    - Admin layout configurations (e.g. `editable: false`, field descriptions, and ordering) reside in the database table `strapi_core_store_settings`.
+   - The `home-page` single type defines dedicated fields for section eyebrows and link labels next to each section's headings:
+     - `solutionModelsEyebrow`, `solutionModelsLinkLabel`
+     - `workShowcaseEyebrow`, `workShowcaseLinkLabel`
+     - `whyChooseEyebrow`
+     - `testimonialsEyebrow`
+     - `faqEyebrow`, `faqLinkLabel`
+     These are synced and laid out next to section headings in `strapi_core_store_settings` using `scripts/apply-admin-layouts.cjs`.
    - The following keys enforce locked, immutable fields:
      - `plugin_content_manager_configuration_content_types::api::industry.industry`: 
        - `slug` (locked: `editable: false`, description: `"Automatically generated from title on creation. Never typed, immutable."`)

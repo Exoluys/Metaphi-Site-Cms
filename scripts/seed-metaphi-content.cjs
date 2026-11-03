@@ -712,6 +712,8 @@ async function seed() {
         { title: 'Growing Beyond Existing Systems', description: 'Standard software no longer fits the way the business operates.' },
         { title: 'Technology Without Business Visibility', description: 'Data exists across systems, but management still lacks timely, actionable information.' }
       ],
+      solutionModelsEyebrow: 'WHAT WE DO',
+      solutionModelsLinkLabel: 'Learn More',
       solutionModelsHeading: 'Choose the technology model that',
       solutionModelsHighlight: 'fits your business.',
       solutionModelsSubtext: 'Not every technology problem should be solved the same way. Metaphi offers three engagement models depending on how unique your requirements are, how quickly you need to move and how much configuration your business requires.',
@@ -729,6 +731,8 @@ async function seed() {
         subtext: 'Where we have already solved similar operational problems, Metaphi can begin with a reusable solution foundation and configure it around your workflows, integrations and operating model.',
         ctaLabel: 'View Ready-to-Configure Solutions',
               },
+      workShowcaseEyebrow: 'FEATURED CASE STUDY',
+      workShowcaseLinkLabel: 'View Full Case Study',
       workShowcaseHeading: "Results We're Accountable for.",
       workShowcaseHighlight: 'Work You Can Verify.',
       workShowcaseIntro: 'Metaphi delivers proven, production-grade systems across industries—from high-fidelity digital twins to HIPAA-compliant clinical platforms and autonomous agent workflows. Every project was engineered from strategy to post-launch impact.',
@@ -757,6 +761,7 @@ async function seed() {
         { label: 'Industries Served', value: 10, suffix: '' },
         { label: 'Products & Systems Shipped', value: 140, suffix: '+' }
       ],
+      whyChooseEyebrow: 'WHY METAPHI',
       whyChooseCertifications: [
         { label: 'ISO 9001:2015', sub: 'Quality Management Certified', icon: 'award' },
         { label: 'ISO 27001:2022', sub: 'Information Security Management', icon: 'shield-check' },
@@ -764,7 +769,10 @@ async function seed() {
         { label: 'HIPAA Compliant', sub: 'Healthcare Data Protection', icon: 'file-check' }
       ],
       certificationsEmptyStateText: 'No certifications currently displayed.',
+      testimonialsEyebrow: 'CLIENT TESTIMONIALS',
       testimonialsEmptyStateText: 'No testimonials available.',
+      faqEyebrow: 'QUICK ANSWERS',
+      faqLinkLabel: 'Browse all FAQs',
       faqEmptyStateText: 'No FAQs available.',
       clientLogos: [],
       industries: seededIndustryDocIds

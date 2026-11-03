@@ -71,7 +71,324 @@ const solutionLayout = {
   ],
 };
 
-const layouts = [caseStudyLayout, industryLayout, solutionLayout];
+
+const homePageLayout = {
+  key: 'plugin_content_manager_configuration_content_types::api::home-page.home-page',
+  editRows: [
+  [
+    {
+      "name": "heroTitle",
+      "size": 6
+    },
+    {
+      "name": "heroHighlight",
+      "size": 6
+    }
+  ],
+  [
+    {
+      "name": "heroDescription",
+      "size": 6
+    },
+    {
+      "name": "primaryButtonText",
+      "size": 6
+    }
+  ],
+  [
+    {
+      "name": "secondaryButtonText",
+      "size": 6
+    }
+  ],
+  [
+    {
+      "name": "trustedByText",
+      "size": 6
+    },
+    {
+      "name": "trustedByHighlight",
+      "size": 6
+    }
+  ],
+  [
+    {
+      "name": "clientLogos",
+      "size": 12
+    }
+  ],
+  [
+    {
+      "name": "solutionModelsEyebrow",
+      "size": 6
+    },
+    {
+      "name": "solutionModelsLinkLabel",
+      "size": 6
+    }
+  ],
+  [
+    {
+      "name": "solutionModelsHeading",
+      "size": 6
+    },
+    {
+      "name": "solutionModelsHighlight",
+      "size": 6
+    }
+  ],
+  [
+    {
+      "name": "solutionModelsSubtext",
+      "size": 12
+    }
+  ],
+  [
+    {
+      "name": "trustHeading",
+      "size": 6
+    },
+    {
+      "name": "trustHighlight",
+      "size": 6
+    }
+  ],
+  [
+    {
+      "name": "trustSubtext",
+      "size": 12
+    }
+  ],
+  [
+    {
+      "name": "trustPills",
+      "size": 12
+    }
+  ],
+  [
+    {
+      "name": "businessProblemsHeading",
+      "size": 6
+    },
+    {
+      "name": "businessProblemsHighlight",
+      "size": 6
+    }
+  ],
+  [
+    {
+      "name": "businessProblemsSubtext",
+      "size": 12
+    }
+  ],
+  [
+    {
+      "name": "businessProblems",
+      "size": 12
+    }
+  ],
+  [
+    {
+      "name": "customCapabilitiesSection",
+      "size": 12
+    }
+  ],
+  [
+    {
+      "name": "industriesSection",
+      "size": 12
+    }
+  ],
+  [
+    {
+      "name": "readyToConfigureSection",
+      "size": 12
+    }
+  ],
+  [
+    {
+      "name": "workShowcaseEyebrow",
+      "size": 6
+    },
+    {
+      "name": "workShowcaseLinkLabel",
+      "size": 6
+    }
+  ],
+  [
+    {
+      "name": "workShowcaseHeading",
+      "size": 6
+    },
+    {
+      "name": "workShowcaseHighlight",
+      "size": 6
+    }
+  ],
+  [
+    {
+      "name": "workShowcaseIntro",
+      "size": 12
+    }
+  ],
+  [
+    {
+      "name": "whyMetaphiHeading",
+      "size": 6
+    },
+    {
+      "name": "whyMetaphiHighlight",
+      "size": 6
+    }
+  ],
+  [
+    {
+      "name": "whyMetaphiSubtext",
+      "size": 12
+    }
+  ],
+  [
+    {
+      "name": "whyMetaphiPillars",
+      "size": 12
+    }
+  ],
+  [
+    {
+      "name": "deliveryApproachHeading",
+      "size": 6
+    },
+    {
+      "name": "deliveryApproachHighlight",
+      "size": 6
+    }
+  ],
+  [
+    {
+      "name": "deliveryApproachSubtext",
+      "size": 12
+    }
+  ],
+  [
+    {
+      "name": "whyChooseEyebrow",
+      "size": 6
+    }
+  ],
+  [
+    {
+      "name": "whyChooseHeading",
+      "size": 6
+    },
+    {
+      "name": "whyChooseHighlight",
+      "size": 6
+    }
+  ],
+  [
+    {
+      "name": "whyChooseSubtitle",
+      "size": 6
+    }
+  ],
+  [
+    {
+      "name": "companyStats",
+      "size": 12
+    }
+  ],
+  [
+    {
+      "name": "whyChooseCertifications",
+      "size": 12
+    }
+  ],
+  [
+    {
+      "name": "certificationsEmptyStateText",
+      "size": 6
+    }
+  ],
+  [
+    {
+      "name": "testimonialsEyebrow",
+      "size": 6
+    },
+    {
+      "name": "testimonialsCtaLabel",
+      "size": 6
+    }
+  ],
+  [
+    {
+      "name": "testimonialsHeading",
+      "size": 6
+    },
+    {
+      "name": "testimonialsHighlight",
+      "size": 6
+    }
+  ],
+  [
+    {
+      "name": "testimonialsSubtitle",
+      "size": 6
+    }
+  ],
+  [
+    {
+      "name": "testimonialsEmptyStateText",
+      "size": 6
+    }
+  ],
+  [
+    {
+      "name": "faqEyebrow",
+      "size": 6
+    },
+    {
+      "name": "faqLinkLabel",
+      "size": 6
+    }
+  ],
+  [
+    {
+      "name": "faqHeading",
+      "size": 6
+    },
+    {
+      "name": "faqHighlight",
+      "size": 6
+    }
+  ],
+  [
+    {
+      "name": "faqSubtitle",
+      "size": 6
+    }
+  ],
+  [
+    {
+      "name": "faqEmptyStateText",
+      "size": 6
+    }
+  ],
+  [
+    {
+      "name": "finalCta",
+      "size": 12
+    }
+  ],
+  [
+    {
+      "name": "industries",
+      "size": 12
+    }
+  ]
+],
+};
+
+const layouts = [caseStudyLayout, industryLayout, solutionLayout, homePageLayout];
 
 // ─── Helpers ─────────────────────────────────────────────────────────────────
 

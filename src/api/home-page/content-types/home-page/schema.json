@@ -188,6 +188,30 @@
     },
     "workShowcaseIntro": {
       "type": "text"
+    },
+    "solutionModelsEyebrow": {
+      "type": "string"
+    },
+    "solutionModelsLinkLabel": {
+      "type": "string"
+    },
+    "workShowcaseEyebrow": {
+      "type": "string"
+    },
+    "workShowcaseLinkLabel": {
+      "type": "string"
+    },
+    "whyChooseEyebrow": {
+      "type": "string"
+    },
+    "testimonialsEyebrow": {
+      "type": "string"
+    },
+    "faqEyebrow": {
+      "type": "string"
+    },
+    "faqLinkLabel": {
+      "type": "string"
     }
   }
 }
