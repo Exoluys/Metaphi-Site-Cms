@@ -728,20 +728,11 @@ async function seed() {
       solutionModelsHeading: 'Choose the technology model that',
       solutionModelsHighlight: 'fits your business.',
       solutionModelsSubtext: 'Not every technology problem should be solved the same way. Metaphi offers three engagement models depending on how unique your requirements are, how quickly you need to move and how much configuration your business requires.',
-      customCapabilitiesSection: {
-        heading: 'From business systems to intelligent digital products.',
-        ctaLabel: 'Explore Custom Solutions',
-              },
       industriesSection: {
         heading: 'Technology grounded in industry context.',
         subtext: 'Technology decisions work better when they reflect how an industry actually operates. Metaphi combines engineering capability with practical understanding of business workflows across ten industry groups.',
         ctaLabel: 'Explore Industries',
-              },
-      readyToConfigureSection: {
-        heading: 'Move faster without forcing your business into generic software.',
-        subtext: 'Where we have already solved similar operational problems, Metaphi can begin with a reusable solution foundation and configure it around your workflows, integrations and operating model.',
-        ctaLabel: 'View Ready-to-Configure Solutions',
-              },
+      },
       workShowcaseEyebrow: 'FEATURED CASE STUDY',
       workShowcaseLinkLabel: 'View Full Case Study',
       workShowcaseHeading: "Results We're Accountable for.",

@@ -112,17 +112,7 @@
     "solutionModelsSubtext": {
       "type": "text"
     },
-    "customCapabilitiesSection": {
-      "type": "component",
-      "repeatable": false,
-      "component": "hub.info-block"
-    },
     "industriesSection": {
-      "type": "component",
-      "repeatable": false,
-      "component": "hub.info-block"
-    },
-    "readyToConfigureSection": {
       "type": "component",
       "repeatable": false,
       "component": "hub.info-block"

@@ -145,6 +145,12 @@ const homePageLayout = {
   ],
   [
     {
+      "name": "solutionModelsImage",
+      "size": 12
+    }
+  ],
+  [
+    {
       "name": "trustHeading",
       "size": 6
     },
@@ -189,19 +195,7 @@ const homePageLayout = {
   ],
   [
     {
-      "name": "customCapabilitiesSection",
-      "size": 12
-    }
-  ],
-  [
-    {
       "name": "industriesSection",
-      "size": 12
-    }
-  ],
-  [
-    {
-      "name": "readyToConfigureSection",
       "size": 12
     }
   ],
