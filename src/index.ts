@@ -108,6 +108,44 @@ export default {
             .update({ value: JSON.stringify(config) });
         }
       }
+
+      // ── 4. Ensure solutionModelsImage is in Home Page edit layout ────────
+      const homeConfigRows = await strapi.db
+        .connection('strapi_core_store_settings')
+        .where({ key: 'plugin_content_manager_configuration_content_types::api::home-page.home-page' })
+        .select('id', 'value');
+
+      if (homeConfigRows.length > 0) {
+        const config = JSON.parse(homeConfigRows[0].value);
+        const editRows = config?.layouts?.edit;
+        if (Array.isArray(editRows)) {
+          const hasImageField = editRows.some((row: any[]) =>
+            row.some((field: any) => field.name === 'solutionModelsImage')
+          );
+          if (!hasImageField) {
+            // Insert solutionModelsImage row right after solutionModelsSubtext
+            const subtextRowIdx = editRows.findIndex((row: any[]) =>
+              row.some((field: any) => field.name === 'solutionModelsSubtext')
+            );
+            const imageRow = [{ name: 'solutionModelsImage', size: 12 }];
+            if (subtextRowIdx !== -1) {
+              editRows.splice(subtextRowIdx + 1, 0, imageRow);
+            } else {
+              editRows.push(imageRow);
+            }
+            // Remove obsolete customCapabilitiesSection and readyToConfigureSection if present
+            const filteredRows = editRows.filter((row: any[]) =>
+              !row.some((f: any) => f.name === 'customCapabilitiesSection' || f.name === 'readyToConfigureSection')
+            );
+            config.layouts.edit = filteredRows;
+            await strapi.db
+              .connection('strapi_core_store_settings')
+              .where({ id: homeConfigRows[0].id })
+              .update({ value: JSON.stringify(config) });
+            strapi.log.info('[Bootstrap] Applied solutionModelsImage and cleaned layouts for Home Page');
+          }
+        }
+      }
       // ── 6. Enforce Minimum 1 Published Testimonial & FAQ Guard ──────
       strapi.documents.use(async (ctx: any, next: any) => {
         const { action, uid } = ctx;
