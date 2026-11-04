@@ -19,6 +19,12 @@
       "type": "text",
       "required": false
     },
+    "whatItMeansHeading": {
+      "type": "string"
+    },
+    "whatItMeansSubtext": {
+      "type": "text"
+    },
     "whatItMeans": {
       "type": "component",
       "repeatable": true,
@@ -43,18 +49,6 @@
       "type": "component",
       "repeatable": false,
       "component": "hub.final-cta"
-    },
-    "whatItMeansHeading": {
-      "type": "string"
-    },
-    "whatItMeansSubtext": {
-      "type": "text"
-    },
-    "portfolioHeading": {
-      "type": "string"
-    },
-    "portfolioSubtext": {
-      "type": "text"
     }
   }
 }
