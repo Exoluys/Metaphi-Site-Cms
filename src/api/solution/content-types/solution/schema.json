@@ -40,16 +40,6 @@
       "min": 0,
       "required": false
     },
-    "featuredOnHome": {
-      "type": "boolean",
-      "default": false
-    },
-    "homeTitle": {
-      "type": "string"
-    },
-    "homeSummary": {
-      "type": "text"
-    },
     "ctaLabel": {
       "type": "string"
     },
