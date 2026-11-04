@@ -31,10 +31,6 @@
       "type": "text",
       "required": false
     },
-    "applyUrl": {
-      "type": "string",
-      "required": false
-    },
     "order": {
       "type": "integer",
       "default": 0
