@@ -5,10 +5,10 @@ export function validateTransformationThemes(transformationThemes: any) {
 
   const items = transformationThemes.items;
   if (items !== undefined) {
-    if (!Array.isArray(items) || items.length !== 9) {
+    if (!Array.isArray(items) || items.length < 3) {
       const count = Array.isArray(items) ? items.length : typeof items;
       throw new errors.ValidationError(
-        `transformationThemes.items must contain exactly 9 items. Received ${count}.`
+        `transformationThemes.items must contain at least 3 items. Received ${count}.`
       );
     }
 

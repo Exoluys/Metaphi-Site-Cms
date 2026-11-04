@@ -19,11 +19,6 @@
       "type": "text",
       "required": false
     },
-    "industryCardsCta": {
-      "type": "component",
-      "repeatable": false,
-      "component": "hub.info-block"
-    },
     "transformationThemes": {
       "type": "component",
       "repeatable": false,

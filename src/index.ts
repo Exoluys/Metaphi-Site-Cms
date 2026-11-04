@@ -215,8 +215,8 @@ export default {
           const tt = ctx.params?.data?.transformationThemes;
           if (tt && tt.items !== undefined) {
             const items = tt.items;
-            if (!Array.isArray(items) || items.length !== 9) {
-              throw new Error(`transformationThemes.items must contain exactly 9 items. Received ${Array.isArray(items) ? items.length : typeof items}.`);
+            if (!Array.isArray(items) || items.length < 3) {
+              throw new Error(`transformationThemes.items must contain at least 3 items. Received ${Array.isArray(items) ? items.length : typeof items}.`);
             }
             for (let i = 0; i < items.length; i++) {
               const item = items[i];
