@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_case_study_tags",
+  "info": {
+    "displayName": "Tag",
+    "icon": "price-tag",
+    "description": "Tag item with title"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    }
+  }
+}
+

@@ -107,6 +107,18 @@ export interface CaseStudyStat extends Struct.ComponentSchema {
   };
 }
 
+export interface CaseStudyTagItem extends Struct.ComponentSchema {
+  collectionName: 'components_case_study_tags';
+  info: {
+    description: 'Tag item with title';
+    displayName: 'Tag';
+    icon: 'price-tag';
+  };
+  attributes: {
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
 export interface ContactPhoneItem extends Struct.ComponentSchema {
   collectionName: 'components_contact_phone_items';
   info: {
@@ -477,6 +489,7 @@ declare module '@strapi/strapi' {
       'case-study.outcome-card': CaseStudyOutcomeCard;
       'case-study.project-summary-section': CaseStudyProjectSummarySection;
       'case-study.stat': CaseStudyStat;
+      'case-study.tag-item': CaseStudyTagItem;
       'contact.phone-item': ContactPhoneItem;
       'home.certification': HomeCertification;
       'home.client-logo': HomeClientLogo;

@@ -566,7 +566,7 @@ export interface ApiCaseStudyCaseStudy extends Struct.CollectionTypeSchema {
     solutionText: Schema.Attribute.Text;
     subtitle: Schema.Attribute.Text;
     summary: Schema.Attribute.Text;
-    tags: Schema.Attribute.Text;
+    tags: Schema.Attribute.Component<'case-study.tag-item', true>;
     title: Schema.Attribute.String & Schema.Attribute.Required;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
