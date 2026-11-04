@@ -527,7 +527,6 @@ export interface ApiCaseStudyCaseStudy extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
-    body: Schema.Attribute.Text;
     challengeSection: Schema.Attribute.Component<
       'case-study.challenge-section',
       false
@@ -535,8 +534,6 @@ export interface ApiCaseStudyCaseStudy extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    featuredOnShowcase: Schema.Attribute.Boolean &
-      Schema.Attribute.DefaultTo<false>;
     heroImage: Schema.Attribute.Media<'images'>;
     impactSection: Schema.Attribute.Component<
       'case-study.impact-section',
@@ -561,38 +558,19 @@ export interface ApiCaseStudyCaseStudy extends Struct.CollectionTypeSchema {
       false
     >;
     publishedAt: Schema.Attribute.DateTime;
-    seoDescription: Schema.Attribute.String &
-      Schema.Attribute.SetMinMaxLength<{
-        maxLength: 160;
-      }>;
     slug: Schema.Attribute.String;
     solutions: Schema.Attribute.Relation<
       'manyToMany',
       'api::solution.solution'
     >;
-    solutionSection: Schema.Attribute.Component<
-      'case-study.solution-section',
-      false
-    >;
+    solutionText: Schema.Attribute.Text;
     subtitle: Schema.Attribute.Text;
     summary: Schema.Attribute.Text;
     tags: Schema.Attribute.Text;
-    takeawaysSection: Schema.Attribute.Component<
-      'case-study.takeaways-section',
-      false
-    >;
-    technologySection: Schema.Attribute.Component<
-      'case-study.technology-section',
-      false
-    >;
     title: Schema.Attribute.String & Schema.Attribute.Required;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    workflowSection: Schema.Attribute.Component<
-      'case-study.workflow-section',
-      false
-    >;
   };
 }
 
@@ -699,15 +677,12 @@ export interface ApiCustomSolutionsHubCustomSolutionsHub
   };
   attributes: {
     businessOutcomes: Schema.Attribute.Component<'hub.checklist', false>;
-    capabilities: Schema.Attribute.Component<'hub.capability-card', true>;
     capabilitiesHeading: Schema.Attribute.String;
     capabilitiesSubtext: Schema.Attribute.Text;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    deliveryHeading: Schema.Attribute.String;
     deliveryProcess: Schema.Attribute.Component<'hub.process-flow', false>;
-    deliverySubtext: Schema.Attribute.Text;
     finalCta: Schema.Attribute.Component<'hub.final-cta', false>;
     heroHeading: Schema.Attribute.String & Schema.Attribute.Required;
     heroSubtext: Schema.Attribute.Text;
@@ -849,10 +824,6 @@ export interface ApiHomePageHomePage extends Struct.SingleTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    customCapabilitiesSection: Schema.Attribute.Component<
-      'hub.info-block',
-      false
-    >;
     deliveryApproachHeading: Schema.Attribute.String;
     deliveryApproachHighlight: Schema.Attribute.String;
     deliveryApproachSubtext: Schema.Attribute.Text;
@@ -879,10 +850,6 @@ export interface ApiHomePageHomePage extends Struct.SingleTypeSchema {
       Schema.Attribute.Private;
     primaryButtonText: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
-    readyToConfigureSection: Schema.Attribute.Component<
-      'hub.info-block',
-      false
-    >;
     secondaryButtonText: Schema.Attribute.String;
     solutionModelsEyebrow: Schema.Attribute.String;
     solutionModelsHeading: Schema.Attribute.String;
@@ -954,7 +921,6 @@ export interface ApiIndustriesHubIndustriesHub extends Struct.SingleTypeSchema {
     gridSubtext: Schema.Attribute.Text;
     heroHeading: Schema.Attribute.String & Schema.Attribute.Required;
     heroSubtext: Schema.Attribute.Text;
-    industryCardsCta: Schema.Attribute.Component<'hub.info-block', false>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -1178,22 +1144,14 @@ export interface ApiReadyToConfigureHubReadyToConfigureHub
     heroHeading: Schema.Attribute.String & Schema.Attribute.Required;
     heroSubtext: Schema.Attribute.Text;
     implementationFlow: Schema.Attribute.Component<'hub.process-flow', false>;
-    implementationHeading: Schema.Attribute.String;
-    implementationSubtext: Schema.Attribute.Text;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
       'api::ready-to-configure-hub.ready-to-configure-hub'
     > &
       Schema.Attribute.Private;
-    portfolioHeading: Schema.Attribute.String;
-    portfolioSubtext: Schema.Attribute.Text;
     proof: Schema.Attribute.Component<'hub.proof-block', false>;
     publishedAt: Schema.Attribute.DateTime;
-    solutionPortfolio: Schema.Attribute.Component<
-      'hub.solution-portfolio',
-      false
-    >;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1330,14 +1288,14 @@ export interface ApiSolutionSolution extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
+    caseStudies: Schema.Attribute.Relation<
+      'manyToMany',
+      'api::case-study.case-study'
+    >;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     ctaLabel: Schema.Attribute.String;
-    featuredOnHome: Schema.Attribute.Boolean &
-      Schema.Attribute.DefaultTo<false>;
-    homeSummary: Schema.Attribute.Text;
-    homeTitle: Schema.Attribute.String;
     industries: Schema.Attribute.Relation<
       'manyToMany',
       'api::industry.industry'

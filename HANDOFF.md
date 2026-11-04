@@ -45,7 +45,14 @@ Before deploying to production (e.g. Railway, Render, DigitalOcean):
    - Confirm removal of `ctaLink`, `secondaryCtaLink`, and `buttonLink` across all Strapi components (`capability-card`, `final-cta`, `info-block`, `proof-block`, `saas-product`, `solution-model`, `solution-portfolio`, `default-cta-banner`, `industry-page/cta-banner`, `challenges-section`, `services-section`, and `api::industry`). Link destinations are strictly managed in Next.js code (`lib/links.ts`).
    - Confirm removal of `seo` components across all 9 company page schemas.
    - Confirm deletion of legacy `api::client-logo` collection and `case-study.solutionModel`.
-4. **Deleted Content Types**:
+4. **Case Study Schema Simplification**:
+   - `case-study` fields removed: `body`, `seoDescription`, `featuredOnShowcase`.
+   - `case-study` sections deleted: `workflowSection`, `technologySection`, `takeawaysSection`.
+   - `case-study` components deleted: `capability-item`, `solution-section`, `workflow-section`, `stage-item`, `technology-section`, `tech-group`, `takeaways-section`, `takeaway-item`, `comparison-row`.
+   - `solutionText` added as plain text and `solutions` relation configured as a bidirectional `manyToMany` with `api::solution.solution`.
+   - `challengeSection` simplified to `challenge` (text) + 3 items (`title`, `description`).
+   - `impactSection` simplified to 3 outcome cards (`metric`, `title`, `description`).
+5. **Deleted Content Types**:
    - `api::service.service`: Legacy Service collection deleted completely along with all `components/service/*` components, `relatedServices` relation on Case Study, lifecycles, and permissions.
    - `api::reviewer.reviewer`: Unused subject matter expert reviewer collection deleted.
    - `api::service-category.service-category`: Unused service category collection deleted.

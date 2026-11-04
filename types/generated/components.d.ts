@@ -1,53 +1,5 @@
 import type { Schema, Struct } from '@strapi/strapi';
 
-export interface CaseStudyCapabilityItem extends Struct.ComponentSchema {
-  collectionName: 'components_case_study_capabilities';
-  info: {
-    description: 'Solution capability delivered in the case study';
-    displayName: 'Capability Item';
-    icon: 'cog';
-  };
-  attributes: {
-    description: Schema.Attribute.Text & Schema.Attribute.Required;
-    icon: Schema.Attribute.Enumeration<
-      [
-        'Bot',
-        'Sparkles',
-        'Cpu',
-        'Layers',
-        'Rocket',
-        'Smartphone',
-        'Globe',
-        'Code2',
-        'Cloud',
-        'CloudRain',
-        'Boxes',
-        'Database',
-        'BarChart3',
-        'PieChart',
-        'TrendingUp',
-        'FileText',
-        'Compass',
-        'Layout',
-        'CheckCircle',
-        'GitBranch',
-        'Users',
-        'FileCode',
-        'Briefcase',
-        'Zap',
-        'Activity',
-        'Building2',
-        'GraduationCap',
-        'Landmark',
-        'ShoppingCart',
-        'Truck',
-      ]
-    > &
-      Schema.Attribute.DefaultTo<'Boxes'>;
-    title: Schema.Attribute.String & Schema.Attribute.Required;
-  };
-}
-
 export interface CaseStudyChallengeItem extends Struct.ComponentSchema {
   collectionName: 'components_case_study_challenges';
   info: {
@@ -64,49 +16,39 @@ export interface CaseStudyChallengeItem extends Struct.ComponentSchema {
 export interface CaseStudyChallengeSection extends Struct.ComponentSchema {
   collectionName: 'components_case_study_challenge_sections';
   info: {
-    description: 'Business challenge section with eyebrow, heading, intro text and challenge items';
+    description: 'Business challenge section with challenge paragraph and 3 challenge items';
     displayName: 'Business Challenge Section';
     icon: 'shield-alert';
   };
   attributes: {
-    challenges: Schema.Attribute.Component<'case-study.challenge-item', true>;
-    eyebrow: Schema.Attribute.String;
-    heading: Schema.Attribute.String;
-    introText: Schema.Attribute.Text;
-  };
-}
-
-export interface CaseStudyComparisonRow extends Struct.ComponentSchema {
-  collectionName: 'components_case_study_comparison_rows';
-  info: {
-    description: 'Baseline vs MetaPhi comparative row';
-    displayName: 'Comparison Row';
-    icon: 'table';
-  };
-  attributes: {
-    baseline: Schema.Attribute.String & Schema.Attribute.Required;
-    dimension: Schema.Attribute.String & Schema.Attribute.Required;
-    ours: Schema.Attribute.String & Schema.Attribute.Required;
+    challenge: Schema.Attribute.Text;
+    items: Schema.Attribute.Component<'case-study.challenge-item', true> &
+      Schema.Attribute.SetMinMax<
+        {
+          max: 3;
+          min: 3;
+        },
+        number
+      >;
   };
 }
 
 export interface CaseStudyImpactSection extends Struct.ComponentSchema {
   collectionName: 'components_case_study_impact_sections';
   info: {
-    description: 'Business impact section with outcome cards and flattened comparison table';
+    description: 'Business impact section with 3 outcome cards';
     displayName: 'Business Impact Section';
     icon: 'trophy';
   };
   attributes: {
-    baselineHeader: Schema.Attribute.String;
-    comparisonRows: Schema.Attribute.Component<
-      'case-study.comparison-row',
-      true
-    >;
-    eyebrow: Schema.Attribute.String;
-    heading: Schema.Attribute.String;
-    oursHeader: Schema.Attribute.String;
-    outcomeCards: Schema.Attribute.Component<'case-study.outcome-card', true>;
+    outcomeCards: Schema.Attribute.Component<'case-study.outcome-card', true> &
+      Schema.Attribute.SetMinMax<
+        {
+          max: 3;
+          min: 3;
+        },
+        number
+      >;
   };
 }
 
@@ -152,39 +94,6 @@ export interface CaseStudyProjectSummarySection extends Struct.ComponentSchema {
   };
 }
 
-export interface CaseStudySolutionSection extends Struct.ComponentSchema {
-  collectionName: 'components_case_study_solution_sections';
-  info: {
-    description: 'Solution and capabilities section with paragraphs, side image, and capabilities list';
-    displayName: 'Solution Section';
-    icon: 'cog';
-  };
-  attributes: {
-    capabilities: Schema.Attribute.Component<
-      'case-study.capability-item',
-      true
-    >;
-    eyebrow: Schema.Attribute.String;
-    heading: Schema.Attribute.String;
-    paragraphOne: Schema.Attribute.Text;
-    paragraphTwo: Schema.Attribute.Text;
-    sideImage: Schema.Attribute.Media<'images'>;
-  };
-}
-
-export interface CaseStudyStageItem extends Struct.ComponentSchema {
-  collectionName: 'components_case_study_stages';
-  info: {
-    description: 'Workflow phase or stage';
-    displayName: 'Stage Item';
-    icon: 'layer';
-  };
-  attributes: {
-    description: Schema.Attribute.Text & Schema.Attribute.Required;
-    title: Schema.Attribute.String & Schema.Attribute.Required;
-  };
-}
-
 export interface CaseStudyStat extends Struct.ComponentSchema {
   collectionName: 'components_case_study_stats';
   info: {
@@ -195,79 +104,6 @@ export interface CaseStudyStat extends Struct.ComponentSchema {
   attributes: {
     label: Schema.Attribute.String & Schema.Attribute.Required;
     value: Schema.Attribute.String & Schema.Attribute.Required;
-  };
-}
-
-export interface CaseStudyTakeawayItem extends Struct.ComponentSchema {
-  collectionName: 'components_case_study_takeaways';
-  info: {
-    description: 'Numbered key takeaway or strategic learning';
-    displayName: 'Takeaway Item';
-    icon: 'check';
-  };
-  attributes: {
-    description: Schema.Attribute.Text & Schema.Attribute.Required;
-    title: Schema.Attribute.String & Schema.Attribute.Required;
-  };
-}
-
-export interface CaseStudyTakeawaysSection extends Struct.ComponentSchema {
-  collectionName: 'components_case_study_takeaways_sections';
-  info: {
-    description: 'Takeaways section with paragraphs, numbered takeaways, and side image';
-    displayName: 'Takeaways Section';
-    icon: 'check';
-  };
-  attributes: {
-    eyebrow: Schema.Attribute.String;
-    heading: Schema.Attribute.String;
-    paragraphOne: Schema.Attribute.Text;
-    paragraphTwo: Schema.Attribute.Text;
-    sideImage: Schema.Attribute.Media<'images'>;
-    takeaways: Schema.Attribute.Component<'case-study.takeaway-item', true>;
-  };
-}
-
-export interface CaseStudyTechGroup extends Struct.ComponentSchema {
-  collectionName: 'components_case_study_tech_groups';
-  info: {
-    description: 'Technology category and list of tools/libraries';
-    displayName: 'Tech Group';
-    icon: 'code';
-  };
-  attributes: {
-    group: Schema.Attribute.String & Schema.Attribute.Required;
-    items: Schema.Attribute.Text & Schema.Attribute.Required;
-  };
-}
-
-export interface CaseStudyTechnologySection extends Struct.ComponentSchema {
-  collectionName: 'components_case_study_technology_sections';
-  info: {
-    description: 'Technology stack section with eyebrow, heading, intro text, and tech groups';
-    displayName: 'Technology Section';
-    icon: 'code';
-  };
-  attributes: {
-    eyebrow: Schema.Attribute.String;
-    heading: Schema.Attribute.String;
-    introText: Schema.Attribute.Text;
-    techGroups: Schema.Attribute.Component<'case-study.tech-group', true>;
-  };
-}
-
-export interface CaseStudyWorkflowSection extends Struct.ComponentSchema {
-  collectionName: 'components_case_study_workflow_sections';
-  info: {
-    description: 'Workflow stages section with eyebrow, heading, subtitle, and numbered stages';
-    displayName: 'Workflow Section';
-    icon: 'layer';
-  };
-  attributes: {
-    eyebrow: Schema.Attribute.String;
-    heading: Schema.Attribute.String;
-    stages: Schema.Attribute.Component<'case-study.stage-item', true>;
-    subtitle: Schema.Attribute.Text;
   };
 }
 
@@ -409,7 +245,6 @@ export interface HubFinalCta extends Struct.ComponentSchema {
   attributes: {
     ctaLabel: Schema.Attribute.String & Schema.Attribute.Required;
     heading: Schema.Attribute.String;
-    secondaryCtaLabel: Schema.Attribute.String;
     subtext: Schema.Attribute.Text;
   };
 }
@@ -444,8 +279,6 @@ export interface HubInfoBlock extends Struct.ComponentSchema {
   attributes: {
     ctaLabel: Schema.Attribute.String;
     heading: Schema.Attribute.String;
-    highlight: Schema.Attribute.String;
-    secondaryCtaLabel: Schema.Attribute.String;
     subtext: Schema.Attribute.Text;
   };
 }
@@ -563,10 +396,8 @@ export interface HubSolutionModel extends Struct.ComponentSchema {
   attributes: {
     ctaLabel: Schema.Attribute.String;
     description: Schema.Attribute.Text;
-    homeDescription: Schema.Attribute.Text;
     tagline: Schema.Attribute.String;
     title: Schema.Attribute.String & Schema.Attribute.Required;
-    typicalNeeds: Schema.Attribute.Component<'hub.string-item', true>;
   };
 }
 
@@ -639,22 +470,13 @@ export interface SharedSeo extends Struct.ComponentSchema {
 declare module '@strapi/strapi' {
   export namespace Public {
     export interface ComponentSchemas {
-      'case-study.capability-item': CaseStudyCapabilityItem;
       'case-study.challenge-item': CaseStudyChallengeItem;
       'case-study.challenge-section': CaseStudyChallengeSection;
-      'case-study.comparison-row': CaseStudyComparisonRow;
       'case-study.impact-section': CaseStudyImpactSection;
       'case-study.key-fact': CaseStudyKeyFact;
       'case-study.outcome-card': CaseStudyOutcomeCard;
       'case-study.project-summary-section': CaseStudyProjectSummarySection;
-      'case-study.solution-section': CaseStudySolutionSection;
-      'case-study.stage-item': CaseStudyStageItem;
       'case-study.stat': CaseStudyStat;
-      'case-study.takeaway-item': CaseStudyTakeawayItem;
-      'case-study.takeaways-section': CaseStudyTakeawaysSection;
-      'case-study.tech-group': CaseStudyTechGroup;
-      'case-study.technology-section': CaseStudyTechnologySection;
-      'case-study.workflow-section': CaseStudyWorkflowSection;
       'contact.phone-item': ContactPhoneItem;
       'home.certification': HomeCertification;
       'home.client-logo': HomeClientLogo;

@@ -20,13 +20,15 @@
       "type": "string",
       "required": true
     },
+    "order": {
+      "type": "integer",
+      "default": 0,
+      "min": 0
+    },
     "subtitle": {
       "type": "text"
     },
     "summary": {
-      "type": "text"
-    },
-    "body": {
       "type": "text"
     },
     "tags": {
@@ -40,18 +42,14 @@
         "images"
       ]
     },
-    "seoDescription": {
-      "type": "string",
-      "maxLength": 160
+    "solutionText": {
+      "type": "text"
     },
-    "order": {
-      "type": "integer",
-      "default": 0,
-      "min": 0
-    },
-    "featuredOnShowcase": {
-      "type": "boolean",
-      "default": false
+    "solutions": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::solution.solution",
+      "inversedBy": "caseStudies"
     },
     "projectSummary": {
       "type": "component",
@@ -63,35 +61,10 @@
       "component": "case-study.challenge-section",
       "repeatable": false
     },
-    "solutionSection": {
-      "type": "component",
-      "component": "case-study.solution-section",
-      "repeatable": false
-    },
-    "workflowSection": {
-      "type": "component",
-      "component": "case-study.workflow-section",
-      "repeatable": false
-    },
-    "technologySection": {
-      "type": "component",
-      "component": "case-study.technology-section",
-      "repeatable": false
-    },
     "impactSection": {
       "type": "component",
       "component": "case-study.impact-section",
       "repeatable": false
-    },
-    "takeawaysSection": {
-      "type": "component",
-      "component": "case-study.takeaways-section",
-      "repeatable": false
-    },
-    "solutions": {
-      "type": "relation",
-      "relation": "manyToMany",
-      "target": "api::solution.solution"
     }
   }
 }

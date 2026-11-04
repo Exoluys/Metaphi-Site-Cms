@@ -48,6 +48,12 @@
       "relation": "manyToMany",
       "target": "api::industry.industry",
       "mappedBy": "solutions"
+    },
+    "caseStudies": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::case-study.case-study",
+      "mappedBy": "solutions"
     }
   }
 }

@@ -10,8 +10,8 @@ async function createDummy() {
       title: 'DUMMY: Autonomous Energy Grid Balancing Through Multi-Agent RL',
       subtitle: 'DUMMY: Subtitle for High-Throughput Grid Optimization',
       summary: 'DUMMY: We engineered an autonomous multi-agent reinforcement learning platform to dynamically balance micro-grid renewable power distribution.',
-      body: 'DUMMY: Renewable micro-grids experience severe transient fluctuations requiring microsecond balancing.\n\nDUMMY: We deployed intelligent distributed swarms that stabilize frequency deviations before cascade failures occur.',
-      seoDescription: null,
+      solutionText: 'DUMMY: Our team engineered real-time telemetry pipelines ingesting inverter signals across 50,000 edge nodes, coordinating dispatch instructions every 10 milliseconds.',
+      tags: 'Clean Energy, AI Optimization, Edge Computing',
       order: 99,
       projectSummary: {
         summaryText: 'DUMMY: Project summary blurb outlining enterprise energy transformation and client milestones.',
@@ -26,82 +26,44 @@ async function createDummy() {
         ],
       },
       challengeSection: {
-        eyebrow: 'DUMMY: The Problem',
-        heading: 'DUMMY: High Frequency Grid Instability',
-        introText: 'DUMMY: Rapid adoption of distributed solar created uncontrollable localized power surges.',
-        challenges: [
+        challenge: 'DUMMY: Rapid adoption of distributed solar created uncontrollable localized power surges across legacy substations.',
+        items: [
           { title: 'DUMMY: Grid Saturation', description: 'DUMMY: Legacy transformers overheated during peak midday generation.' },
           { title: 'DUMMY: Asymmetric Feed', description: 'DUMMY: Power feed variations risked localized brownouts.' },
-        ],
-      },
-      solutionSection: {
-        eyebrow: 'DUMMY: The Solution',
-        heading: 'DUMMY: Decentralized Swarm Coordination',
-        paragraphOne: 'DUMMY: Our team engineered real-time telemetry pipelines ingesting inverter signals across 50,000 edge nodes.',
-        paragraphTwo: 'DUMMY: Intelligent agents coordinate dispatch instructions every 10 milliseconds to damp harmonics.',
-        capabilities: [
-          { icon: 'Zap', title: 'DUMMY: Sub-second Control', description: 'DUMMY: Hardware in the loop automated response.' },
-          { icon: 'Cpu', title: 'DUMMY: Fail-Safe Isolation', description: 'DUMMY: Air-gapped failover logic.' },
-        ],
-      },
-      workflowSection: {
-        eyebrow: 'DUMMY: The Process',
-        heading: 'DUMMY: 4-Stage Deployment Architecture',
-        subtitle: 'DUMMY: From digital twin modeling to edge firmware rollouts.',
-        stages: [
-          { stepNumber: '01', title: 'DUMMY: Simulation Modeling', description: 'DUMMY: Validated stability across 10,000 Monte Carlo runs.' },
-          { stepNumber: '02', title: 'DUMMY: Edge Firmware Agent', description: 'DUMMY: Compiled lightweight C++ inference runtimes.' },
-        ],
-      },
-      technologySection: {
-        eyebrow: 'DUMMY: Tech Stack',
-        heading: 'DUMMY: Real-Time Event Driven Architecture',
-        introText: 'DUMMY: High-concurrency systems engineered for fault tolerance.',
-        techGroups: [
-          {
-            group: 'DUMMY: Core Compute',
-            items: 'Rust\nKafka\nPyTorch',
-          },
+          { title: 'DUMMY: Signal Latency', description: 'DUMMY: Centralized SCADA systems polled too slowly to prevent frequency drift.' },
         ],
       },
       impactSection: {
-        eyebrow: 'DUMMY: Business Impact',
-        heading: 'DUMMY: Measurable Performance Gains',
-        baselineHeader: 'DUMMY: Legacy Grid',
-        oursHeader: 'DUMMY: MetaPhi Swarm',
         outcomeCards: [
-          { metric: '99.99%', title: 'DUMMY: Uptime', description: 'DUMMY: Zero brownout events across 12 months.' },
-          { metric: '4.8x', title: 'DUMMY: Efficiency', description: 'DUMMY: Faster load balancing dispatch cycles.' },
-        ],
-        comparisonRows: [
-          { dimension: 'DUMMY: Fault Response', baseline: '45 seconds', ours: '12 milliseconds' },
-          { dimension: 'DUMMY: Curtailment Loss', baseline: '14.2%', ours: '0.8%' },
-        ],
-      },
-      takeawaysSection: {
-        eyebrow: 'DUMMY: Key Lessons',
-        heading: 'DUMMY: Insights From Grid Modernization',
-        paragraphOne: 'DUMMY: Edge intelligence dramatically minimizes central cloud roundtrip latency.',
-        paragraphTwo: 'DUMMY: Continuous automated testing prevents catastrophic cascading edge failures.',
-        takeaways: [
-          { title: 'DUMMY: Latency is King', description: 'DUMMY: Local inference decisions must never wait on cloud API handshakes.' },
-          { title: 'DUMMY: Observability First', description: 'DUMMY: High-resolution telemetry is non-negotiable for autonomous swarms.' },
+          { metric: '38%', title: 'DUMMY: Peak Reduction', description: 'DUMMY: Diminished midday overload.' },
+          { metric: '<5ms', title: 'DUMMY: Sync Latency', description: 'DUMMY: Rapid edge peer convergence.' },
+          { metric: '99.9%', title: 'DUMMY: Grid Uptime', description: 'DUMMY: Zero brownout events over six months.' },
         ],
       },
     };
 
-    const doc = await app.documents('api::case-study.case-study').create({
-      status: 'published',
-      data: dummyData,
+    console.log('Checking if dummy case study already exists...');
+    const existing = await app.documents('api::case-study.case-study').findFirst({
+      filters: { slug: 'dummy-case-study' }
     });
 
-    console.log('Created and published dummy case study:', doc.documentId, doc.slug);
-
-  } catch(err: any) {
-    console.error('Failed to create dummy case study:', err);
-    if (err.details?.errors) {
-      console.error('Validation errors:', JSON.stringify(err.details.errors, null, 2));
+    if (existing) {
+      console.log('Dummy case study already exists (docId: ' + existing.documentId + '). Updating...');
+      await app.documents('api::case-study.case-study').update({
+        documentId: existing.documentId,
+        data: dummyData
+      });
+      console.log('Updated successfully.');
+    } else {
+      console.log('Creating new dummy case study document...');
+      const created = await app.documents('api::case-study.case-study').create({
+        data: dummyData,
+        status: 'published'
+      });
+      console.log('Created and published dummy case study (docId: ' + created.documentId + ')');
     }
+  } catch (err) {
+    console.error('Error during dummy case study creation:', err);
   } finally {
     process.exit(0);
   }

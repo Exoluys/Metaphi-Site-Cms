@@ -899,7 +899,6 @@ async function seed() {
         summary: 'We built a high-fidelity wind farm digital twin that enabled renewable energy planners to simulate turbine layouts, improve energy forecasting, validate feasibility, and estimate ROI before capital investment decisions.',
         tags: 'Digital Twin Solution, Unreal Engine Development, AI Development',
         order: 1,
-        featuredOnShowcase: true,
         heroImageFileName: 'showcase_wind_farm_f99d4fd26d.jpg',
         outcomeCards: [
           { metric: '35%', title: 'Faster Planning' },
@@ -914,7 +913,6 @@ async function seed() {
         summary: 'Developed a HIPAA-compliant medical AI diagnostic co-pilot that assists radiologists in segmenting MRI/CT scans with sub-millimeter precision, prioritizing critical findings and cutting patient turnaround time.',
         tags: 'Healthcare IT Solution, Computer Vision, HIPAA Architecture',
         order: 2,
-        featuredOnShowcase: true,
         heroImageFileName: 'showcase_healthcare_ai_73f26654ab.jpg',
         outcomeCards: [
           { metric: '45%', title: 'Faster Review' },
@@ -929,7 +927,6 @@ async function seed() {
         summary: 'Implemented distributed autonomous agent swarms coordinating 500+ AGVs across dynamic fulfillment floors, optimizing package routing and eliminating warehouse traffic bottlenecks in real time.',
         tags: 'Autonomous Agents, Enterprise Automation, IoT & Telemetry',
         order: 3,
-        featuredOnShowcase: true,
         heroImageFileName: 'showcase_logistics_ai_f8c09b461a.jpg',
         outcomeCards: [
           { metric: '28%', title: 'Fuel & Route Optimization' },
@@ -955,7 +952,6 @@ async function seed() {
         summary: cs.summary,
         tags: cs.tags,
         order: cs.order,
-        featuredOnShowcase: cs.featuredOnShowcase,
         ...(heroImageId ? { heroImage: heroImageId } : {}),
         impactSection: {
           outcomeCards: cs.outcomeCards

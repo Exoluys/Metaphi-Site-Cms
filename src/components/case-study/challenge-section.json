@@ -3,23 +3,19 @@
   "info": {
     "displayName": "Business Challenge Section",
     "icon": "shield-alert",
-    "description": "Business challenge section with eyebrow, heading, intro text and challenge items"
+    "description": "Business challenge section with challenge paragraph and 3 challenge items"
   },
   "options": {},
   "attributes": {
-    "eyebrow": {
-      "type": "string"
-    },
-    "heading": {
-      "type": "string"
-    },
-    "introText": {
+    "challenge": {
       "type": "text"
     },
-    "challenges": {
+    "items": {
       "type": "component",
       "component": "case-study.challenge-item",
-      "repeatable": true
+      "repeatable": true,
+      "min": 3,
+      "max": 3
     }
   }
 }

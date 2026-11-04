@@ -3,31 +3,16 @@
   "info": {
     "displayName": "Business Impact Section",
     "icon": "trophy",
-    "description": "Business impact section with outcome cards and flattened comparison table"
+    "description": "Business impact section with 3 outcome cards"
   },
   "options": {},
   "attributes": {
-    "eyebrow": {
-      "type": "string"
-    },
-    "heading": {
-      "type": "string"
-    },
     "outcomeCards": {
       "type": "component",
       "component": "case-study.outcome-card",
-      "repeatable": true
-    },
-    "baselineHeader": {
-      "type": "string"
-    },
-    "oursHeader": {
-      "type": "string"
-    },
-    "comparisonRows": {
-      "type": "component",
-      "component": "case-study.comparison-row",
-      "repeatable": true
+      "repeatable": true,
+      "min": 3,
+      "max": 3
     }
   }
 }
