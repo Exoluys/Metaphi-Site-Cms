@@ -50,6 +50,8 @@ async function grantPublicPermissions() {
     'api::testimonial.testimonial.findOne',
     'api::faq.faq.find',
     'api::faq.faq.findOne',
+    'api::faq-category.faq-category.find',
+    'api::faq-category.faq-category.findOne',
   ];
 
   console.log(`Setting public permissions for ${actions.length} actions...`);

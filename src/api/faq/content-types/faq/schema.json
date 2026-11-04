@@ -5,7 +5,7 @@
     "singularName": "faq",
     "pluralName": "faqs",
     "displayName": "FAQ",
-    "description": ""
+    "description": "CMS-driven FAQ item"
   },
   "options": {
     "draftAndPublish": true
@@ -20,11 +20,16 @@
       "type": "text",
       "required": true
     },
-    "category": {
-      "type": "string"
+    "faqCategory": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::faq-category.faq-category",
+      "inversedBy": "faqs"
     },
     "order": {
-      "type": "integer"
+      "type": "integer",
+      "default": 0,
+      "min": 0
     }
   }
 }
