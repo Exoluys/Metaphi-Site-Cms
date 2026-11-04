@@ -19,6 +19,12 @@
       "type": "text",
       "required": false
     },
+    "productsHeading": {
+      "type": "string"
+    },
+    "productsSubtext": {
+      "type": "text"
+    },
     "otherModels": {
       "type": "component",
       "repeatable": false,
@@ -28,12 +34,6 @@
       "type": "component",
       "repeatable": false,
       "component": "hub.final-cta"
-    },
-    "productsHeading": {
-      "type": "string"
-    },
-    "productsSubtext": {
-      "type": "text"
     }
   }
 }
