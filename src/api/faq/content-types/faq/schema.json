@@ -24,7 +24,7 @@
       "type": "relation",
       "relation": "manyToOne",
       "target": "api::faq-category.faq-category",
-      "inversedBy": "faqs"
+      "required": true
     },
     "order": {
       "type": "integer",

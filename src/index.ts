@@ -39,6 +39,11 @@ export default {
           'api::compliance-page.compliance-page.find',
           'api::contact-page.contact-page.find',
           'api::schedule-a-call-page.schedule-a-call-page.find',
+          'api::faq-category.faq-category.find',
+          'api::faq-category.faq-category.findOne',
+          'api::faq.faq.find',
+          'api::faq.faq.findOne',
+          'api::faq-page.faq-page.find',
         ];
 
         for (const action of requiredActions) {

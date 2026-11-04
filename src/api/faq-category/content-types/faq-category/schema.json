@@ -16,17 +16,6 @@
       "type": "string",
       "required": true,
       "unique": true
-    },
-    "order": {
-      "type": "integer",
-      "default": 0,
-      "min": 0
-    },
-    "faqs": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::faq.faq",
-      "mappedBy": "faqCategory"
     }
   }
 }
