@@ -19,41 +19,41 @@
       "type": "text",
       "required": false
     },
-    "customModel": {
-      "type": "component",
-      "repeatable": false,
-      "component": "hub.solution-model"
-    },
-    "readyModel": {
-      "type": "component",
-      "repeatable": false,
-      "component": "hub.solution-model"
-    },
-    "saasModel": {
-      "type": "component",
-      "repeatable": false,
-      "component": "hub.solution-model"
-    },
-    "howToChoose": {
-      "type": "component",
-      "repeatable": false,
-      "component": "hub.how-to-choose"
-    },
-    "proof": {
-      "type": "component",
-      "repeatable": false,
-      "component": "hub.proof-block"
-    },
-    "finalCta": {
-      "type": "component",
-      "repeatable": false,
-      "component": "hub.final-cta"
-    },
     "modelsHeading": {
       "type": "string"
     },
     "modelsSubtext": {
       "type": "text"
+    },
+    "customModel": {
+      "type": "component",
+      "component": "hub.solution-model",
+      "repeatable": false
+    },
+    "readyModel": {
+      "type": "component",
+      "component": "hub.solution-model",
+      "repeatable": false
+    },
+    "saasModel": {
+      "type": "component",
+      "component": "hub.solution-model",
+      "repeatable": false
+    },
+    "howToChoose": {
+      "type": "component",
+      "component": "hub.how-to-choose",
+      "repeatable": false
+    },
+    "proof": {
+      "type": "component",
+      "component": "hub.proof-block",
+      "repeatable": false
+    },
+    "finalCta": {
+      "type": "component",
+      "component": "hub.final-cta",
+      "repeatable": false
     }
   }
 }
