@@ -29,11 +29,6 @@
       "repeatable": false,
       "component": "hub.comparison-matrix"
     },
-    "solutionPortfolio": {
-      "type": "component",
-      "repeatable": false,
-      "component": "hub.solution-portfolio"
-    },
     "implementationFlow": {
       "type": "component",
       "repeatable": false,
@@ -59,12 +54,6 @@
       "type": "string"
     },
     "portfolioSubtext": {
-      "type": "text"
-    },
-    "implementationHeading": {
-      "type": "string"
-    },
-    "implementationSubtext": {
       "type": "text"
     }
   }
