@@ -57,6 +57,7 @@ export default {
       // ── 2. Ensure slug fields are read-only in Admin Content Manager ────
       const lockedContentTypes = [
         'plugin_content_manager_configuration_content_types::api::industry.industry',
+        'plugin_content_manager_configuration_content_types::api::solution.solution',
         'plugin_content_manager_configuration_content_types::api::case-study.case-study',
       ];
 
