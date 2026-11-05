@@ -247,45 +247,57 @@ async function seed() {
   try {
     console.log('✓ Strapi loaded. Running in local mode.');
 
-    // ── STEP 4: Clear Target Tables Completely ────────────────────────────
-    console.log('\n--- Step 4: Truncating/Clearing target tables so nothing old remains ---');
-    const tablesToClear = [
-      'case_studies_solutions_lnk',
-      'components_case_study_tags',
-      'components_case_study_stats',
-      'components_case_study_key_facts',
-      'components_case_study_outcome_cards',
-      'components_case_study_challenges',
-      'components_case_study_challenge_sections_cmps',
-      'components_case_study_challenge_sections',
-      'components_case_study_impact_sections_cmps',
-      'components_case_study_impact_sections',
-      'components_case_study_project_summaries_cmps',
-      'components_case_study_project_summaries',
-      'case_studies_cmps',
-      'case_studies',
-      'faqs_faq_category_lnk',
-      'faqs',
-      'faq_categories',
-      'team_members',
-      'partners',
-      'testimonials',
-      'job_openings'
+    // ── STEP 4: Clear Target Collections via Document Service ──────────
+    console.log('\n--- Step 4: Clearing target collections via Document Service ---');
+    const repoModule = require(path.join(appDir, 'node_modules', '@strapi', 'core', 'dist', 'services', 'document-service', 'repository.js'));
+    const validator = require(path.join(appDir, 'node_modules', '@strapi', 'core', 'dist', 'services', 'entity-validator', 'index.js'));
+
+    const contentTypesToClear = [
+      'api::case-study.case-study',
+      'api::faq.faq',
+      'api::faq-category.faq-category',
+      'api::team-member.team-member',
+      'api::partner.partner',
+      'api::testimonial.testimonial',
+      'api::job-opening.job-opening'
     ];
 
-    for (const table of tablesToClear) {
-      try {
-        await app.db.connection.raw(`TRUNCATE TABLE "${table}" CASCADE;`);
-      } catch (err) {
-        // Fallback to DELETE if TRUNCATE CASCADE hits link constraints
-        try {
-          await app.db.connection.raw(`DELETE FROM "${table}";`);
-        } catch (delErr) {
-          console.warn(`Warning clearing table ${table}: ${delErr.message}`);
+    for (const uid of contentTypesToClear) {
+      const rawRepo = repoModule.createContentTypeRepository(uid, validator);
+      let deletedCount = 0;
+      const seenDocIds = new Set();
+      while (true) {
+        const batch = await app.documents(uid).findMany({
+          limit: 100,
+          status: 'draft'
+        });
+        if (!batch || batch.length === 0) break;
+
+        let batchDeleted = 0;
+        for (const doc of batch) {
+          if (!doc.documentId || seenDocIds.has(doc.documentId)) continue;
+          seenDocIds.add(doc.documentId);
+          await rawRepo.delete({
+            documentId: doc.documentId
+          });
+          deletedCount++;
+          batchDeleted++;
         }
+
+        if (batchDeleted === 0) break;
       }
+
+      const remainingDraft = await app.documents(uid).count({ status: 'draft' });
+      const remainingPublished = await app.documents(uid).count({ status: 'published' });
+
+      if (remainingDraft !== 0 || remainingPublished !== 0) {
+        throw new Error(
+          `FATAL: Failed to clear ${uid}. Remaining: draft=${remainingDraft}, published=${remainingPublished}`
+        );
+      }
+
+      console.log(`cleared ${uid}: ${deletedCount} deleted, 0 remaining`);
     }
-    console.log('✓ Cleared tables: testimonials, faqs, faq_categories, case_studies, team_members, partners');
 
     // ── 1. Seed 17 Solutions ─────────────────────────────────────────────
     console.log('\n--- 1. Seeding 17 Solutions (5 custom, 10 ready-to-configure, 2 saas) ---');
