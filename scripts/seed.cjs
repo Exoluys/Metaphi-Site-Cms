@@ -730,7 +730,7 @@ async function seed() {
     console.log('\n--- 4. Seeding Work Page & Case Studies ---');
     const workPageData = {
       heading: 'Work We Have Delivered for Real Teams',
-      highlight: '',
+      highlight: 'Outcomes Backed by Evidence.',
       intro: 'A look inside the problems we were handed, the choices we made and the measurable results that followed. Every case study reflects real code in production.',
       emptyStateText: 'Case studies are currently being updated. Please check back soon.'
     };
@@ -766,9 +766,10 @@ async function seed() {
         subtitle: 'Replacing manual dispatch with real-time routing',
         summary: 'A regional delivery fleet was spending three hours every morning manually assigning runs. We built a dispatch platform with dynamic route optimization that cut planning time to under twenty minutes and dropped fuel costs across the board.',
         tags: [
+          { title: 'Route Optimization' },
+          { title: 'Mobile App Development' },
           { title: 'Logistics' },
-          { title: 'Dispatch' },
-          { title: 'Routing' }
+          { title: 'Data Analytics' }
         ],
         solutionText: 'We deployed an automated scheduling engine that factors in live traffic, vehicle capacities, delivery windows, and priority tiers to compute optimal multi-stop runs in real time.',
         solutions: cs1Solutions,
@@ -840,9 +841,10 @@ async function seed() {
         subtitle: 'Unifying four clinic systems into one patient portal',
         summary: 'A network of twenty-four outpatient clinics had four different scheduling tools, leaving front-desk staff overwhelmed by phone bookings. We unified their calendars into a single patient self-service portal, reducing no-shows and freeing front desks to focus on patients in the room.',
         tags: [
-          { title: 'Healthcare' },
-          { title: 'Scheduling' },
-          { title: 'Self-Service' }
+          { title: 'Healthcare Software' },
+          { title: 'UX Design' },
+          { title: 'Patient Portal' },
+          { title: 'System Integration' }
         ],
         solutionText: 'We integrated the clinic EHR databases into a centralized scheduling platform with automated SMS reminders and a patient self-service portal.',
         solutions: cs2Solutions,
@@ -1058,8 +1060,12 @@ async function seed() {
     // ── 8. Seed Partners Page & Partners ─────────────────────────────────
     console.log('\n--- 8. Seeding Partners Page & Partners ---');
     const partnersPageData = {
+      heroEyebrow: 'Partner Network',
       heroHeading: 'Technology and Platform Partners',
       heroSubtext: 'We build on proven cloud providers, developer platforms and data infrastructure so your software stays fast, secure and supported long after launch.',
+      directoryEyebrow: 'Our Partners',
+      directoryHeading: 'Companies We Build and Grow With',
+      directorySubtext: 'From cloud platforms to industry specialists, these are the organizations we trust, certify with and recommend to our clients.',
       emptyStateText: 'Partner directory is currently being updated. Please check back soon.'
     };
 
@@ -1111,6 +1117,7 @@ async function seed() {
     // ── 9. Seed Compliance Page ──────────────────────────────────────────
     console.log('\n--- 9. Seeding Compliance Page ---');
     const compliancePageData = {
+      heroEyebrow: 'Trust and Compliance',
       heroHeading: 'Security, Privacy and Engineering Standards',
       heroSubtext: 'Enterprise-grade protection is not an add-on. We build defense in depth, strict access controls and verifiable audit logs into every project from day one.',
       sectionEyebrow: 'Our Safeguards',
