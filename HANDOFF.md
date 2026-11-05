@@ -35,7 +35,67 @@ psql -h 127.0.0.1 -U postgres -d metaphi_cms < backups/metaphi_cms_backup_before
 
 ---
 
-## 4. Hosted Strapi Deployment Checklist
+## 4. Hosted Strapi Deployment & Database Transfer Checklist
+
+When overwriting the hosted (Render) database with a local database dump or transferring state:
+
+### A. What the Database Overwrite Replaces on Hosted (Besides Content)
+Restoring a full database dump (`pg_restore` / `psql`) replaces every PostgreSQL table, which includes:
+1. **Admin Users & Passwords**: Any administrator accounts created on Render will be replaced with local admin users. Use your local admin email and password to log in post-transfer.
+2. **API Tokens & Transfer Tokens**: Salted tokens in `strapi_api_tokens` and `strapi_transfer_tokens` are overwritten.
+3. **Webhooks**: Overwriting `strapi_webhooks` will delete or reset webhooks configured on Render (including the crucial **Vercel Revalidation Webhook**).
+4. **Roles & Permissions**: Overwrites `users-permissions_permissions` and `users-permissions_roles`. (Our `src/index.ts` automatically regrants public read permissions on server bootstrap for all public endpoints).
+
+### B. Media Handling & Upload Providers
+- **Local Storage vs. Cloudinary**:
+  - The local database points upload files to local disk paths unless Cloudinary is configured locally.
+  - If database rows in `files` or `files_related_morphs` reference local disk filenames that do not exist on the hosted server or Cloudinary, images will render as broken links (HTTP 404).
+  - *Recommendation*: Since our seed script adheres to strict zero-invented-media (no fake logos, images, or hero images), media tables are empty or minimal. Always upload client media via the hosted admin panel or Cloudinary CDN once deployed.
+
+### C. Step-by-Step Order of Operations for Database Transfer
+1. **Back up the Hosted Database First**:
+   - Take a full `pg_dump` of the hosted Render PostgreSQL database before touching anything:
+     ```bash
+     pg_dump -h <render-db-host> -U <render-db-user> -d <render-db-name> -F c -b -v -f metaphi_hosted_pre_transfer_backup.dump
+     ```
+2. **Deploy Schema Code First**:
+   - Push code commits to GitHub so Render builds and deploys the latest Strapi schemas and bootstrap hooks. Ensure the Render deployment shows `Live`.
+3. **Restore the Local Dump to Render**:
+   - Restore the local PostgreSQL database dump to the Render PostgreSQL instance:
+     ```bash
+     psql -h <render-db-host> -U <render-db-user> -d <render-db-name> < metaphi-cms/backups/metaphi_cms_backup_before_new_seed.sql
+     ```
+4. **Restart Hosted Strapi Service**:
+   - In Render dashboard, trigger a manual restart of the Web Service so `src/index.ts` bootstrap runs, verifying permissions and core store layouts.
+5. **Recreate the Vercel Revalidation Webhook**:
+   - In Render Strapi Admin (`/admin`), go to **Settings -> Webhooks -> Create new webhook**:
+     - **Name**: `Vercel Revalidation Webhook`
+     - **URL**: `https://metaphi-site-five.vercel.app/api/revalidate`
+     - **Headers**: Key `x-revalidate-secret`, Value `<REVALIDATE_SECRET>`
+     - **Events**: Check `entry.create`, `entry.update`, `entry.delete`, `entry.publish`, `entry.unpublish`.
+6. **Trigger Revalidation & Verify Live Pages**:
+   - In Strapi Admin, save any page (e.g. `Home Page`) to fire the webhook, or call the endpoint with curl.
+   - Verify live frontend routes: `/`, `/work`, `/about`, `/team`, `/testimonials`, `/partners`, `/compliance`, `/faq`, `/careers`, `/careers/why-join-us`, `/careers/rewards`, `/life-at-metaphi`.
+
+### D. Environment Variables & Secrets That Must Match
+Ensure the following are coordinated across Local, Render, and Vercel:
+- `REVALIDATE_SECRET`: Must match between Render Webhook header (`x-revalidate-secret`) and Vercel environment variable (`REVALIDATE_SECRET`).
+- `TRANSFER_TOKEN_SALT` & `API_TOKEN_SALT`: If using CLI transfer (`strapi transfer`), salts and tokens must match.
+- `ADMIN_JWT_SECRET` & `JWT_SECRET`: Standard Strapi secret keys.
+- `STRAPI_URL`: Configured on Vercel to point to `https://metaphi-site-cms.onrender.com`.
+
+### E. Rollback Procedure
+If the restore causes errors or breaks the hosted admin:
+1. Restore the safety dump taken in Step 1:
+   ```bash
+   pg_restore -h <render-db-host> -U <render-db-user> -d <render-db-name> --clean --if-exists -v metaphi_hosted_pre_transfer_backup.dump
+   ```
+2. Restart the Render Web Service and verify the previous state is restored.
+
+---
+
+## 5. Hosted Strapi Deployment Checklist
+
 Before deploying to production (e.g. Railway, Render, DigitalOcean):
 1. **Schema Modifications & Removed Fields**:
    - Confirm removal of `ctaLink`, `secondaryCtaLink`, and `buttonLink` across all Strapi components (`capability-card`, `final-cta`, `info-block`, `proof-block`, `saas-product`, `solution-model`, `solution-portfolio`, `default-cta-banner`, `industry-page/cta-banner`, `challenges-section`, `services-section`, and `api::industry`). Link destinations are strictly managed in Next.js code (`lib/links.ts`).

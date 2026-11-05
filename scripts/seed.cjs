@@ -269,7 +269,8 @@ async function seed() {
       'faq_categories',
       'team_members',
       'partners',
-      'testimonials'
+      'testimonials',
+      'job_openings'
     ];
 
     for (const table of tablesToClear) {
@@ -928,7 +929,7 @@ async function seed() {
         heading: "Let's Talk About What You Need Built",
         subtext: "Tell us where your current tools are letting you down. We'll set up a 30-minute discovery call with a senior engineer - no sales pitch, just practical answers.",
         ctaLabel: 'Book a Technical Consultation',
-        secondaryCtaLabel: 'Schedule a Call'
+        secondaryCtaLabel: 'Book a Discovery Call'
       }
     };
 
@@ -953,7 +954,13 @@ async function seed() {
     const teamPageData = {
       heroHeading: 'The People Behind the Code',
       heroSubtext: "Senior engineers, product designers and solution architects with decades of collective experience across cloud infrastructure, enterprise applications and applied AI.",
-      emptyStateText: 'Our team directory is being updated. Please check back shortly.'
+      emptyStateText: 'Our team directory is being updated. Please check back shortly.',
+      finalCta: {
+        heading: 'Want to Work With This Team?',
+        subtext: 'Tell us about your operations challenge. We will connect you directly with a senior engineer who can evaluate the architecture.',
+        ctaLabel: 'Contact Us',
+        secondaryCtaLabel: 'Book a Discovery Call'
+      }
     };
 
     const exTeamPage = await app.documents('api::team-page.team-page').findFirst({});
@@ -1344,8 +1351,210 @@ async function seed() {
       console.log('✓ Updated Schedule A Call Page');
     }
 
-    // ── 13. Ensure Home Page Baseline Exists (Preserve Hero & Stats Strip) ──
-    console.log('\n--- 13. Verifying Home Page baseline ---');
+    // ── 13. Seed Why Join Us Page ────────────────────────────────────────
+    console.log('\n--- 13. Seeding Why Join Us Page ---');
+    const whyJoinUsPageData = {
+      heroEyebrow: 'Careers at Metaphi',
+      heroHeading: 'Do the Best Work of Your Career With People Who Care',
+      heroSubtext: 'We are a small, senior team that values clear thinking, steady growth and work that makes a real difference to our clients. If that sounds like the place for you, come and join us.',
+      sectionEyebrow: 'Why Join Us',
+      sectionHeading: 'What You Can Expect Working Here',
+      sectionSubtext: 'These are the things our team members tell us matter most, and the things we work hardest to protect as we grow.',
+      pillars: [
+        {
+          title: 'Meaningful Work',
+          description: 'You will build software that real businesses rely on every day, and see the results of your work after launch.'
+        },
+        {
+          title: 'Room to Grow',
+          description: 'Mentoring, learning time and clear paths from junior to senior roles help you build skills that last.'
+        },
+        {
+          title: 'Respectful Culture',
+          description: "We listen, give honest feedback and treat deadlines and people's time with care."
+        },
+        {
+          title: 'Flexible Working',
+          description: 'We plan around outcomes, not hours at a desk, with hybrid and remote options for many roles.'
+        }
+      ],
+      emptyStateText: 'We have no open roles right now, but we are always glad to hear from talented people. Please check back soon.',
+      finalCta: {
+        heading: "Don't See the Right Role?",
+        subtext: 'Tell us about yourself and what you would like to work on. We keep every application in mind when new roles open up.',
+        ctaLabel: 'Get in Touch'
+      }
+    };
+
+    const exWhyJoin = await app.documents('api::why-join-us-page.why-join-us-page').findFirst({});
+    if (!exWhyJoin) {
+      await app.documents('api::why-join-us-page.why-join-us-page').create({
+        data: whyJoinUsPageData,
+        status: 'published'
+      });
+      console.log('✓ Created Why Join Us Page');
+    } else {
+      await app.documents('api::why-join-us-page.why-join-us-page').update({
+        documentId: exWhyJoin.documentId,
+        data: whyJoinUsPageData,
+        status: 'published'
+      });
+      console.log('✓ Updated Why Join Us Page');
+    }
+
+    // ── 14. Seed Rewards Page ────────────────────────────────────────────
+    console.log('\n--- 14. Seeding Rewards Page ---');
+    const rewardsPageData = {
+      heroEyebrow: 'Rewards and Benefits',
+      heroHeading: 'Good Work Deserves to Be Recognised',
+      heroSubtext: 'We want everyone at Metaphi to feel valued for what they contribute, so we back up our thanks with benefits that make a real difference to your day-to-day life.',
+      sectionEyebrow: 'What We Offer',
+      sectionHeading: 'Benefits Built Around Your Life, Not Just Your Job',
+      sectionSubtext: 'From how you grow to how you rest, these are the rewards our team members rely on most.',
+      rewards: [
+        {
+          title: 'Learning Budget',
+          description: 'A yearly allowance for courses, books and conferences that help you build skills you care about.'
+        },
+        {
+          title: 'Health Cover',
+          description: 'Health insurance for you and your immediate family, so medical costs are one less worry.'
+        },
+        {
+          title: 'Flexible Time Off',
+          description: 'Generous paid leave and the freedom to plan time away around your own life and projects.'
+        },
+        {
+          title: 'Performance Recognition',
+          description: 'Regular recognition and bonuses for strong results, shared openly across the team.'
+        },
+        {
+          title: 'Home Office Support',
+          description: 'A setup allowance for equipment, so you can work comfortably from home or the office.'
+        },
+        {
+          title: 'Team Gatherings',
+          description: 'Regular team meals, offsites and celebrations that give everyone time to connect away from deadlines.'
+        }
+      ],
+      emptyStateText: 'Our rewards details are being updated. Please check back soon for the latest on what we offer our team.',
+      finalCta: {
+        heading: "Curious What It's Like to Work Here?",
+        subtext: 'Take a look at our open roles, or send us a note about the kind of work you would like to do.',
+        ctaLabel: 'See Open Roles'
+      }
+    };
+
+    const exRewards = await app.documents('api::rewards-page.rewards-page').findFirst({});
+    if (!exRewards) {
+      await app.documents('api::rewards-page.rewards-page').create({
+        data: rewardsPageData,
+        status: 'published'
+      });
+      console.log('✓ Created Rewards Page');
+    } else {
+      await app.documents('api::rewards-page.rewards-page').update({
+        documentId: exRewards.documentId,
+        data: rewardsPageData,
+        status: 'published'
+      });
+      console.log('✓ Updated Rewards Page');
+    }
+
+    // ── 15. Seed Life at Metaphi Page ────────────────────────────────────
+    console.log('\n--- 15. Seeding Life at Metaphi Page ---');
+    const lifeAtMetaphiPageData = {
+      heroEyebrow: 'Life at Metaphi',
+      heroHeading: 'A Workplace Where Good Ideas Come From Everywhere',
+      heroSubtext: 'We are a close-knit team that shares knowledge freely, celebrates progress and looks out for each other, whether we are in the office or working from home.',
+      sectionEyebrow: 'Our Values',
+      sectionHeading: 'The Principles That Shape How We Work Together',
+      sectionSubtext: 'Values are only useful if people actually live by them, so these are the ones we come back to in everyday decisions.',
+      values: [
+        {
+          title: 'Be Curious',
+          description: 'We ask questions, try new approaches and treat every project as a chance to learn something.'
+        },
+        {
+          title: 'Own the Outcome',
+          description: 'We follow our work through to results and take responsibility when things need fixing.'
+        },
+        {
+          title: 'Say It Plainly',
+          description: 'We communicate openly and kindly, with clients and with each other, and avoid jargon.'
+        },
+        {
+          title: 'Help Each Other',
+          description: "We share what we know, review each other's work and step in when a teammate needs support."
+        },
+        {
+          title: 'Stay Humble',
+          description: 'We celebrate wins together, learn from mistakes and never assume we have all the answers.'
+        }
+      ],
+      emptyStateText: 'We are updating this page with stories and photos from our team. Please check back soon.',
+      finalCta: {
+        heading: "Think You'd Fit In?",
+        subtext: 'Have a look at the roles we have open right now, or tell us a little about yourself and what you would like to build.',
+        ctaLabel: 'Explore Careers'
+      }
+    };
+
+    const exLife = await app.documents('api::life-at-metaphi-page.life-at-metaphi-page').findFirst({});
+    if (!exLife) {
+      await app.documents('api::life-at-metaphi-page.life-at-metaphi-page').create({
+        data: lifeAtMetaphiPageData,
+        status: 'published'
+      });
+      console.log('✓ Created Life at Metaphi Page');
+    } else {
+      await app.documents('api::life-at-metaphi-page.life-at-metaphi-page').update({
+        documentId: exLife.documentId,
+        data: lifeAtMetaphiPageData,
+        status: 'published'
+      });
+      console.log('✓ Updated Life at Metaphi Page');
+    }
+
+    // ── 16. Seed Job Openings ────────────────────────────────────────────
+    console.log('\n--- 16. Seeding Job Openings ---');
+    const jobOpeningsList = [
+      {
+        title: 'Senior Full-Stack Engineer',
+        department: 'Engineering',
+        location: 'Mumbai, India (Hybrid)',
+        employmentType: 'Full-time',
+        order: 1,
+        description: 'You will design and build web platforms for clients across healthcare, logistics and finance, working with product owners and designers from first workshop to launch. We are looking for someone with strong experience in React, Node.js and relational databases, who writes clear, tested code and enjoys mentoring teammates.'
+      },
+      {
+        title: 'Product Designer',
+        department: 'Design',
+        location: 'Remote (India)',
+        employmentType: 'Full-time',
+        order: 2,
+        description: 'You will turn complex business workflows into simple, clear interfaces, from research and wireframes to polished prototypes handed over to engineering. You should have a portfolio showing real product work and be comfortable explaining your design decisions to clients.'
+      },
+      {
+        title: 'QA Engineering Intern',
+        department: 'Quality Assurance',
+        location: 'Mumbai, India (On-site)',
+        employmentType: 'Internship (6 months)',
+        order: 3,
+        description: 'You will learn how professional teams test web applications, writing test cases, running manual and automated checks, and reporting issues clearly. This is a good first step for students or recent graduates interested in software quality.'
+      }
+    ];
+
+    for (const job of jobOpeningsList) {
+      await app.documents('api::job-opening.job-opening').create({
+        data: job,
+        status: 'published'
+      });
+      console.log(`✓ Created Job Opening: "${job.title}" [order: ${job.order}]`);
+    }
+
+    // ── 17. Ensure Home Page Baseline Exists (Preserve Hero & Stats Strip) ──
+    console.log('\n--- 17. Verifying Home Page baseline ---');
     const exHome = await app.documents('api::home-page.home-page').findFirst({});
     if (!exHome) {
       const homeData = {

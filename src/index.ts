@@ -44,6 +44,13 @@ export default {
           'api::faq.faq.find',
           'api::faq.faq.findOne',
           'api::faq-page.faq-page.find',
+          'api::about-page.about-page.find',
+          'api::careers-page.careers-page.find',
+          'api::why-join-us-page.why-join-us-page.find',
+          'api::rewards-page.rewards-page.find',
+          'api::life-at-metaphi-page.life-at-metaphi-page.find',
+          'api::job-opening.job-opening.find',
+          'api::job-opening.job-opening.findOne',
         ];
 
         for (const action of requiredActions) {
