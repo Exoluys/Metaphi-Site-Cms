@@ -1580,7 +1580,7 @@ async function seed() {
         heroTitle: 'Technology Built Around',
         heroHighlight: 'Your Business',
         heroDescription: 'We design, engineer and evolve custom software, digital products and enterprise AI solutions that solve real operational problems, connect fragmented workflows and create the technology foundation for growth.',
-        primaryButtonText: 'Discuss Your Technology Initiative',
+        PrimaryCtaButtonLabel: 'Discuss Your Technology Initiative',
         secondaryButtonText: 'Explore Case Studies',
         companyStats: [
           { label: 'Years of Experience', value: 12, suffix: '+' },
@@ -1651,7 +1651,7 @@ async function seed() {
       });
       console.log('✓ Created initial Home Page baseline');
     } else {
-      // Preserve heroTitle, heroHighlight, heroDescription, primaryButtonText, secondaryButtonText, companyStats
+      // Preserve heroTitle, heroHighlight, heroDescription, PrimaryCtaButtonLabel, secondaryButtonText, companyStats
       // Only attach updated industries relation and ensure certifications/logos remain uninvented/empty
       await app.documents('api::home-page.home-page').update({
         documentId: exHome.documentId,

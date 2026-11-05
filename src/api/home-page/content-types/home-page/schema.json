@@ -12,105 +12,131 @@
   "pluginOptions": {},
   "attributes": {
     "heroTitle": {
-      "type": "string"
+      "type": "string",
+      "required": true,
+      "maxLength": 20
     },
     "heroHighlight": {
-      "type": "string"
+      "type": "string",
+      "required": true,
+      "maxLength": 20
     },
     "heroDescription": {
-      "type": "text"
-    },
-    "primaryButtonText": {
-      "type": "string"
+      "type": "text",
+      "maxLength": 120
     },
     "secondaryButtonText": {
       "type": "string"
     },
     "trustedByText": {
       "type": "string",
-      "required": false
+      "required": true
     },
     "trustedByHighlight": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "clientLogos": {
       "type": "component",
       "component": "home.client-logo",
-      "repeatable": true
+      "repeatable": true,
+      "required": true,
+      "min": 5
     },
     "whyChooseHeading": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "whyChooseHighlight": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "whyChooseSubtitle": {
-      "type": "text"
+      "type": "text",
+      "maxLength": 160
     },
     "whyChooseCertifications": {
       "type": "component",
       "component": "home.certification",
       "repeatable": true,
-      "min": 0,
+      "min": 4,
       "max": 4
     },
     "testimonialsHeading": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "testimonialsHighlight": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "testimonialsSubtitle": {
-      "type": "text"
+      "type": "text",
+      "maxLength": 160
     },
     "testimonialsCtaLabel": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "faqHeading": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "faqHighlight": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "faqSubtitle": {
-      "type": "text"
+      "type": "text",
+      "maxLength": 160
     },
     "trustHeading": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "trustHighlight": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "trustSubtext": {
-      "type": "text"
+      "type": "text",
+      "maxLength": 160
     },
     "trustPills": {
       "type": "component",
       "repeatable": true,
-      "component": "hub.string-item"
+      "component": "hub.string-item",
+      "min": 5
     },
     "businessProblemsHeading": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "businessProblemsHighlight": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "businessProblemsSubtext": {
-      "type": "text"
+      "type": "text",
+      "maxLength": 160
     },
     "businessProblems": {
       "type": "component",
       "repeatable": true,
-      "component": "hub.title-description"
+      "component": "hub.title-description",
+      "min": 6
     },
     "solutionModelsHeading": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "solutionModelsHighlight": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "solutionModelsSubtext": {
-      "type": "text"
+      "type": "text",
+      "maxLength": 160
     },
     "industriesSection": {
       "type": "component",
@@ -118,13 +144,16 @@
       "component": "hub.info-block"
     },
     "deliveryApproachHeading": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "deliveryApproachHighlight": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "deliveryApproachSubtext": {
-      "type": "text"
+      "type": "text",
+      "maxLength": 160
     },
     "finalCta": {
       "type": "component",
@@ -134,7 +163,8 @@
     "industries": {
       "type": "relation",
       "relation": "manyToMany",
-      "target": "api::industry.industry"
+      "target": "api::industry.industry",
+      "min": 5
     },
     "companyStats": {
       "type": "component",
@@ -157,25 +187,30 @@
       "required": false
     },
     "workShowcaseHeading": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "workShowcaseHighlight": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "workShowcaseIntro": {
-      "type": "text"
+      "type": "text",
+      "maxLength": 160
     },
     "solutionModelsEyebrow": {
       "type": "string"
     },
     "solutionModelsLinkLabel": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "workShowcaseEyebrow": {
       "type": "string"
     },
     "workShowcaseLinkLabel": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "whyChooseEyebrow": {
       "type": "string"
@@ -187,15 +222,20 @@
       "type": "string"
     },
     "faqLinkLabel": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "solutionModelsImage": {
       "type": "media",
       "multiple": false,
-      "required": false,
+      "required": true,
       "allowedTypes": [
         "images"
       ]
+    },
+    "PrimaryCtaButtonLabel": {
+      "type": "string",
+      "required": true
     }
   }
 }

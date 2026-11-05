@@ -199,24 +199,211 @@ export default {
           }
         }
 
-        // ── 7. Enforce companyStats on home-page ───────────────────────
+        // ── 7. Enforce Validation Rules on Home Page ───────────────────
         if (uid === 'api::home-page.home-page' && (action === 'update' || action === 'create')) {
-          const stats = ctx.params?.data?.companyStats;
-          if (stats !== undefined) {
-            if (!Array.isArray(stats) || stats.length !== 4) {
-              throw new Error(`companyStats must contain exactly 4 items. Received ${Array.isArray(stats) ? stats.length : typeof stats}.`);
+          const data = ctx.params?.data;
+          if (data) {
+            const checkRequired = (val: any, name: string) => {
+              if (val === undefined || val === null || (typeof val === 'string' && !val.trim())) {
+                throw new Error(`${name} is required.`);
+              }
+            };
+            const checkMaxChars = (val: any, max: number, name: string) => {
+              if (val !== undefined && val !== null && typeof val === 'string' && val.trim().length > max) {
+                throw new Error(`${name} must be ${max} characters or fewer.`);
+              }
+            };
+
+            // HERO
+            if (data.heroTitle !== undefined) {
+              checkRequired(data.heroTitle, 'Hero Title');
+              checkMaxChars(data.heroTitle, 20, 'Hero Title');
             }
-            for (let i = 0; i < stats.length; i++) {
-              const item = stats[i];
-              if (!item || !item.label || typeof item.label !== 'string' || !item.label.trim()) {
-                throw new Error(`companyStats[${i}].label is required and cannot be empty.`);
+            if (data.heroHighlight !== undefined) {
+              checkRequired(data.heroHighlight, 'Hero Highlight');
+              checkMaxChars(data.heroHighlight, 20, 'Hero Highlight');
+            }
+            if (data.heroDescription !== undefined) {
+              checkMaxChars(data.heroDescription, 120, 'Hero Description');
+            }
+            if (data.PrimaryCtaButtonLabel !== undefined) {
+              checkRequired(data.PrimaryCtaButtonLabel, 'Primary CTA Button Label');
+            }
+
+            // TRUSTED BY
+            if (data.trustedByText !== undefined) {
+              checkRequired(data.trustedByText, 'Trusted By Text');
+            }
+            if (data.trustedByHighlight !== undefined) {
+              checkRequired(data.trustedByHighlight, 'Trusted By Highlight');
+            }
+            if (data.clientLogos !== undefined) {
+              if (!Array.isArray(data.clientLogos) || data.clientLogos.length < 5) {
+                throw new Error('At least 5 client logos are required.');
               }
-              if (item.value === undefined || item.value === null || item.value === '') {
-                throw new Error(`companyStats[${i}].value is required.`);
+            }
+
+            // SOLUTION MODELS
+            if (data.solutionModelsLinkLabel !== undefined) {
+              checkRequired(data.solutionModelsLinkLabel, 'Solution Models Link Label');
+            }
+            if (data.solutionModelsHeading !== undefined) {
+              checkRequired(data.solutionModelsHeading, 'Solution Models Heading');
+            }
+            if (data.solutionModelsHighlight !== undefined) {
+              checkRequired(data.solutionModelsHighlight, 'Solution Models Highlight');
+            }
+            if (data.solutionModelsSubtext !== undefined) {
+              checkMaxChars(data.solutionModelsSubtext, 160, 'Solution Models Subtext');
+            }
+            if (data.solutionModelsImage !== undefined) {
+              checkRequired(data.solutionModelsImage, 'Solution Models Image');
+            }
+
+            // TRUST
+            if (data.trustHeading !== undefined) {
+              checkRequired(data.trustHeading, 'Trust Heading');
+            }
+            if (data.trustHighlight !== undefined) {
+              checkRequired(data.trustHighlight, 'Trust Highlight');
+            }
+            if (data.trustSubtext !== undefined) {
+              checkMaxChars(data.trustSubtext, 160, 'Trust Subtext');
+            }
+            if (data.trustPills !== undefined) {
+              if (!Array.isArray(data.trustPills) || data.trustPills.length < 5) {
+                throw new Error('At least 5 trust pills are required.');
               }
-              const num = Number(item.value);
-              if (isNaN(num) || !Number.isInteger(num) || num < 0) {
-                throw new Error(`companyStats[${i}].value must be a non-negative integer (min 0). Received: ${item.value}`);
+            }
+
+            // BUSINESS PROBLEMS
+            if (data.businessProblemsHeading !== undefined) {
+              checkRequired(data.businessProblemsHeading, 'Business Problems Heading');
+            }
+            if (data.businessProblemsHighlight !== undefined) {
+              checkRequired(data.businessProblemsHighlight, 'Business Problems Highlight');
+            }
+            if (data.businessProblemsSubtext !== undefined) {
+              checkMaxChars(data.businessProblemsSubtext, 160, 'Business Problems Subtext');
+            }
+            if (data.businessProblems !== undefined) {
+              if (!Array.isArray(data.businessProblems) || data.businessProblems.length < 6) {
+                throw new Error('At least 6 business problems are required.');
+              }
+            }
+
+            // INDUSTRIES SECTION
+            if (data.industriesSection !== undefined && data.industriesSection !== null) {
+              if (data.industriesSection.heading !== undefined) {
+                checkRequired(data.industriesSection.heading, 'Industries Section Heading');
+              }
+              if (data.industriesSection.subtext !== undefined) {
+                checkMaxChars(data.industriesSection.subtext, 160, 'Industries Section Subtext');
+              }
+            }
+            if (data.industries !== undefined) {
+              if (!Array.isArray(data.industries) || data.industries.length < 5) {
+                throw new Error('At least 5 industries are required.');
+              }
+            }
+
+            // WORK SHOWCASE
+            if (data.workShowcaseLinkLabel !== undefined) {
+              checkRequired(data.workShowcaseLinkLabel, 'Work Showcase Link Label');
+            }
+            if (data.workShowcaseHeading !== undefined) {
+              checkRequired(data.workShowcaseHeading, 'Work Showcase Heading');
+            }
+            if (data.workShowcaseHighlight !== undefined) {
+              checkRequired(data.workShowcaseHighlight, 'Work Showcase Highlight');
+            }
+            if (data.workShowcaseIntro !== undefined) {
+              checkMaxChars(data.workShowcaseIntro, 160, 'Work Showcase Intro');
+            }
+
+            // DELIVERY APPROACH
+            if (data.deliveryApproachHeading !== undefined) {
+              checkRequired(data.deliveryApproachHeading, 'Delivery Approach Heading');
+            }
+            if (data.deliveryApproachHighlight !== undefined) {
+              checkRequired(data.deliveryApproachHighlight, 'Delivery Approach Highlight');
+            }
+            if (data.deliveryApproachSubtext !== undefined) {
+              checkMaxChars(data.deliveryApproachSubtext, 160, 'Delivery Approach Subtext');
+            }
+
+            // WHY CHOOSE
+            if (data.whyChooseHeading !== undefined) {
+              checkRequired(data.whyChooseHeading, 'Why Choose Heading');
+            }
+            if (data.whyChooseHighlight !== undefined) {
+              checkRequired(data.whyChooseHighlight, 'Why Choose Highlight');
+            }
+            if (data.whyChooseSubtitle !== undefined) {
+              checkMaxChars(data.whyChooseSubtitle, 160, 'Why Choose Subtitle');
+            }
+            if (data.whyChooseCertifications !== undefined) {
+              if (!Array.isArray(data.whyChooseCertifications) || data.whyChooseCertifications.length !== 4) {
+                throw new Error('Exactly 4 why choose certifications are required.');
+              }
+            }
+
+            // COMPANY STATS
+            const stats = data.companyStats;
+            if (stats !== undefined) {
+              if (!Array.isArray(stats) || stats.length !== 4) {
+                throw new Error(`companyStats must contain exactly 4 items. Received ${Array.isArray(stats) ? stats.length : typeof stats}.`);
+              }
+              for (let i = 0; i < stats.length; i++) {
+                const item = stats[i];
+                if (!item || !item.label || typeof item.label !== 'string' || !item.label.trim()) {
+                  throw new Error(`companyStats[${i}].label is required and cannot be empty.`);
+                }
+                if (item.value === undefined || item.value === null || item.value === '') {
+                  throw new Error(`companyStats[${i}].value is required.`);
+                }
+                const num = Number(item.value);
+                if (isNaN(num) || !Number.isInteger(num) || num < 0) {
+                  throw new Error(`companyStats[${i}].value must be a non-negative integer (min 0). Received: ${item.value}`);
+                }
+              }
+            }
+
+            // TESTIMONIALS
+            if (data.testimonialsCtaLabel !== undefined) {
+              checkRequired(data.testimonialsCtaLabel, 'Testimonials CTA Label');
+            }
+            if (data.testimonialsHeading !== undefined) {
+              checkRequired(data.testimonialsHeading, 'Testimonials Heading');
+            }
+            if (data.testimonialsHighlight !== undefined) {
+              checkRequired(data.testimonialsHighlight, 'Testimonials Highlight');
+            }
+            if (data.testimonialsSubtitle !== undefined) {
+              checkMaxChars(data.testimonialsSubtitle, 160, 'Testimonials Subtitle');
+            }
+
+            // FAQ
+            if (data.faqLinkLabel !== undefined) {
+              checkRequired(data.faqLinkLabel, 'FAQ Link Label');
+            }
+            if (data.faqHeading !== undefined) {
+              checkRequired(data.faqHeading, 'FAQ Heading');
+            }
+            if (data.faqHighlight !== undefined) {
+              checkRequired(data.faqHighlight, 'FAQ Highlight');
+            }
+            if (data.faqSubtitle !== undefined) {
+              checkMaxChars(data.faqSubtitle, 160, 'FAQ Subtitle');
+            }
+
+            // FINAL CTA
+            if (data.finalCta !== undefined && data.finalCta !== null) {
+              if (data.finalCta.heading !== undefined) {
+                checkRequired(data.finalCta.heading, 'Final CTA Heading');
+              }
+              if (data.finalCta.subtext !== undefined) {
+                checkRequired(data.finalCta.subtext, 'Final CTA Subtext');
               }
             }
           }
