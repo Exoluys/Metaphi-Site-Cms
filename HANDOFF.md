@@ -9,32 +9,28 @@ Content architecture:
 ---
 
 ## 2. Running Content Seeds
-All seed scripts are located in `scripts/`:
+All previous seed and migration scripts have been consolidated into ONE idempotent script: `scripts/seed.cjs`.
 
-1. **Seed Word Doc Canonical Content** (Home Page, 5 Hubs, Solutions, Industries):
-   ```bash
-   node scripts/seed-metaphi-content.cjs
-   ```
-2. **Seed 9 Company Pages** (About, Careers, Why Join Us, Rewards, Life @ Metaphi, Compliance, Partners, Team, Testimonials with `[DUMMY]` content):
-   ```bash
-   node scripts/seed-company-pages.js
-   ```
-3. **Grant Public API Permissions**:
-   ```bash
-   node scripts/grant-public-permissions.cjs
-   node scripts/grant-permissions.js
-   ```
+### Running the Seed Script
+```bash
+node scripts/seed.cjs
+```
+
+**Guardrails:**
+- Restricted strictly to local development (`STRAPI_URL` containing localhost/127.0.0.1 and `NODE_ENV !== 'production'`). Refuses execution if pointed to production.
+- Cleans and resets the volatile tables completely before inserting (`case_studies`, `testimonials`, `faqs`, `faq_categories`, `team_members`, `partners`).
+- Seeds all content as `published`.
+- Does not modify or overwrite home hero copy or stats strip.
 
 ---
 
-## 3. Undoing / Rolling Back Seeds
-To clean seeded documents:
+## 3. Backups & Rollbacks
+Prior to consolidating the seed scripts, a complete PostgreSQL dump backup was captured:
+`metaphi-cms/backups/metaphi_cms_backup_before_new_seed.sql`
+
+To restore this backup:
 ```bash
-node scripts/undo-metaphi-seed.cjs
-```
-Database dumps can be restored via standard PostgreSQL tools:
-```bash
-psql -h <host> -U <user> -d <database> < backups/metaphi_cms_backup_cta_removal.sql
+psql -h 127.0.0.1 -U postgres -d metaphi_cms < backups/metaphi_cms_backup_before_new_seed.sql
 ```
 
 ---

@@ -257,9 +257,9 @@ export default {
         if (uid === 'api::industry.industry' && (action === 'update' || action === 'create')) {
           const CANONICAL_INDUSTRY_TITLES: Record<string, string> = {
             'manufacturing': 'Manufacturing',
-            'healthcare': 'Healthcare & Diagnostics',
+            'healthcare': 'Healthcare & Life Sciences',
             'logistics': 'Logistics & 3PL',
-            'finance': 'Financial Services & FinTech',
+            'finance': 'Banking, Payments & FinTech',
             'professional-services': 'Professional Services',
             'retail-and-ecommerce': 'Retail & Ecommerce',
             'consumer-platforms-and-marketplaces': 'Consumer Platforms & Marketplaces',
