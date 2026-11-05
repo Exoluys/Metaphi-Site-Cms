@@ -1624,16 +1624,6 @@ async function seed() {
         workShowcaseHeading: "Results We're Accountable for.",
         workShowcaseHighlight: 'Work You Can Verify.',
         workShowcaseIntro: 'Metaphi delivers proven, production-grade systems across industries. Every project was engineered from strategy to post-launch impact.',
-        whyMetaphiHeading: 'A technology partner—',
-        whyMetaphiHighlight: 'not another development vendor.',
-        whyMetaphiSubtext: 'We partner with growing businesses and enterprise teams who need more than extra development hands.',
-        whyMetaphiPillars: [
-          { title: 'Business Before Technology', description: 'We begin by understanding the operating problem, not by prescribing a technology stack.' },
-          { title: 'Structured Product Thinking', description: 'Requirements, workflows and priorities are translated into clear product and engineering decisions.' },
-          { title: 'Integrated Capability', description: 'Software, AI, cloud, data and integrations are considered as parts of one technology ecosystem.' },
-          { title: 'Built for Evolution', description: 'Solutions are designed so that new workflows, integrations and capabilities can be introduced as the business changes.' },
-          { title: 'Long-Term Partnership', description: 'We can continue supporting, improving and extending the technology after launch.' }
-        ],
         deliveryApproachHeading: 'From business problem to',
         deliveryApproachHighlight: 'working technology.',
         deliveryApproachSubtext: 'A structured, transparent engineering process designed to deliver predictable outcomes from discovery through to post-launch evolution.',

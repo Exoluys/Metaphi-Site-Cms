@@ -80,7 +80,7 @@ Restoring a full database dump (`psql`) replaces every PostgreSQL table, which i
      pg_dump -h <render-external-host> -U <render-user> -d <render-dbname> --clean --if-exists --no-owner --no-privileges -f metaphi_hosted_pre_transfer_backup.sql
      ```
 2. **Deploy Schema Code First**:
-   - Push code commits to GitHub so Render builds and deploys the latest Strapi schemas and bootstrap hooks. Ensure the Render deployment shows `Live`.
+   - Push code commits to GitHub so Render builds and deploys the latest Strapi schemas and bootstrap hooks (IMPORTANT: The hosted Strapi Web Service must build and deploy the removal of `whyMetaphi*` from the Home Page schema BEFORE the database restore is performed, ensuring Strapi does not look for removed columns). Ensure the Render deployment shows `Live`.
 3. **Restore the Local Dump to Render**:
    - Restore `metaphi_cms_local_final_for_transfer.sql` using `psql`:
      ```bash

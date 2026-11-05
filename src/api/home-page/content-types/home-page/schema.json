@@ -117,20 +117,6 @@
       "repeatable": false,
       "component": "hub.info-block"
     },
-    "whyMetaphiHeading": {
-      "type": "string"
-    },
-    "whyMetaphiHighlight": {
-      "type": "string"
-    },
-    "whyMetaphiSubtext": {
-      "type": "text"
-    },
-    "whyMetaphiPillars": {
-      "type": "component",
-      "repeatable": true,
-      "component": "hub.title-description"
-    },
     "deliveryApproachHeading": {
       "type": "string"
     },
