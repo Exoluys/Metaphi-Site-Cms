@@ -17,6 +17,7 @@
     },
     "heroSubtext": {
       "type": "text",
+      "maxLength": 160,
       "required": false
     },
     "heroEyebrow": {
@@ -29,10 +30,11 @@
     },
     "directoryHeading": {
       "type": "string",
-      "required": false
+      "required": true
     },
     "directorySubtext": {
       "type": "text",
+      "maxLength": 160,
       "required": false
     },
     "emptyStateText": {
@@ -41,8 +43,8 @@
     },
     "finalCta": {
       "type": "component",
-      "repeatable": false,
-      "component": "hub.final-cta"
+      "component": "hub.final-cta",
+      "repeatable": false
     }
   }
 }

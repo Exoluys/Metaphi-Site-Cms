@@ -17,6 +17,7 @@
     },
     "heroSubtext": {
       "type": "text",
+      "maxLength": 160,
       "required": false
     },
     "heroEyebrow": {
@@ -29,6 +30,7 @@
     },
     "missionText": {
       "type": "text",
+      "maxLength": 160,
       "required": false
     },
     "pillarsEyebrow": {
@@ -37,21 +39,22 @@
     },
     "pillarsHeading": {
       "type": "string",
-      "required": false
+      "required": true
     },
     "pillarsSubtext": {
       "type": "text",
+      "maxLength": 160,
       "required": false
     },
     "pillars": {
       "type": "component",
-      "repeatable": true,
-      "component": "hub.title-description"
+      "component": "hub.title-description",
+      "repeatable": true
     },
     "finalCta": {
       "type": "component",
-      "repeatable": false,
-      "component": "hub.final-cta"
+      "component": "hub.final-cta",
+      "repeatable": false
     }
   }
 }

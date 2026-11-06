@@ -17,38 +17,43 @@
     },
     "heroSubtext": {
       "type": "text",
+      "maxLength": 160,
       "required": false
     },
     "whatItMeansHeading": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "whatItMeansSubtext": {
-      "type": "text"
+      "type": "text",
+      "maxLength": 160
     },
     "whatItMeans": {
       "type": "component",
+      "component": "hub.title-description",
       "repeatable": true,
-      "component": "hub.title-description"
+      "min": 4,
+      "max": 4
     },
     "comparisonMatrix": {
       "type": "component",
-      "repeatable": false,
-      "component": "hub.comparison-matrix"
+      "component": "hub.comparison-matrix",
+      "repeatable": false
     },
     "implementationFlow": {
       "type": "component",
-      "repeatable": false,
-      "component": "hub.process-flow"
+      "component": "hub.ready-process-flow",
+      "repeatable": false
     },
     "proof": {
       "type": "component",
-      "repeatable": false,
-      "component": "hub.proof-block"
+      "component": "hub.proof-block",
+      "repeatable": false
     },
     "finalCta": {
       "type": "component",
-      "repeatable": false,
-      "component": "hub.final-cta"
+      "component": "hub.final-cta",
+      "repeatable": false
     }
   }
 }

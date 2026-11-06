@@ -17,44 +17,49 @@
     },
     "heroSubtext": {
       "type": "text",
+      "maxLength": 160,
       "required": false
     },
     "transformationThemes": {
       "type": "component",
-      "repeatable": false,
-      "component": "hub.checklist"
+      "component": "hub.checklist",
+      "repeatable": false
     },
     "relevantSolutions": {
       "type": "component",
-      "repeatable": false,
-      "component": "hub.info-block"
+      "component": "hub.info-block",
+      "repeatable": false
     },
     "proof": {
       "type": "component",
-      "repeatable": false,
-      "component": "hub.proof-block"
+      "component": "hub.proof-block",
+      "repeatable": false
     },
     "resources": {
       "type": "component",
-      "repeatable": false,
-      "component": "hub.info-block"
+      "component": "hub.info-block",
+      "repeatable": false
     },
     "finalCta": {
       "type": "component",
-      "repeatable": false,
-      "component": "hub.final-cta"
+      "component": "hub.final-cta",
+      "repeatable": false
     },
     "gridHeading": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "gridSubtext": {
-      "type": "text"
+      "type": "text",
+      "maxLength": 160
     },
     "relatedSolutionsHeading": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "servedIndustriesHeading": {
-      "type": "string"
+      "type": "string",
+      "maxLength": 160
     }
   }
 }

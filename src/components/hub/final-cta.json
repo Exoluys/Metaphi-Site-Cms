@@ -13,7 +13,8 @@
     },
     "subtext": {
       "type": "text",
-      "required": true
+      "maxLength": 160,
+      "required": false
     },
     "ctaLabel": {
       "type": "string",

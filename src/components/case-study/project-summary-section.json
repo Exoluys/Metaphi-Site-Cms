@@ -10,23 +10,27 @@
     "clientLogo": {
       "type": "media",
       "multiple": false,
-      "required": false,
+      "required": true,
       "allowedTypes": [
         "images"
       ]
     },
     "summaryText": {
-      "type": "text"
+      "type": "text",
+      "maxLength": 160
     },
     "keyFacts": {
       "type": "component",
       "component": "case-study.key-fact",
-      "repeatable": true
+      "repeatable": true,
+      "required": false,
+      "max": 3
     },
     "headlineStats": {
       "type": "component",
       "component": "case-study.stat",
-      "repeatable": true
+      "repeatable": true,
+      "max": 4
     }
   }
 }

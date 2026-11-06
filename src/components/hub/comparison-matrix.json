@@ -9,23 +9,27 @@
   "attributes": {
     "heading": {
       "type": "string",
-      "required": false
+      "required": true
     },
     "subtext": {
       "type": "text",
+      "maxLength": 160,
       "required": false
     },
     "saasColumn": {
       "type": "text",
-      "required": false
+      "maxLength": 160,
+      "required": true
     },
     "readyColumn": {
       "type": "text",
-      "required": false
+      "maxLength": 160,
+      "required": true
     },
     "customColumn": {
       "type": "text",
-      "required": false
+      "maxLength": 160,
+      "required": true
     }
   }
 }

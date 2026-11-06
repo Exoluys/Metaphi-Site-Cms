@@ -460,7 +460,10 @@ export interface ApiAboutPageAboutPage extends Struct.SingleTypeSchema {
     finalCta: Schema.Attribute.Component<'hub.final-cta', false>;
     heroEyebrow: Schema.Attribute.String;
     heroHeading: Schema.Attribute.String & Schema.Attribute.Required;
-    heroSubtext: Schema.Attribute.Text;
+    heroSubtext: Schema.Attribute.Text &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 160;
+      }>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -468,11 +471,17 @@ export interface ApiAboutPageAboutPage extends Struct.SingleTypeSchema {
     > &
       Schema.Attribute.Private;
     missionHeading: Schema.Attribute.String;
-    missionText: Schema.Attribute.Text;
+    missionText: Schema.Attribute.Text &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 160;
+      }>;
     pillars: Schema.Attribute.Component<'hub.title-description', true>;
     pillarsEyebrow: Schema.Attribute.String;
-    pillarsHeading: Schema.Attribute.String;
-    pillarsSubtext: Schema.Attribute.Text;
+    pillarsHeading: Schema.Attribute.String & Schema.Attribute.Required;
+    pillarsSubtext: Schema.Attribute.Text &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 160;
+      }>;
     publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -495,13 +504,19 @@ export interface ApiCareersPageCareersPage extends Struct.SingleTypeSchema {
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     directoryEyebrow: Schema.Attribute.String;
-    directoryHeading: Schema.Attribute.String;
-    directorySubtext: Schema.Attribute.Text;
+    directoryHeading: Schema.Attribute.String & Schema.Attribute.Required;
+    directorySubtext: Schema.Attribute.Text &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 160;
+      }>;
     emptyStateText: Schema.Attribute.Text;
     finalCta: Schema.Attribute.Component<'hub.final-cta', false>;
     heroEyebrow: Schema.Attribute.String;
     heroHeading: Schema.Attribute.String & Schema.Attribute.Required;
-    heroSubtext: Schema.Attribute.Text;
+    heroSubtext: Schema.Attribute.Text &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 160;
+      }>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -534,7 +549,7 @@ export interface ApiCaseStudyCaseStudy extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    heroImage: Schema.Attribute.Media<'images'>;
+    heroImage: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
     impactSection: Schema.Attribute.Component<
       'case-study.impact-section',
       false
@@ -563,10 +578,23 @@ export interface ApiCaseStudyCaseStudy extends Struct.CollectionTypeSchema {
       'manyToMany',
       'api::solution.solution'
     >;
-    solutionText: Schema.Attribute.Text;
-    subtitle: Schema.Attribute.Text;
-    summary: Schema.Attribute.Text;
-    tags: Schema.Attribute.Component<'case-study.tag-item', true>;
+    solutionText: Schema.Attribute.Text & Schema.Attribute.Required;
+    subtitle: Schema.Attribute.Text &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 160;
+      }>;
+    summary: Schema.Attribute.Text &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 180;
+      }>;
+    tags: Schema.Attribute.Component<'case-study.tag-item', true> &
+      Schema.Attribute.SetMinMax<
+        {
+          max: 6;
+          min: 1;
+        },
+        number
+      >;
     title: Schema.Attribute.String & Schema.Attribute.Required;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -592,8 +620,17 @@ export interface ApiCompliancePageCompliancePage
     finalCta: Schema.Attribute.Component<'hub.final-cta', false>;
     heroEyebrow: Schema.Attribute.String;
     heroHeading: Schema.Attribute.String & Schema.Attribute.Required;
-    heroSubtext: Schema.Attribute.Text;
-    items: Schema.Attribute.Component<'hub.title-description', true>;
+    heroSubtext: Schema.Attribute.Text &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 160;
+      }>;
+    items: Schema.Attribute.Component<'hub.title-description', true> &
+      Schema.Attribute.SetMinMax<
+        {
+          min: 1;
+        },
+        number
+      >;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -602,8 +639,11 @@ export interface ApiCompliancePageCompliancePage
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
     sectionEyebrow: Schema.Attribute.String;
-    sectionHeading: Schema.Attribute.String;
-    sectionSubtext: Schema.Attribute.Text;
+    sectionHeading: Schema.Attribute.String & Schema.Attribute.Required;
+    sectionSubtext: Schema.Attribute.Text &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 160;
+      }>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -622,22 +662,25 @@ export interface ApiContactPageContactPage extends Struct.SingleTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
-    address: Schema.Attribute.Text;
-    addressLabel: Schema.Attribute.String;
+    address: Schema.Attribute.Text & Schema.Attribute.Required;
+    addressLabel: Schema.Attribute.String & Schema.Attribute.Required;
     countryCodeLabel: Schema.Attribute.String & Schema.Attribute.Required;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    email: Schema.Attribute.Email;
+    email: Schema.Attribute.Email & Schema.Attribute.Required;
     emailFieldLabel: Schema.Attribute.String & Schema.Attribute.Required;
     emailFieldPlaceholder: Schema.Attribute.String;
-    emailLabel: Schema.Attribute.String;
-    errorMessage: Schema.Attribute.Text;
+    emailLabel: Schema.Attribute.String & Schema.Attribute.Required;
+    errorMessage: Schema.Attribute.Text & Schema.Attribute.Required;
     firstNameLabel: Schema.Attribute.String & Schema.Attribute.Required;
     firstNamePlaceholder: Schema.Attribute.String;
     heroHeading: Schema.Attribute.String & Schema.Attribute.Required;
-    heroHighlight: Schema.Attribute.String;
-    heroSubtext: Schema.Attribute.Text;
+    heroHighlight: Schema.Attribute.String & Schema.Attribute.Required;
+    heroSubtext: Schema.Attribute.Text &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 160;
+      }>;
     lastNameLabel: Schema.Attribute.String & Schema.Attribute.Required;
     lastNamePlaceholder: Schema.Attribute.String;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
@@ -650,14 +693,25 @@ export interface ApiContactPageContactPage extends Struct.SingleTypeSchema {
     messageFieldPlaceholder: Schema.Attribute.String;
     phoneFieldLabel: Schema.Attribute.String & Schema.Attribute.Required;
     phoneFieldPlaceholder: Schema.Attribute.String;
-    phoneLabel: Schema.Attribute.String;
-    phones: Schema.Attribute.Component<'contact.phone-item', true>;
+    phoneLabel: Schema.Attribute.String & Schema.Attribute.Required;
+    phones: Schema.Attribute.Component<'contact.phone-item', true> &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMax<
+        {
+          min: 1;
+        },
+        number
+      >;
     publishedAt: Schema.Attribute.DateTime;
-    sendAnotherLabel: Schema.Attribute.String;
+    sendAnotherLabel: Schema.Attribute.String & Schema.Attribute.Required;
     submitButtonLabel: Schema.Attribute.String & Schema.Attribute.Required;
-    submittingButtonLabel: Schema.Attribute.String;
-    successHeading: Schema.Attribute.String;
-    successMessage: Schema.Attribute.Text;
+    submittingButtonLabel: Schema.Attribute.String & Schema.Attribute.Required;
+    successHeading: Schema.Attribute.String & Schema.Attribute.Required;
+    successMessage: Schema.Attribute.Text &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 160;
+      }>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -677,15 +731,21 @@ export interface ApiCustomSolutionsHubCustomSolutionsHub
   };
   attributes: {
     businessOutcomes: Schema.Attribute.Component<'hub.checklist', false>;
-    capabilitiesHeading: Schema.Attribute.String;
-    capabilitiesSubtext: Schema.Attribute.Text;
+    capabilitiesHeading: Schema.Attribute.String & Schema.Attribute.Required;
+    capabilitiesSubtext: Schema.Attribute.Text &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 160;
+      }>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     deliveryProcess: Schema.Attribute.Component<'hub.process-flow', false>;
     finalCta: Schema.Attribute.Component<'hub.final-cta', false>;
     heroHeading: Schema.Attribute.String & Schema.Attribute.Required;
-    heroSubtext: Schema.Attribute.Text;
+    heroSubtext: Schema.Attribute.Text &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 160;
+      }>;
     industriesBlock: Schema.Attribute.Component<'hub.info-block', false>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
@@ -782,8 +842,11 @@ export interface ApiFaqPageFaqPage extends Struct.SingleTypeSchema {
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     emptyStateText: Schema.Attribute.Text;
-    heroHeading: Schema.Attribute.String;
-    heroSubtext: Schema.Attribute.Text;
+    heroHeading: Schema.Attribute.String & Schema.Attribute.Required;
+    heroSubtext: Schema.Attribute.Text &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 160;
+      }>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -809,7 +872,11 @@ export interface ApiFaqFaq extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
-    answer: Schema.Attribute.Text & Schema.Attribute.Required;
+    answer: Schema.Attribute.Text &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 160;
+      }>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -830,7 +897,11 @@ export interface ApiFaqFaq extends Struct.CollectionTypeSchema {
       > &
       Schema.Attribute.DefaultTo<0>;
     publishedAt: Schema.Attribute.DateTime;
-    question: Schema.Attribute.String & Schema.Attribute.Required;
+    question: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 160;
+      }>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -848,12 +919,33 @@ export interface ApiHomePageHomePage extends Struct.SingleTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
-    businessProblems: Schema.Attribute.Component<'hub.title-description', true>;
-    businessProblemsHeading: Schema.Attribute.String;
-    businessProblemsHighlight: Schema.Attribute.String;
-    businessProblemsSubtext: Schema.Attribute.Text;
+    businessProblems: Schema.Attribute.Component<
+      'hub.title-description',
+      true
+    > &
+      Schema.Attribute.SetMinMax<
+        {
+          min: 6;
+        },
+        number
+      >;
+    businessProblemsHeading: Schema.Attribute.String &
+      Schema.Attribute.Required;
+    businessProblemsHighlight: Schema.Attribute.String &
+      Schema.Attribute.Required;
+    businessProblemsSubtext: Schema.Attribute.Text &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 160;
+      }>;
     certificationsEmptyStateText: Schema.Attribute.Text;
-    clientLogos: Schema.Attribute.Component<'home.client-logo', true>;
+    clientLogos: Schema.Attribute.Component<'home.client-logo', true> &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMax<
+        {
+          min: 5;
+        },
+        number
+      >;
     companyStats: Schema.Attribute.Component<'home.stat', true> &
       Schema.Attribute.Required &
       Schema.Attribute.SetMinMax<
@@ -866,23 +958,48 @@ export interface ApiHomePageHomePage extends Struct.SingleTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    deliveryApproachHeading: Schema.Attribute.String;
-    deliveryApproachHighlight: Schema.Attribute.String;
-    deliveryApproachSubtext: Schema.Attribute.Text;
+    deliveryApproachHeading: Schema.Attribute.String &
+      Schema.Attribute.Required;
+    deliveryApproachHighlight: Schema.Attribute.String &
+      Schema.Attribute.Required;
+    deliveryApproachSubtext: Schema.Attribute.Text &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 160;
+      }>;
     faqEmptyStateText: Schema.Attribute.Text;
     faqEyebrow: Schema.Attribute.String;
-    faqHeading: Schema.Attribute.String;
-    faqHighlight: Schema.Attribute.String;
-    faqLinkLabel: Schema.Attribute.String;
-    faqSubtitle: Schema.Attribute.Text;
+    faqHeading: Schema.Attribute.String & Schema.Attribute.Required;
+    faqHighlight: Schema.Attribute.String & Schema.Attribute.Required;
+    faqLinkLabel: Schema.Attribute.String & Schema.Attribute.Required;
+    faqSubtitle: Schema.Attribute.Text &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 160;
+      }>;
     finalCta: Schema.Attribute.Component<'hub.final-cta', false>;
-    heroDescription: Schema.Attribute.Text;
-    heroHighlight: Schema.Attribute.String;
-    heroTitle: Schema.Attribute.String;
+    heroDescription: Schema.Attribute.Text &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 120;
+      }>;
+    heroHighlight: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 20;
+      }>;
+    heroTitle: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 20;
+      }>;
     industries: Schema.Attribute.Relation<
       'manyToMany',
       'api::industry.industry'
-    >;
+    > &
+      Schema.Attribute.SetMinMax<
+        {
+          min: 5;
+        },
+        number
+      >;
     industriesSection: Schema.Attribute.Component<'hub.info-block', false>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
@@ -890,27 +1007,45 @@ export interface ApiHomePageHomePage extends Struct.SingleTypeSchema {
       'api::home-page.home-page'
     > &
       Schema.Attribute.Private;
-    primaryButtonText: Schema.Attribute.String;
+    PrimaryCtaButtonLabel: Schema.Attribute.String & Schema.Attribute.Required;
     publishedAt: Schema.Attribute.DateTime;
     secondaryButtonText: Schema.Attribute.String;
     solutionModelsEyebrow: Schema.Attribute.String;
-    solutionModelsHeading: Schema.Attribute.String;
-    solutionModelsHighlight: Schema.Attribute.String;
-    solutionModelsImage: Schema.Attribute.Media<'images'>;
-    solutionModelsLinkLabel: Schema.Attribute.String;
-    solutionModelsSubtext: Schema.Attribute.Text;
-    testimonialsCtaLabel: Schema.Attribute.String;
+    solutionModelsHeading: Schema.Attribute.String & Schema.Attribute.Required;
+    solutionModelsHighlight: Schema.Attribute.String &
+      Schema.Attribute.Required;
+    solutionModelsImage: Schema.Attribute.Media<'images'> &
+      Schema.Attribute.Required;
+    solutionModelsLinkLabel: Schema.Attribute.String &
+      Schema.Attribute.Required;
+    solutionModelsSubtext: Schema.Attribute.Text &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 160;
+      }>;
+    testimonialsCtaLabel: Schema.Attribute.String & Schema.Attribute.Required;
     testimonialsEmptyStateText: Schema.Attribute.Text;
     testimonialsEyebrow: Schema.Attribute.String;
-    testimonialsHeading: Schema.Attribute.String;
-    testimonialsHighlight: Schema.Attribute.String;
-    testimonialsSubtitle: Schema.Attribute.Text;
-    trustedByHighlight: Schema.Attribute.String;
-    trustedByText: Schema.Attribute.String;
-    trustHeading: Schema.Attribute.String;
-    trustHighlight: Schema.Attribute.String;
-    trustPills: Schema.Attribute.Component<'hub.string-item', true>;
-    trustSubtext: Schema.Attribute.Text;
+    testimonialsHeading: Schema.Attribute.String & Schema.Attribute.Required;
+    testimonialsHighlight: Schema.Attribute.String & Schema.Attribute.Required;
+    testimonialsSubtitle: Schema.Attribute.Text &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 160;
+      }>;
+    trustedByHighlight: Schema.Attribute.String & Schema.Attribute.Required;
+    trustedByText: Schema.Attribute.String & Schema.Attribute.Required;
+    trustHeading: Schema.Attribute.String & Schema.Attribute.Required;
+    trustHighlight: Schema.Attribute.String & Schema.Attribute.Required;
+    trustPills: Schema.Attribute.Component<'hub.string-item', true> &
+      Schema.Attribute.SetMinMax<
+        {
+          min: 5;
+        },
+        number
+      >;
+    trustSubtext: Schema.Attribute.Text &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 160;
+      }>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -921,26 +1056,25 @@ export interface ApiHomePageHomePage extends Struct.SingleTypeSchema {
       Schema.Attribute.SetMinMax<
         {
           max: 4;
-          min: 0;
+          min: 4;
         },
         number
       >;
     whyChooseEyebrow: Schema.Attribute.String;
-    whyChooseHeading: Schema.Attribute.String;
-    whyChooseHighlight: Schema.Attribute.String;
-    whyChooseSubtitle: Schema.Attribute.Text;
-    whyMetaphiHeading: Schema.Attribute.String;
-    whyMetaphiHighlight: Schema.Attribute.String;
-    whyMetaphiPillars: Schema.Attribute.Component<
-      'hub.title-description',
-      true
-    >;
-    whyMetaphiSubtext: Schema.Attribute.Text;
+    whyChooseHeading: Schema.Attribute.String & Schema.Attribute.Required;
+    whyChooseHighlight: Schema.Attribute.String & Schema.Attribute.Required;
+    whyChooseSubtitle: Schema.Attribute.Text &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 160;
+      }>;
     workShowcaseEyebrow: Schema.Attribute.String;
-    workShowcaseHeading: Schema.Attribute.String;
-    workShowcaseHighlight: Schema.Attribute.String;
-    workShowcaseIntro: Schema.Attribute.Text;
-    workShowcaseLinkLabel: Schema.Attribute.String;
+    workShowcaseHeading: Schema.Attribute.String & Schema.Attribute.Required;
+    workShowcaseHighlight: Schema.Attribute.String & Schema.Attribute.Required;
+    workShowcaseIntro: Schema.Attribute.Text &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 160;
+      }>;
+    workShowcaseLinkLabel: Schema.Attribute.String & Schema.Attribute.Required;
   };
 }
 
@@ -959,10 +1093,16 @@ export interface ApiIndustriesHubIndustriesHub extends Struct.SingleTypeSchema {
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     finalCta: Schema.Attribute.Component<'hub.final-cta', false>;
-    gridHeading: Schema.Attribute.String;
-    gridSubtext: Schema.Attribute.Text;
+    gridHeading: Schema.Attribute.String & Schema.Attribute.Required;
+    gridSubtext: Schema.Attribute.Text &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 160;
+      }>;
     heroHeading: Schema.Attribute.String & Schema.Attribute.Required;
-    heroSubtext: Schema.Attribute.Text;
+    heroSubtext: Schema.Attribute.Text &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 160;
+      }>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -971,10 +1111,14 @@ export interface ApiIndustriesHubIndustriesHub extends Struct.SingleTypeSchema {
       Schema.Attribute.Private;
     proof: Schema.Attribute.Component<'hub.proof-block', false>;
     publishedAt: Schema.Attribute.DateTime;
-    relatedSolutionsHeading: Schema.Attribute.String;
+    relatedSolutionsHeading: Schema.Attribute.String &
+      Schema.Attribute.Required;
     relevantSolutions: Schema.Attribute.Component<'hub.info-block', false>;
     resources: Schema.Attribute.Component<'hub.info-block', false>;
-    servedIndustriesHeading: Schema.Attribute.String;
+    servedIndustriesHeading: Schema.Attribute.String &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 160;
+      }>;
     transformationThemes: Schema.Attribute.Component<'hub.checklist', false>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -997,7 +1141,7 @@ export interface ApiIndustryIndustry extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    heroImage: Schema.Attribute.Media<'images'>;
+    heroImage: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -1005,10 +1149,9 @@ export interface ApiIndustryIndustry extends Struct.CollectionTypeSchema {
     > &
       Schema.Attribute.Private;
     order: Schema.Attribute.Integer &
-      Schema.Attribute.Required &
       Schema.Attribute.SetMinMax<
         {
-          min: 1;
+          min: 0;
         },
         number
       >;
@@ -1018,7 +1161,10 @@ export interface ApiIndustryIndustry extends Struct.CollectionTypeSchema {
       'manyToMany',
       'api::solution.solution'
     >;
-    summary: Schema.Attribute.Text;
+    summary: Schema.Attribute.Text &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 160;
+      }>;
     title: Schema.Attribute.String & Schema.Attribute.Required;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -1040,16 +1186,19 @@ export interface ApiJobOpeningJobOpening extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    department: Schema.Attribute.String;
-    description: Schema.Attribute.Text;
-    employmentType: Schema.Attribute.String;
+    department: Schema.Attribute.String & Schema.Attribute.Required;
+    description: Schema.Attribute.Text &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 160;
+      }>;
+    employmentType: Schema.Attribute.String & Schema.Attribute.Required;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
       'api::job-opening.job-opening'
     > &
       Schema.Attribute.Private;
-    location: Schema.Attribute.String;
+    location: Schema.Attribute.String & Schema.Attribute.Required;
     order: Schema.Attribute.Integer & Schema.Attribute.DefaultTo<0>;
     publishedAt: Schema.Attribute.DateTime;
     title: Schema.Attribute.String & Schema.Attribute.Required;
@@ -1078,7 +1227,10 @@ export interface ApiLifeAtMetaphiPageLifeAtMetaphiPage
     finalCta: Schema.Attribute.Component<'hub.final-cta', false>;
     heroEyebrow: Schema.Attribute.String;
     heroHeading: Schema.Attribute.String & Schema.Attribute.Required;
-    heroSubtext: Schema.Attribute.Text;
+    heroSubtext: Schema.Attribute.Text &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 160;
+      }>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -1087,12 +1239,22 @@ export interface ApiLifeAtMetaphiPageLifeAtMetaphiPage
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
     sectionEyebrow: Schema.Attribute.String;
-    sectionHeading: Schema.Attribute.String;
-    sectionSubtext: Schema.Attribute.Text;
+    sectionHeading: Schema.Attribute.String & Schema.Attribute.Required;
+    sectionSubtext: Schema.Attribute.Text &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 160;
+      }>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    values: Schema.Attribute.Component<'hub.title-description', true>;
+    values: Schema.Attribute.Component<'hub.title-description', true> &
+      Schema.Attribute.SetMinMax<
+        {
+          max: 9;
+          min: 3;
+        },
+        number
+      >;
   };
 }
 
@@ -1107,11 +1269,14 @@ export interface ApiPartnerPartner extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
-    category: Schema.Attribute.String;
+    category: Schema.Attribute.String & Schema.Attribute.Required;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    description: Schema.Attribute.Text;
+    description: Schema.Attribute.Text &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 160;
+      }>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -1142,13 +1307,19 @@ export interface ApiPartnersPagePartnersPage extends Struct.SingleTypeSchema {
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     directoryEyebrow: Schema.Attribute.String;
-    directoryHeading: Schema.Attribute.String;
-    directorySubtext: Schema.Attribute.Text;
+    directoryHeading: Schema.Attribute.String & Schema.Attribute.Required;
+    directorySubtext: Schema.Attribute.Text &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 160;
+      }>;
     emptyStateText: Schema.Attribute.Text;
     finalCta: Schema.Attribute.Component<'hub.final-cta', false>;
     heroEyebrow: Schema.Attribute.String;
     heroHeading: Schema.Attribute.String & Schema.Attribute.Required;
-    heroSubtext: Schema.Attribute.Text;
+    heroSubtext: Schema.Attribute.Text &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 160;
+      }>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -1183,8 +1354,14 @@ export interface ApiReadyToConfigureHubReadyToConfigureHub
       Schema.Attribute.Private;
     finalCta: Schema.Attribute.Component<'hub.final-cta', false>;
     heroHeading: Schema.Attribute.String & Schema.Attribute.Required;
-    heroSubtext: Schema.Attribute.Text;
-    implementationFlow: Schema.Attribute.Component<'hub.process-flow', false>;
+    heroSubtext: Schema.Attribute.Text &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 160;
+      }>;
+    implementationFlow: Schema.Attribute.Component<
+      'hub.ready-process-flow',
+      false
+    >;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -1196,9 +1373,19 @@ export interface ApiReadyToConfigureHubReadyToConfigureHub
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    whatItMeans: Schema.Attribute.Component<'hub.title-description', true>;
-    whatItMeansHeading: Schema.Attribute.String;
-    whatItMeansSubtext: Schema.Attribute.Text;
+    whatItMeans: Schema.Attribute.Component<'hub.title-description', true> &
+      Schema.Attribute.SetMinMax<
+        {
+          max: 4;
+          min: 4;
+        },
+        number
+      >;
+    whatItMeansHeading: Schema.Attribute.String & Schema.Attribute.Required;
+    whatItMeansSubtext: Schema.Attribute.Text &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 160;
+      }>;
   };
 }
 
@@ -1220,7 +1407,10 @@ export interface ApiRewardsPageRewardsPage extends Struct.SingleTypeSchema {
     finalCta: Schema.Attribute.Component<'hub.final-cta', false>;
     heroEyebrow: Schema.Attribute.String;
     heroHeading: Schema.Attribute.String & Schema.Attribute.Required;
-    heroSubtext: Schema.Attribute.Text;
+    heroSubtext: Schema.Attribute.Text &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 160;
+      }>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -1228,10 +1418,20 @@ export interface ApiRewardsPageRewardsPage extends Struct.SingleTypeSchema {
     > &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
-    rewards: Schema.Attribute.Component<'hub.title-description', true>;
+    rewards: Schema.Attribute.Component<'hub.title-description', true> &
+      Schema.Attribute.SetMinMax<
+        {
+          max: 9;
+          min: 3;
+        },
+        number
+      >;
     sectionEyebrow: Schema.Attribute.String;
-    sectionHeading: Schema.Attribute.String;
-    sectionSubtext: Schema.Attribute.Text;
+    sectionHeading: Schema.Attribute.String & Schema.Attribute.Required;
+    sectionSubtext: Schema.Attribute.Text &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 160;
+      }>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1285,35 +1485,54 @@ export interface ApiScheduleACallPageScheduleACallPage
     draftAndPublish: true;
   };
   attributes: {
-    availableSlotsLabel: Schema.Attribute.String;
-    calendarInviteNote: Schema.Attribute.String;
-    confirmationHeading: Schema.Attribute.String;
-    confirmationSubtext: Schema.Attribute.Text;
-    confirmButtonTemplate: Schema.Attribute.String;
+    availableSlotsLabel: Schema.Attribute.String & Schema.Attribute.Required;
+    calendarInviteNote: Schema.Attribute.String & Schema.Attribute.Required;
+    confirmationHeading: Schema.Attribute.String & Schema.Attribute.Required;
+    confirmationSubtext: Schema.Attribute.Text &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 160;
+      }>;
+    confirmButtonTemplate: Schema.Attribute.String & Schema.Attribute.Required;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    durationText: Schema.Attribute.String;
-    emptySlotButtonLabel: Schema.Attribute.String;
+    durationText: Schema.Attribute.String & Schema.Attribute.Required;
+    emptySlotButtonLabel: Schema.Attribute.String & Schema.Attribute.Required;
     heroHeading: Schema.Attribute.String & Schema.Attribute.Required;
-    heroHighlight: Schema.Attribute.String;
-    heroSubtext: Schema.Attribute.Text;
+    heroHighlight: Schema.Attribute.String & Schema.Attribute.Required;
+    heroSubtext: Schema.Attribute.Text &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 160;
+      }>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
       'api::schedule-a-call-page.schedule-a-call-page'
     > &
       Schema.Attribute.Private;
-    promises: Schema.Attribute.Component<'hub.string-item', true>;
-    promisesHeading: Schema.Attribute.String;
+    promises: Schema.Attribute.Component<'hub.string-item', true> &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMax<
+        {
+          max: 5;
+          min: 1;
+        },
+        number
+      >;
+    promisesHeading: Schema.Attribute.String & Schema.Attribute.Required;
     publishedAt: Schema.Attribute.DateTime;
-    rescheduleButtonLabel: Schema.Attribute.String;
-    returnHomeButtonLabel: Schema.Attribute.String;
-    selectTimezoneLabel: Schema.Attribute.String;
+    rescheduleButtonLabel: Schema.Attribute.String & Schema.Attribute.Required;
+    returnHomeButtonLabel: Schema.Attribute.String & Schema.Attribute.Required;
+    selectTimezoneLabel: Schema.Attribute.String & Schema.Attribute.Required;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    videoCallText: Schema.Attribute.String;
+    videoCallText: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 160;
+      }>;
   };
 }
 
@@ -1336,7 +1555,7 @@ export interface ApiSolutionSolution extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    ctaLabel: Schema.Attribute.String;
+    ctaLabel: Schema.Attribute.String & Schema.Attribute.Required;
     industries: Schema.Attribute.Relation<
       'manyToMany',
       'api::industry.industry'
@@ -1361,7 +1580,10 @@ export interface ApiSolutionSolution extends Struct.CollectionTypeSchema {
       Schema.Attribute.DefaultTo<0>;
     publishedAt: Schema.Attribute.DateTime;
     slug: Schema.Attribute.UID<'title'> & Schema.Attribute.Required;
-    summary: Schema.Attribute.Text;
+    summary: Schema.Attribute.Text &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 160;
+      }>;
     title: Schema.Attribute.String & Schema.Attribute.Required;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -1386,7 +1608,10 @@ export interface ApiSolutionsHubSolutionsHub extends Struct.SingleTypeSchema {
     customModel: Schema.Attribute.Component<'hub.solution-model', false>;
     finalCta: Schema.Attribute.Component<'hub.final-cta', false>;
     heroHeading: Schema.Attribute.String & Schema.Attribute.Required;
-    heroSubtext: Schema.Attribute.Text;
+    heroSubtext: Schema.Attribute.Text &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 160;
+      }>;
     howToChoose: Schema.Attribute.Component<'hub.how-to-choose', false>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
@@ -1394,8 +1619,11 @@ export interface ApiSolutionsHubSolutionsHub extends Struct.SingleTypeSchema {
       'api::solutions-hub.solutions-hub'
     > &
       Schema.Attribute.Private;
-    modelsHeading: Schema.Attribute.String;
-    modelsSubtext: Schema.Attribute.Text;
+    modelsHeading: Schema.Attribute.String & Schema.Attribute.Required;
+    modelsSubtext: Schema.Attribute.Text &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 160;
+      }>;
     proof: Schema.Attribute.Component<'hub.proof-block', false>;
     publishedAt: Schema.Attribute.DateTime;
     readyModel: Schema.Attribute.Component<'hub.solution-model', false>;
@@ -1417,7 +1645,10 @@ export interface ApiTeamMemberTeamMember extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
-    bio: Schema.Attribute.Text;
+    bio: Schema.Attribute.Text &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 160;
+      }>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1431,7 +1662,7 @@ export interface ApiTeamMemberTeamMember extends Struct.CollectionTypeSchema {
     name: Schema.Attribute.String & Schema.Attribute.Required;
     order: Schema.Attribute.Integer & Schema.Attribute.DefaultTo<0>;
     publishedAt: Schema.Attribute.DateTime;
-    role: Schema.Attribute.String;
+    role: Schema.Attribute.String & Schema.Attribute.Required;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1453,13 +1684,19 @@ export interface ApiTeamPageTeamPage extends Struct.SingleTypeSchema {
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     directoryEyebrow: Schema.Attribute.String;
-    directoryHeading: Schema.Attribute.String;
-    directorySubtext: Schema.Attribute.Text;
+    directoryHeading: Schema.Attribute.String & Schema.Attribute.Required;
+    directorySubtext: Schema.Attribute.Text &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 160;
+      }>;
     emptyStateText: Schema.Attribute.Text;
     finalCta: Schema.Attribute.Component<'hub.final-cta', false>;
     heroEyebrow: Schema.Attribute.String;
     heroHeading: Schema.Attribute.String & Schema.Attribute.Required;
-    heroSubtext: Schema.Attribute.Text;
+    heroSubtext: Schema.Attribute.Text &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 160;
+      }>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -1523,13 +1760,19 @@ export interface ApiTestimonialsPageTestimonialsPage
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     directoryEyebrow: Schema.Attribute.String;
-    directoryHeading: Schema.Attribute.String;
-    directorySubtext: Schema.Attribute.Text;
+    directoryHeading: Schema.Attribute.String & Schema.Attribute.Required;
+    directorySubtext: Schema.Attribute.Text &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 160;
+      }>;
     emptyStateText: Schema.Attribute.Text;
     finalCta: Schema.Attribute.Component<'hub.final-cta', false>;
     heroEyebrow: Schema.Attribute.String;
     heroHeading: Schema.Attribute.String & Schema.Attribute.Required;
-    heroSubtext: Schema.Attribute.Text;
+    heroSubtext: Schema.Attribute.Text &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 160;
+      }>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -1594,9 +1837,12 @@ export interface ApiWorkPageWorkPage extends Struct.SingleTypeSchema {
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     emptyStateText: Schema.Attribute.Text;
-    heading: Schema.Attribute.String;
-    highlight: Schema.Attribute.String;
-    intro: Schema.Attribute.Text;
+    heading: Schema.Attribute.String & Schema.Attribute.Required;
+    highlight: Schema.Attribute.String & Schema.Attribute.Required;
+    intro: Schema.Attribute.Text &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 160;
+      }>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',

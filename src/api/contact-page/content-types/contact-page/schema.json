@@ -17,30 +17,39 @@
       "required": true
     },
     "heroHighlight": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "heroSubtext": {
-      "type": "text"
+      "type": "text",
+      "maxLength": 160
     },
     "email": {
-      "type": "email"
+      "type": "email",
+      "required": true
     },
     "emailLabel": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "phoneLabel": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "phones": {
       "type": "component",
+      "component": "contact.phone-item",
       "repeatable": true,
-      "component": "contact.phone-item"
+      "required": true,
+      "min": 1
     },
     "address": {
-      "type": "text"
+      "type": "text",
+      "required": true
     },
     "addressLabel": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "firstNameLabel": {
       "type": "string",
@@ -86,19 +95,25 @@
       "required": true
     },
     "submittingButtonLabel": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "successHeading": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "successMessage": {
-      "type": "text"
+      "type": "text",
+      "maxLength": 160,
+      "required": true
     },
     "sendAnotherLabel": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "errorMessage": {
-      "type": "text"
+      "type": "text",
+      "required": true
     }
   }
 }

@@ -17,18 +17,19 @@
     },
     "department": {
       "type": "string",
-      "required": false
+      "required": true
     },
     "location": {
       "type": "string",
-      "required": false
+      "required": true
     },
     "employmentType": {
       "type": "string",
-      "required": false
+      "required": true
     },
     "description": {
       "type": "text",
+      "maxLength": 160,
       "required": false
     },
     "order": {

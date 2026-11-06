@@ -17,43 +17,46 @@
     },
     "heroSubtext": {
       "type": "text",
+      "maxLength": 160,
       "required": false
     },
     "whenCustomMakesSense": {
       "type": "component",
-      "repeatable": false,
-      "component": "hub.checklist"
+      "component": "hub.checklist",
+      "repeatable": false
+    },
+    "capabilitiesHeading": {
+      "type": "string",
+      "required": true
+    },
+    "capabilitiesSubtext": {
+      "type": "text",
+      "maxLength": 160
     },
     "businessOutcomes": {
       "type": "component",
-      "repeatable": false,
-      "component": "hub.checklist"
+      "component": "hub.checklist",
+      "repeatable": false
     },
     "industriesBlock": {
       "type": "component",
-      "repeatable": false,
-      "component": "hub.info-block"
+      "component": "hub.info-block",
+      "repeatable": false
     },
     "deliveryProcess": {
       "type": "component",
-      "repeatable": false,
-      "component": "hub.process-flow"
+      "component": "hub.process-flow",
+      "repeatable": false
     },
     "proof": {
       "type": "component",
-      "repeatable": false,
-      "component": "hub.proof-block"
+      "component": "hub.proof-block",
+      "repeatable": false
     },
     "finalCta": {
       "type": "component",
-      "repeatable": false,
-      "component": "hub.final-cta"
-    },
-    "capabilitiesHeading": {
-      "type": "string"
-    },
-    "capabilitiesSubtext": {
-      "type": "text"
+      "component": "hub.final-cta",
+      "repeatable": false
     }
   }
 }

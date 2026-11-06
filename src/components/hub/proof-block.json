@@ -9,7 +9,7 @@
   "attributes": {
     "heading": {
       "type": "string",
-      "required": false
+      "required": true
     },
     "ctaLabel": {
       "type": "string",

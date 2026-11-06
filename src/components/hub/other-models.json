@@ -12,8 +12,8 @@
     },
     "items": {
       "type": "component",
-      "repeatable": true,
       "component": "hub.other-model-item",
+      "repeatable": true,
       "min": 2,
       "max": 2
     }

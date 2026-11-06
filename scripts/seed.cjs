@@ -365,7 +365,7 @@ async function seed() {
         console.warn(`WARNING: Industry slug "${ind.slug}" not found in database; creating.`);
         const created = await app.documents('api::industry.industry').create({
           data: payload,
-          status: 'published'
+          status: 'draft'
         });
         seededIndustryDocIds.push(created.documentId);
         console.log(`✓ Created industry: "${ind.title}" (${ind.slug}) [order: ${ind.order}]`);
@@ -373,7 +373,7 @@ async function seed() {
         await app.documents('api::industry.industry').update({
           documentId: existing.documentId,
           data: payload,
-          status: 'published'
+          status: 'draft'
         });
         seededIndustryDocIds.push(existing.documentId);
         console.log(`• Updated industry: "${ind.title}" (${ind.slug}) [order: ${ind.order}]`);
@@ -387,7 +387,7 @@ async function seed() {
     console.log('Seeding Ready-to-Configure Hub...');
     const rtcData = {
       heroHeading: 'Launch Faster With Software That Is Already Built',
-      heroSubtext: 'Skip the long build phase. Our pre-engineered platforms come with the core features ready, so your team can tailor screens, rules and reports to fit your operations and go live in weeks instead of months.',
+      heroSubtext: 'Skip the long build phase. Our pre-engineered platforms come with core features ready, so your team can tailor screens, rules and reports and go live in weeks.',
       whatItMeansHeading: 'Why This Approach Works',
       whatItMeansSubtext: 'A working core means you spend your budget on what makes your business different, not on rebuilding standard features.',
       whatItMeans: [
@@ -477,7 +477,7 @@ async function seed() {
     console.log('Seeding SaaS Products Hub...');
     const saasData = {
       heroHeading: 'Ready-to-Use Software, Billed Simply, Running in Days',
-      heroSubtext: 'Sign up, invite your team and start working. Our subscription products cover everyday needs like invoicing, scheduling and support, with regular updates and hosting handled for you.',
+      heroSubtext: 'Sign up, invite your team and start working. Subscription products covering invoicing, scheduling and support, with hosting and regular updates included.',
       productsHeading: 'Our SaaS Product Lineup',
       productsSubtext: 'Subscription tools for invoicing, appointment booking, helpdesk and team collaboration, each ready to use out of the box and priced per user per month.',
       otherModels: {
@@ -520,9 +520,9 @@ async function seed() {
     // 3c. Industries Hub
     console.log('Seeding Industries Hub...');
     const indHubData = {
-      heroHeading: 'Software That Understands How Your Industry Actually Works',
-      heroSubtext: 'Healthcare, logistics, retail and finance each run on different rules, rhythms and regulations. We pair deep engineering skill with sector knowledge so the technology we deliver fits your daily reality from the first release.',
-      gridHeading: 'Industries We Serve',
+      heroHeading: 'Industry-Specific Solutions',
+      heroSubtext: 'Domain-tailored technology built around regulatory requirements, operational models and market pressures of your sector.',
+      gridHeading: 'Explore by Industry',
       gridSubtext: 'Explore how we apply our engineering core across ten industry verticals.',
       transformationThemes: {
         heading: 'One Industry at a Time, the Same Proven Playbook',
@@ -538,9 +538,10 @@ async function seed() {
           { text: 'Ship products that scale' }
         ]
       },
+      relatedSolutionsHeading: 'Shared Capabilities Across Sectors',
       relevantSolutions: {
         heading: 'The Same Engineering Core Behind Every Sector',
-        subtext: 'Whatever your industry, our delivery draws on shared strengths in application development, intelligent automation, cloud infrastructure and long-term platform support.',
+        subtext: 'Whatever your industry, our delivery draws on shared strengths in application development, intelligent automation, cloud infrastructure and platform support.',
         ctaLabel: 'See How We Build'
       },
       proof: {
@@ -607,13 +608,13 @@ async function seed() {
       customModel: {
         title: 'Custom Solutions',
         tagline: 'Designed for your exact workflow',
-        description: 'Choose this route when your processes, integrations or product vision are too specific for packaged software. Typical projects include internal platforms, customer portals, workflow automation and legacy system replacement.',
+        description: 'Choose this route when your processes, integrations or product vision are too specific for packaged software, customer portals or bespoke workflow systems.',
         ctaLabel: 'View Bespoke Engineering'
       },
       readyModel: {
         title: 'Ready-to-Configure Solutions',
         tagline: 'Launch in weeks, not quarters',
-        description: 'Choose this route when we already have tested components for your problem, such as onboarding, scheduling, billing or reporting. We configure them to your rules and expand only where you need something unique.',
+        description: 'Choose this route when we already have tested components for your problem, such as onboarding, scheduling, billing or reporting to configure to your rules.',
         ctaLabel: 'View Pre-Built Modules'
       },
       saasModel: {
@@ -644,7 +645,7 @@ async function seed() {
     console.log('Seeding Custom Solutions Hub...');
     const customHubData = {
       heroHeading: 'Technology Designed Around the Way Your Business Works',
-      heroSubtext: 'When standard software cannot accommodate your processes, product strategy or integration requirements, Metaphi designs and engineers technology around your business instead of forcing your business around the software.',
+      heroSubtext: 'When standard software cannot accommodate your processes, product strategy or integrations, we build custom platforms.',
       capabilitiesHeading: 'Capabilities',
       capabilitiesSubtext: 'From business systems to intelligent digital products.',
       whenCustomMakesSense: {
@@ -776,7 +777,7 @@ async function seed() {
         title: 'Route Planning Overhaul for Regional Fleet',
         order: 1,
         subtitle: 'Replacing manual dispatch with real-time routing',
-        summary: 'A regional delivery fleet was spending three hours every morning manually assigning runs. We built a dispatch platform with dynamic route optimization that cut planning time to under twenty minutes and dropped fuel costs across the board.',
+        summary: 'We built a dispatch platform with dynamic route optimization that cut planning time to under twenty minutes and dropped fuel costs across the board for a regional fleet.',
         tags: [
           { title: 'Route Optimization' },
           { title: 'Mobile App Development' },
@@ -834,9 +835,9 @@ async function seed() {
           ]
         }
       },
-      status: 'published'
+      status: 'draft'
     });
-    console.log('✓ Created Case Study: "Route Planning Overhaul for Regional Fleet"');
+    console.log('✓ Created Case Study: "Route Planning Overhaul for Regional Fleet" (DRAFT: requires heroImage & clientLogo)');
 
     // Case Study 2: Patient Booking Redesign (Order 2, topic: healthcare)
     const cs2Solutions = [
@@ -851,7 +852,7 @@ async function seed() {
         title: 'Patient Booking Redesign for Multi-Clinic Network',
         order: 2,
         subtitle: 'Unifying four clinic systems into one patient portal',
-        summary: 'A network of twenty-four outpatient clinics had four different scheduling tools, leaving front-desk staff overwhelmed by phone bookings. We unified their calendars into a single patient self-service portal, reducing no-shows and freeing front desks to focus on patients in the room.',
+        summary: 'We unified calendars across twenty-four outpatient clinics into a single patient self-service portal, reducing no-shows and freeing front desks to focus on patients.',
         tags: [
           { title: 'Healthcare Software' },
           { title: 'UX Design' },
@@ -909,17 +910,17 @@ async function seed() {
           ]
         }
       },
-      status: 'published'
+      status: 'draft'
     });
-    console.log('✓ Created Case Study: "Patient Booking Redesign for Multi-Clinic Network"');
+    console.log('✓ Created Case Study: "Patient Booking Redesign for Multi-Clinic Network" (DRAFT: requires heroImage & clientLogo)');
 
     // ── 5. Seed About Page ───────────────────────────────────────────────
     console.log('\n--- 5. Seeding About Page ---');
     const aboutPageData = {
       heroHeading: 'We Build the Software Your Operations Depend On',
-      heroSubtext: "We are an engineering team that focuses on what happens after the sale: the messy, critical, everyday software that keeps orders moving, trucks running, patients seen and teams aligned. No jargon, no runaway scopes - just solid software that solves the problem you hired us for.",
+      heroSubtext: "We build the messy, critical, everyday software that keeps orders moving, trucks running, patients seen and teams aligned, with no jargon or runaway scopes.",
       missionHeading: 'How We Think About the Work',
-      missionText: "Most software projects don't fail because the code was bad. They fail because the team building it never truly understood the business problem. We start on your side of the table: learning your workflows, respecting the systems you already have, and delivering working software in small, verifiable steps so you never have to wonder what your budget is paying for.",
+      missionText: "We start on your side of the table: learning workflows, respecting existing systems, and delivering working software in small, verifiable steps.",
       pillarsHeading: 'The Principles We Work By',
       pillars: [
         {
@@ -967,7 +968,8 @@ async function seed() {
     console.log('\n--- 6. Seeding Team Page & Team Members ---');
     const teamPageData = {
       heroHeading: 'The People Behind the Code',
-      heroSubtext: "Senior engineers, product designers and solution architects with decades of collective experience across cloud infrastructure, enterprise applications and applied AI.",
+      heroSubtext: "Senior engineers, designers and architects with decades of collective experience across cloud infrastructure, enterprise applications and applied AI.",
+      directoryHeading: 'Meet Our Team',
       emptyStateText: 'Our team directory is being updated. Please check back shortly.',
       finalCta: {
         heading: 'Want to Work With This Team?',
@@ -1023,6 +1025,7 @@ async function seed() {
     const testimonialsPageData = {
       heroHeading: 'What Our Clients Say',
       heroSubtext: 'Read how teams across logistics, healthcare and commerce used Metaphi software to modernize operations, cut overhead and hit their deadlines.',
+      directoryHeading: 'What Our Clients Say',
       emptyStateText: 'Testimonials are currently being refreshed. Please check back soon.'
     };
 
@@ -1226,7 +1229,7 @@ async function seed() {
       },
       {
         question: 'How do you price your work?',
-        answer: 'We offer fixed-price packages for well-defined scopes and monthly team-based pricing for ongoing work. After a short discovery call we give you a written estimate.',
+        answer: 'We offer fixed-price packages for well-defined scopes and monthly pricing for ongoing work. After a short discovery call we provide a written estimate.',
         categoryName: 'Pricing',
         order: 2
       },
@@ -1290,6 +1293,8 @@ async function seed() {
       email: 'hello@metaphi.example',
       emailLabel: 'Email Us',
       phoneLabel: 'Call Us',
+      address: 'London, United Kingdom',
+      addressLabel: 'Office Location',
       phones: [
         { label: 'India', value: '+91 00000 00000', href: '+910000000000' },
         { label: 'USA', value: '+1 000 000 0000', href: '+10000000000' }
@@ -1375,7 +1380,7 @@ async function seed() {
     const whyJoinUsPageData = {
       heroEyebrow: 'Careers at Metaphi',
       heroHeading: 'Do the Best Work of Your Career With People Who Care',
-      heroSubtext: 'We are a small, senior team that values clear thinking, steady growth and work that makes a real difference to our clients. If that sounds like the place for you, come and join us.',
+      heroSubtext: 'We are a senior team that values clear thinking, steady growth and work that makes a real difference to our clients. Come and join us.',
       sectionEyebrow: 'Why Join Us',
       sectionHeading: 'What You Can Expect Working Here',
       sectionSubtext: 'These are the things our team members tell us matter most, and the things we work hardest to protect as we grow.',
@@ -1544,7 +1549,7 @@ async function seed() {
         location: 'Mumbai, India (Hybrid)',
         employmentType: 'Full-time',
         order: 1,
-        description: 'You will design and build web platforms for clients across healthcare, logistics and finance, working with product owners and designers from first workshop to launch. We are looking for someone with strong experience in React, Node.js and relational databases, who writes clear, tested code and enjoys mentoring teammates.'
+        description: 'Design and build web platforms for clients across healthcare, logistics and finance. Strong experience in React, Node.js and relational databases required.'
       },
       {
         title: 'Product Designer',
@@ -1552,7 +1557,7 @@ async function seed() {
         location: 'Remote (India)',
         employmentType: 'Full-time',
         order: 2,
-        description: 'You will turn complex business workflows into simple, clear interfaces, from research and wireframes to polished prototypes handed over to engineering. You should have a portfolio showing real product work and be comfortable explaining your design decisions to clients.'
+        description: 'Turn complex business workflows into simple, clear interfaces, from wireframes to polished prototypes handed over to engineering.'
       },
       {
         title: 'QA Engineering Intern',
@@ -1560,7 +1565,7 @@ async function seed() {
         location: 'Mumbai, India (On-site)',
         employmentType: 'Internship (6 months)',
         order: 3,
-        description: 'You will learn how professional teams test web applications, writing test cases, running manual and automated checks, and reporting issues clearly. This is a good first step for students or recent graduates interested in software quality.'
+        description: 'Learn how professional teams test web applications, write test cases, run automated checks, and report issues clearly for software quality.'
       }
     ];
 
@@ -1577,9 +1582,9 @@ async function seed() {
     const exHome = await app.documents('api::home-page.home-page').findFirst({});
     if (!exHome) {
       const homeData = {
-        heroTitle: 'Technology Built Around',
-        heroHighlight: 'Your Business',
-        heroDescription: 'We design, engineer and evolve custom software, digital products and enterprise AI solutions that solve real operational problems, connect fragmented workflows and create the technology foundation for growth.',
+        heroTitle: 'Custom Software & AI',
+        heroHighlight: 'Engineered to Scale',
+        heroDescription: 'We engineer custom software, digital products and AI solutions that solve real operational problems for growth.',
         PrimaryCtaButtonLabel: 'Discuss Your Technology Initiative',
         secondaryButtonText: 'Explore Case Studies',
         companyStats: [
@@ -1647,7 +1652,7 @@ async function seed() {
 
       await app.documents('api::home-page.home-page').create({
         data: homeData,
-        status: 'published'
+        status: 'draft'
       });
       console.log('✓ Created initial Home Page baseline');
     } else {
@@ -1656,11 +1661,9 @@ async function seed() {
       await app.documents('api::home-page.home-page').update({
         documentId: exHome.documentId,
         data: {
-          industries: seededIndustryDocIds,
-          clientLogos: [],
-          whyChooseCertifications: []
+          industries: seededIndustryDocIds
         },
-        status: 'published'
+        status: 'draft'
       });
       console.log('✓ Verified and linked Home Page without altering hero or stats strip');
     }

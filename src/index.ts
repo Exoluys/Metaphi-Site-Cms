@@ -409,6 +409,123 @@ export default {
           }
         }
 
+        // ── 7a2. Enforce validation rules on solutions-hub ────────────
+        if (uid === 'api::solutions-hub.solutions-hub' && (action === 'update' || action === 'create')) {
+          const data = ctx.params?.data;
+          if (data) {
+            const checkRequired = (val: any, name: string) => {
+              if (val === undefined || val === null || (typeof val === 'string' && !val.trim())) {
+                throw new Error(name + ' is required.');
+              }
+            };
+            const checkMaxChars = (val: any, max: number, name: string) => {
+              if (val !== undefined && val !== null && typeof val === 'string' && val.trim().length > max) {
+                throw new Error(name + ' must be ' + max + ' characters or fewer.');
+              }
+            };
+
+            // HERO
+            if (data.heroSubtext !== undefined) {
+              checkMaxChars(data.heroSubtext, 160, 'Hero Subtext');
+            }
+
+            // MODELS SECTION
+            if (data.modelsHeading !== undefined) {
+              checkRequired(data.modelsHeading, 'Models Heading');
+            }
+            if (data.modelsSubtext !== undefined) {
+              checkMaxChars(data.modelsSubtext, 160, 'Models Subtext');
+            }
+
+            // HOW TO CHOOSE
+            if (data.howToChoose !== undefined && data.howToChoose !== null) {
+              if (data.howToChoose.heading !== undefined) {
+                checkRequired(data.howToChoose.heading, 'How To Choose Heading');
+              }
+              if (data.howToChoose.subtext !== undefined) {
+                checkMaxChars(data.howToChoose.subtext, 160, 'How To Choose Subtext');
+              }
+              if (data.howToChoose.customRule !== undefined) {
+                checkRequired(data.howToChoose.customRule, 'How To Choose Custom Rule');
+                checkMaxChars(data.howToChoose.customRule, 160, 'How To Choose Custom Rule');
+              }
+              if (data.howToChoose.readyRule !== undefined) {
+                checkRequired(data.howToChoose.readyRule, 'How To Choose Ready Rule');
+                checkMaxChars(data.howToChoose.readyRule, 160, 'How To Choose Ready Rule');
+              }
+              if (data.howToChoose.saasRule !== undefined) {
+                checkRequired(data.howToChoose.saasRule, 'How To Choose SaaS Rule');
+                checkMaxChars(data.howToChoose.saasRule, 160, 'How To Choose SaaS Rule');
+              }
+              if (data.howToChoose.ctaLabel !== undefined) {
+                checkRequired(data.howToChoose.ctaLabel, 'How To Choose CTA Label');
+              }
+            }
+
+            // PROOF
+            if (data.proof !== undefined && data.proof !== null) {
+              if (data.proof.heading !== undefined) {
+                checkRequired(data.proof.heading, 'Proof Heading');
+              }
+            }
+
+            // FINAL CTA
+            if (data.finalCta !== undefined && data.finalCta !== null) {
+              if (data.finalCta.heading !== undefined) {
+                checkRequired(data.finalCta.heading, 'Final CTA Heading');
+              }
+              if (data.finalCta.subtext !== undefined) {
+                checkRequired(data.finalCta.subtext, 'Final CTA Subtext');
+              }
+            }
+
+            // CUSTOM MODEL
+            if (data.customModel !== undefined && data.customModel !== null) {
+              if (data.customModel.tagline !== undefined) {
+                checkRequired(data.customModel.tagline, 'Custom Model Tagline');
+                checkMaxChars(data.customModel.tagline, 160, 'Custom Model Tagline');
+              }
+              if (data.customModel.description !== undefined) {
+                checkRequired(data.customModel.description, 'Custom Model Description');
+                checkMaxChars(data.customModel.description, 160, 'Custom Model Description');
+              }
+              if (data.customModel.ctaLabel !== undefined) {
+                checkRequired(data.customModel.ctaLabel, 'Custom Model CTA Label');
+              }
+            }
+
+            // READY MODEL
+            if (data.readyModel !== undefined && data.readyModel !== null) {
+              if (data.readyModel.tagline !== undefined) {
+                checkRequired(data.readyModel.tagline, 'Ready Model Tagline');
+                checkMaxChars(data.readyModel.tagline, 160, 'Ready Model Tagline');
+              }
+              if (data.readyModel.description !== undefined) {
+                checkRequired(data.readyModel.description, 'Ready Model Description');
+                checkMaxChars(data.readyModel.description, 160, 'Ready Model Description');
+              }
+              if (data.readyModel.ctaLabel !== undefined) {
+                checkRequired(data.readyModel.ctaLabel, 'Ready Model CTA Label');
+              }
+            }
+
+            // SAAS MODEL
+            if (data.saasModel !== undefined && data.saasModel !== null) {
+              if (data.saasModel.tagline !== undefined) {
+                checkRequired(data.saasModel.tagline, 'SaaS Model Tagline');
+                checkMaxChars(data.saasModel.tagline, 160, 'SaaS Model Tagline');
+              }
+              if (data.saasModel.description !== undefined) {
+                checkRequired(data.saasModel.description, 'SaaS Model Description');
+                checkMaxChars(data.saasModel.description, 160, 'SaaS Model Description');
+              }
+              if (data.saasModel.ctaLabel !== undefined) {
+                checkRequired(data.saasModel.ctaLabel, 'SaaS Model CTA Label');
+              }
+            }
+          }
+        }
+
         // ── 7b. Enforce transformationThemes on industries-hub ─────────
         if (uid === 'api::industries-hub.industries-hub' && (action === 'update' || action === 'create')) {
           const tt = ctx.params?.data?.transformationThemes;

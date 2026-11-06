@@ -17,6 +17,7 @@
     },
     "heroSubtext": {
       "type": "text",
+      "maxLength": 160,
       "required": false
     },
     "heroEyebrow": {
@@ -29,21 +30,24 @@
     },
     "sectionHeading": {
       "type": "string",
-      "required": false
+      "required": true
     },
     "sectionSubtext": {
       "type": "text",
+      "maxLength": 160,
       "required": false
     },
     "rewards": {
       "type": "component",
+      "component": "hub.title-description",
       "repeatable": true,
-      "component": "hub.title-description"
+      "min": 3,
+      "max": 9
     },
     "finalCta": {
       "type": "component",
-      "repeatable": false,
-      "component": "hub.final-cta"
+      "component": "hub.final-cta",
+      "repeatable": false
     },
     "emptyStateText": {
       "type": "text",

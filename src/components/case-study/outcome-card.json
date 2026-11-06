@@ -16,7 +16,8 @@
       "required": true
     },
     "description": {
-      "type": "text"
+      "type": "text",
+      "maxLength": 160
     }
   }
 }

@@ -9,11 +9,12 @@
   "attributes": {
     "heading": {
       "type": "string",
-      "required": false
+      "required": true
     },
     "subtext": {
       "type": "text",
-      "required": false
+      "required": false,
+      "maxLength": 160
     },
     "customRuleTitle": {
       "type": "string",
@@ -21,7 +22,8 @@
     },
     "customRule": {
       "type": "text",
-      "required": false
+      "required": true,
+      "maxLength": 160
     },
     "readyRuleTitle": {
       "type": "string",
@@ -29,7 +31,8 @@
     },
     "readyRule": {
       "type": "text",
-      "required": false
+      "required": true,
+      "maxLength": 160
     },
     "saasRuleTitle": {
       "type": "string",
@@ -37,11 +40,12 @@
     },
     "saasRule": {
       "type": "text",
-      "required": false
+      "required": true,
+      "maxLength": 160
     },
     "ctaLabel": {
       "type": "string",
-      "required": false
+      "required": true
     }
   }
 }

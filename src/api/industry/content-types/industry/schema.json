@@ -22,20 +22,21 @@
       "required": true
     },
     "summary": {
-      "type": "text"
+      "type": "text",
+      "maxLength": 160
     },
     "heroImage": {
       "type": "media",
       "multiple": false,
-      "required": false,
+      "required": true,
       "allowedTypes": [
         "images"
       ]
     },
     "order": {
       "type": "integer",
-      "required": true,
-      "min": 1
+      "required": false,
+      "min": 0
     },
     "solutions": {
       "type": "relation",

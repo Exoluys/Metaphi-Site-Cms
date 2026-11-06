@@ -17,13 +17,16 @@
     },
     "heroSubtext": {
       "type": "text",
-      "required": false
+      "required": false,
+      "maxLength": 160
     },
     "modelsHeading": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "modelsSubtext": {
-      "type": "text"
+      "type": "text",
+      "maxLength": 160
     },
     "customModel": {
       "type": "component",

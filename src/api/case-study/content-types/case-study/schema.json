@@ -26,26 +26,31 @@
       "min": 0
     },
     "subtitle": {
-      "type": "text"
+      "type": "text",
+      "maxLength": 160
     },
     "summary": {
-      "type": "text"
+      "type": "text",
+      "maxLength": 180
     },
     "tags": {
       "type": "component",
       "component": "case-study.tag-item",
-      "repeatable": true
+      "repeatable": true,
+      "min": 1,
+      "max": 6
     },
     "heroImage": {
       "type": "media",
       "multiple": false,
-      "required": false,
+      "required": true,
       "allowedTypes": [
         "images"
       ]
     },
     "solutionText": {
-      "type": "text"
+      "type": "text",
+      "required": true
     },
     "solutions": {
       "type": "relation",

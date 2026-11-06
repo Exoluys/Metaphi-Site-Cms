@@ -17,51 +17,70 @@
       "required": true
     },
     "heroHighlight": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "heroSubtext": {
-      "type": "text"
+      "type": "text",
+      "maxLength": 160
     },
     "durationText": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "videoCallText": {
-      "type": "string"
+      "type": "string",
+      "maxLength": 160,
+      "required": true
     },
     "promisesHeading": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "promises": {
       "type": "component",
+      "component": "hub.string-item",
       "repeatable": true,
-      "component": "hub.string-item"
+      "required": true,
+      "min": 1,
+      "max": 5
     },
     "selectTimezoneLabel": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "availableSlotsLabel": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "confirmButtonTemplate": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "emptySlotButtonLabel": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "confirmationHeading": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "confirmationSubtext": {
-      "type": "text"
+      "type": "text",
+      "maxLength": 160,
+      "required": true
     },
     "calendarInviteNote": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "rescheduleButtonLabel": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "returnHomeButtonLabel": {
-      "type": "string"
+      "type": "string",
+      "required": true
     }
   }
 }

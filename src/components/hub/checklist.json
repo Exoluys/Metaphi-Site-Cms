@@ -9,12 +9,13 @@
   "attributes": {
     "heading": {
       "type": "string",
-      "required": false
+      "required": true
     },
     "items": {
       "type": "component",
-      "repeatable": true,
       "component": "hub.string-item",
+      "repeatable": true,
+      "min": 3,
       "max": 9
     }
   }

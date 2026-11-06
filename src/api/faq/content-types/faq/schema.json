@@ -14,10 +14,12 @@
   "attributes": {
     "question": {
       "type": "string",
+      "maxLength": 160,
       "required": true
     },
     "answer": {
       "type": "text",
+      "maxLength": 160,
       "required": true
     },
     "faqCategory": {

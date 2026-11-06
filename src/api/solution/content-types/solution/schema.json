@@ -23,25 +23,27 @@
     },
     "modelType": {
       "type": "enumeration",
+      "required": true,
       "enum": [
         "custom",
         "ready-to-configure",
         "saas"
-      ],
-      "required": true
+      ]
     },
     "summary": {
       "type": "text",
+      "maxLength": 160,
       "required": false
     },
     "order": {
       "type": "integer",
+      "required": false,
       "default": 0,
-      "min": 0,
-      "required": false
+      "min": 0
     },
     "ctaLabel": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "industries": {
       "type": "relation",

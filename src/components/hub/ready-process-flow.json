@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_hub_ready_process_flows",
+  "info": {
+    "displayName": "Ready Process Flow",
+    "icon": "cog",
+    "description": "Implementation flow section for ready-to-configure hub with 6 steps"
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "string",
+      "required": true
+    },
+    "subtext": {
+      "type": "text",
+      "maxLength": 160,
+      "required": false
+    },
+    "steps": {
+      "type": "component",
+      "component": "hub.step-item",
+      "repeatable": true,
+      "min": 6,
+      "max": 6
+    }
+  }
+}
+
