@@ -81,6 +81,14 @@
     "returnHomeButtonLabel": {
       "type": "string",
       "required": true
+    },
+    "backgroundImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
     }
   }
 }

@@ -1340,7 +1340,7 @@ async function seed() {
       heroSubtext: 'Speak directly with our solutions architects to evaluate technical feasibility, project scope, and system design tailored to your organization.',
       durationText: '30 Min Session',
       videoCallText: 'Google Meet / Zoom',
-      promisesHeading: 'What you can expect from us:',
+      promisesHeading: 'WHAT YOU CAN EXPECT',
       promises: [
         { text: 'Tailored Solutions for Complex Challenges' },
         { text: 'End-to-End Development Support' },

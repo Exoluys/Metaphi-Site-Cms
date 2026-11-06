@@ -1486,6 +1486,7 @@ export interface ApiScheduleACallPageScheduleACallPage
   };
   attributes: {
     availableSlotsLabel: Schema.Attribute.String & Schema.Attribute.Required;
+    backgroundImage: Schema.Attribute.Media<'images'>;
     calendarInviteNote: Schema.Attribute.String & Schema.Attribute.Required;
     confirmationHeading: Schema.Attribute.String & Schema.Attribute.Required;
     confirmationSubtext: Schema.Attribute.Text &
