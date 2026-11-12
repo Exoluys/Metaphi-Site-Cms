@@ -343,13 +343,14 @@ export interface HubHowToChoose extends Struct.ComponentSchema {
 export interface HubInfoBlock extends Struct.ComponentSchema {
   collectionName: 'components_hub_info_blocks';
   info: {
-    description: 'General section block with heading, subtext, and CTA';
+    description: 'General section block with heading, highlight, subtext, and CTA';
     displayName: 'Info Block';
     icon: 'information';
   };
   attributes: {
     ctaLabel: Schema.Attribute.String & Schema.Attribute.Required;
     heading: Schema.Attribute.String & Schema.Attribute.Required;
+    highlight: Schema.Attribute.String & Schema.Attribute.Required;
     subtext: Schema.Attribute.Text &
       Schema.Attribute.SetMinMaxLength<{
         maxLength: 160;
@@ -516,7 +517,7 @@ export interface HubSolutionModel extends Struct.ComponentSchema {
       Schema.Attribute.SetMinMaxLength<{
         maxLength: 160;
       }>;
-    title: Schema.Attribute.String & Schema.Attribute.Required;
+    title: Schema.Attribute.String;
   };
 }
 

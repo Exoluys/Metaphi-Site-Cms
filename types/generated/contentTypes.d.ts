@@ -573,7 +573,7 @@ export interface ApiCaseStudyCaseStudy extends Struct.CollectionTypeSchema {
       false
     >;
     publishedAt: Schema.Attribute.DateTime;
-    slug: Schema.Attribute.String;
+    slug: Schema.Attribute.UID<'title'>;
     solutions: Schema.Attribute.Relation<
       'manyToMany',
       'api::solution.solution'
@@ -595,7 +595,9 @@ export interface ApiCaseStudyCaseStudy extends Struct.CollectionTypeSchema {
         },
         number
       >;
-    title: Schema.Attribute.String & Schema.Attribute.Required;
+    title: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.Unique;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1007,9 +1009,9 @@ export interface ApiHomePageHomePage extends Struct.SingleTypeSchema {
       'api::home-page.home-page'
     > &
       Schema.Attribute.Private;
-    PrimaryCtaButtonLabel: Schema.Attribute.String & Schema.Attribute.Required;
+    primaryButtonLabel: Schema.Attribute.String & Schema.Attribute.Required;
     publishedAt: Schema.Attribute.DateTime;
-    secondaryButtonText: Schema.Attribute.String;
+    secondaryButtonLabel: Schema.Attribute.String;
     solutionModelsEyebrow: Schema.Attribute.String;
     solutionModelsHeading: Schema.Attribute.String & Schema.Attribute.Required;
     solutionModelsHighlight: Schema.Attribute.String &
@@ -1154,9 +1156,10 @@ export interface ApiIndustryIndustry extends Struct.CollectionTypeSchema {
           min: 0;
         },
         number
-      >;
+      > &
+      Schema.Attribute.DefaultTo<0>;
     publishedAt: Schema.Attribute.DateTime;
-    slug: Schema.Attribute.UID<'title'> & Schema.Attribute.Required;
+    slug: Schema.Attribute.UID<'title'>;
     solutions: Schema.Attribute.Relation<
       'manyToMany',
       'api::solution.solution'
@@ -1165,7 +1168,9 @@ export interface ApiIndustryIndustry extends Struct.CollectionTypeSchema {
       Schema.Attribute.SetMinMaxLength<{
         maxLength: 160;
       }>;
-    title: Schema.Attribute.String & Schema.Attribute.Required;
+    title: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.Unique;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1580,12 +1585,14 @@ export interface ApiSolutionSolution extends Struct.CollectionTypeSchema {
       > &
       Schema.Attribute.DefaultTo<0>;
     publishedAt: Schema.Attribute.DateTime;
-    slug: Schema.Attribute.UID<'title'> & Schema.Attribute.Required;
+    slug: Schema.Attribute.UID<'title'>;
     summary: Schema.Attribute.Text &
       Schema.Attribute.SetMinMaxLength<{
         maxLength: 160;
       }>;
-    title: Schema.Attribute.String & Schema.Attribute.Required;
+    title: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.Unique;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;

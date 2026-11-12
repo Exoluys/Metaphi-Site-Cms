@@ -3,11 +3,15 @@
   "info": {
     "displayName": "Info Block",
     "icon": "information",
-    "description": "General section block with heading, subtext, and CTA"
+    "description": "General section block with heading, highlight, subtext, and CTA"
   },
   "options": {},
   "attributes": {
     "heading": {
+      "type": "string",
+      "required": true
+    },
+    "highlight": {
       "type": "string",
       "required": true
     },

@@ -12,16 +12,19 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "slug": {
-      "type": "string",
-      "required": false
-    },
     "title": {
       "type": "string",
-      "required": true
+      "required": true,
+      "unique": true
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title",
+      "required": false
     },
     "order": {
       "type": "integer",
+      "required": false,
       "default": 0,
       "min": 0
     },
