@@ -351,6 +351,7 @@ export interface HubInfoBlock extends Struct.ComponentSchema {
     ctaLabel: Schema.Attribute.String & Schema.Attribute.Required;
     heading: Schema.Attribute.String & Schema.Attribute.Required;
     highlight: Schema.Attribute.String & Schema.Attribute.Required;
+    image: Schema.Attribute.Media<'images'>;
     subtext: Schema.Attribute.Text &
       Schema.Attribute.SetMinMaxLength<{
         maxLength: 160;
@@ -456,6 +457,11 @@ export interface HubProofBlock extends Struct.ComponentSchema {
   attributes: {
     ctaLabel: Schema.Attribute.String & Schema.Attribute.Required;
     heading: Schema.Attribute.String & Schema.Attribute.Required;
+    image: Schema.Attribute.Media<'images'>;
+    subtext: Schema.Attribute.Text &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 160;
+      }>;
   };
 }
 
