@@ -1550,6 +1550,7 @@ export interface ApiSolutionSolution extends Struct.CollectionTypeSchema {
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     ctaLabel: Schema.Attribute.String & Schema.Attribute.Required;
+    heroImage: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
     industries: Schema.Attribute.Relation<
       'manyToMany',
       'api::industry.industry'

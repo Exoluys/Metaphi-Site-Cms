@@ -46,6 +46,14 @@
       "type": "string",
       "required": true
     },
+    "heroImage": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
     "industries": {
       "type": "relation",
       "relation": "manyToMany",
