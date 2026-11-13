@@ -28,6 +28,14 @@
       "maxLength": 160,
       "required": false
     },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
     "order": {
       "type": "integer",
       "default": 0

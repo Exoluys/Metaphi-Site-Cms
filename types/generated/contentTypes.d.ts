@@ -1661,6 +1661,7 @@ export interface ApiTeamMemberTeamMember extends Struct.CollectionTypeSchema {
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     department: Schema.Attribute.String;
+    image: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -1691,12 +1692,6 @@ export interface ApiTeamPageTeamPage extends Struct.SingleTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    directoryEyebrow: Schema.Attribute.String;
-    directoryHeading: Schema.Attribute.String & Schema.Attribute.Required;
-    directorySubtext: Schema.Attribute.Text &
-      Schema.Attribute.SetMinMaxLength<{
-        maxLength: 160;
-      }>;
     emptyStateText: Schema.Attribute.Text;
     finalCta: Schema.Attribute.Component<'hub.final-cta', false>;
     heroEyebrow: Schema.Attribute.String;
