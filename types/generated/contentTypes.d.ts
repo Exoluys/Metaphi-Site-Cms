@@ -640,12 +640,6 @@ export interface ApiCompliancePageCompliancePage
     > &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
-    sectionEyebrow: Schema.Attribute.String;
-    sectionHeading: Schema.Attribute.String & Schema.Attribute.Required;
-    sectionSubtext: Schema.Attribute.Text &
-      Schema.Attribute.SetMinMaxLength<{
-        maxLength: 160;
-      }>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1311,12 +1305,6 @@ export interface ApiPartnersPagePartnersPage extends Struct.SingleTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    directoryEyebrow: Schema.Attribute.String;
-    directoryHeading: Schema.Attribute.String & Schema.Attribute.Required;
-    directorySubtext: Schema.Attribute.Text &
-      Schema.Attribute.SetMinMaxLength<{
-        maxLength: 160;
-      }>;
     emptyStateText: Schema.Attribute.Text;
     finalCta: Schema.Attribute.Component<'hub.final-cta', false>;
     heroEyebrow: Schema.Attribute.String;
