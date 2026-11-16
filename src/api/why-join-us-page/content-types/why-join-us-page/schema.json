@@ -23,18 +23,6 @@
       "type": "string",
       "required": false
     },
-    "sectionEyebrow": {
-      "type": "string",
-      "required": false
-    },
-    "sectionHeading": {
-      "type": "string",
-      "required": false
-    },
-    "sectionSubtext": {
-      "type": "text",
-      "required": false
-    },
     "pillars": {
       "type": "component",
       "repeatable": true,

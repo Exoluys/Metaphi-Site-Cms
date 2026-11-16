@@ -24,19 +24,6 @@
       "type": "string",
       "required": false
     },
-    "sectionEyebrow": {
-      "type": "string",
-      "required": false
-    },
-    "sectionHeading": {
-      "type": "string",
-      "required": true
-    },
-    "sectionSubtext": {
-      "type": "text",
-      "maxLength": 160,
-      "required": false
-    },
     "rewards": {
       "type": "component",
       "component": "hub.title-description",

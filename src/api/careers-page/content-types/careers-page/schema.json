@@ -24,19 +24,6 @@
       "type": "string",
       "required": false
     },
-    "directoryEyebrow": {
-      "type": "string",
-      "required": false
-    },
-    "directoryHeading": {
-      "type": "string",
-      "required": true
-    },
-    "directorySubtext": {
-      "type": "text",
-      "maxLength": 160,
-      "required": false
-    },
     "emptyStateText": {
       "type": "text",
       "required": false
