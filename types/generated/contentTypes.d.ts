@@ -503,12 +503,6 @@ export interface ApiCareersPageCareersPage extends Struct.SingleTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    directoryEyebrow: Schema.Attribute.String;
-    directoryHeading: Schema.Attribute.String & Schema.Attribute.Required;
-    directorySubtext: Schema.Attribute.Text &
-      Schema.Attribute.SetMinMaxLength<{
-        maxLength: 160;
-      }>;
     emptyStateText: Schema.Attribute.Text;
     finalCta: Schema.Attribute.Component<'hub.final-cta', false>;
     heroEyebrow: Schema.Attribute.String;
@@ -815,6 +809,14 @@ export interface ApiFaqCategoryFaqCategory extends Struct.CollectionTypeSchema {
     name: Schema.Attribute.String &
       Schema.Attribute.Required &
       Schema.Attribute.Unique;
+    order: Schema.Attribute.Integer &
+      Schema.Attribute.SetMinMax<
+        {
+          min: 0;
+        },
+        number
+      > &
+      Schema.Attribute.DefaultTo<0>;
     publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -1237,12 +1239,6 @@ export interface ApiLifeAtMetaphiPageLifeAtMetaphiPage
     > &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
-    sectionEyebrow: Schema.Attribute.String;
-    sectionHeading: Schema.Attribute.String & Schema.Attribute.Required;
-    sectionSubtext: Schema.Attribute.Text &
-      Schema.Attribute.SetMinMaxLength<{
-        maxLength: 160;
-      }>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1419,12 +1415,6 @@ export interface ApiRewardsPageRewardsPage extends Struct.SingleTypeSchema {
         },
         number
       >;
-    sectionEyebrow: Schema.Attribute.String;
-    sectionHeading: Schema.Attribute.String & Schema.Attribute.Required;
-    sectionSubtext: Schema.Attribute.Text &
-      Schema.Attribute.SetMinMaxLength<{
-        maxLength: 160;
-      }>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1800,9 +1790,6 @@ export interface ApiWhyJoinUsPageWhyJoinUsPage extends Struct.SingleTypeSchema {
       Schema.Attribute.Private;
     pillars: Schema.Attribute.Component<'hub.title-description', true>;
     publishedAt: Schema.Attribute.DateTime;
-    sectionEyebrow: Schema.Attribute.String;
-    sectionHeading: Schema.Attribute.String;
-    sectionSubtext: Schema.Attribute.Text;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
