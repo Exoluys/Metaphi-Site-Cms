@@ -132,3 +132,11 @@ dist
 build
 .strapi-updater.json
 .strapi-cloud.json
+
+############################
+# Agents & AI skills
+############################
+
+.agent/
+.agents/
+skills-lock.json
