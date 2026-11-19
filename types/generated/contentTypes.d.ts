@@ -1594,7 +1594,16 @@ export interface ApiSolutionsHubSolutionsHub extends Struct.SingleTypeSchema {
       Schema.Attribute.Private;
     customModel: Schema.Attribute.Component<'hub.solution-model', false>;
     finalCta: Schema.Attribute.Component<'hub.final-cta', false>;
+    heroCtaLabel: Schema.Attribute.String &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 60;
+      }>;
+    heroEyebrow: Schema.Attribute.String &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+      }>;
     heroHeading: Schema.Attribute.String & Schema.Attribute.Required;
+    heroImage: Schema.Attribute.Media<'images'>;
     heroSubtext: Schema.Attribute.Text &
       Schema.Attribute.SetMinMaxLength<{
         maxLength: 160;

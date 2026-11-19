@@ -11,6 +11,11 @@
   },
   "pluginOptions": {},
   "attributes": {
+    "heroEyebrow": {
+      "type": "string",
+      "maxLength": 100,
+      "required": false
+    },
     "heroHeading": {
       "type": "string",
       "required": true
@@ -19,6 +24,19 @@
       "type": "text",
       "required": false,
       "maxLength": 160
+    },
+    "heroImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "heroCtaLabel": {
+      "type": "string",
+      "maxLength": 60,
+      "required": false
     },
     "modelsHeading": {
       "type": "string",

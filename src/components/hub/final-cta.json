@@ -7,6 +7,11 @@
   },
   "options": {},
   "attributes": {
+    "eyebrow": {
+      "type": "string",
+      "maxLength": 100,
+      "required": false
+    },
     "heading": {
       "type": "string",
       "required": true
@@ -18,7 +23,13 @@
     },
     "ctaLabel": {
       "type": "string",
-      "required": true
+      "maxLength": 60,
+      "required": false
+    },
+    "secondaryCtaLabel": {
+      "type": "string",
+      "maxLength": 60,
+      "required": false
     }
   }
 }

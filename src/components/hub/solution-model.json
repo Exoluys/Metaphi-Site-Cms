@@ -11,19 +11,25 @@
       "type": "string",
       "required": false
     },
+    "badge": {
+      "type": "string",
+      "maxLength": 60,
+      "required": false
+    },
     "tagline": {
       "type": "string",
-      "required": true,
+      "required": false,
       "maxLength": 160
     },
     "description": {
       "type": "text",
-      "required": true,
+      "required": false,
       "maxLength": 160
     },
-    "ctaLabel": {
-      "type": "string",
-      "required": true
+    "keyFit": {
+      "type": "text",
+      "maxLength": 160,
+      "required": false
     }
   }
 }

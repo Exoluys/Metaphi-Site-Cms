@@ -296,8 +296,19 @@ export interface HubFinalCta extends Struct.ComponentSchema {
     icon: 'cursor';
   };
   attributes: {
-    ctaLabel: Schema.Attribute.String & Schema.Attribute.Required;
+    ctaLabel: Schema.Attribute.String &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 60;
+      }>;
+    eyebrow: Schema.Attribute.String &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+      }>;
     heading: Schema.Attribute.String & Schema.Attribute.Required;
+    secondaryCtaLabel: Schema.Attribute.String &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 60;
+      }>;
     subtext: Schema.Attribute.Text &
       Schema.Attribute.SetMinMaxLength<{
         maxLength: 160;
@@ -320,6 +331,10 @@ export interface HubHowToChoose extends Struct.ComponentSchema {
         maxLength: 160;
       }>;
     customRuleTitle: Schema.Attribute.String;
+    customSummary: Schema.Attribute.Text &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 200;
+      }>;
     heading: Schema.Attribute.String & Schema.Attribute.Required;
     readyRule: Schema.Attribute.Text &
       Schema.Attribute.Required &
@@ -327,12 +342,20 @@ export interface HubHowToChoose extends Struct.ComponentSchema {
         maxLength: 160;
       }>;
     readyRuleTitle: Schema.Attribute.String;
+    readySummary: Schema.Attribute.Text &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 200;
+      }>;
     saasRule: Schema.Attribute.Text &
       Schema.Attribute.Required &
       Schema.Attribute.SetMinMaxLength<{
         maxLength: 160;
       }>;
     saasRuleTitle: Schema.Attribute.String;
+    saasSummary: Schema.Attribute.Text &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 200;
+      }>;
     subtext: Schema.Attribute.Text &
       Schema.Attribute.SetMinMaxLength<{
         maxLength: 160;
@@ -512,14 +535,19 @@ export interface HubSolutionModel extends Struct.ComponentSchema {
     icon: 'apps';
   };
   attributes: {
-    ctaLabel: Schema.Attribute.String & Schema.Attribute.Required;
+    badge: Schema.Attribute.String &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 60;
+      }>;
     description: Schema.Attribute.Text &
-      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 160;
+      }>;
+    keyFit: Schema.Attribute.Text &
       Schema.Attribute.SetMinMaxLength<{
         maxLength: 160;
       }>;
     tagline: Schema.Attribute.String &
-      Schema.Attribute.Required &
       Schema.Attribute.SetMinMaxLength<{
         maxLength: 160;
       }>;

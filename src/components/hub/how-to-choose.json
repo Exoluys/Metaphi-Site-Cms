@@ -25,6 +25,11 @@
       "required": true,
       "maxLength": 160
     },
+    "customSummary": {
+      "type": "text",
+      "required": false,
+      "maxLength": 200
+    },
     "readyRuleTitle": {
       "type": "string",
       "required": false
@@ -34,6 +39,11 @@
       "required": true,
       "maxLength": 160
     },
+    "readySummary": {
+      "type": "text",
+      "required": false,
+      "maxLength": 200
+    },
     "saasRuleTitle": {
       "type": "string",
       "required": false
@@ -42,6 +52,11 @@
       "type": "text",
       "required": true,
       "maxLength": 160
+    },
+    "saasSummary": {
+      "type": "text",
+      "required": false,
+      "maxLength": 200
     },
     "ctaLabel": {
       "type": "string",
