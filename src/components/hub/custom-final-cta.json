@@ -1,0 +1,30 @@
+{
+  "collectionName": "components_hub_custom_final_ctas",
+  "info": {
+    "displayName": "Custom Final CTA",
+    "icon": "cursor",
+    "description": "Final CTA section for Custom Solutions Hub"
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "string",
+      "required": true
+    },
+    "subtext": {
+      "type": "text",
+      "maxLength": 160,
+      "required": false
+    },
+    "ctaLabel": {
+      "type": "string",
+      "maxLength": 60,
+      "required": false
+    },
+    "secondaryCtaLabel": {
+      "type": "string",
+      "maxLength": 60,
+      "required": false
+    }
+  }
+}

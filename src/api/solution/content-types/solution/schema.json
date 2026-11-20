@@ -31,6 +31,9 @@
         "saas"
       ]
     },
+    "badge": {
+      "type": "string"
+    },
     "summary": {
       "type": "text",
       "maxLength": 160,

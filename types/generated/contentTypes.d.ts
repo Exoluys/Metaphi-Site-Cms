@@ -730,8 +730,12 @@ export interface ApiCustomSolutionsHubCustomSolutionsHub
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     deliveryProcess: Schema.Attribute.Component<'hub.process-flow', false>;
-    finalCta: Schema.Attribute.Component<'hub.final-cta', false>;
+    finalCta: Schema.Attribute.Component<'hub.custom-final-cta', false>;
+    heroAnchorLabel: Schema.Attribute.String;
+    heroEyebrow: Schema.Attribute.String;
     heroHeading: Schema.Attribute.String & Schema.Attribute.Required;
+    heroImage: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
+    heroMetric: Schema.Attribute.String;
     heroSubtext: Schema.Attribute.Text &
       Schema.Attribute.SetMinMaxLength<{
         maxLength: 160;
@@ -1342,7 +1346,11 @@ export interface ApiReadyToConfigureHubReadyToConfigureHub
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     finalCta: Schema.Attribute.Component<'hub.final-cta', false>;
+    heroAnchorLabel: Schema.Attribute.String;
+    heroEyebrow: Schema.Attribute.String;
     heroHeading: Schema.Attribute.String & Schema.Attribute.Required;
+    heroImage: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
+    heroMetric: Schema.Attribute.String;
     heroSubtext: Schema.Attribute.Text &
       Schema.Attribute.SetMinMaxLength<{
         maxLength: 160;
@@ -1357,7 +1365,7 @@ export interface ApiReadyToConfigureHubReadyToConfigureHub
       'api::ready-to-configure-hub.ready-to-configure-hub'
     > &
       Schema.Attribute.Private;
-    proof: Schema.Attribute.Component<'hub.proof-block', false>;
+    proof: Schema.Attribute.Component<'hub.ready-proof-block', false>;
     publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -1436,8 +1444,12 @@ export interface ApiSaasProductsHubSaasProductsHub
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    finalCta: Schema.Attribute.Component<'hub.final-cta', false>;
+    finalCta: Schema.Attribute.Component<'hub.saas-final-cta', false>;
+    heroAnchorLabel: Schema.Attribute.String;
+    heroEyebrow: Schema.Attribute.String;
     heroHeading: Schema.Attribute.String & Schema.Attribute.Required;
+    heroImage: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
+    heroMetric: Schema.Attribute.String;
     heroSubtext: Schema.Attribute.Text;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
@@ -1448,10 +1460,22 @@ export interface ApiSaasProductsHubSaasProductsHub
     otherModels: Schema.Attribute.Component<'hub.other-models', false>;
     productsHeading: Schema.Attribute.String;
     productsSubtext: Schema.Attribute.Text;
+    proof: Schema.Attribute.Component<'hub.saas-proof-block', false>;
     publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    whySaasBenefits: Schema.Attribute.Component<'hub.title-description', true> &
+      Schema.Attribute.SetMinMax<
+        {
+          max: 6;
+          min: 2;
+        },
+        number
+      >;
+    whySaasHeading: Schema.Attribute.String;
+    whySaasSla: Schema.Attribute.String;
+    whySaasSubtext: Schema.Attribute.Text;
   };
 }
 
@@ -1532,6 +1556,7 @@ export interface ApiSolutionSolution extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
+    badge: Schema.Attribute.String;
     caseStudies: Schema.Attribute.Relation<
       'manyToMany',
       'api::case-study.case-study'

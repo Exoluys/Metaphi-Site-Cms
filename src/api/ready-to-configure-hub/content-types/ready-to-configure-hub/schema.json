@@ -20,6 +20,26 @@
       "maxLength": 160,
       "required": false
     },
+    "heroImage": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "heroEyebrow": {
+      "type": "string",
+      "required": false
+    },
+    "heroMetric": {
+      "type": "string",
+      "required": false
+    },
+    "heroAnchorLabel": {
+      "type": "string",
+      "required": false
+    },
     "whatItMeansHeading": {
       "type": "string",
       "required": true
@@ -47,7 +67,7 @@
     },
     "proof": {
       "type": "component",
-      "component": "hub.proof-block",
+      "component": "hub.ready-proof-block",
       "repeatable": false
     },
     "finalCta": {

@@ -7,6 +7,10 @@
   },
   "options": {},
   "attributes": {
+    "eyebrow": {
+      "type": "string",
+      "required": false
+    },
     "heading": {
       "type": "string",
       "required": true
@@ -20,13 +24,10 @@
       "maxLength": 160,
       "required": false
     },
-    "image": {
-      "type": "media",
-      "multiple": false,
-      "required": false,
-      "allowedTypes": [
-        "images"
-      ]
+    "caseStudy": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::case-study.case-study"
     }
   }
 }

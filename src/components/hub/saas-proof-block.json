@@ -1,0 +1,29 @@
+{
+  "collectionName": "components_hub_saas_proof_blocks",
+  "info": {
+    "displayName": "SaaS Proof Block",
+    "icon": "shield",
+    "description": "Proof / case study CTA block for SaaS hub without eyebrow"
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "string",
+      "required": true
+    },
+    "ctaLabel": {
+      "type": "string",
+      "required": true
+    },
+    "subtext": {
+      "type": "text",
+      "maxLength": 160,
+      "required": false
+    },
+    "caseStudy": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::case-study.case-study"
+    }
+  }
+}

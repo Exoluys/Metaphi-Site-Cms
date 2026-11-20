@@ -232,6 +232,8 @@ export interface HubChecklist extends Struct.ComponentSchema {
     icon: 'checkCircle';
   };
   attributes: {
+    featuredEyebrow: Schema.Attribute.String;
+    featuredNote: Schema.Attribute.Text;
     heading: Schema.Attribute.String & Schema.Attribute.Required;
     items: Schema.Attribute.Component<'hub.string-item', true> &
       Schema.Attribute.SetMinMax<
@@ -252,22 +254,40 @@ export interface HubComparisonMatrix extends Struct.ComponentSchema {
     icon: 'apps';
   };
   attributes: {
+    customCategory: Schema.Attribute.String;
     customColumn: Schema.Attribute.Text &
       Schema.Attribute.Required &
       Schema.Attribute.SetMinMaxLength<{
         maxLength: 160;
       }>;
+    customFooter: Schema.Attribute.String;
+    customMetric1Label: Schema.Attribute.String;
+    customMetric1Value: Schema.Attribute.String;
+    customMetric2Label: Schema.Attribute.String;
+    customMetric2Value: Schema.Attribute.String;
     heading: Schema.Attribute.String & Schema.Attribute.Required;
+    readyCategory: Schema.Attribute.String;
     readyColumn: Schema.Attribute.Text &
       Schema.Attribute.Required &
       Schema.Attribute.SetMinMaxLength<{
         maxLength: 160;
       }>;
+    readyFooter: Schema.Attribute.String;
+    readyMetric1Label: Schema.Attribute.String;
+    readyMetric1Value: Schema.Attribute.String;
+    readyMetric2Label: Schema.Attribute.String;
+    readyMetric2Value: Schema.Attribute.String;
+    saasCategory: Schema.Attribute.String;
     saasColumn: Schema.Attribute.Text &
       Schema.Attribute.Required &
       Schema.Attribute.SetMinMaxLength<{
         maxLength: 160;
       }>;
+    saasFooter: Schema.Attribute.String;
+    saasMetric1Label: Schema.Attribute.String;
+    saasMetric1Value: Schema.Attribute.String;
+    saasMetric2Label: Schema.Attribute.String;
+    saasMetric2Value: Schema.Attribute.String;
     subtext: Schema.Attribute.Text &
       Schema.Attribute.SetMinMaxLength<{
         maxLength: 160;
@@ -288,6 +308,30 @@ export interface HubComparisonRow extends Struct.ComponentSchema {
   };
 }
 
+export interface HubCustomFinalCta extends Struct.ComponentSchema {
+  collectionName: 'components_hub_custom_final_ctas';
+  info: {
+    description: 'Final CTA section for Custom Solutions Hub';
+    displayName: 'Custom Final CTA';
+    icon: 'cursor';
+  };
+  attributes: {
+    ctaLabel: Schema.Attribute.String &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 60;
+      }>;
+    heading: Schema.Attribute.String & Schema.Attribute.Required;
+    secondaryCtaLabel: Schema.Attribute.String &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 60;
+      }>;
+    subtext: Schema.Attribute.Text &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 160;
+      }>;
+  };
+}
+
 export interface HubFinalCta extends Struct.ComponentSchema {
   collectionName: 'components_hub_final_ctas';
   info: {
@@ -300,15 +344,7 @@ export interface HubFinalCta extends Struct.ComponentSchema {
       Schema.Attribute.SetMinMaxLength<{
         maxLength: 60;
       }>;
-    eyebrow: Schema.Attribute.String &
-      Schema.Attribute.SetMinMaxLength<{
-        maxLength: 100;
-      }>;
     heading: Schema.Attribute.String & Schema.Attribute.Required;
-    secondaryCtaLabel: Schema.Attribute.String &
-      Schema.Attribute.SetMinMaxLength<{
-        maxLength: 60;
-      }>;
     subtext: Schema.Attribute.Text &
       Schema.Attribute.SetMinMaxLength<{
         maxLength: 160;
@@ -455,11 +491,17 @@ export interface HubProcessFlow extends Struct.ComponentSchema {
   };
   attributes: {
     heading: Schema.Attribute.String & Schema.Attribute.Required;
+    phase1Description: Schema.Attribute.Text;
+    phase1Title: Schema.Attribute.String;
+    phase2Description: Schema.Attribute.Text;
+    phase2Title: Schema.Attribute.String;
+    phase3Description: Schema.Attribute.Text;
+    phase3Title: Schema.Attribute.String;
     steps: Schema.Attribute.Component<'hub.step-item', true> &
       Schema.Attribute.SetMinMax<
         {
           max: 7;
-          min: 7;
+          min: 0;
         },
         number
       >;
@@ -478,9 +520,13 @@ export interface HubProofBlock extends Struct.ComponentSchema {
     icon: 'shield';
   };
   attributes: {
+    caseStudy: Schema.Attribute.Relation<
+      'oneToOne',
+      'api::case-study.case-study'
+    >;
     ctaLabel: Schema.Attribute.String & Schema.Attribute.Required;
+    eyebrow: Schema.Attribute.String;
     heading: Schema.Attribute.String & Schema.Attribute.Required;
-    image: Schema.Attribute.Media<'images'>;
     subtext: Schema.Attribute.Text &
       Schema.Attribute.SetMinMaxLength<{
         maxLength: 160;
@@ -491,17 +537,23 @@ export interface HubProofBlock extends Struct.ComponentSchema {
 export interface HubReadyProcessFlow extends Struct.ComponentSchema {
   collectionName: 'components_hub_ready_process_flows';
   info: {
-    description: 'Implementation flow section for ready-to-configure hub with 6 steps';
+    description: 'Implementation flow section for ready-to-configure hub matching custom delivery process';
     displayName: 'Ready Process Flow';
     icon: 'cog';
   };
   attributes: {
     heading: Schema.Attribute.String & Schema.Attribute.Required;
+    phase1Description: Schema.Attribute.Text;
+    phase1Title: Schema.Attribute.String;
+    phase2Description: Schema.Attribute.Text;
+    phase2Title: Schema.Attribute.String;
+    phase3Description: Schema.Attribute.Text;
+    phase3Title: Schema.Attribute.String;
     steps: Schema.Attribute.Component<'hub.step-item', true> &
       Schema.Attribute.SetMinMax<
         {
-          max: 6;
-          min: 6;
+          max: 7;
+          min: 0;
         },
         number
       >;
@@ -509,6 +561,48 @@ export interface HubReadyProcessFlow extends Struct.ComponentSchema {
       Schema.Attribute.SetMinMaxLength<{
         maxLength: 160;
       }>;
+  };
+}
+
+export interface HubReadyProofBlock extends Struct.ComponentSchema {
+  collectionName: 'components_hub_ready_proof_blocks';
+  info: {
+    description: 'Proof / case study CTA block for Ready to Configure hub';
+    displayName: 'Ready Proof Block';
+    icon: 'shield';
+  };
+  attributes: {
+    caseStudy: Schema.Attribute.Relation<
+      'oneToOne',
+      'api::case-study.case-study'
+    >;
+    ctaLabel: Schema.Attribute.String & Schema.Attribute.Required;
+    heading: Schema.Attribute.String & Schema.Attribute.Required;
+    subtext: Schema.Attribute.Text &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 160;
+      }>;
+  };
+}
+
+export interface HubSaasFinalCta extends Struct.ComponentSchema {
+  collectionName: 'components_hub_saas_final_ctas';
+  info: {
+    description: 'Final CTA section for SaaS Products Hub';
+    displayName: 'SaaS Final CTA';
+    icon: 'cursor';
+  };
+  attributes: {
+    ctaLabel: Schema.Attribute.String &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 60;
+      }>;
+    heading: Schema.Attribute.String & Schema.Attribute.Required;
+    subtext: Schema.Attribute.Text &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 160;
+      }>;
+    trustNote: Schema.Attribute.String;
   };
 }
 
@@ -524,6 +618,27 @@ export interface HubSaasProduct extends Struct.ComponentSchema {
     description: Schema.Attribute.Text;
     logo: Schema.Attribute.Media<'images'>;
     name: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
+export interface HubSaasProofBlock extends Struct.ComponentSchema {
+  collectionName: 'components_hub_saas_proof_blocks';
+  info: {
+    description: 'Proof / case study CTA block for SaaS hub without eyebrow';
+    displayName: 'SaaS Proof Block';
+    icon: 'shield';
+  };
+  attributes: {
+    caseStudy: Schema.Attribute.Relation<
+      'oneToOne',
+      'api::case-study.case-study'
+    >;
+    ctaLabel: Schema.Attribute.String & Schema.Attribute.Required;
+    heading: Schema.Attribute.String & Schema.Attribute.Required;
+    subtext: Schema.Attribute.Text &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 160;
+      }>;
   };
 }
 
@@ -646,6 +761,7 @@ declare module '@strapi/strapi' {
       'hub.checklist': HubChecklist;
       'hub.comparison-matrix': HubComparisonMatrix;
       'hub.comparison-row': HubComparisonRow;
+      'hub.custom-final-cta': HubCustomFinalCta;
       'hub.final-cta': HubFinalCta;
       'hub.how-to-choose': HubHowToChoose;
       'hub.info-block': HubInfoBlock;
@@ -656,7 +772,10 @@ declare module '@strapi/strapi' {
       'hub.process-flow': HubProcessFlow;
       'hub.proof-block': HubProofBlock;
       'hub.ready-process-flow': HubReadyProcessFlow;
+      'hub.ready-proof-block': HubReadyProofBlock;
+      'hub.saas-final-cta': HubSaasFinalCta;
       'hub.saas-product': HubSaasProduct;
+      'hub.saas-proof-block': HubSaasProofBlock;
       'hub.solution-model': HubSolutionModel;
       'hub.solution-portfolio': HubSolutionPortfolio;
       'hub.step-item': HubStepItem;

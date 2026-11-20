@@ -11,6 +11,14 @@
       "type": "string",
       "required": true
     },
+    "featuredEyebrow": {
+      "type": "string",
+      "required": false
+    },
+    "featuredNote": {
+      "type": "text",
+      "required": false
+    },
     "items": {
       "type": "component",
       "component": "hub.string-item",

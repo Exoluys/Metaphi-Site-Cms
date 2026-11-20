@@ -20,6 +20,26 @@
       "maxLength": 160,
       "required": false
     },
+    "heroImage": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "heroEyebrow": {
+      "type": "string",
+      "required": false
+    },
+    "heroMetric": {
+      "type": "string",
+      "required": false
+    },
+    "heroAnchorLabel": {
+      "type": "string",
+      "required": false
+    },
     "whenCustomMakesSense": {
       "type": "component",
       "component": "hub.checklist",
@@ -55,7 +75,7 @@
     },
     "finalCta": {
       "type": "component",
-      "component": "hub.final-cta",
+      "component": "hub.custom-final-cta",
       "repeatable": false
     }
   }

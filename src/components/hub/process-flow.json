@@ -16,11 +16,35 @@
       "maxLength": 160,
       "required": false
     },
+    "phase1Title": {
+      "type": "string",
+      "required": false
+    },
+    "phase1Description": {
+      "type": "text",
+      "required": false
+    },
+    "phase2Title": {
+      "type": "string",
+      "required": false
+    },
+    "phase2Description": {
+      "type": "text",
+      "required": false
+    },
+    "phase3Title": {
+      "type": "string",
+      "required": false
+    },
+    "phase3Description": {
+      "type": "text",
+      "required": false
+    },
     "steps": {
       "type": "component",
       "component": "hub.step-item",
       "repeatable": true,
-      "min": 7,
+      "min": 0,
       "max": 7
     }
   }

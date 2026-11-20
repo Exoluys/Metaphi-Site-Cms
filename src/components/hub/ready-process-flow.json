@@ -3,7 +3,7 @@
   "info": {
     "displayName": "Ready Process Flow",
     "icon": "cog",
-    "description": "Implementation flow section for ready-to-configure hub with 6 steps"
+    "description": "Implementation flow section for ready-to-configure hub matching custom delivery process"
   },
   "options": {},
   "attributes": {
@@ -16,13 +16,36 @@
       "maxLength": 160,
       "required": false
     },
+    "phase1Title": {
+      "type": "string",
+      "required": false
+    },
+    "phase1Description": {
+      "type": "text",
+      "required": false
+    },
+    "phase2Title": {
+      "type": "string",
+      "required": false
+    },
+    "phase2Description": {
+      "type": "text",
+      "required": false
+    },
+    "phase3Title": {
+      "type": "string",
+      "required": false
+    },
+    "phase3Description": {
+      "type": "text",
+      "required": false
+    },
     "steps": {
       "type": "component",
       "component": "hub.step-item",
       "repeatable": true,
-      "min": 6,
-      "max": 6
+      "min": 0,
+      "max": 7
     }
   }
 }
-
