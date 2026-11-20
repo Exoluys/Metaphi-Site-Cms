@@ -60,6 +60,15 @@
       "component": "hub.comparison-matrix",
       "repeatable": false
     },
+    "portfolioHeading": {
+      "type": "string",
+      "required": false
+    },
+    "portfolioSubtext": {
+      "type": "text",
+      "maxLength": 160,
+      "required": false
+    },
     "implementationFlow": {
       "type": "component",
       "component": "hub.ready-process-flow",

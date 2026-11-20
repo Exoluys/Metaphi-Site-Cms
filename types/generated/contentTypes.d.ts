@@ -1390,6 +1390,11 @@ export interface ApiReadyToConfigureHubReadyToConfigureHub
       'api::ready-to-configure-hub.ready-to-configure-hub'
     > &
       Schema.Attribute.Private;
+    portfolioHeading: Schema.Attribute.String;
+    portfolioSubtext: Schema.Attribute.Text &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 160;
+      }>;
     proof: Schema.Attribute.Component<'hub.ready-proof-block', false>;
     publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
