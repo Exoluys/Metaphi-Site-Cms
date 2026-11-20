@@ -209,6 +209,88 @@ export default {
         }
       }
 
+      // ── 3.b Ensure newly added fields are in Content Manager edit layout ──
+      const syncTypes = [
+        {
+          uid: 'api::work-page.work-page',
+          fields: [
+            {
+              name: 'heroImage',
+              size: 12,
+              label: 'Hero Image',
+              description: 'Banner background image for the work page hero',
+            },
+          ],
+        },
+        {
+          uid: 'api::ready-to-configure-hub.ready-to-configure-hub',
+          fields: [
+            {
+              name: 'portfolioHeading',
+              size: 6,
+              label: 'Portfolio Heading',
+              description: 'Heading for the ready-to-configure solutions portfolio',
+            },
+            {
+              name: 'portfolioSubtext',
+              size: 6,
+              label: 'Portfolio Subtext',
+              description: 'Subtext for the ready-to-configure solutions portfolio',
+            },
+          ],
+        },
+      ];
+
+      for (const item of syncTypes) {
+        const rows = await strapi.db
+          .connection('strapi_core_store_settings')
+          .where({
+            key: `plugin_content_manager_configuration_content_types::${item.uid}`,
+          })
+          .select('id', 'value');
+
+        if (rows.length > 0) {
+          const config = JSON.parse(rows[0].value);
+          let updated = false;
+
+          for (const field of item.fields) {
+            const alreadyInEdit = config?.layouts?.edit?.some((row: any[]) =>
+              row.some((f: any) => f.name === field.name)
+            );
+
+            if (!alreadyInEdit) {
+              config.layouts = config.layouts || {};
+              config.layouts.edit = config.layouts.edit || [];
+              config.layouts.edit.push([
+                { name: field.name, size: field.size || 12 },
+              ]);
+
+              config.metadatas = config.metadatas || {};
+              config.metadatas[field.name] = config.metadatas[field.name] || {};
+              config.metadatas[field.name].edit = {
+                label: field.label,
+                description: field.description,
+                placeholder: '',
+                visible: true,
+                editable: true,
+                mainField: 'name',
+              };
+              updated = true;
+            }
+          }
+
+          if (updated) {
+            await strapi.db
+              .connection('strapi_core_store_settings')
+              .where({ id: rows[0].id })
+              .update({ value: JSON.stringify(config) });
+            strapi.log.info(
+              `[Bootstrap] Synced missing fields to Content Manager edit layout for ${item.uid}`
+            );
+          }
+        }
+      }
+
       // ── 4. Enforce Minimum 1 Published Testimonial & FAQ Guard ──────
       strapi.documents.use(async (ctx: any, next: any) => {
         const { action, uid } = ctx;
