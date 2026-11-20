@@ -215,10 +215,28 @@ export default {
           uid: 'api::work-page.work-page',
           fields: [
             {
+              name: 'heroEyebrow',
+              size: 12,
+              label: 'Hero Eyebrow',
+              description: 'Eyebrow label above the hero heading',
+            },
+            {
               name: 'heroImage',
               size: 12,
               label: 'Hero Image',
               description: 'Banner background image for the work page hero',
+            },
+            {
+              name: 'showcaseEyebrow',
+              size: 6,
+              label: 'Showcase Eyebrow',
+              description: 'Eyebrow above the case studies showcase',
+            },
+            {
+              name: 'showcaseHeading',
+              size: 6,
+              label: 'Showcase Heading',
+              description: 'Heading for the case studies showcase',
             },
           ],
         },

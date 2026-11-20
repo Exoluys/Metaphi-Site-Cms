@@ -11,6 +11,10 @@
   },
   "pluginOptions": {},
   "attributes": {
+    "heroEyebrow": {
+      "type": "string",
+      "required": false
+    },
     "heading": {
       "type": "string",
       "required": true
@@ -31,6 +35,14 @@
       "allowedTypes": [
         "images"
       ]
+    },
+    "showcaseEyebrow": {
+      "type": "string",
+      "required": false
+    },
+    "showcaseHeading": {
+      "type": "string",
+      "required": false
     },
     "emptyStateText": {
       "type": "text",

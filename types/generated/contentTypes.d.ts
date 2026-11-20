@@ -1876,6 +1876,7 @@ export interface ApiWorkPageWorkPage extends Struct.SingleTypeSchema {
       Schema.Attribute.Private;
     emptyStateText: Schema.Attribute.Text;
     heading: Schema.Attribute.String & Schema.Attribute.Required;
+    heroEyebrow: Schema.Attribute.String;
     heroImage: Schema.Attribute.Media<'images'>;
     highlight: Schema.Attribute.String & Schema.Attribute.Required;
     intro: Schema.Attribute.Text &
@@ -1889,6 +1890,8 @@ export interface ApiWorkPageWorkPage extends Struct.SingleTypeSchema {
     > &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
+    showcaseEyebrow: Schema.Attribute.String;
+    showcaseHeading: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
