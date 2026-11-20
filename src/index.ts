@@ -257,6 +257,29 @@ export default {
             },
           ],
         },
+        {
+          uid: 'api::about-page.about-page',
+          fields: [
+            {
+              name: 'missionEyebrow',
+              size: 6,
+              label: 'Mission Eyebrow',
+              description: 'Eyebrow label for the mission section',
+            },
+            {
+              name: 'missionSubtext',
+              size: 6,
+              label: 'Mission Subtext',
+              description: 'Left column subtext for the mission section',
+            },
+            {
+              name: 'pillarsEyebrow',
+              size: 6,
+              label: 'Pillars Eyebrow',
+              description: 'Eyebrow label for the principles/pillars section',
+            },
+          ],
+        },
       ];
 
       for (const item of syncTypes) {

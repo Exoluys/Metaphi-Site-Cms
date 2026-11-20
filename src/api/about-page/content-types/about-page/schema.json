@@ -24,11 +24,20 @@
       "type": "string",
       "required": false
     },
+    "missionEyebrow": {
+      "type": "string",
+      "required": false
+    },
     "missionHeading": {
       "type": "string",
       "required": false
     },
     "missionText": {
+      "type": "text",
+      "maxLength": 160,
+      "required": false
+    },
+    "missionSubtext": {
       "type": "text",
       "maxLength": 160,
       "required": false
