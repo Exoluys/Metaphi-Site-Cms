@@ -11,6 +11,11 @@
   },
   "pluginOptions": {},
   "attributes": {
+    "heroEyebrow": {
+      "type": "string",
+      "maxLength": 100,
+      "required": false
+    },
     "heroHeading": {
       "type": "string",
       "required": true
@@ -18,6 +23,11 @@
     "heroSubtext": {
       "type": "text",
       "maxLength": 160,
+      "required": false
+    },
+    "heroCtaLabel": {
+      "type": "string",
+      "maxLength": 60,
       "required": false
     },
     "heroImage": {
@@ -53,6 +63,11 @@
       "component": "hub.final-cta",
       "repeatable": false
     },
+    "gridEyebrow": {
+      "type": "string",
+      "maxLength": 100,
+      "required": false
+    },
     "gridHeading": {
       "type": "string",
       "required": true
@@ -60,6 +75,21 @@
     "gridSubtext": {
       "type": "text",
       "maxLength": 160
+    },
+    "gridCardLabel": {
+      "type": "string",
+      "maxLength": 60,
+      "required": false
+    },
+    "gridCardActionLabel": {
+      "type": "string",
+      "maxLength": 60,
+      "required": false
+    },
+    "relatedSolutionsEyebrow": {
+      "type": "string",
+      "maxLength": 100,
+      "required": false
     },
     "relatedSolutionsHeading": {
       "type": "string",

@@ -1095,10 +1095,30 @@ export interface ApiIndustriesHubIndustriesHub extends Struct.SingleTypeSchema {
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     finalCta: Schema.Attribute.Component<'hub.final-cta', false>;
+    gridCardActionLabel: Schema.Attribute.String &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 60;
+      }>;
+    gridCardLabel: Schema.Attribute.String &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 60;
+      }>;
+    gridEyebrow: Schema.Attribute.String &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+      }>;
     gridHeading: Schema.Attribute.String & Schema.Attribute.Required;
     gridSubtext: Schema.Attribute.Text &
       Schema.Attribute.SetMinMaxLength<{
         maxLength: 160;
+      }>;
+    heroCtaLabel: Schema.Attribute.String &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 60;
+      }>;
+    heroEyebrow: Schema.Attribute.String &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
       }>;
     heroHeading: Schema.Attribute.String & Schema.Attribute.Required;
     heroImage: Schema.Attribute.Media<'images'>;
@@ -1114,6 +1134,10 @@ export interface ApiIndustriesHubIndustriesHub extends Struct.SingleTypeSchema {
       Schema.Attribute.Private;
     proof: Schema.Attribute.Component<'hub.proof-block', false>;
     publishedAt: Schema.Attribute.DateTime;
+    relatedSolutionsEyebrow: Schema.Attribute.String &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+      }>;
     relatedSolutionsHeading: Schema.Attribute.String &
       Schema.Attribute.Required;
     relevantSolutions: Schema.Attribute.Component<'hub.info-block', false>;
