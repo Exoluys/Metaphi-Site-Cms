@@ -24,6 +24,14 @@
       "maxLength": 160,
       "required": false
     },
+    "heroImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
     "emptyStateText": {
       "type": "text",
       "required": false

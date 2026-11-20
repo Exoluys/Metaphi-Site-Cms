@@ -1876,6 +1876,7 @@ export interface ApiWorkPageWorkPage extends Struct.SingleTypeSchema {
       Schema.Attribute.Private;
     emptyStateText: Schema.Attribute.Text;
     heading: Schema.Attribute.String & Schema.Attribute.Required;
+    heroImage: Schema.Attribute.Media<'images'>;
     highlight: Schema.Attribute.String & Schema.Attribute.Required;
     intro: Schema.Attribute.Text &
       Schema.Attribute.SetMinMaxLength<{
