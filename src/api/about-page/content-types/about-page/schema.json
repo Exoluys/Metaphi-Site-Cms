@@ -24,6 +24,14 @@
       "type": "string",
       "required": false
     },
+    "heroImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
     "missionEyebrow": {
       "type": "string",
       "required": false

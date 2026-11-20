@@ -261,6 +261,12 @@ export default {
           uid: 'api::about-page.about-page',
           fields: [
             {
+              name: 'heroImage',
+              size: 12,
+              label: 'Hero Image',
+              description: 'Banner background image for the about page hero',
+            },
+            {
               name: 'missionEyebrow',
               size: 6,
               label: 'Mission Eyebrow',
