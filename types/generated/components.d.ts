@@ -525,7 +525,6 @@ export interface HubProofBlock extends Struct.ComponentSchema {
       'api::case-study.case-study'
     >;
     ctaLabel: Schema.Attribute.String & Schema.Attribute.Required;
-    eyebrow: Schema.Attribute.String;
     heading: Schema.Attribute.String & Schema.Attribute.Required;
     subtext: Schema.Attribute.Text &
       Schema.Attribute.SetMinMaxLength<{
