@@ -1101,6 +1101,7 @@ export interface ApiIndustriesHubIndustriesHub extends Struct.SingleTypeSchema {
         maxLength: 160;
       }>;
     heroHeading: Schema.Attribute.String & Schema.Attribute.Required;
+    heroImage: Schema.Attribute.Media<'images'>;
     heroSubtext: Schema.Attribute.Text &
       Schema.Attribute.SetMinMaxLength<{
         maxLength: 160;
