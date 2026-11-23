@@ -1881,6 +1881,7 @@ export interface ApiWorkPageWorkPage extends Struct.SingleTypeSchema {
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     emptyStateText: Schema.Attribute.Text;
+    finalCta: Schema.Attribute.Component<'hub.final-cta', false>;
     heading: Schema.Attribute.String & Schema.Attribute.Required;
     heroEyebrow: Schema.Attribute.String;
     heroImage: Schema.Attribute.Media<'images'>;

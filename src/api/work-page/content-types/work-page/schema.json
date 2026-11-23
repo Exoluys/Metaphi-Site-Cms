@@ -47,6 +47,11 @@
     "emptyStateText": {
       "type": "text",
       "required": false
+    },
+    "finalCta": {
+      "type": "component",
+      "repeatable": false,
+      "component": "hub.final-cta"
     }
   }
 }
