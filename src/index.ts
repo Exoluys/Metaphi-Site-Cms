@@ -209,7 +209,48 @@ export default {
         }
       }
 
-      // ── 3.b Ensure newly added fields are in Content Manager edit layout ──
+      // ── 3.b Configure Industry Edit Layout in Content Manager (Side-by-side pairs) ──
+      const industryLayoutRows = await strapi.db
+        .connection('strapi_core_store_settings')
+        .where({ key: 'plugin_content_manager_configuration_content_types::api::industry.industry' })
+        .select('id', 'value');
+
+      if (industryLayoutRows.length > 0) {
+        const config = JSON.parse(industryLayoutRows[0].value);
+        config.layouts = config.layouts || {};
+        config.layouts.edit = [
+          [{ name: 'title', size: 6 }, { name: 'order', size: 6 }],
+          [{ name: 'summary', size: 12 }],
+          [{ name: 'heroImage', size: 12 }],
+          [{ name: 'heroHeadline', size: 12 }],
+          [{ name: 'heroSubtext', size: 12 }],
+          [{ name: 'ctaPrimaryLabel', size: 6 }, { name: 'ctaSecondaryLabel', size: 6 }],
+          [{ name: 'industryContext', size: 12 }],
+          [{ name: 'commonChallenges', size: 12 }],
+          [{ name: 'techOpportunities', size: 12 }],
+          [{ name: 'howMetaphiHelps', size: 12 }],
+          [{ name: 'relevantCustomSolutions', size: 12 }],
+          [{ name: 'readyToConfigureSolutions', size: 12 }],
+          [{ name: 'keyUseCases', size: 12 }],
+          [{ name: 'aiOpportunities', size: 12 }],
+          [{ name: 'integrations', size: 12 }],
+          [{ name: 'caseStudies', size: 12 }],
+          [{ name: 'transformationApproachHeading', size: 6 }, { name: 'transformationApproachText', size: 6 }],
+          [{ name: 'playbookHeading', size: 6 }, { name: 'playbookSubtext', size: 6 }],
+          [{ name: 'faqs', size: 12 }],
+          [{ name: 'solutions', size: 12 }],
+          [{ name: 'primarySeoTheme', size: 12 }],
+          [{ name: 'seo', size: 12 }],
+        ];
+
+        await strapi.db
+          .connection('strapi_core_store_settings')
+          .where({ id: industryLayoutRows[0].id })
+          .update({ value: JSON.stringify(config) });
+        strapi.log.info('[Bootstrap] Configured side-by-side edit layout for Industry');
+      }
+
+      // ── 3.c Ensure newly added fields are in Content Manager edit layout ──
       const syncTypes = [
         {
           uid: 'api::work-page.work-page',

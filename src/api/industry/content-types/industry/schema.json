@@ -24,15 +24,7 @@
     },
     "summary": {
       "type": "text",
-      "maxLength": 160
-    },
-    "heroImage": {
-      "type": "media",
-      "multiple": false,
-      "required": true,
-      "allowedTypes": [
-        "images"
-      ]
+      "maxLength": 300
     },
     "order": {
       "type": "integer",
@@ -40,11 +32,102 @@
       "default": 0,
       "min": 0
     },
+    "heroImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "heroHeadline": {
+      "type": "string"
+    },
+    "heroSubtext": {
+      "type": "text"
+    },
+    "ctaPrimaryLabel": {
+      "type": "string"
+    },
+    "ctaSecondaryLabel": {
+      "type": "string"
+    },
+    "industryContext": {
+      "type": "text"
+    },
+    "commonChallenges": {
+      "type": "component",
+      "repeatable": true,
+      "component": "hub.string-item"
+    },
+    "techOpportunities": {
+      "type": "text"
+    },
+    "howMetaphiHelps": {
+      "type": "component",
+      "repeatable": true,
+      "component": "hub.string-item"
+    },
+    "relevantCustomSolutions": {
+      "type": "component",
+      "repeatable": true,
+      "component": "hub.title-description"
+    },
+    "readyToConfigureSolutions": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::solution.solution"
+    },
+    "keyUseCases": {
+      "type": "component",
+      "repeatable": true,
+      "component": "hub.string-item"
+    },
+    "aiOpportunities": {
+      "type": "component",
+      "repeatable": true,
+      "component": "hub.string-item"
+    },
+    "integrations": {
+      "type": "component",
+      "repeatable": true,
+      "component": "hub.string-item"
+    },
+    "caseStudies": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::case-study.case-study"
+    },
+    "transformationApproachHeading": {
+      "type": "string"
+    },
+    "transformationApproachText": {
+      "type": "text"
+    },
+    "playbookHeading": {
+      "type": "string"
+    },
+    "playbookSubtext": {
+      "type": "text"
+    },
+    "faqs": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::faq.faq"
+    },
     "solutions": {
       "type": "relation",
       "relation": "manyToMany",
       "target": "api::solution.solution",
       "inversedBy": "industries"
+    },
+    "primarySeoTheme": {
+      "type": "string"
+    },
+    "seo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.seo"
     }
   }
 }

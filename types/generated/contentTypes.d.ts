@@ -1201,10 +1201,25 @@ export interface ApiIndustryIndustry extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
+    aiOpportunities: Schema.Attribute.Component<'hub.string-item', true>;
+    caseStudies: Schema.Attribute.Relation<
+      'manyToMany',
+      'api::case-study.case-study'
+    >;
+    commonChallenges: Schema.Attribute.Component<'hub.string-item', true>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    heroImage: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
+    ctaPrimaryLabel: Schema.Attribute.String;
+    ctaSecondaryLabel: Schema.Attribute.String;
+    faqs: Schema.Attribute.Relation<'manyToMany', 'api::faq.faq'>;
+    heroHeadline: Schema.Attribute.String;
+    heroImage: Schema.Attribute.Media<'images'>;
+    heroSubtext: Schema.Attribute.Text;
+    howMetaphiHelps: Schema.Attribute.Component<'hub.string-item', true>;
+    industryContext: Schema.Attribute.Text;
+    integrations: Schema.Attribute.Component<'hub.string-item', true>;
+    keyUseCases: Schema.Attribute.Component<'hub.string-item', true>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -1219,7 +1234,19 @@ export interface ApiIndustryIndustry extends Struct.CollectionTypeSchema {
         number
       > &
       Schema.Attribute.DefaultTo<0>;
+    playbookHeading: Schema.Attribute.String;
+    playbookSubtext: Schema.Attribute.Text;
+    primarySeoTheme: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
+    readyToConfigureSolutions: Schema.Attribute.Relation<
+      'manyToMany',
+      'api::solution.solution'
+    >;
+    relevantCustomSolutions: Schema.Attribute.Component<
+      'hub.title-description',
+      true
+    >;
+    seo: Schema.Attribute.Component<'shared.seo', false>;
     slug: Schema.Attribute.UID<'title'>;
     solutions: Schema.Attribute.Relation<
       'manyToMany',
@@ -1227,11 +1254,14 @@ export interface ApiIndustryIndustry extends Struct.CollectionTypeSchema {
     >;
     summary: Schema.Attribute.Text &
       Schema.Attribute.SetMinMaxLength<{
-        maxLength: 160;
+        maxLength: 300;
       }>;
+    techOpportunities: Schema.Attribute.Text;
     title: Schema.Attribute.String &
       Schema.Attribute.Required &
       Schema.Attribute.Unique;
+    transformationApproachHeading: Schema.Attribute.String;
+    transformationApproachText: Schema.Attribute.Text;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
