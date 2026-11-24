@@ -69,10 +69,11 @@ $RECYCLE.BIN/
 
 .tmp
 *.log
-*.sql
 *.dump
 *.sqlite
 *.sqlite3
+backup*.sql
+*backup*.sql
 
 
 ############################
@@ -121,10 +122,17 @@ yarn-error.log
 coverage
 
 ############################
-# Strapi
+# Strapi & Environment
 ############################
 
 .env
+.env.*
+.env*.local
+*.env
+*.env.*
+!.env.example
+!.env.sample
+!.env.template
 license.txt
 exports
 .strapi
@@ -139,4 +147,8 @@ build
 
 .agent/
 .agents/
+.cursor/
+.claude/
+.vscode/
+.idea/
 skills-lock.json
