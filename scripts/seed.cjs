@@ -1629,18 +1629,31 @@ async function seed() {
         workShowcaseHeading: "Results We're Accountable for.",
         workShowcaseHighlight: 'Work You Can Verify.',
         workShowcaseIntro: 'Metaphi delivers proven, production-grade systems across industries. Every project was engineered from strategy to post-launch impact.',
+        whyMetaphiHeading: 'A technology partner—',
+        whyMetaphiHighlight: 'not another development vendor.',
+        whyMetaphiSubtext: 'We partner with growing businesses and enterprise teams who need more than extra development hands.',
+        whyMetaphiPillars: [
+          { title: 'Business Before Technology', description: 'We begin by understanding the operating problem, not by prescribing a technology stack.' },
+          { title: 'Structured Product Thinking', description: 'Requirements, workflows and priorities are translated into clear product and engineering decisions.' },
+          { title: 'Integrated Capability', description: 'Software, AI, cloud, data and integrations are considered as parts of one technology ecosystem.' },
+          { title: 'Built for Evolution', description: 'Solutions are designed so that new workflows, integrations and capabilities can be introduced as the business changes.' },
+          { title: 'Long-Term Partnership', description: 'We can continue supporting, improving and extending the technology after launch.' }
+        ],
         deliveryApproachHeading: 'From business problem to',
         deliveryApproachHighlight: 'working technology.',
         deliveryApproachSubtext: 'A structured, transparent engineering process designed to deliver predictable outcomes from discovery through to post-launch evolution.',
+        insightsResourcesSection: {
+          heading: 'Practical thinking for better',
+          highlight: 'technology decisions.',
+          subtext: 'Explore industry playbooks, implementation guides and perspectives on enterprise software, product engineering, AI and digital transformation.',
+          ctaLabel: 'Explore Insights'
+        },
         finalCta: {
           heading: "Have a technology initiative you're trying to move forward?",
           subtext: "Tell us what you are trying to improve, automate, build or scale. We'll help you evaluate the right technology approach.",
           ctaLabel: 'Discuss Your Technology Initiative',
           secondaryCtaLabel: ''
         },
-        whyChooseEyebrow: 'WHY METAPHI',
-        whyChooseCertifications: [],
-        certificationsEmptyStateText: 'No certifications currently displayed.',
         testimonialsEyebrow: 'CLIENT TESTIMONIALS',
         testimonialsEmptyStateText: 'No testimonials available.',
         faqEyebrow: 'QUICK ANSWERS',

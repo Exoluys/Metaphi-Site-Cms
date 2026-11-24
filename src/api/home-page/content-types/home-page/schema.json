@@ -47,25 +47,6 @@
       "required": true,
       "min": 5
     },
-    "whyChooseHeading": {
-      "type": "string",
-      "required": true
-    },
-    "whyChooseHighlight": {
-      "type": "string",
-      "required": true
-    },
-    "whyChooseSubtitle": {
-      "type": "text",
-      "maxLength": 160
-    },
-    "whyChooseCertifications": {
-      "type": "component",
-      "component": "home.certification",
-      "repeatable": true,
-      "min": 4,
-      "max": 4
-    },
     "testimonialsHeading": {
       "type": "string",
       "required": true
@@ -147,6 +128,20 @@
       "repeatable": false,
       "component": "hub.info-block"
     },
+    "whyMetaphiHeading": {
+      "type": "string"
+    },
+    "whyMetaphiHighlight": {
+      "type": "string"
+    },
+    "whyMetaphiSubtext": {
+      "type": "text"
+    },
+    "whyMetaphiPillars": {
+      "type": "component",
+      "repeatable": true,
+      "component": "hub.title-description"
+    },
     "deliveryApproachHeading": {
       "type": "string",
       "required": true
@@ -158,6 +153,11 @@
     "deliveryApproachSubtext": {
       "type": "text",
       "maxLength": 160
+    },
+    "insightsResourcesSection": {
+      "type": "component",
+      "repeatable": false,
+      "component": "hub.info-block"
     },
     "finalCta": {
       "type": "component",
@@ -215,9 +215,6 @@
     "workShowcaseLinkLabel": {
       "type": "string",
       "required": true
-    },
-    "whyChooseEyebrow": {
-      "type": "string"
     },
     "testimonialsEyebrow": {
       "type": "string"
