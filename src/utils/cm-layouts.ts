@@ -1,0 +1,348 @@
+import type { Core } from '@strapi/strapi';
+
+type LayoutCell = { name: string; size: number };
+type EditLayout = LayoutCell[][];
+
+export const CONTENT_MANAGER_LAYOUTS: Record<string, EditLayout> = {
+  'api::home-page.home-page': [
+    [{ name: 'heroTitle', size: 6 }, { name: 'heroHighlight', size: 6 }],
+    [{ name: 'heroDescription', size: 12 }],
+    [{ name: 'primaryButtonLabel', size: 6 }, { name: 'secondaryButtonLabel', size: 6 }],
+    [{ name: 'trustedByText', size: 6 }, { name: 'trustedByHighlight', size: 6 }],
+    [{ name: 'clientLogos', size: 12 }],
+    [{ name: 'trustHeading', size: 6 }, { name: 'trustHighlight', size: 6 }],
+    [{ name: 'trustSubtext', size: 12 }],
+    [{ name: 'trustPills', size: 12 }],
+    [{ name: 'certificationsEmptyStateText', size: 12 }],
+    [{ name: 'businessProblemsHeading', size: 6 }, { name: 'businessProblemsHighlight', size: 6 }],
+    [{ name: 'businessProblemsSubtext', size: 12 }],
+    [{ name: 'businessProblems', size: 12 }],
+    [{ name: 'solutionModelsEyebrow', size: 6 }, { name: 'solutionModelsLinkLabel', size: 6 }],
+    [{ name: 'solutionModelsHeading', size: 6 }, { name: 'solutionModelsHighlight', size: 6 }],
+    [{ name: 'solutionModelsSubtext', size: 6 }, { name: 'solutionModelsImage', size: 6 }],
+    [{ name: 'industriesSection', size: 12 }],
+    [{ name: 'industries', size: 12 }],
+    [{ name: 'whyMetaphiHeading', size: 6 }, { name: 'whyMetaphiHighlight', size: 6 }],
+    [{ name: 'whyMetaphiSubtext', size: 12 }],
+    [{ name: 'whyMetaphiPillars', size: 12 }],
+    [{ name: 'deliveryApproachHeading', size: 6 }, { name: 'deliveryApproachHighlight', size: 6 }],
+    [{ name: 'deliveryApproachSubtext', size: 12 }],
+    [{ name: 'workShowcaseEyebrow', size: 6 }, { name: 'workShowcaseLinkLabel', size: 6 }],
+    [{ name: 'workShowcaseHeading', size: 6 }, { name: 'workShowcaseHighlight', size: 6 }],
+    [{ name: 'workShowcaseIntro', size: 12 }],
+    [{ name: 'testimonialsEyebrow', size: 6 }, { name: 'testimonialsCtaLabel', size: 6 }],
+    [{ name: 'testimonialsHeading', size: 6 }, { name: 'testimonialsHighlight', size: 6 }],
+    [{ name: 'testimonialsSubtitle', size: 6 }, { name: 'testimonialsEmptyStateText', size: 6 }],
+    [{ name: 'faqEyebrow', size: 6 }, { name: 'faqLinkLabel', size: 6 }],
+    [{ name: 'faqHeading', size: 6 }, { name: 'faqHighlight', size: 6 }],
+    [{ name: 'faqSubtitle', size: 6 }, { name: 'faqEmptyStateText', size: 6 }],
+    [{ name: 'insightsResourcesSection', size: 12 }],
+    [{ name: 'companyStats', size: 12 }],
+    [{ name: 'finalCta', size: 12 }],
+  ],
+  'api::solutions-hub.solutions-hub': [
+    [{ name: 'heroEyebrow', size: 6 }, { name: 'heroCtaLabel', size: 6 }],
+    [{ name: 'heroHeading', size: 6 }, { name: 'heroSubtext', size: 6 }],
+    [{ name: 'heroImage', size: 12 }],
+    [{ name: 'modelsHeading', size: 6 }, { name: 'modelsSubtext', size: 6 }],
+    [{ name: 'customModel', size: 12 }],
+    [{ name: 'readyModel', size: 12 }],
+    [{ name: 'saasModel', size: 12 }],
+    [{ name: 'howToChoose', size: 12 }],
+    [{ name: 'proof', size: 12 }],
+    [{ name: 'finalCta', size: 12 }],
+  ],
+  'api::industries-hub.industries-hub': [
+    [{ name: 'heroEyebrow', size: 6 }, { name: 'heroCtaLabel', size: 6 }],
+    [{ name: 'heroHeading', size: 6 }, { name: 'heroSubtext', size: 6 }],
+    [{ name: 'heroImage', size: 12 }],
+    [{ name: 'gridEyebrow', size: 6 }, { name: 'gridHeading', size: 6 }],
+    [{ name: 'gridSubtext', size: 12 }],
+    [{ name: 'gridCardLabel', size: 6 }, { name: 'gridCardActionLabel', size: 6 }],
+    [{ name: 'transformationThemes', size: 12 }],
+    [{ name: 'relevantSolutions', size: 12 }],
+    [{ name: 'proof', size: 12 }],
+    [{ name: 'resources', size: 12 }],
+    [{ name: 'relatedSolutionsEyebrow', size: 6 }, { name: 'relatedSolutionsHeading', size: 6 }],
+    [{ name: 'servedIndustriesHeading', size: 12 }],
+    [{ name: 'finalCta', size: 12 }],
+  ],
+  'api::custom-solutions-hub.custom-solutions-hub': [
+    [{ name: 'heroEyebrow', size: 4 }, { name: 'heroMetric', size: 4 }, { name: 'heroAnchorLabel', size: 4 }],
+    [{ name: 'heroHeading', size: 6 }, { name: 'heroSubtext', size: 6 }],
+    [{ name: 'heroImage', size: 12 }],
+    [{ name: 'whenCustomMakesSense', size: 12 }],
+    [{ name: 'capabilitiesHeading', size: 6 }, { name: 'capabilitiesSubtext', size: 6 }],
+    [{ name: 'businessOutcomes', size: 12 }],
+    [{ name: 'industriesBlock', size: 12 }],
+    [{ name: 'deliveryProcess', size: 12 }],
+    [{ name: 'proof', size: 12 }],
+    [{ name: 'finalCta', size: 12 }],
+  ],
+  'api::ready-to-configure-hub.ready-to-configure-hub': [
+    [{ name: 'heroEyebrow', size: 4 }, { name: 'heroMetric', size: 4 }, { name: 'heroAnchorLabel', size: 4 }],
+    [{ name: 'heroHeading', size: 6 }, { name: 'heroSubtext', size: 6 }],
+    [{ name: 'heroImage', size: 12 }],
+    [{ name: 'whatItMeansHeading', size: 6 }, { name: 'whatItMeansSubtext', size: 6 }],
+    [{ name: 'whatItMeans', size: 12 }],
+    [{ name: 'comparisonMatrix', size: 12 }],
+    [{ name: 'portfolioHeading', size: 6 }, { name: 'portfolioSubtext', size: 6 }],
+    [{ name: 'implementationFlow', size: 12 }],
+    [{ name: 'proof', size: 12 }],
+    [{ name: 'finalCta', size: 12 }],
+  ],
+  'api::saas-products-hub.saas-products-hub': [
+    [{ name: 'heroEyebrow', size: 4 }, { name: 'heroMetric', size: 4 }, { name: 'heroAnchorLabel', size: 4 }],
+    [{ name: 'heroHeading', size: 6 }, { name: 'heroSubtext', size: 6 }],
+    [{ name: 'heroImage', size: 12 }],
+    [{ name: 'productsHeading', size: 6 }, { name: 'productsSubtext', size: 6 }],
+    [{ name: 'whySaasHeading', size: 6 }, { name: 'whySaasSubtext', size: 6 }],
+    [{ name: 'whySaasSla', size: 12 }],
+    [{ name: 'whySaasBenefits', size: 12 }],
+    [{ name: 'proof', size: 12 }],
+    [{ name: 'otherModels', size: 12 }],
+    [{ name: 'finalCta', size: 12 }],
+  ],
+  'api::about-page.about-page': [
+    [{ name: 'heroEyebrow', size: 12 }],
+    [{ name: 'heroHeading', size: 6 }, { name: 'heroSubtext', size: 6 }],
+    [{ name: 'heroImage', size: 12 }],
+    [{ name: 'missionEyebrow', size: 6 }, { name: 'missionHeading', size: 6 }],
+    [{ name: 'missionSubtext', size: 6 }, { name: 'missionText', size: 6 }],
+    [{ name: 'pillarsEyebrow', size: 6 }, { name: 'pillarsHeading', size: 6 }],
+    [{ name: 'pillarsSubtext', size: 12 }],
+    [{ name: 'pillars', size: 12 }],
+    [{ name: 'finalCta', size: 12 }],
+  ],
+  'api::work-page.work-page': [
+    [{ name: 'heroEyebrow', size: 12 }],
+    [{ name: 'heading', size: 6 }, { name: 'highlight', size: 6 }],
+    [{ name: 'intro', size: 12 }],
+    [{ name: 'heroImage', size: 12 }],
+    [{ name: 'showcaseEyebrow', size: 6 }, { name: 'showcaseHeading', size: 6 }],
+    [{ name: 'emptyStateText', size: 12 }],
+    [{ name: 'finalCta', size: 12 }],
+  ],
+  'api::careers-page.careers-page': [
+    [{ name: 'heroEyebrow', size: 12 }],
+    [{ name: 'heroHeading', size: 6 }, { name: 'heroSubtext', size: 6 }],
+    [{ name: 'emptyStateText', size: 12 }],
+    [{ name: 'finalCta', size: 12 }],
+  ],
+  'api::compliance-page.compliance-page': [
+    [{ name: 'heroEyebrow', size: 12 }],
+    [{ name: 'heroHeading', size: 6 }, { name: 'heroSubtext', size: 6 }],
+    [{ name: 'items', size: 12 }],
+    [{ name: 'finalCta', size: 12 }],
+  ],
+  'api::life-at-metaphi-page.life-at-metaphi-page': [
+    [{ name: 'heroEyebrow', size: 12 }],
+    [{ name: 'heroHeading', size: 6 }, { name: 'heroSubtext', size: 6 }],
+    [{ name: 'values', size: 12 }],
+    [{ name: 'emptyStateText', size: 12 }],
+    [{ name: 'finalCta', size: 12 }],
+  ],
+  'api::partners-page.partners-page': [
+    [{ name: 'heroEyebrow', size: 12 }],
+    [{ name: 'heroHeading', size: 6 }, { name: 'heroSubtext', size: 6 }],
+    [{ name: 'emptyStateText', size: 12 }],
+    [{ name: 'finalCta', size: 12 }],
+  ],
+  'api::rewards-page.rewards-page': [
+    [{ name: 'heroEyebrow', size: 12 }],
+    [{ name: 'heroHeading', size: 6 }, { name: 'heroSubtext', size: 6 }],
+    [{ name: 'rewards', size: 12 }],
+    [{ name: 'emptyStateText', size: 12 }],
+    [{ name: 'finalCta', size: 12 }],
+  ],
+  'api::team-page.team-page': [
+    [{ name: 'heroEyebrow', size: 12 }],
+    [{ name: 'heroHeading', size: 6 }, { name: 'heroSubtext', size: 6 }],
+    [{ name: 'emptyStateText', size: 12 }],
+    [{ name: 'finalCta', size: 12 }],
+  ],
+  'api::testimonials-page.testimonials-page': [
+    [{ name: 'heroEyebrow', size: 12 }],
+    [{ name: 'heroHeading', size: 6 }, { name: 'heroSubtext', size: 6 }],
+    [{ name: 'emptyStateText', size: 12 }],
+    [{ name: 'finalCta', size: 12 }],
+  ],
+  'api::why-join-us-page.why-join-us-page': [
+    [{ name: 'heroEyebrow', size: 12 }],
+    [{ name: 'heroHeading', size: 6 }, { name: 'heroSubtext', size: 6 }],
+    [{ name: 'pillars', size: 12 }],
+    [{ name: 'emptyStateText', size: 12 }],
+    [{ name: 'finalCta', size: 12 }],
+  ],
+  'api::faq-page.faq-page': [
+    [{ name: 'heroHeading', size: 6 }, { name: 'heroSubtext', size: 6 }],
+    [{ name: 'emptyStateText', size: 12 }],
+  ],
+  'api::default-cta-banner.default-cta-banner': [
+    [{ name: 'heading', size: 6 }, { name: 'buttonLabel', size: 6 }],
+    [{ name: 'text', size: 12 }],
+    [{ name: 'image', size: 12 }],
+  ],
+  'api::industry.industry': [
+    [{ name: 'title', size: 6 }, { name: 'order', size: 6 }],
+    [{ name: 'summary', size: 12 }],
+    [{ name: 'heroImage', size: 12 }],
+    [{ name: 'heroHeadline', size: 12 }],
+    [{ name: 'heroSubtext', size: 12 }],
+    [{ name: 'ctaPrimaryLabel', size: 6 }, { name: 'ctaSecondaryLabel', size: 6 }],
+    [{ name: 'industryContext', size: 12 }],
+    [{ name: 'commonChallenges', size: 12 }],
+    [{ name: 'techOpportunities', size: 12 }],
+    [{ name: 'howMetaphiHelps', size: 12 }],
+    [{ name: 'relevantCustomSolutions', size: 12 }],
+    [{ name: 'readyToConfigureSolutions', size: 12 }],
+    [{ name: 'keyUseCases', size: 12 }],
+    [{ name: 'aiOpportunities', size: 12 }],
+    [{ name: 'integrations', size: 12 }],
+    [{ name: 'caseStudies', size: 12 }],
+    [{ name: 'transformationApproachHeading', size: 6 }, { name: 'transformationApproachText', size: 6 }],
+    [{ name: 'playbookHeading', size: 6 }, { name: 'playbookSubtext', size: 6 }],
+    [{ name: 'faqs', size: 12 }],
+    [{ name: 'solutions', size: 12 }],
+    [{ name: 'primarySeoTheme', size: 12 }],
+    [{ name: 'seo', size: 12 }],
+  ],
+  'api::solution.solution': [
+    [{ name: 'title', size: 6 }, { name: 'modelType', size: 6 }],
+    [{ name: 'order', size: 12 }],
+    [{ name: 'heroImage', size: 12 }],
+    [{ name: 'heroHeadline', size: 12 }],
+    [{ name: 'summary', size: 12 }],
+    [{ name: 'ctaLabel', size: 6 }, { name: 'ctaSecondaryLabel', size: 6 }],
+    [{ name: 'problemHeading', size: 6 }, { name: 'problemText', size: 6 }],
+    [{ name: 'problemItems', size: 12 }],
+    [{ name: 'offeringsHeading', size: 12 }],
+    [{ name: 'offerings', size: 12 }],
+    [{ name: 'useCasesHeading', size: 6 }, { name: 'useCasesSubtext', size: 6 }],
+    [{ name: 'useCases', size: 12 }],
+    [{ name: 'outcomesHeading', size: 6 }, { name: 'outcomesSubtext', size: 6 }],
+    [{ name: 'outcomes', size: 12 }],
+    [{ name: 'industries', size: 12 }],
+    [{ name: 'approachHeading', size: 6 }, { name: 'approachSubtext', size: 6 }],
+    [{ name: 'approachSteps', size: 12 }],
+    [{ name: 'capabilitiesHeading', size: 6 }, { name: 'capabilitiesSubtext', size: 6 }],
+    [{ name: 'capabilities', size: 12 }],
+    [{ name: 'techApproachHeading', size: 6 }, { name: 'techApproachText', size: 6 }],
+    [{ name: 'techApproachItems', size: 12 }],
+    [{ name: 'aiOpportunitiesHeading', size: 6 }, { name: 'aiOpportunitiesSubtext', size: 6 }],
+    [{ name: 'aiOpportunities', size: 12 }],
+    [{ name: 'secondaryNarrativeHeading', size: 6 }, { name: 'secondaryNarrativeText', size: 6 }],
+    [{ name: 'modernisationHeading', size: 6 }, { name: 'modernisationSubtext', size: 6 }],
+    [{ name: 'modernisationItems', size: 12 }],
+    [{ name: 'whoItIsFor', size: 12 }],
+    [{ name: 'solutionOverview', size: 6 }, { name: 'exampleWorkflow', size: 6 }],
+    [{ name: 'coreModules', size: 12 }],
+    [{ name: 'whatIsAlreadyAvailable', size: 12 }],
+    [{ name: 'whatCanBeConfigured', size: 12 }],
+    [{ name: 'whatCanBeExtended', size: 12 }],
+    [{ name: 'whoItIsForText', size: 12 }],
+    [{ name: 'notRightFitHeading', size: 6 }, { name: 'notRightFitText', size: 6 }],
+    [{ name: 'productScreenshots', size: 12 }],
+    [{ name: 'caseStudies', size: 12 }],
+    [{ name: 'relatedResources', size: 12 }],
+    [{ name: 'faqs', size: 12 }],
+    [{ name: 'finalCtaHeading', size: 12 }],
+    [{ name: 'finalCtaText', size: 12 }],
+    [{ name: 'finalCtaButtonLabel', size: 6 }, { name: 'finalCtaSecondaryLabel', size: 6 }],
+    [{ name: 'primarySeoTheme', size: 12 }],
+    [{ name: 'seo', size: 12 }],
+  ],
+  'api::case-study.case-study': [
+    [{ name: 'title', size: 8 }, { name: 'order', size: 4 }],
+    [{ name: 'subtitle', size: 6 }, { name: 'summary', size: 6 }],
+    [{ name: 'heroImage', size: 12 }],
+    [{ name: 'tags', size: 12 }],
+    [{ name: 'projectSummary', size: 12 }],
+    [{ name: 'challengeSection', size: 12 }],
+    [{ name: 'solutionText', size: 12 }],
+    [{ name: 'solutions', size: 12 }],
+    [{ name: 'impactSection', size: 12 }],
+  ],
+  'api::faq.faq': [
+    [{ name: 'question', size: 6 }, { name: 'answer', size: 6 }],
+    [{ name: 'faqCategory', size: 6 }, { name: 'order', size: 6 }],
+  ],
+  'api::faq-category.faq-category': [
+    [{ name: 'name', size: 6 }, { name: 'order', size: 6 }],
+  ],
+  'api::job-opening.job-opening': [
+    [{ name: 'title', size: 6 }, { name: 'department', size: 6 }],
+    [{ name: 'location', size: 6 }, { name: 'employmentType', size: 6 }],
+    [{ name: 'description', size: 8 }, { name: 'order', size: 4 }],
+  ],
+  'api::partner.partner': [
+    [{ name: 'name', size: 6 }, { name: 'category', size: 6 }],
+    [{ name: 'description', size: 8 }, { name: 'order', size: 4 }],
+  ],
+  'api::team-member.team-member': [
+    [{ name: 'name', size: 6 }, { name: 'role', size: 6 }],
+    [{ name: 'department', size: 6 }, { name: 'order', size: 6 }],
+    [{ name: 'bio', size: 6 }, { name: 'image', size: 6 }],
+  ],
+  'api::testimonial.testimonial': [
+    [{ name: 'name', size: 6 }, { name: 'role', size: 6 }],
+    [{ name: 'company', size: 6 }, { name: 'order', size: 6 }],
+    [{ name: 'quote', size: 6 }, { name: 'result', size: 6 }],
+    [{ name: 'image', size: 12 }],
+  ],
+};
+
+const RELATION_MAIN_FIELDS: Record<string, string> = {
+  faqs: 'question',
+  faqCategory: 'name',
+  industries: 'title',
+  solutions: 'title',
+  caseStudies: 'title',
+  readyToConfigureSolutions: 'title',
+};
+
+export async function syncAllContentManagerLayouts(strapi: Core.Strapi) {
+  for (const [uid, editLayout] of Object.entries(CONTENT_MANAGER_LAYOUTS)) {
+    const key = `plugin_content_manager_configuration_content_types::${uid}`;
+    const rows = await strapi.db
+      .connection('strapi_core_store_settings')
+      .where({ key })
+      .select('id', 'value');
+
+    if (rows.length === 0) continue;
+
+    const config = JSON.parse(rows[0].value);
+    config.layouts = config.layouts || {};
+    config.layouts.edit = editLayout;
+
+    config.metadatas = config.metadatas || {};
+    for (const row of editLayout) {
+      for (const cell of row) {
+        const name = cell.name;
+        if (!config.metadatas[name]) {
+          config.metadatas[name] = {
+            edit: {
+              label: name,
+              description: '',
+              placeholder: '',
+              visible: true,
+              editable: true,
+              ...(RELATION_MAIN_FIELDS[name] ? { mainField: RELATION_MAIN_FIELDS[name] } : {}),
+            },
+            list: {
+              label: name,
+              searchable: !RELATION_MAIN_FIELDS[name],
+              sortable: !RELATION_MAIN_FIELDS[name],
+            },
+          };
+        }
+      }
+    }
+
+    await strapi.db
+      .connection('strapi_core_store_settings')
+      .where({ id: rows[0].id })
+      .update({ value: JSON.stringify(config) });
+  }
+  strapi.log.info('[Bootstrap] Synced Content Manager layouts for all content types');
+}
