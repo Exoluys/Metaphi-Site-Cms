@@ -1675,6 +1675,7 @@ export interface ApiSolutionSolution extends Struct.CollectionTypeSchema {
     faqs: Schema.Attribute.Relation<'manyToMany', 'api::faq.faq'>;
     finalCtaButtonLabel: Schema.Attribute.String;
     finalCtaHeading: Schema.Attribute.String;
+    finalCtaSecondaryLabel: Schema.Attribute.String;
     finalCtaText: Schema.Attribute.Text;
     heroHeadline: Schema.Attribute.String;
     heroImage: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
@@ -1695,6 +1696,8 @@ export interface ApiSolutionSolution extends Struct.CollectionTypeSchema {
     modernisationHeading: Schema.Attribute.String;
     modernisationItems: Schema.Attribute.Component<'hub.string-item', true>;
     modernisationSubtext: Schema.Attribute.Text;
+    notRightFitHeading: Schema.Attribute.String;
+    notRightFitText: Schema.Attribute.Text;
     offerings: Schema.Attribute.Component<'hub.title-description', true>;
     offeringsHeading: Schema.Attribute.String;
     order: Schema.Attribute.Integer &
@@ -1712,6 +1715,7 @@ export interface ApiSolutionSolution extends Struct.CollectionTypeSchema {
     problemHeading: Schema.Attribute.String;
     problemItems: Schema.Attribute.Component<'hub.string-item', true>;
     problemText: Schema.Attribute.Text;
+    productScreenshots: Schema.Attribute.Media<'images', true>;
     publishedAt: Schema.Attribute.DateTime;
     relatedResources: Schema.Attribute.Component<'hub.string-item', true>;
     secondaryNarrativeHeading: Schema.Attribute.String;
@@ -1736,6 +1740,7 @@ export interface ApiSolutionSolution extends Struct.CollectionTypeSchema {
     whatCanBeExtended: Schema.Attribute.Component<'hub.string-item', true>;
     whatIsAlreadyAvailable: Schema.Attribute.Component<'hub.string-item', true>;
     whoItIsFor: Schema.Attribute.Component<'hub.string-item', true>;
+    whoItIsForText: Schema.Attribute.Text;
   };
 }
 

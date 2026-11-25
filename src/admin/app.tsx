@@ -35,6 +35,45 @@ const READY_ONLY_FIELDS = new Set([
   'whatCanBeExtended',
 ]);
 
+const SAAS_ONLY_FIELDS = new Set([
+  'whoItIsForText',
+  'notRightFitHeading',
+  'notRightFitText',
+  'productScreenshots',
+  'finalCtaSecondaryLabel',
+]);
+
+const SAAS_HIDDEN_FIELDS = new Set([
+  ...READY_ONLY_FIELDS,
+  'problemItems',
+  'useCasesHeading',
+  'useCasesSubtext',
+  'useCases',
+  'outcomesHeading',
+  'outcomesSubtext',
+  'outcomes',
+  'industries',
+  'approachSubtext',
+  'techApproachHeading',
+  'techApproachText',
+  'techApproachItems',
+  'aiOpportunitiesHeading',
+  'aiOpportunitiesSubtext',
+  'aiOpportunities',
+  'modernisationHeading',
+  'modernisationSubtext',
+  'modernisationItems',
+  'caseStudies',
+  'relatedResources',
+]);
+
+const ALL_CONDITIONAL_FIELDS = new Set([
+  ...CUSTOM_ONLY_FIELDS,
+  ...READY_ONLY_FIELDS,
+  ...SAAS_ONLY_FIELDS,
+  ...SAAS_HIDDEN_FIELDS,
+]);
+
 function getGridCell(el: Element | null): HTMLElement | null {
   let curr: HTMLElement | null = el as HTMLElement | null;
   while (curr && curr.parentElement) {
@@ -85,10 +124,10 @@ function applySolutionFieldVisibility() {
 
   const hiddenSet =
     modelType === 'custom'
-      ? READY_ONLY_FIELDS
+      ? new Set([...READY_ONLY_FIELDS, ...SAAS_ONLY_FIELDS])
       : modelType === 'ready-to-configure'
-      ? CUSTOM_ONLY_FIELDS
-      : new Set([...CUSTOM_ONLY_FIELDS, ...READY_ONLY_FIELDS]);
+      ? new Set([...CUSTOM_ONLY_FIELDS, ...SAAS_ONLY_FIELDS])
+      : SAAS_HIDDEN_FIELDS;
 
   // Scan field labels / component headings / inputs in the main form grid
   const candidates = document.querySelectorAll(
@@ -98,17 +137,16 @@ function applySolutionFieldVisibility() {
 
   for (const el of candidates) {
     const attrName = (el.getAttribute('name') || el.getAttribute('for') || '').trim();
-    let fieldName =
-      CUSTOM_ONLY_FIELDS.has(attrName) || READY_ONLY_FIELDS.has(attrName) ? attrName : '';
+    let fieldName = ALL_CONDITIONAL_FIELDS.has(attrName) ? attrName : '';
     if (!fieldName) {
       // Component/repeatable labels often look like "whoItIsFor (6)" or "offerings (0)"
       const raw = (el.textContent || '').replace('*', '').replace(/\s*\(\d+\)\s*$/, '').trim();
-      if (CUSTOM_ONLY_FIELDS.has(raw) || READY_ONLY_FIELDS.has(raw)) {
+      if (ALL_CONDITIONAL_FIELDS.has(raw)) {
         fieldName = raw;
       }
     }
 
-    if (!fieldName || (!CUSTOM_ONLY_FIELDS.has(fieldName) && !READY_ONLY_FIELDS.has(fieldName))) {
+    if (!fieldName || !ALL_CONDITIONAL_FIELDS.has(fieldName)) {
       continue;
     }
 
