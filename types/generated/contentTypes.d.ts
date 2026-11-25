@@ -1665,11 +1665,13 @@ export interface ApiSolutionSolution extends Struct.CollectionTypeSchema {
       'manyToMany',
       'api::case-study.case-study'
     >;
+    coreModules: Schema.Attribute.Component<'hub.string-item', true>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     ctaLabel: Schema.Attribute.String & Schema.Attribute.Required;
     ctaSecondaryLabel: Schema.Attribute.String;
+    exampleWorkflow: Schema.Attribute.Text;
     faqs: Schema.Attribute.Relation<'manyToMany', 'api::faq.faq'>;
     finalCtaButtonLabel: Schema.Attribute.String;
     finalCtaHeading: Schema.Attribute.String;
@@ -1716,6 +1718,7 @@ export interface ApiSolutionSolution extends Struct.CollectionTypeSchema {
     secondaryNarrativeText: Schema.Attribute.Text;
     seo: Schema.Attribute.Component<'shared.seo', false>;
     slug: Schema.Attribute.UID<'title'>;
+    solutionOverview: Schema.Attribute.Text;
     summary: Schema.Attribute.Text;
     techApproachHeading: Schema.Attribute.String;
     techApproachItems: Schema.Attribute.Component<'hub.string-item', true>;
@@ -1729,6 +1732,10 @@ export interface ApiSolutionSolution extends Struct.CollectionTypeSchema {
     useCases: Schema.Attribute.Component<'hub.string-item', true>;
     useCasesHeading: Schema.Attribute.String;
     useCasesSubtext: Schema.Attribute.Text;
+    whatCanBeConfigured: Schema.Attribute.Component<'hub.string-item', true>;
+    whatCanBeExtended: Schema.Attribute.Component<'hub.string-item', true>;
+    whatIsAlreadyAvailable: Schema.Attribute.Component<'hub.string-item', true>;
+    whoItIsFor: Schema.Attribute.Component<'hub.string-item', true>;
   };
 }
 

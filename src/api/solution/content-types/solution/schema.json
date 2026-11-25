@@ -167,6 +167,37 @@
       "repeatable": true,
       "component": "hub.string-item"
     },
+    "whoItIsFor": {
+      "type": "component",
+      "repeatable": true,
+      "component": "hub.string-item"
+    },
+    "solutionOverview": {
+      "type": "text"
+    },
+    "exampleWorkflow": {
+      "type": "text"
+    },
+    "coreModules": {
+      "type": "component",
+      "repeatable": true,
+      "component": "hub.string-item"
+    },
+    "whatIsAlreadyAvailable": {
+      "type": "component",
+      "repeatable": true,
+      "component": "hub.string-item"
+    },
+    "whatCanBeConfigured": {
+      "type": "component",
+      "repeatable": true,
+      "component": "hub.string-item"
+    },
+    "whatCanBeExtended": {
+      "type": "component",
+      "repeatable": true,
+      "component": "hub.string-item"
+    },
     "caseStudies": {
       "type": "relation",
       "relation": "manyToMany",
