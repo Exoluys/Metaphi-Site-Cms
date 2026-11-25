@@ -31,23 +31,11 @@
         "saas"
       ]
     },
-    "badge": {
-      "type": "string"
-    },
-    "summary": {
-      "type": "text",
-      "maxLength": 160,
-      "required": false
-    },
     "order": {
       "type": "integer",
       "required": false,
       "default": 0,
       "min": 0
-    },
-    "ctaLabel": {
-      "type": "string",
-      "required": true
     },
     "heroImage": {
       "type": "media",
@@ -57,17 +45,160 @@
         "images"
       ]
     },
+    "heroHeadline": {
+      "type": "string"
+    },
+    "summary": {
+      "type": "text",
+      "required": false
+    },
+    "ctaLabel": {
+      "type": "string",
+      "required": true
+    },
+    "ctaSecondaryLabel": {
+      "type": "string"
+    },
+    "problemHeading": {
+      "type": "string"
+    },
+    "problemText": {
+      "type": "text"
+    },
+    "problemItems": {
+      "type": "component",
+      "repeatable": true,
+      "component": "hub.string-item"
+    },
+    "offeringsHeading": {
+      "type": "string"
+    },
+    "offerings": {
+      "type": "component",
+      "repeatable": true,
+      "component": "hub.title-description"
+    },
+    "useCasesHeading": {
+      "type": "string"
+    },
+    "useCasesSubtext": {
+      "type": "text"
+    },
+    "useCases": {
+      "type": "component",
+      "repeatable": true,
+      "component": "hub.string-item"
+    },
+    "outcomesHeading": {
+      "type": "string"
+    },
+    "outcomesSubtext": {
+      "type": "text"
+    },
+    "outcomes": {
+      "type": "component",
+      "repeatable": true,
+      "component": "hub.string-item"
+    },
     "industries": {
       "type": "relation",
       "relation": "manyToMany",
       "target": "api::industry.industry",
       "mappedBy": "solutions"
     },
+    "approachHeading": {
+      "type": "string"
+    },
+    "approachSubtext": {
+      "type": "text"
+    },
+    "approachSteps": {
+      "type": "component",
+      "repeatable": true,
+      "component": "hub.title-description"
+    },
+    "capabilitiesHeading": {
+      "type": "string"
+    },
+    "capabilitiesSubtext": {
+      "type": "text"
+    },
+    "capabilities": {
+      "type": "component",
+      "repeatable": true,
+      "component": "hub.string-item"
+    },
+    "techApproachHeading": {
+      "type": "string"
+    },
+    "techApproachText": {
+      "type": "text"
+    },
+    "techApproachItems": {
+      "type": "component",
+      "repeatable": true,
+      "component": "hub.string-item"
+    },
+    "aiOpportunitiesHeading": {
+      "type": "string"
+    },
+    "aiOpportunitiesSubtext": {
+      "type": "text"
+    },
+    "aiOpportunities": {
+      "type": "component",
+      "repeatable": true,
+      "component": "hub.string-item"
+    },
+    "secondaryNarrativeHeading": {
+      "type": "string"
+    },
+    "secondaryNarrativeText": {
+      "type": "text"
+    },
+    "modernisationHeading": {
+      "type": "string"
+    },
+    "modernisationSubtext": {
+      "type": "text"
+    },
+    "modernisationItems": {
+      "type": "component",
+      "repeatable": true,
+      "component": "hub.string-item"
+    },
     "caseStudies": {
       "type": "relation",
       "relation": "manyToMany",
       "target": "api::case-study.case-study",
       "mappedBy": "solutions"
+    },
+    "relatedResources": {
+      "type": "component",
+      "repeatable": true,
+      "component": "hub.string-item"
+    },
+    "faqs": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::faq.faq"
+    },
+    "finalCtaHeading": {
+      "type": "string"
+    },
+    "finalCtaText": {
+      "type": "text"
+    },
+    "finalCtaButtonLabel": {
+      "type": "string"
+    },
+    "primarySeoTheme": {
+      "type": "string"
+    },
+    "seo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.seo"
     }
   }
 }

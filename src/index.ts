@@ -250,6 +250,82 @@ export default {
         strapi.log.info('[Bootstrap] Configured side-by-side edit layout for Industry');
       }
 
+      // ── 3.b.2 Configure Solution Edit Layout in Content Manager (Side-by-side pairs) ──
+      const solutionLayoutRows = await strapi.db
+        .connection('strapi_core_store_settings')
+        .where({ key: 'plugin_content_manager_configuration_content_types::api::solution.solution' })
+        .select('id', 'value');
+
+      if (solutionLayoutRows.length > 0) {
+        const config = JSON.parse(solutionLayoutRows[0].value);
+        config.layouts = config.layouts || {};
+        config.layouts.edit = [
+          [{ name: 'title', size: 6 }, { name: 'modelType', size: 6 }],
+          [{ name: 'order', size: 12 }],
+          [{ name: 'heroImage', size: 12 }],
+          [{ name: 'heroHeadline', size: 12 }],
+          [{ name: 'summary', size: 12 }],
+          [{ name: 'ctaLabel', size: 6 }, { name: 'ctaSecondaryLabel', size: 6 }],
+          [{ name: 'problemHeading', size: 6 }, { name: 'problemText', size: 6 }],
+          [{ name: 'problemItems', size: 12 }],
+          [{ name: 'offeringsHeading', size: 12 }],
+          [{ name: 'offerings', size: 12 }],
+          [{ name: 'useCasesHeading', size: 6 }, { name: 'useCasesSubtext', size: 6 }],
+          [{ name: 'useCases', size: 12 }],
+          [{ name: 'outcomesHeading', size: 6 }, { name: 'outcomesSubtext', size: 6 }],
+          [{ name: 'outcomes', size: 12 }],
+          [{ name: 'industries', size: 12 }],
+          [{ name: 'approachHeading', size: 6 }, { name: 'approachSubtext', size: 6 }],
+          [{ name: 'approachSteps', size: 12 }],
+          [{ name: 'capabilitiesHeading', size: 6 }, { name: 'capabilitiesSubtext', size: 6 }],
+          [{ name: 'capabilities', size: 12 }],
+          [{ name: 'techApproachHeading', size: 6 }, { name: 'techApproachText', size: 6 }],
+          [{ name: 'techApproachItems', size: 12 }],
+          [{ name: 'aiOpportunitiesHeading', size: 6 }, { name: 'aiOpportunitiesSubtext', size: 6 }],
+          [{ name: 'aiOpportunities', size: 12 }],
+          [{ name: 'secondaryNarrativeHeading', size: 6 }, { name: 'secondaryNarrativeText', size: 6 }],
+          [{ name: 'modernisationHeading', size: 6 }, { name: 'modernisationSubtext', size: 6 }],
+          [{ name: 'modernisationItems', size: 12 }],
+          [{ name: 'caseStudies', size: 12 }],
+          [{ name: 'relatedResources', size: 12 }],
+          [{ name: 'faqs', size: 12 }],
+          [{ name: 'finalCtaHeading', size: 6 }, { name: 'finalCtaButtonLabel', size: 6 }],
+          [{ name: 'finalCtaText', size: 12 }],
+          [{ name: 'primarySeoTheme', size: 12 }],
+          [{ name: 'seo', size: 12 }],
+        ];
+
+        config.metadatas = config.metadatas || {};
+        for (const row of config.layouts.edit) {
+          for (const cell of row) {
+            const name = cell.name;
+            if (!config.metadatas[name]) {
+              config.metadatas[name] = {
+                edit: {
+                  label: name,
+                  description: '',
+                  placeholder: '',
+                  visible: true,
+                  editable: true,
+                  ...(name === 'faqs' ? { mainField: 'question' } : {}),
+                },
+                list: {
+                  label: name,
+                  searchable: name !== 'faqs',
+                  sortable: name !== 'faqs',
+                },
+              };
+            }
+          }
+        }
+
+        await strapi.db
+          .connection('strapi_core_store_settings')
+          .where({ id: solutionLayoutRows[0].id })
+          .update({ value: JSON.stringify(config) });
+        strapi.log.info('[Bootstrap] Configured side-by-side edit layout for Solution');
+      }
+
       // ── 3.c Ensure newly added fields are in Content Manager edit layout ──
       const syncTypes = [
         {

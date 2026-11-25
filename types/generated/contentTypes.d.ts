@@ -1652,7 +1652,15 @@ export interface ApiSolutionSolution extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
-    badge: Schema.Attribute.String;
+    aiOpportunities: Schema.Attribute.Component<'hub.string-item', true>;
+    aiOpportunitiesHeading: Schema.Attribute.String;
+    aiOpportunitiesSubtext: Schema.Attribute.Text;
+    approachHeading: Schema.Attribute.String;
+    approachSteps: Schema.Attribute.Component<'hub.title-description', true>;
+    approachSubtext: Schema.Attribute.Text;
+    capabilities: Schema.Attribute.Component<'hub.string-item', true>;
+    capabilitiesHeading: Schema.Attribute.String;
+    capabilitiesSubtext: Schema.Attribute.Text;
     caseStudies: Schema.Attribute.Relation<
       'manyToMany',
       'api::case-study.case-study'
@@ -1661,6 +1669,12 @@ export interface ApiSolutionSolution extends Struct.CollectionTypeSchema {
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     ctaLabel: Schema.Attribute.String & Schema.Attribute.Required;
+    ctaSecondaryLabel: Schema.Attribute.String;
+    faqs: Schema.Attribute.Relation<'manyToMany', 'api::faq.faq'>;
+    finalCtaButtonLabel: Schema.Attribute.String;
+    finalCtaHeading: Schema.Attribute.String;
+    finalCtaText: Schema.Attribute.Text;
+    heroHeadline: Schema.Attribute.String;
     heroImage: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
     industries: Schema.Attribute.Relation<
       'manyToMany',
@@ -1676,6 +1690,11 @@ export interface ApiSolutionSolution extends Struct.CollectionTypeSchema {
       ['custom', 'ready-to-configure', 'saas']
     > &
       Schema.Attribute.Required;
+    modernisationHeading: Schema.Attribute.String;
+    modernisationItems: Schema.Attribute.Component<'hub.string-item', true>;
+    modernisationSubtext: Schema.Attribute.Text;
+    offerings: Schema.Attribute.Component<'hub.title-description', true>;
+    offeringsHeading: Schema.Attribute.String;
     order: Schema.Attribute.Integer &
       Schema.Attribute.SetMinMax<
         {
@@ -1684,18 +1703,32 @@ export interface ApiSolutionSolution extends Struct.CollectionTypeSchema {
         number
       > &
       Schema.Attribute.DefaultTo<0>;
+    outcomes: Schema.Attribute.Component<'hub.string-item', true>;
+    outcomesHeading: Schema.Attribute.String;
+    outcomesSubtext: Schema.Attribute.Text;
+    primarySeoTheme: Schema.Attribute.String;
+    problemHeading: Schema.Attribute.String;
+    problemItems: Schema.Attribute.Component<'hub.string-item', true>;
+    problemText: Schema.Attribute.Text;
     publishedAt: Schema.Attribute.DateTime;
+    relatedResources: Schema.Attribute.Component<'hub.string-item', true>;
+    secondaryNarrativeHeading: Schema.Attribute.String;
+    secondaryNarrativeText: Schema.Attribute.Text;
+    seo: Schema.Attribute.Component<'shared.seo', false>;
     slug: Schema.Attribute.UID<'title'>;
-    summary: Schema.Attribute.Text &
-      Schema.Attribute.SetMinMaxLength<{
-        maxLength: 160;
-      }>;
+    summary: Schema.Attribute.Text;
+    techApproachHeading: Schema.Attribute.String;
+    techApproachItems: Schema.Attribute.Component<'hub.string-item', true>;
+    techApproachText: Schema.Attribute.Text;
     title: Schema.Attribute.String &
       Schema.Attribute.Required &
       Schema.Attribute.Unique;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    useCases: Schema.Attribute.Component<'hub.string-item', true>;
+    useCasesHeading: Schema.Attribute.String;
+    useCasesSubtext: Schema.Attribute.Text;
   };
 }
 
