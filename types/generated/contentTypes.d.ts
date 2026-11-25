@@ -917,11 +917,7 @@ export interface ApiFaqFaq extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
-    answer: Schema.Attribute.Text &
-      Schema.Attribute.Required &
-      Schema.Attribute.SetMinMaxLength<{
-        maxLength: 160;
-      }>;
+    answer: Schema.Attribute.Text & Schema.Attribute.Required;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1678,7 +1674,7 @@ export interface ApiSolutionSolution extends Struct.CollectionTypeSchema {
     finalCtaSecondaryLabel: Schema.Attribute.String;
     finalCtaText: Schema.Attribute.Text;
     heroHeadline: Schema.Attribute.String;
-    heroImage: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
+    heroImage: Schema.Attribute.Media<'images'>;
     industries: Schema.Attribute.Relation<
       'manyToMany',
       'api::industry.industry'

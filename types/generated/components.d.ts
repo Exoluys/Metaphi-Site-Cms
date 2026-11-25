@@ -719,10 +719,7 @@ export interface HubTitleDescription extends Struct.ComponentSchema {
     icon: 'layer';
   };
   attributes: {
-    description: Schema.Attribute.Text &
-      Schema.Attribute.SetMinMaxLength<{
-        maxLength: 160;
-      }>;
+    description: Schema.Attribute.Text;
     title: Schema.Attribute.String & Schema.Attribute.Required;
   };
 }

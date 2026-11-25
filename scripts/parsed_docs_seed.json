@@ -1,0 +1,5519 @@
+{
+  "industries": [
+    {
+      "title": "Manufacturing",
+      "order": 1,
+      "summary": "Metaphi helps manufacturers digitise fragmented workflows across production, inventory, quality, sales, procurement, finance and management reporting through custom software, AI and connected business platforms.",
+      "heroHeadline": "Build More Connected, Data-Driven Manufacturing Operations",
+      "heroSubtext": "Metaphi helps manufacturers digitise fragmented workflows across production, inventory, quality, sales, procurement, finance and management reporting through custom software, AI and connected business platforms.",
+      "ctaPrimaryLabel": "Discuss Your Manufacturing Initiative",
+      "ctaSecondaryLabel": "Explore Manufacturing Case Studies",
+      "industryContext": "Manufacturing businesses often grow faster than their internal systems. As operations become more complex, businesses begin depending on spreadsheets, standalone accounting tools, disconnected production records and manual coordination between departments. The result is limited visibility, duplicated effort and slower decision-making. Metaphi helps manufacturing businesses create connected digital systems aligned to their actual operating processes.",
+      "commonChallenges": [
+        {
+          "text": "Fragmented production and inventory data"
+        },
+        {
+          "text": "Manual production planning"
+        },
+        {
+          "text": "Limited shop-floor visibility"
+        },
+        {
+          "text": "Disconnected sales and dispatch workflows"
+        },
+        {
+          "text": "Inaccurate stock information"
+        },
+        {
+          "text": "Manual quality processes"
+        },
+        {
+          "text": "Procurement and vendor coordination gaps"
+        },
+        {
+          "text": "Multiple spreadsheets across departments"
+        },
+        {
+          "text": "Limited management reporting"
+        },
+        {
+          "text": "Difficulty integrating machines, devices and business systems"
+        }
+      ],
+      "techOpportunities": "Manufacturers can create significant operational leverage by connecting production planning, inventory, procurement, sales, dispatch, quality, finance, maintenance, IoT data and management analytics into one digital operating environment.",
+      "howMetaphiHelps": [
+        {
+          "text": "Manufacturing ERP"
+        },
+        {
+          "text": "Production management systems"
+        },
+        {
+          "text": "Inventory and warehouse systems"
+        },
+        {
+          "text": "Procurement platforms"
+        },
+        {
+          "text": "Sales and distribution systems"
+        },
+        {
+          "text": "Quality management"
+        },
+        {
+          "text": "Dealer or distributor portals"
+        },
+        {
+          "text": "IoT-enabled operational systems"
+        },
+        {
+          "text": "AI-based forecasting and decision support"
+        },
+        {
+          "text": "Management dashboards"
+        }
+      ],
+      "relevantCustomSolutions": [
+        {
+          "title": "Custom Business Applications",
+          "description": "Build ERP, production, inventory, sales and workflow systems around your manufacturing processes."
+        },
+        {
+          "title": "Enterprise AI",
+          "description": "Apply AI to forecasting, anomaly detection, document processing and decision support."
+        },
+        {
+          "title": "Cloud, Data & Integrations",
+          "description": "Connect ERP, accounting, IoT, ecommerce and other enterprise systems."
+        },
+        {
+          "title": "Managed Services",
+          "description": "Maintain and continuously improve critical operational platforms."
+        }
+      ],
+      "readyToConfigureTitles": [
+        "Manufacturing Operations Management",
+        "Inventory & Distribution Management",
+        "Warehouse & Logistics Management",
+        "Sales Force Automation"
+      ],
+      "keyUseCases": [
+        {
+          "text": "Production planning"
+        },
+        {
+          "text": "Batch or job tracking"
+        },
+        {
+          "text": "Raw material management"
+        },
+        {
+          "text": "Finished goods inventory"
+        },
+        {
+          "text": "Procurement"
+        },
+        {
+          "text": "Vendor management"
+        },
+        {
+          "text": "Dispatch"
+        },
+        {
+          "text": "Sales order management"
+        },
+        {
+          "text": "Quality workflows"
+        },
+        {
+          "text": "Maintenance"
+        },
+        {
+          "text": "Dealer management"
+        },
+        {
+          "text": "Management dashboards"
+        }
+      ],
+      "aiOpportunities": [
+        {
+          "text": "Demand forecasting"
+        },
+        {
+          "text": "Inventory optimisation"
+        },
+        {
+          "text": "Predictive maintenance"
+        },
+        {
+          "text": "Quality anomaly detection"
+        },
+        {
+          "text": "Intelligent document processing"
+        },
+        {
+          "text": "Production planning assistance"
+        },
+        {
+          "text": "Sales forecasting"
+        },
+        {
+          "text": "Knowledge assistants"
+        },
+        {
+          "text": "Automated operational reporting"
+        }
+      ],
+      "integrations": [
+        {
+          "text": "Tally / accounting systems"
+        },
+        {
+          "text": "ERP platforms"
+        },
+        {
+          "text": "Barcode systems"
+        },
+        {
+          "text": "IoT devices"
+        },
+        {
+          "text": "Weighing scales"
+        },
+        {
+          "text": "Ecommerce platforms"
+        },
+        {
+          "text": "Payment gateways"
+        },
+        {
+          "text": "CRM"
+        },
+        {
+          "text": "BI tools"
+        },
+        {
+          "text": "APIs from customers or vendors"
+        }
+      ],
+      "transformationApproachHeading": "Discover → Prioritise → Digitise → Integrate → Automate → Optimise",
+      "transformationApproachText": "We begin with business workflows and operational bottlenecks before recommending technology.",
+      "playbookHeading": "Planning Manufacturing Digital Transformation?",
+      "playbookSubtext": "Download the Metaphi Manufacturing Industry Playbook for a structured view of common challenges, technology opportunities and implementation priorities.",
+      "faqs": [
+        {
+          "question": "Can Metaphi replace our existing ERP?",
+          "answer": ""
+        },
+        {
+          "question": "Can systems be introduced department by department?",
+          "answer": ""
+        },
+        {
+          "question": "Can Metaphi integrate machines or IoT devices?",
+          "answer": ""
+        },
+        {
+          "question": "Do we need to start from scratch?",
+          "answer": ""
+        }
+      ],
+      "primarySeoTheme": "manufacturing software solutions",
+      "seo": {
+        "metaTitle": "Manufacturing Software & Digital Transformation Solutions | Metaphi",
+        "metaDescription": "Metaphi helps manufacturers digitise fragmented workflows across production, inventory, quality, sales, procurement, finance and management reporting through custom software, AI and connected business platforms."
+      }
+    },
+    {
+      "title": "Healthcare & Diagnostics",
+      "order": 2,
+      "summary": "Metaphi designs patient, laboratory, diagnostic and healthcare operations platforms that improve workflows, service delivery, visibility and digital engagement.",
+      "heroHeadline": "Digital Platforms for Better Healthcare & Diagnostic Operations",
+      "heroSubtext": "Metaphi designs patient, laboratory, diagnostic and healthcare operations platforms that improve workflows, service delivery, visibility and digital engagement.",
+      "ctaPrimaryLabel": "Discuss Your Healthcare Initiative",
+      "ctaSecondaryLabel": "Explore Healthcare Case Studies",
+      "industryContext": "Healthcare and diagnostic organisations manage a complex mix of patients, laboratories, tests, reports, appointments, service teams, payments and regulatory workflows. When these processes depend on disconnected systems or manual coordination, service experience and operational visibility suffer. Metaphi builds connected platforms that support both healthcare operations and digital customer journeys.",
+      "commonChallenges": [
+        {
+          "text": "Fragmented patient information"
+        },
+        {
+          "text": "Manual appointment processes"
+        },
+        {
+          "text": "Laboratory workflow delays"
+        },
+        {
+          "text": "Limited sample visibility"
+        },
+        {
+          "text": "Disconnected billing and reporting"
+        },
+        {
+          "text": "Manual customer communication"
+        },
+        {
+          "text": "Difficulty managing multiple centres"
+        },
+        {
+          "text": "Limited operational dashboards"
+        },
+        {
+          "text": "Poor integration between platforms"
+        },
+        {
+          "text": "Inconsistent patient experience"
+        }
+      ],
+      "techOpportunities": "Digital patient journeys\n\nLaboratory workflow automation\n\nOnline booking\n\nPatient portals\n\nMulti-location operations\n\nReport delivery\n\nWorkflow alerts\n\nHealthcare analytics\n\nAI-assisted administration\n\nIntegrated billing",
+      "howMetaphiHelps": [
+        {
+          "text": "Laboratory Information Management Systems"
+        },
+        {
+          "text": "Patient portals"
+        },
+        {
+          "text": "Diagnostic booking platforms"
+        },
+        {
+          "text": "Healthcare operations systems"
+        },
+        {
+          "text": "CRM and engagement platforms"
+        },
+        {
+          "text": "Instrument/service management"
+        },
+        {
+          "text": "Mobile apps"
+        },
+        {
+          "text": "Dashboards"
+        },
+        {
+          "text": "AI-enabled support workflows"
+        }
+      ],
+      "relevantCustomSolutions": [],
+      "readyToConfigureTitles": [
+        "Laboratory Information Management System",
+        "Healthcare Operations Management Platform",
+        "Customer Portal Solution",
+        "Inventory & Distribution Management"
+      ],
+      "keyUseCases": [
+        {
+          "text": "Patient registration"
+        },
+        {
+          "text": "Appointments"
+        },
+        {
+          "text": "Sample collection"
+        },
+        {
+          "text": "Laboratory testing"
+        },
+        {
+          "text": "Report approval"
+        },
+        {
+          "text": "Report delivery"
+        },
+        {
+          "text": "Billing"
+        },
+        {
+          "text": "Instrument servicing"
+        },
+        {
+          "text": "Inventory"
+        },
+        {
+          "text": "Multi-centre operations"
+        },
+        {
+          "text": "Customer support"
+        },
+        {
+          "text": "AI Opportunities"
+        },
+        {
+          "text": "Document extraction"
+        },
+        {
+          "text": "Workflow assistants"
+        },
+        {
+          "text": "Report summarisation support"
+        },
+        {
+          "text": "Patient service assistants"
+        },
+        {
+          "text": "Predictive operational analytics"
+        },
+        {
+          "text": "Smart routing"
+        },
+        {
+          "text": "Knowledge assistants"
+        },
+        {
+          "text": "AI implementations should support—not replace—appropriate clinical and professional judgment."
+        }
+      ],
+      "aiOpportunities": [],
+      "integrations": [
+        {
+          "text": "Laboratory instruments"
+        },
+        {
+          "text": "Payment gateways"
+        },
+        {
+          "text": "SMS/email/WhatsApp"
+        },
+        {
+          "text": "ERP/accounting"
+        },
+        {
+          "text": "Hospital systems"
+        },
+        {
+          "text": "CRM"
+        },
+        {
+          "text": "APIs"
+        },
+        {
+          "text": "BI tools"
+        },
+        {
+          "text": "Cloud storage"
+        }
+      ],
+      "transformationApproachHeading": "Map the patient/lab journey → prioritise bottlenecks → digitise workflows → integrate systems → improve visibility",
+      "playbookHeading": "Download Healthcare & Diagnostics Technology Playbook",
+      "faqs": [
+        {
+          "question": "Can Metaphi build a LIMS?",
+          "answer": ""
+        },
+        {
+          "question": "Can existing laboratory software be integrated?",
+          "answer": ""
+        },
+        {
+          "question": "Can the solution support multiple centres?",
+          "answer": ""
+        },
+        {
+          "question": "Do you build patient-facing mobile apps?",
+          "answer": ""
+        }
+      ],
+      "primarySeoTheme": "healthcare software solutions",
+      "seo": {
+        "metaTitle": "Healthcare & Diagnostic Software Solutions | Metaphi",
+        "metaDescription": "Metaphi designs patient, laboratory, diagnostic and healthcare operations platforms that improve workflows, service delivery, visibility and digital engagement."
+      }
+    },
+    {
+      "title": "Logistics & 3PL",
+      "order": 3,
+      "summary": "Build connected systems for fleet, transport, warehouse, shipment, customer and operational workflows.",
+      "heroHeadline": "Digitise Transportation, Warehousing and Logistics Operations",
+      "heroSubtext": "Build connected systems for fleet, transport, warehouse, shipment, customer and operational workflows.",
+      "ctaPrimaryLabel": "Discuss Your Logistics Initiative",
+      "industryContext": "Logistics businesses operate across multiple moving parts—vehicles, drivers, warehouses, shipments, customers, vendors and documents. When these workflows operate through phone calls, spreadsheets and disconnected systems, businesses lose visibility and control.",
+      "commonChallenges": [
+        {
+          "text": "Manual trip planning"
+        },
+        {
+          "text": "Limited fleet visibility"
+        },
+        {
+          "text": "Driver coordination"
+        },
+        {
+          "text": "Disconnected warehousing"
+        },
+        {
+          "text": "Poor shipment visibility"
+        },
+        {
+          "text": "Manual documentation"
+        },
+        {
+          "text": "Billing delays"
+        },
+        {
+          "text": "Customer communication gaps"
+        },
+        {
+          "text": "Vendor tracking"
+        },
+        {
+          "text": "Limited profitability visibility"
+        }
+      ],
+      "techOpportunities": "Transport management\n\nFleet management\n\nWarehouse digitisation\n\nCustomer portals\n\nShipment tracking\n\nDigital proof of delivery\n\nBilling automation\n\nRoute optimisation\n\nAnalytics\n\nAI-assisted operations",
+      "howMetaphiHelps": [
+        {
+          "text": "Transportation platforms"
+        },
+        {
+          "text": "Trucking operations"
+        },
+        {
+          "text": "Warehouse management"
+        },
+        {
+          "text": "Customer tracking portals"
+        },
+        {
+          "text": "Driver/mobile workflows"
+        },
+        {
+          "text": "Billing and settlement"
+        },
+        {
+          "text": "Fleet systems"
+        },
+        {
+          "text": "Integration platforms"
+        },
+        {
+          "text": "Analytics dashboards"
+        },
+        {
+          "text": "Relevant Solutions"
+        },
+        {
+          "text": "Custom Solutions"
+        },
+        {
+          "text": "Business Applications · Product Engineering · Enterprise AI · Integrations"
+        },
+        {
+          "text": "Ready-to-Configure"
+        },
+        {
+          "text": "Warehouse & Logistics Management · Inventory & Distribution · Customer Portal"
+        }
+      ],
+      "relevantCustomSolutions": [],
+      "readyToConfigureTitles": [],
+      "keyUseCases": [
+        {
+          "text": "Booking"
+        },
+        {
+          "text": "Vehicle allocation"
+        },
+        {
+          "text": "Trip management"
+        },
+        {
+          "text": "Route planning"
+        },
+        {
+          "text": "Driver assignment"
+        },
+        {
+          "text": "Shipment tracking"
+        },
+        {
+          "text": "POD"
+        },
+        {
+          "text": "Freight billing"
+        },
+        {
+          "text": "Vendor settlement"
+        },
+        {
+          "text": "Warehouse operations"
+        },
+        {
+          "text": "Customer visibility"
+        },
+        {
+          "text": "AI Opportunities"
+        },
+        {
+          "text": "ETA prediction"
+        },
+        {
+          "text": "Route optimisation"
+        },
+        {
+          "text": "Exception detection"
+        },
+        {
+          "text": "Document extraction"
+        },
+        {
+          "text": "Demand planning"
+        },
+        {
+          "text": "Operations assistant"
+        },
+        {
+          "text": "Fleet utilisation analytics"
+        }
+      ],
+      "aiOpportunities": [],
+      "integrations": [
+        {
+          "text": "GPS providers"
+        },
+        {
+          "text": "Maps"
+        },
+        {
+          "text": "FASTag/toll data where available"
+        },
+        {
+          "text": "ERP"
+        },
+        {
+          "text": "Accounting"
+        },
+        {
+          "text": "Customer APIs"
+        },
+        {
+          "text": "Warehouse systems"
+        },
+        {
+          "text": "Payment services"
+        },
+        {
+          "text": "Messaging platforms"
+        }
+      ],
+      "faqs": [],
+      "primarySeoTheme": "logistics software solutions",
+      "seo": {
+        "metaTitle": "Logistics & 3PL Software Solutions | Metaphi",
+        "metaDescription": "Build connected systems for fleet, transport, warehouse, shipment, customer and operational workflows."
+      }
+    },
+    {
+      "title": "Financial Services & FinTech",
+      "order": 4,
+      "summary": "Build fintech, trading, lending, partner-management and operational platforms designed for complex financial workflows.",
+      "heroHeadline": "Engineer Secure Digital Platforms for Financial Businesses",
+      "heroSubtext": "Build fintech, trading, lending, partner-management and operational platforms designed for complex financial workflows.",
+      "ctaPrimaryLabel": "Discuss Your FinTech Initiative",
+      "industryContext": "Financial businesses require technology that balances speed, workflow control, security, traceability and customer experience. The platform must support both digital engagement and operational governance.",
+      "commonChallenges": [
+        {
+          "text": "Manual onboarding"
+        },
+        {
+          "text": "Partner network complexity"
+        },
+        {
+          "text": "Disconnected workflows"
+        },
+        {
+          "text": "Reconciliation effort"
+        },
+        {
+          "text": "Document-heavy operations"
+        },
+        {
+          "text": "Limited real-time visibility"
+        },
+        {
+          "text": "Complex permissions"
+        },
+        {
+          "text": "Compliance-related workflows"
+        },
+        {
+          "text": "Legacy systems"
+        },
+        {
+          "text": "Scaling transaction operations"
+        }
+      ],
+      "techOpportunities": "Digital onboarding\n\nPartner portals\n\nLending workflows\n\nTrading platforms\n\nDigital documentation\n\nWorkflow automation\n\nAnalytics\n\nCustomer portals\n\nAPI ecosystems\n\nAI-assisted operations",
+      "howMetaphiHelps": [
+        {
+          "text": "FinTech product engineering"
+        },
+        {
+          "text": "Partner platforms"
+        },
+        {
+          "text": "Branch management"
+        },
+        {
+          "text": "Invoice discounting platforms"
+        },
+        {
+          "text": "Trading systems"
+        },
+        {
+          "text": "Financial operations platforms"
+        },
+        {
+          "text": "Workflow automation"
+        },
+        {
+          "text": "Integrations"
+        },
+        {
+          "text": "Dashboards"
+        },
+        {
+          "text": "Managed application services"
+        },
+        {
+          "text": "Relevant Solutions"
+        },
+        {
+          "text": "Custom"
+        },
+        {
+          "text": "Product Engineering · Business Applications · Enterprise AI · Cloud & Integrations"
+        },
+        {
+          "text": "Ready-to-Configure"
+        },
+        {
+          "text": "Financial Operations Management · Customer Portal"
+        }
+      ],
+      "relevantCustomSolutions": [],
+      "readyToConfigureTitles": [],
+      "keyUseCases": [
+        {
+          "text": "Partner onboarding"
+        },
+        {
+          "text": "KYC workflows"
+        },
+        {
+          "text": "Lending journeys"
+        },
+        {
+          "text": "Invoice workflows"
+        },
+        {
+          "text": "Branch management"
+        },
+        {
+          "text": "Account management"
+        },
+        {
+          "text": "Trading operations"
+        },
+        {
+          "text": "Reconciliation"
+        },
+        {
+          "text": "Reporting"
+        },
+        {
+          "text": "Customer service"
+        },
+        {
+          "text": "AI Opportunities"
+        },
+        {
+          "text": "Document intelligence"
+        },
+        {
+          "text": "Operations copilots"
+        },
+        {
+          "text": "Fraud/anomaly support"
+        },
+        {
+          "text": "Workflow prioritisation"
+        },
+        {
+          "text": "Customer-support automation"
+        },
+        {
+          "text": "Knowledge search"
+        },
+        {
+          "text": "Financial document classification"
+        }
+      ],
+      "aiOpportunities": [],
+      "integrations": [
+        {
+          "text": "Payment gateways"
+        },
+        {
+          "text": "Banking APIs"
+        },
+        {
+          "text": "KYC services"
+        },
+        {
+          "text": "Accounting systems"
+        },
+        {
+          "text": "Messaging services"
+        },
+        {
+          "text": "Market/data services"
+        },
+        {
+          "text": "CRM"
+        },
+        {
+          "text": "Analytics"
+        }
+      ],
+      "faqs": [],
+      "primarySeoTheme": "fintech software development company",
+      "seo": {
+        "metaTitle": "FinTech & Financial Software Development | Metaphi",
+        "metaDescription": "Build fintech, trading, lending, partner-management and operational platforms designed for complex financial workflows."
+      }
+    },
+    {
+      "title": "Professional Services",
+      "order": 5,
+      "summary": "Custom digital platforms for consulting, architecture, design and other project-led professional service businesses.",
+      "heroHeadline": "Connect Sales, Projects, Service Delivery and Finance",
+      "heroSubtext": "Custom digital platforms for consulting, architecture, design and other project-led professional service businesses.",
+      "industryContext": "Professional service businesses rely on people, projects, client relationships and commercial discipline. As firms grow, CRM, project delivery, time, billing and finance often become fragmented.",
+      "commonChallenges": [
+        {
+          "text": "Sales information separated from delivery"
+        },
+        {
+          "text": "Manual project tracking"
+        },
+        {
+          "text": "Limited resource visibility"
+        },
+        {
+          "text": "Inconsistent quotation processes"
+        },
+        {
+          "text": "Poor project profitability visibility"
+        },
+        {
+          "text": "Manual follow-up"
+        },
+        {
+          "text": "Scattered documents"
+        },
+        {
+          "text": "Finance disconnected from execution"
+        }
+      ],
+      "techOpportunities": "CRM\n\nProject management\n\nQuotation\n\nResource allocation\n\nService workflows\n\nCustomer portals\n\nBilling\n\nProject finance\n\nAnalytics\n\nAI support",
+      "howMetaphiHelps": [
+        {
+          "text": "CRM platforms"
+        },
+        {
+          "text": "Project systems"
+        },
+        {
+          "text": "Proposal/quotation workflows"
+        },
+        {
+          "text": "Resource management"
+        },
+        {
+          "text": "Service-management software"
+        },
+        {
+          "text": "Finance integration"
+        },
+        {
+          "text": "Dashboards"
+        },
+        {
+          "text": "Customer portals"
+        },
+        {
+          "text": "Relevant Solutions"
+        },
+        {
+          "text": "Custom"
+        },
+        {
+          "text": "Business Applications · Product Engineering · Enterprise AI"
+        },
+        {
+          "text": "Ready-to-Configure"
+        },
+        {
+          "text": "Project & Service Management · Sales Force Automation · Customer Portal"
+        }
+      ],
+      "relevantCustomSolutions": [],
+      "readyToConfigureTitles": [],
+      "keyUseCases": [
+        {
+          "text": "Lead management"
+        },
+        {
+          "text": "Opportunity tracking"
+        },
+        {
+          "text": "Proposal preparation"
+        },
+        {
+          "text": "Project initiation"
+        },
+        {
+          "text": "Task coordination"
+        },
+        {
+          "text": "Project costing"
+        },
+        {
+          "text": "Billing"
+        },
+        {
+          "text": "Client approvals"
+        },
+        {
+          "text": "Customer communication"
+        },
+        {
+          "text": "Management reporting"
+        },
+        {
+          "text": "AI Opportunities"
+        },
+        {
+          "text": "Proposal drafting"
+        },
+        {
+          "text": "Document summarisation"
+        },
+        {
+          "text": "Knowledge assistants"
+        },
+        {
+          "text": "Project-risk alerts"
+        },
+        {
+          "text": "Resource planning support"
+        },
+        {
+          "text": "CRM assistants"
+        },
+        {
+          "text": "Meeting summarisation"
+        }
+      ],
+      "aiOpportunities": [],
+      "integrations": [],
+      "faqs": [],
+      "primarySeoTheme": "professional services software solutions",
+      "seo": {
+        "metaTitle": "Professional Services Software Solutions | Metaphi",
+        "metaDescription": "Custom digital platforms for consulting, architecture, design and other project-led professional service businesses."
+      }
+    },
+    {
+      "title": "Retail & Ecommerce",
+      "order": 6,
+      "summary": "Connect ecommerce, inventory, orders, fulfilment, customer engagement and business operations through integrated technology.",
+      "heroHeadline": "Build Connected Commerce and Retail Operations",
+      "heroSubtext": "Connect ecommerce, inventory, orders, fulfilment, customer engagement and business operations through integrated technology.",
+      "industryContext": "Retail and ecommerce businesses compete on customer experience and operational execution. Growth creates complexity across channels, stock, warehouses, orders, returns, payments and customer communication.",
+      "commonChallenges": [
+        {
+          "text": "Inventory inaccuracies"
+        },
+        {
+          "text": "Multi-channel order complexity"
+        },
+        {
+          "text": "Manual fulfilment"
+        },
+        {
+          "text": "Disconnected ecommerce and operations"
+        },
+        {
+          "text": "Customer-support gaps"
+        },
+        {
+          "text": "Returns management"
+        },
+        {
+          "text": "Limited order visibility"
+        },
+        {
+          "text": "Poor analytics"
+        },
+        {
+          "text": "Warehouse inefficiencies"
+        }
+      ],
+      "techOpportunities": "Ecommerce platforms\n\nInventory integration\n\nOrder orchestration\n\nWarehouse systems\n\nCustomer portals\n\nMobile commerce\n\nReturns workflows\n\nAnalytics\n\nRecommendation engines\n\nAutomation",
+      "howMetaphiHelps": [
+        {
+          "text": "Ecommerce engineering"
+        },
+        {
+          "text": "Custom order-management systems"
+        },
+        {
+          "text": "Inventory platforms"
+        },
+        {
+          "text": "Customer portals"
+        },
+        {
+          "text": "Marketplace development"
+        },
+        {
+          "text": "Integrations"
+        },
+        {
+          "text": "Mobile apps"
+        },
+        {
+          "text": "AI/analytics"
+        },
+        {
+          "text": "Relevant Solutions"
+        },
+        {
+          "text": "Custom"
+        },
+        {
+          "text": "Business Applications · Product Engineering · Enterprise AI"
+        },
+        {
+          "text": "Ready-to-Configure"
+        },
+        {
+          "text": "Inventory & Distribution · Warehouse & Logistics · Customer Portal"
+        }
+      ],
+      "relevantCustomSolutions": [],
+      "readyToConfigureTitles": [],
+      "keyUseCases": [
+        {
+          "text": "Catalogues"
+        },
+        {
+          "text": "Orders"
+        },
+        {
+          "text": "Inventory"
+        },
+        {
+          "text": "Dispatch"
+        },
+        {
+          "text": "Fulfilment"
+        },
+        {
+          "text": "Returns"
+        },
+        {
+          "text": "Customer service"
+        },
+        {
+          "text": "Vendor management"
+        },
+        {
+          "text": "Promotions"
+        },
+        {
+          "text": "Dashboards"
+        },
+        {
+          "text": "AI Opportunities"
+        },
+        {
+          "text": "Demand prediction"
+        },
+        {
+          "text": "Recommendation engines"
+        },
+        {
+          "text": "Customer assistants"
+        },
+        {
+          "text": "Inventory optimisation"
+        },
+        {
+          "text": "Product-content generation support"
+        },
+        {
+          "text": "Fraud/anomaly detection"
+        },
+        {
+          "text": "Customer segmentation"
+        }
+      ],
+      "aiOpportunities": [],
+      "integrations": [
+        {
+          "text": "Shopify"
+        },
+        {
+          "text": "Marketplaces"
+        },
+        {
+          "text": "Payment gateways"
+        },
+        {
+          "text": "Logistics providers"
+        },
+        {
+          "text": "Accounting"
+        },
+        {
+          "text": "CRM"
+        },
+        {
+          "text": "Warehouse platforms"
+        }
+      ],
+      "faqs": [],
+      "primarySeoTheme": "retail ecommerce software development",
+      "seo": {
+        "metaTitle": "Retail & Ecommerce Software Solutions | Metaphi",
+        "metaDescription": "Connect ecommerce, inventory, orders, fulfilment, customer engagement and business operations through integrated technology."
+      }
+    },
+    {
+      "title": "Consumer Platforms & Marketplaces",
+      "order": 7,
+      "summary": "Engineer marketplaces, subscription products, streaming platforms and consumer-facing digital experiences from concept to scale.",
+      "heroHeadline": "Build Digital Platforms Consumers Want to Use",
+      "heroSubtext": "Engineer marketplaces, subscription products, streaming platforms and consumer-facing digital experiences from concept to scale.",
+      "industryContext": "Consumer platforms depend on a combination of product experience, marketplace economics, engagement, payments, subscriptions, reliability and scale. Technology needs to support both the user proposition and the operating model behind it.",
+      "commonChallenges": [
+        {
+          "text": "Product-market fit uncertainty"
+        },
+        {
+          "text": "Complex user journeys"
+        },
+        {
+          "text": "Marketplace matching"
+        },
+        {
+          "text": "Subscription management"
+        },
+        {
+          "text": "Payment workflows"
+        },
+        {
+          "text": "Engagement"
+        },
+        {
+          "text": "Content management"
+        },
+        {
+          "text": "Scale"
+        },
+        {
+          "text": "Retention"
+        },
+        {
+          "text": "Platform moderation"
+        }
+      ],
+      "techOpportunities": "Marketplace platforms\n\nConsumer apps\n\nSubscription systems\n\nOTT\n\nCommunity platforms\n\nBooking platforms\n\nRecommendation engines\n\nCustomer analytics",
+      "howMetaphiHelps": [
+        {
+          "text": "Product discovery"
+        },
+        {
+          "text": "MVP engineering"
+        },
+        {
+          "text": "Marketplace platforms"
+        },
+        {
+          "text": "SaaS/consumer product engineering"
+        },
+        {
+          "text": "Mobile apps"
+        },
+        {
+          "text": "Payment integration"
+        },
+        {
+          "text": "Cloud architecture"
+        },
+        {
+          "text": "AI features"
+        },
+        {
+          "text": "Managed evolution"
+        }
+      ],
+      "relevantCustomSolutions": [],
+      "readyToConfigureTitles": [],
+      "keyUseCases": [
+        {
+          "text": "User onboarding"
+        },
+        {
+          "text": "Search/discovery"
+        },
+        {
+          "text": "Marketplace transactions"
+        },
+        {
+          "text": "Subscriptions"
+        },
+        {
+          "text": "Payments"
+        },
+        {
+          "text": "Content streaming"
+        },
+        {
+          "text": "Recurring delivery"
+        },
+        {
+          "text": "Messaging"
+        },
+        {
+          "text": "Ratings"
+        },
+        {
+          "text": "Community features"
+        },
+        {
+          "text": "AI Opportunities"
+        },
+        {
+          "text": "Personalisation"
+        },
+        {
+          "text": "Recommendations"
+        },
+        {
+          "text": "Search"
+        },
+        {
+          "text": "Conversational assistance"
+        },
+        {
+          "text": "Moderation support"
+        },
+        {
+          "text": "Retention analytics"
+        },
+        {
+          "text": "Customer segmentation"
+        }
+      ],
+      "aiOpportunities": [],
+      "integrations": [],
+      "faqs": [],
+      "primarySeoTheme": "marketplace platform development",
+      "seo": {
+        "metaTitle": "Marketplace & Consumer Platform Development | Metaphi",
+        "metaDescription": "Engineer marketplaces, subscription products, streaming platforms and consumer-facing digital experiences from concept to scale."
+      }
+    },
+    {
+      "title": "Associations & Communities",
+      "order": 8,
+      "summary": "Digitise membership, networking, events, communication and engagement through purpose-built community platforms.",
+      "heroHeadline": "Create More Connected Member Communities",
+      "heroSubtext": "Digitise membership, networking, events, communication and engagement through purpose-built community platforms.",
+      "industryContext": "Associations deliver value through relationships, participation and shared opportunities. As communities grow, spreadsheets, email groups and messaging platforms become difficult to manage.",
+      "commonChallenges": [
+        {
+          "text": "Member databases"
+        },
+        {
+          "text": "Renewals"
+        },
+        {
+          "text": "Communication"
+        },
+        {
+          "text": "Networking"
+        },
+        {
+          "text": "Chapter management"
+        },
+        {
+          "text": "Event registrations"
+        },
+        {
+          "text": "Referrals"
+        },
+        {
+          "text": "Engagement measurement"
+        },
+        {
+          "text": "Committee coordination"
+        },
+        {
+          "text": "Payments"
+        }
+      ],
+      "techOpportunities": "Membership platforms\n\nNetworking directories\n\nCommunity applications\n\nEvent systems\n\nReferrals\n\nChapter management\n\nDigital payments\n\nEngagement analytics",
+      "howMetaphiHelps": [
+        {
+          "text": "Association management"
+        },
+        {
+          "text": "Community platforms"
+        },
+        {
+          "text": "Event platforms"
+        },
+        {
+          "text": "Member directories"
+        },
+        {
+          "text": "Digital engagement"
+        },
+        {
+          "text": "Payment workflows"
+        },
+        {
+          "text": "Analytics"
+        },
+        {
+          "text": "Mobile applications"
+        },
+        {
+          "text": "Relevant Solutions"
+        },
+        {
+          "text": "Custom"
+        },
+        {
+          "text": "Product Engineering · Business Applications"
+        },
+        {
+          "text": "Ready-to-Configure"
+        },
+        {
+          "text": "Association & Membership Management · Customer Portal · Project & Service Management"
+        }
+      ],
+      "relevantCustomSolutions": [],
+      "readyToConfigureTitles": [],
+      "keyUseCases": [
+        {
+          "text": "Member onboarding"
+        },
+        {
+          "text": "Renewals"
+        },
+        {
+          "text": "Directory"
+        },
+        {
+          "text": "Networking"
+        },
+        {
+          "text": "Referrals"
+        },
+        {
+          "text": "Chapter management"
+        },
+        {
+          "text": "Events"
+        },
+        {
+          "text": "Committees"
+        },
+        {
+          "text": "Communication"
+        },
+        {
+          "text": "Voting"
+        },
+        {
+          "text": "Resources"
+        },
+        {
+          "text": "AI Opportunities"
+        },
+        {
+          "text": "Member recommendations"
+        },
+        {
+          "text": "Event recommendations"
+        },
+        {
+          "text": "Community assistants"
+        },
+        {
+          "text": "Intelligent search"
+        },
+        {
+          "text": "Engagement scoring"
+        },
+        {
+          "text": "Automated support"
+        }
+      ],
+      "aiOpportunities": [],
+      "integrations": [],
+      "faqs": [],
+      "primarySeoTheme": "association management software",
+      "seo": {
+        "metaTitle": "Association & Community Management Solutions | Metaphi",
+        "metaDescription": "Digitise membership, networking, events, communication and engagement through purpose-built community platforms."
+      }
+    },
+    {
+      "title": "Education & Training",
+      "order": 9,
+      "summary": "Custom platforms for education, training, learner engagement, administration and digital programme delivery.",
+      "heroHeadline": "Build Better Digital Learning and Training Experiences",
+      "heroSubtext": "Custom platforms for education, training, learner engagement, administration and digital programme delivery.",
+      "industryContext": "Education and training organisations need to manage learners, content, assessments, programmes, communication and administration while providing accessible digital experiences.",
+      "commonChallenges": [
+        {
+          "text": "Fragmented learner information"
+        },
+        {
+          "text": "Manual enrolment"
+        },
+        {
+          "text": "Course administration"
+        },
+        {
+          "text": "Content delivery"
+        },
+        {
+          "text": "Assessment management"
+        },
+        {
+          "text": "Learner communication"
+        },
+        {
+          "text": "Certificates"
+        },
+        {
+          "text": "Reporting"
+        },
+        {
+          "text": "Instructor coordination"
+        }
+      ],
+      "techOpportunities": "Learning platforms\n\nTraining portals\n\nAdministration systems\n\nAssessment platforms\n\nMobile learning\n\nCertification\n\nAnalytics\n\nAI-assisted learning",
+      "howMetaphiHelps": [
+        {
+          "text": "LMS and training platforms"
+        },
+        {
+          "text": "Learner portals"
+        },
+        {
+          "text": "Mobile applications"
+        },
+        {
+          "text": "Administration systems"
+        },
+        {
+          "text": "Assessment workflows"
+        },
+        {
+          "text": "Certification"
+        },
+        {
+          "text": "Integrations"
+        },
+        {
+          "text": "AI and analytics"
+        },
+        {
+          "text": "Relevant Solutions"
+        },
+        {
+          "text": "Custom"
+        },
+        {
+          "text": "Product Engineering · Business Applications · Enterprise AI"
+        },
+        {
+          "text": "Ready-to-Configure"
+        },
+        {
+          "text": "Customer Portal · Project & Service Management where applicable"
+        }
+      ],
+      "relevantCustomSolutions": [],
+      "readyToConfigureTitles": [],
+      "keyUseCases": [
+        {
+          "text": "Registration"
+        },
+        {
+          "text": "Enrolment"
+        },
+        {
+          "text": "Course management"
+        },
+        {
+          "text": "Content"
+        },
+        {
+          "text": "Assessments"
+        },
+        {
+          "text": "Attendance"
+        },
+        {
+          "text": "Certification"
+        },
+        {
+          "text": "Learner progress"
+        },
+        {
+          "text": "Instructor management"
+        },
+        {
+          "text": "Payments"
+        },
+        {
+          "text": "AI Opportunities"
+        },
+        {
+          "text": "Learning assistants"
+        },
+        {
+          "text": "Knowledge search"
+        },
+        {
+          "text": "Content support"
+        },
+        {
+          "text": "Assessment assistance"
+        },
+        {
+          "text": "Learner recommendations"
+        },
+        {
+          "text": "Analytics"
+        },
+        {
+          "text": "Personalised learning paths"
+        }
+      ],
+      "aiOpportunities": [],
+      "integrations": [
+        {
+          "text": "Payment gateways"
+        },
+        {
+          "text": "Video platforms"
+        },
+        {
+          "text": "Email/SMS"
+        },
+        {
+          "text": "Meeting platforms"
+        },
+        {
+          "text": "Authentication"
+        },
+        {
+          "text": "Content services"
+        },
+        {
+          "text": "Analytics"
+        }
+      ],
+      "faqs": [],
+      "primarySeoTheme": "education software development",
+      "seo": {
+        "metaTitle": "Education & Training Software Solutions | Metaphi",
+        "metaDescription": "Custom platforms for education, training, learner engagement, administration and digital programme delivery."
+      }
+    },
+    {
+      "title": "Government & Public Sector",
+      "order": 10,
+      "summary": "Build digital platforms for administration, infrastructure programmes, monitoring, citizen workflows and public-sector operations.",
+      "heroHeadline": "Technology for More Connected Public Operations",
+      "heroSubtext": "Build digital platforms for administration, infrastructure programmes, monitoring, citizen workflows and public-sector operations.",
+      "industryContext": "Public-sector programmes often involve multiple departments, stakeholders, contractors, assets and reporting requirements. Technology can improve coordination, visibility and service delivery when designed around operational reality.",
+      "commonChallenges": [
+        {
+          "text": "Complex approvals"
+        },
+        {
+          "text": "Manual records"
+        },
+        {
+          "text": "Fragmented departments"
+        },
+        {
+          "text": "Infrastructure tracking"
+        },
+        {
+          "text": "Field data collection"
+        },
+        {
+          "text": "Contractor coordination"
+        },
+        {
+          "text": "Reporting delays"
+        },
+        {
+          "text": "Citizen-service workflows"
+        },
+        {
+          "text": "Legacy systems"
+        },
+        {
+          "text": "Data fragmentation"
+        }
+      ],
+      "techOpportunities": "e-governance platforms\n\nInfrastructure management\n\nProject monitoring\n\nMobile field applications\n\nCitizen portals\n\nWorkflow automation\n\nDashboards\n\nGIS integration\n\nAsset management",
+      "howMetaphiHelps": [
+        {
+          "text": "Government workflow platforms"
+        },
+        {
+          "text": "Infrastructure systems"
+        },
+        {
+          "text": "Citizen portals"
+        },
+        {
+          "text": "Mobile applications"
+        },
+        {
+          "text": "Programme dashboards"
+        },
+        {
+          "text": "Cloud modernisation"
+        },
+        {
+          "text": "Integrations"
+        },
+        {
+          "text": "Analytics"
+        },
+        {
+          "text": "Managed support"
+        },
+        {
+          "text": "Relevant Solutions"
+        },
+        {
+          "text": "Custom"
+        },
+        {
+          "text": "Business Applications · Product Engineering · Cloud & Integrations · Enterprise AI · Managed Services"
+        },
+        {
+          "text": "Ready-to-Configure"
+        },
+        {
+          "text": "Project & Service Management · Customer Portal · Inventory & Distribution where applicable"
+        }
+      ],
+      "relevantCustomSolutions": [],
+      "readyToConfigureTitles": [],
+      "keyUseCases": [
+        {
+          "text": "Infrastructure planning"
+        },
+        {
+          "text": "Project monitoring"
+        },
+        {
+          "text": "Contractor tracking"
+        },
+        {
+          "text": "Asset management"
+        },
+        {
+          "text": "Inspections"
+        },
+        {
+          "text": "Approvals"
+        },
+        {
+          "text": "Field data"
+        },
+        {
+          "text": "Citizen requests"
+        },
+        {
+          "text": "Reporting"
+        },
+        {
+          "text": "Dashboards"
+        },
+        {
+          "text": "AI Opportunities"
+        },
+        {
+          "text": "Document processing"
+        },
+        {
+          "text": "Knowledge search"
+        },
+        {
+          "text": "Citizen-service assistants"
+        },
+        {
+          "text": "Anomaly detection"
+        },
+        {
+          "text": "Reporting assistance"
+        },
+        {
+          "text": "Predictive maintenance"
+        },
+        {
+          "text": "Programme analytics"
+        },
+        {
+          "text": "Appropriate governance and human oversight should be applied wherever AI influences consequential public decisions."
+        }
+      ],
+      "aiOpportunities": [],
+      "integrations": [
+        {
+          "text": "GIS"
+        },
+        {
+          "text": "Existing government systems"
+        },
+        {
+          "text": "Document repositories"
+        },
+        {
+          "text": "Identity services"
+        },
+        {
+          "text": "Payment systems"
+        },
+        {
+          "text": "Messaging"
+        },
+        {
+          "text": "BI platforms"
+        },
+        {
+          "text": "APIs"
+        },
+        {
+          "text": "Relevant Case Study"
+        },
+        {
+          "text": "Infrastructure Planning, Development & Maintenance Platform"
+        }
+      ],
+      "faqs": [],
+      "primarySeoTheme": "government digital solutions",
+      "seo": {
+        "metaTitle": "Government & Public Sector Digital Solutions | Metaphi",
+        "metaDescription": "Build digital platforms for administration, infrastructure programmes, monitoring, citizen workflows and public-sector operations."
+      }
+    }
+  ],
+  "customSolutions": [
+    {
+      "title": "Custom Business Applications",
+      "modelType": "custom",
+      "order": 1,
+      "heroHeadline": "Build Business Software Around Your Actual Workflows",
+      "summary": "Metaphi designs and engineers custom business applications that replace fragmented processes, connect teams and systems, and give management better operational visibility.",
+      "ctaLabel": "Discuss Your Business Application Requirement",
+      "ctaSecondaryLabel": "Explore Relevant Case Studies",
+      "problemHeading": "Business Problems We Address",
+      "problemText": "Businesses often reach a point where generic tools, spreadsheets and disconnected applications can no longer support the way they operate.",
+      "problemItems": [
+        {
+          "text": "Critical workflows spread across multiple tools"
+        },
+        {
+          "text": "Excessive spreadsheet dependency"
+        },
+        {
+          "text": "Manual approvals and follow-ups"
+        },
+        {
+          "text": "Duplicate data entry"
+        },
+        {
+          "text": "Limited operational visibility"
+        },
+        {
+          "text": "Software that does not fit business processes"
+        },
+        {
+          "text": "Weak integration between departments"
+        },
+        {
+          "text": "Difficulty adapting systems as the business grows"
+        },
+        {
+          "text": "Limited reporting and management control"
+        },
+        {
+          "text": "Legacy applications that are expensive or difficult to maintain"
+        }
+      ],
+      "offeringsHeading": "What We Build",
+      "offerings": [
+        {
+          "title": "ERP & Operations Platforms",
+          "description": "Custom systems that connect operational functions such as procurement, inventory, production, sales, dispatch, finance and management reporting."
+        },
+        {
+          "title": "CRM & Sales Systems",
+          "description": "Lead, opportunity, quotation, follow-up, customer and sales-force workflows aligned to your commercial process."
+        },
+        {
+          "title": "Inventory & Distribution Applications",
+          "description": "Systems for stock visibility, movement, warehouses, orders, dispatch and distribution operations."
+        },
+        {
+          "title": "Workflow & Approval Systems",
+          "description": "Digitise business processes that currently depend on email, spreadsheets, paper or manual coordination."
+        },
+        {
+          "title": "Customer, Dealer & Partner Portals",
+          "description": "Give customers and external stakeholders structured access to transactions, information, documents and service workflows."
+        },
+        {
+          "title": "Management & Reporting Platforms",
+          "description": "Create dashboards and decision-support systems using data from across business operations."
+        }
+      ],
+      "useCasesHeading": "Typical Use Cases",
+      "useCases": [
+        {
+          "text": "Custom ERP"
+        },
+        {
+          "text": "CRM"
+        },
+        {
+          "text": "Sales Force Automation"
+        },
+        {
+          "text": "Inventory Management"
+        },
+        {
+          "text": "Warehouse Management"
+        },
+        {
+          "text": "Procurement"
+        },
+        {
+          "text": "Production Management"
+        },
+        {
+          "text": "Order Management"
+        },
+        {
+          "text": "Dispatch"
+        },
+        {
+          "text": "Dealer Management"
+        },
+        {
+          "text": "Service Management"
+        },
+        {
+          "text": "Finance Workflows"
+        },
+        {
+          "text": "Approval Systems"
+        },
+        {
+          "text": "Customer Portals"
+        },
+        {
+          "text": "Partner Portals"
+        },
+        {
+          "text": "Business Dashboards"
+        }
+      ],
+      "outcomesHeading": "Business Outcomes",
+      "outcomesSubtext": "A well-designed business application can help organisations:",
+      "outcomes": [
+        {
+          "text": "Reduce manual coordination"
+        },
+        {
+          "text": "Improve data consistency"
+        },
+        {
+          "text": "Increase process visibility"
+        },
+        {
+          "text": "Shorten turnaround times"
+        },
+        {
+          "text": "Improve accountability"
+        },
+        {
+          "text": "Standardise operating workflows"
+        },
+        {
+          "text": "Connect departments"
+        },
+        {
+          "text": "Support growth without multiplying spreadsheets"
+        },
+        {
+          "text": "Improve management reporting"
+        },
+        {
+          "text": "Reduce dependency on disconnected tools"
+        }
+      ],
+      "industryTitles": [
+        "Manufacturing",
+        "Healthcare & Diagnostics",
+        "Logistics & 3PL",
+        "Financial Services & FinTech",
+        "Professional Services",
+        "Retail & Ecommerce",
+        "Associations & Communities",
+        "Education & Training",
+        "Government & Public Sector"
+      ],
+      "approachHeading": "How We Approach Custom Business Applications",
+      "approachSteps": [
+        {
+          "title": "Understand the Workflow",
+          "description": "We map how the process works today, where information moves, who is involved and where bottlenecks exist."
+        },
+        {
+          "title": "Define the Future Process",
+          "description": "We distinguish between processes that should be digitised, improved, automated or eliminated."
+        },
+        {
+          "title": "Design the System",
+          "description": "User journeys, workflows, roles, integrations, data structures and reporting requirements are translated into a solution architecture."
+        },
+        {
+          "title": "Build Iteratively",
+          "description": "The system is developed in controlled iterations so important workflows can be validated early."
+        },
+        {
+          "title": "Integrate",
+          "description": "Where appropriate, the solution connects with accounting platforms, ERP systems, ecommerce tools, devices, APIs and other business applications."
+        },
+        {
+          "title": "Launch & Evolve",
+          "description": "After deployment, the application can continue evolving as workflows and business requirements change."
+        }
+      ],
+      "capabilitiesHeading": "Integration Capabilities",
+      "capabilitiesSubtext": "Depending on technical feasibility and available interfaces, Metaphi can integrate custom applications with:",
+      "capabilities": [
+        {
+          "text": "Tally and accounting platforms"
+        },
+        {
+          "text": "ERP systems"
+        },
+        {
+          "text": "CRM platforms"
+        },
+        {
+          "text": "Ecommerce platforms"
+        },
+        {
+          "text": "Payment gateways"
+        },
+        {
+          "text": "Logistics providers"
+        },
+        {
+          "text": "IoT devices"
+        },
+        {
+          "text": "Barcode systems"
+        },
+        {
+          "text": "Messaging platforms"
+        },
+        {
+          "text": "Identity providers"
+        },
+        {
+          "text": "BI platforms"
+        },
+        {
+          "text": "Third-party APIs"
+        }
+      ],
+      "techApproachHeading": "Technology Approach",
+      "techApproachText": "Technology choices are based on the business requirement rather than predetermined stacks. Our approach considers security, scalability, maintainability, performance, integration needs, deployment environment, user experience and future evolution. The objective is to create technology that the business can continue using and extending—not a short-term application that becomes tomorrow’s constraint.",
+      "techApproachItems": [],
+      "aiOpportunitiesHeading": "AI Opportunities",
+      "aiOpportunities": [
+        {
+          "text": "AI can be introduced where it creates practical business value."
+        },
+        {
+          "text": "Intelligent document processing"
+        },
+        {
+          "text": "Workflow assistants"
+        },
+        {
+          "text": "Knowledge search"
+        },
+        {
+          "text": "Forecasting"
+        },
+        {
+          "text": "Anomaly detection"
+        },
+        {
+          "text": "Automated classification"
+        },
+        {
+          "text": "Management summaries"
+        },
+        {
+          "text": "Customer-service assistance"
+        },
+        {
+          "text": "Decision-support tools"
+        }
+      ],
+      "modernisationItems": [],
+      "relatedResources": [
+        {
+          "text": "Manufacturing Digital Transformation Playbook"
+        },
+        {
+          "text": "Business Process Automation Guide"
+        },
+        {
+          "text": "ERP Readiness Guide"
+        },
+        {
+          "text": "Build vs Buy Guide"
+        }
+      ],
+      "faqs": [
+        {
+          "question": "What is custom business application development?",
+          "answer": "It means designing software around your specific business workflows, users, rules and integrations instead of adapting your organisation to a fixed generic product."
+        },
+        {
+          "question": "Should we replace our existing software?",
+          "answer": "Not necessarily. We first evaluate whether the better approach is replacement, integration, extension or selective modernisation."
+        },
+        {
+          "question": "Can the application be implemented in phases?",
+          "answer": "Yes. Large programmes can be divided into logical modules or business functions and introduced progressively."
+        },
+        {
+          "question": "Will the application integrate with our existing systems?",
+          "answer": "Where suitable integration options exist, yes. Integration requirements are assessed during discovery and architecture planning."
+        },
+        {
+          "question": "Can Metaphi maintain the application after launch?",
+          "answer": "Yes. Ongoing application support, enhancement and managed services can be provided after implementation."
+        }
+      ],
+      "finalCtaHeading": "If your business has outgrown spreadsheets or generic software, let’s design something that fits.",
+      "finalCtaButtonLabel": "Discuss Your Business Application Requirement",
+      "seo": {
+        "metaTitle": "",
+        "metaDescription": ""
+      }
+    },
+    {
+      "title": "Product Engineering",
+      "modelType": "custom",
+      "order": 2,
+      "heroHeadline": "Engineer Digital Products Built to Scale",
+      "summary": "Metaphi helps businesses turn product ideas into reliable digital platforms and evolve existing software products as users, features and operational complexity grow.",
+      "ctaLabel": "Discuss Your Product Idea",
+      "ctaSecondaryLabel": "Explore Product Case Studies",
+      "problemHeading": "When Product Engineering Matters",
+      "problemText": "Building a digital product requires more than writing software. Successful products need the right balance of customer need, product scope, user experience, architecture, engineering quality, release discipline, scalability, maintainability and commercial viability. Metaphi combines product thinking with software engineering to help organisations move from idea to launch and beyond.",
+      "problemItems": [],
+      "offeringsHeading": "What We Help Build",
+      "offerings": [
+        {
+          "title": "New Digital Products",
+          "description": "Transform a validated business idea into a working web, mobile or platform product."
+        },
+        {
+          "title": "MVPs",
+          "description": "Define and build the smallest useful product that can validate assumptions without overbuilding."
+        },
+        {
+          "title": "SaaS Platforms",
+          "description": "Engineer subscription-based software products with scalable architecture, roles, workflows and integrations."
+        },
+        {
+          "title": "Web Platforms",
+          "description": "Build complex browser-based products for customers, partners, employees or marketplaces."
+        },
+        {
+          "title": "Mobile Applications",
+          "description": "Design and develop mobile experiences connected to reliable backend platforms."
+        },
+        {
+          "title": "Product Modernisation",
+          "description": "Re-engineer ageing software products to improve performance, architecture, user experience and maintainability."
+        },
+        {
+          "title": "Platform Extensions",
+          "description": "Add modules, APIs, integrations and capabilities as products evolve."
+        }
+      ],
+      "useCasesHeading": "Typical Engagements",
+      "useCases": [
+        {
+          "text": "Product discovery"
+        },
+        {
+          "text": "MVP engineering"
+        },
+        {
+          "text": "SaaS development"
+        },
+        {
+          "text": "Web application development"
+        },
+        {
+          "text": "Mobile application development"
+        },
+        {
+          "text": "Marketplace development"
+        },
+        {
+          "text": "Subscription platform development"
+        },
+        {
+          "text": "OTT/streaming platforms"
+        },
+        {
+          "text": "Portal development"
+        },
+        {
+          "text": "Platform modernisation"
+        },
+        {
+          "text": "Feature engineering"
+        },
+        {
+          "text": "Product maintenance"
+        }
+      ],
+      "outcomes": [],
+      "industryTitles": [
+        "FinTech",
+        "Consumer Platforms",
+        "Retail & Ecommerce",
+        "Healthcare",
+        "Education",
+        "Professional Services",
+        "Associations & Communities",
+        "Logistics",
+        "SaaS businesses"
+      ],
+      "approachHeading": "Product Engineering Lifecycle",
+      "approachSteps": [
+        {
+          "title": "Discover",
+          "description": "Understand the user, problem, business model and product objectives."
+        },
+        {
+          "title": "Define",
+          "description": "Prioritise features, workflows, personas, success criteria and release scope."
+        },
+        {
+          "title": "Design",
+          "description": "Create user journeys, interfaces and technical architecture."
+        },
+        {
+          "title": "Engineer",
+          "description": "Develop the frontend, backend, integrations and platform capabilities."
+        },
+        {
+          "title": "Validate",
+          "description": "Test functionality, performance, security and user journeys."
+        },
+        {
+          "title": "Launch",
+          "description": "Deploy the product and establish production monitoring."
+        },
+        {
+          "title": "Evolve",
+          "description": "Use market feedback, product data and business priorities to guide subsequent releases."
+        }
+      ],
+      "capabilitiesHeading": "Scalability & Architecture",
+      "capabilitiesSubtext": "Depending on the product, architecture may consider:",
+      "capabilities": [
+        {
+          "text": "Modular application design"
+        },
+        {
+          "text": "API-first integration"
+        },
+        {
+          "text": "Role-based access"
+        },
+        {
+          "text": "Multi-tenancy"
+        },
+        {
+          "text": "Subscription models"
+        },
+        {
+          "text": "Cloud infrastructure"
+        },
+        {
+          "text": "Asynchronous processing"
+        },
+        {
+          "text": "Analytics"
+        },
+        {
+          "text": "Observability"
+        },
+        {
+          "text": "Security"
+        },
+        {
+          "text": "Data architecture"
+        }
+      ],
+      "techApproachItems": [],
+      "aiOpportunitiesHeading": "AI Opportunities in Products",
+      "aiOpportunitiesSubtext": "AI can create new product capabilities such as:",
+      "aiOpportunities": [
+        {
+          "text": "Intelligent search"
+        },
+        {
+          "text": "Recommendations"
+        },
+        {
+          "text": "Conversational assistance"
+        },
+        {
+          "text": "Workflow copilots"
+        },
+        {
+          "text": "Content generation support"
+        },
+        {
+          "text": "Document processing"
+        },
+        {
+          "text": "Personalisation"
+        },
+        {
+          "text": "Predictive features"
+        },
+        {
+          "text": "Semantic knowledge access"
+        }
+      ],
+      "secondaryNarrativeHeading": "Product Thinking",
+      "secondaryNarrativeText": "We actively challenge unnecessary features, premature complexity, over-engineering, technology choices without business justification and architectures that cannot evolve. The objective is not to maximise the amount of software built. It is to create the right product foundation for the next stage of the business.",
+      "modernisationItems": [],
+      "relatedResources": [
+        {
+          "text": "MVP Planning Guide"
+        },
+        {
+          "text": "Product Engineering Playbook"
+        },
+        {
+          "text": "Build vs Buy Framework"
+        },
+        {
+          "text": "SaaS Architecture Guide"
+        }
+      ],
+      "faqs": [
+        {
+          "question": "Can Metaphi help before development begins?",
+          "answer": "Yes. Product discovery, scoping, user journeys and release prioritisation can be addressed before engineering begins."
+        },
+        {
+          "question": "Do you build MVPs?",
+          "answer": "Yes. MVP development is appropriate where the objective is to validate the product proposition or operating model before committing to a broader roadmap."
+        },
+        {
+          "question": "Can you modernise an existing software product?",
+          "answer": "Yes. We can assess architecture, codebase, UX and operational constraints and define a phased modernisation approach."
+        },
+        {
+          "question": "Do you build mobile and web products?",
+          "answer": "Yes. Depending on the product requirement, the solution may include web applications, mobile apps, APIs and backend platforms."
+        },
+        {
+          "question": "Can you continue supporting the product after launch?",
+          "answer": "Yes. Product enhancement, maintenance, infrastructure support and managed services can continue after launch."
+        }
+      ],
+      "finalCtaHeading": "Have a product idea—or an existing platform that needs its next stage?",
+      "finalCtaButtonLabel": "Discuss Your Product Initiative",
+      "seo": {
+        "metaTitle": "",
+        "metaDescription": ""
+      }
+    },
+    {
+      "title": "Enterprise AI",
+      "modelType": "custom",
+      "order": 3,
+      "heroHeadline": "Turn AI Into Working Business Capability",
+      "summary": "Metaphi helps organisations identify where AI can create practical business value, then designs and integrates AI solutions into real workflows, systems and decision processes.",
+      "ctaLabel": "Discuss Your AI Initiative",
+      "ctaSecondaryLabel": "Explore AI Use Cases",
+      "problemHeading": "The Enterprise AI Challenge",
+      "problemText": "The challenge for most businesses is no longer understanding that AI exists. It is deciding where AI actually creates value, which workflows should change, which data can be used, where human oversight is required, how AI connects with existing systems, and how quality, privacy and security should be managed. Metaphi approaches AI from the operating problem outward—not from the model inward.",
+      "problemItems": [],
+      "offeringsHeading": "Where AI Can Help",
+      "offerings": [
+        {
+          "title": "AI Assistants & Copilots",
+          "description": "Help employees access information, complete tasks and work more effectively within existing workflows."
+        },
+        {
+          "title": "Intelligent Document Processing",
+          "description": "Extract, classify and structure information from invoices, reports, forms, contracts and other documents."
+        },
+        {
+          "title": "Knowledge Assistants",
+          "description": "Enable natural-language access to internal knowledge, documentation and business information."
+        },
+        {
+          "title": "Workflow Automation",
+          "description": "Combine AI with rules and integrations to reduce repetitive manual work."
+        },
+        {
+          "title": "Forecasting & Prediction",
+          "description": "Use historical data to support demand, sales, inventory or operational forecasting."
+        },
+        {
+          "title": "Recommendation Systems",
+          "description": "Personalise content, products, actions or decisions using relevant behavioural and business data."
+        },
+        {
+          "title": "Anomaly Detection",
+          "description": "Identify unusual operational, transactional or data patterns for further review."
+        },
+        {
+          "title": "AI-Enabled Product Features",
+          "description": "Embed AI directly within SaaS, consumer and enterprise products."
+        }
+      ],
+      "useCasesHeading": "Enterprise AI Use Cases",
+      "useCasesSubtext": "Potential applications include:",
+      "useCases": [
+        {
+          "text": "Customer-service assistants"
+        },
+        {
+          "text": "Internal knowledge assistants"
+        },
+        {
+          "text": "Document extraction"
+        },
+        {
+          "text": "Report summarisation"
+        },
+        {
+          "text": "Proposal assistance"
+        },
+        {
+          "text": "Sales copilots"
+        },
+        {
+          "text": "Operations assistants"
+        },
+        {
+          "text": "Inventory forecasting"
+        },
+        {
+          "text": "Demand forecasting"
+        },
+        {
+          "text": "Recommendation engines"
+        },
+        {
+          "text": "Intelligent search"
+        },
+        {
+          "text": "Classification"
+        },
+        {
+          "text": "Workflow prioritisation"
+        },
+        {
+          "text": "Analytics narratives"
+        }
+      ],
+      "outcomes": [],
+      "industryTitles": [
+        "Manufacturing",
+        "Healthcare",
+        "Logistics",
+        "Financial Services",
+        "Professional Services",
+        "Retail & Ecommerce",
+        "Consumer Platforms",
+        "Education",
+        "Public Sector"
+      ],
+      "approachHeading": "Our Approach",
+      "approachSteps": [
+        {
+          "title": "Identify the Business Opportunity",
+          "description": "Start with workflows, bottlenecks and measurable business outcomes."
+        },
+        {
+          "title": "Assess Data & Feasibility",
+          "description": "Understand what information exists, its quality and whether AI is the appropriate tool."
+        },
+        {
+          "title": "Define Human + AI Workflow",
+          "description": "Determine where AI assists, recommends or automates and where human review remains necessary."
+        },
+        {
+          "title": "Prototype",
+          "description": "Validate the solution before scaling."
+        },
+        {
+          "title": "Integrate",
+          "description": "Connect AI with applications, documents, databases, APIs and workflows."
+        },
+        {
+          "title": "Govern",
+          "description": "Introduce controls appropriate to the use case, sensitivity and business risk."
+        },
+        {
+          "title": "Improve",
+          "description": "Monitor performance and improve prompts, data, workflows and models over time."
+        }
+      ],
+      "capabilitiesHeading": "Data & Integration",
+      "capabilitiesSubtext": "Enterprise AI may require connections with:",
+      "capabilities": [
+        {
+          "text": "ERP"
+        },
+        {
+          "text": "CRM"
+        },
+        {
+          "text": "Document repositories"
+        },
+        {
+          "text": "Databases"
+        },
+        {
+          "text": "Email"
+        },
+        {
+          "text": "APIs"
+        },
+        {
+          "text": "Cloud storage"
+        },
+        {
+          "text": "Internal knowledge systems"
+        },
+        {
+          "text": "Business applications"
+        },
+        {
+          "text": "Analytics platforms"
+        }
+      ],
+      "techApproachHeading": "Responsible Implementation",
+      "techApproachItems": [
+        {
+          "text": "The level of governance should reflect the risk of the use case."
+        },
+        {
+          "text": "Data privacy"
+        },
+        {
+          "text": "Security"
+        },
+        {
+          "text": "Access controls"
+        },
+        {
+          "text": "Traceability"
+        },
+        {
+          "text": "Human oversight"
+        },
+        {
+          "text": "Hallucination risk"
+        },
+        {
+          "text": "Evaluation"
+        },
+        {
+          "text": "Monitoring"
+        },
+        {
+          "text": "Sensitive-data handling"
+        }
+      ],
+      "aiOpportunities": [],
+      "secondaryNarrativeHeading": "AI + Business Applications",
+      "secondaryNarrativeText": "AI often creates more value when embedded inside an existing workflow. For example, instead of creating a separate chatbot, an operations manager receives AI-assisted exception summaries directly inside the operations platform. Instead of another AI tool, a sales application automatically prepares account summaries before meetings. This is why Metaphi combines AI capability with software engineering and integration expertise.",
+      "modernisationItems": [],
+      "relatedResources": [
+        {
+          "text": "Enterprise AI Adoption Guide"
+        },
+        {
+          "text": "AI Readiness Assessment"
+        },
+        {
+          "text": "AI Use Case Prioritisation Framework"
+        },
+        {
+          "text": "Document Intelligence Guide"
+        }
+      ],
+      "faqs": [
+        {
+          "question": "Where should a business start with AI?",
+          "answer": "Start by identifying high-friction workflows, repetitive knowledge tasks, document-heavy processes or decisions where better information could improve outcomes."
+        },
+        {
+          "question": "Does every AI project require a custom model?",
+          "answer": "No. Many business applications can use existing foundation models or specialised services combined with business data, integration and workflow design."
+        },
+        {
+          "question": "Can AI connect with existing enterprise applications?",
+          "answer": "Yes, where suitable integrations and system access exist."
+        },
+        {
+          "question": "Do you build AI agents?",
+          "answer": "We can design agentic workflows where the use case genuinely benefits from multi-step AI actions, tool usage and appropriate controls."
+        },
+        {
+          "question": "How do you manage AI accuracy?",
+          "answer": "The approach depends on the use case and may include grounding, validation, structured outputs, evaluations, human review and monitoring."
+        }
+      ],
+      "finalCtaHeading": "Have an AI idea—or a business workflow you think AI could improve?",
+      "finalCtaButtonLabel": "Discuss Your AI Initiative",
+      "seo": {
+        "metaTitle": "",
+        "metaDescription": ""
+      }
+    },
+    {
+      "title": "Cloud, Data & System Integrations",
+      "modelType": "custom",
+      "order": 4,
+      "heroHeadline": "Connect Systems, Data and Cloud Without Creating More Complexity",
+      "summary": "Metaphi helps businesses modernise technology environments, connect disconnected applications and create reliable data flows across systems, APIs and cloud platforms.",
+      "ctaLabel": "Discuss Your Integration Requirement",
+      "problemHeading": "Why Integration Matters",
+      "problemText": "Businesses frequently accumulate technology over time: ERP, CRM, accounting, ecommerce, mobile apps, portals, logistics systems, SaaS tools, databases and devices. When these systems do not communicate effectively, teams compensate through spreadsheets and manual coordination. Integration creates the connective layer between business processes.",
+      "problemItems": [],
+      "offeringsHeading": "What We Help With",
+      "offerings": [
+        {
+          "title": "API Integration",
+          "description": "Connect internal and external applications using secure APIs."
+        },
+        {
+          "title": "Application Integration",
+          "description": "Synchronise workflows and data between enterprise platforms."
+        },
+        {
+          "title": "Data Integration",
+          "description": "Create reliable flows between operational systems, databases and analytical platforms."
+        },
+        {
+          "title": "Cloud Application Development",
+          "description": "Build and deploy applications using cloud infrastructure appropriate to business and technical requirements."
+        },
+        {
+          "title": "Legacy Modernisation",
+          "description": "Modernise ageing systems, architecture or interfaces without necessarily replacing everything at once."
+        },
+        {
+          "title": "Third-Party Integrations",
+          "description": "Connect with accounting, payments, ecommerce, logistics, communication and industry platforms."
+        }
+      ],
+      "useCasesHeading": "Common Integration Scenarios",
+      "useCases": [
+        {
+          "text": "ERP ↔ CRM"
+        },
+        {
+          "text": "Ecommerce ↔ Inventory"
+        },
+        {
+          "text": "Website/App ↔ ERP"
+        },
+        {
+          "text": "Portal ↔ Internal Systems"
+        },
+        {
+          "text": "Tally ↔ Business Application"
+        },
+        {
+          "text": "Payment Gateway ↔ Platform"
+        },
+        {
+          "text": "Logistics APIs ↔ Order System"
+        },
+        {
+          "text": "IoT Device ↔ Operations Platform"
+        },
+        {
+          "text": "CRM ↔ Marketing Systems"
+        },
+        {
+          "text": "Operational Systems ↔ BI"
+        }
+      ],
+      "outcomesHeading": "Business Outcomes",
+      "outcomesSubtext": "Integration can help:",
+      "outcomes": [
+        {
+          "text": "Reduce duplicate data entry"
+        },
+        {
+          "text": "Improve information consistency"
+        },
+        {
+          "text": "Automate hand-offs"
+        },
+        {
+          "text": "Improve customer visibility"
+        },
+        {
+          "text": "Shorten processing time"
+        },
+        {
+          "text": "Reduce reconciliation"
+        },
+        {
+          "text": "Enable better analytics"
+        },
+        {
+          "text": "Preserve useful existing systems"
+        },
+        {
+          "text": "Create foundations for AI and automation"
+        }
+      ],
+      "industryTitles": [],
+      "approachHeading": "Modernisation Approach",
+      "approachSteps": [
+        {
+          "title": "Integrate",
+          "description": "Preserve the existing application and connect it to newer systems."
+        },
+        {
+          "title": "Extend",
+          "description": "Add modern portals, APIs or interfaces around the existing platform."
+        },
+        {
+          "title": "Refactor",
+          "description": "Improve selected components or architecture."
+        },
+        {
+          "title": "Rebuild",
+          "description": "Replace the existing application where its constraints justify a new platform."
+        }
+      ],
+      "capabilitiesHeading": "Integration Capabilities",
+      "capabilitiesSubtext": "Potential integrations include:",
+      "capabilities": [
+        {
+          "text": "Tally"
+        },
+        {
+          "text": "ERP platforms"
+        },
+        {
+          "text": "Shopify and ecommerce"
+        },
+        {
+          "text": "Payment gateways"
+        },
+        {
+          "text": "CRM"
+        },
+        {
+          "text": "Logistics platforms"
+        },
+        {
+          "text": "Messaging services"
+        },
+        {
+          "text": "Google/Microsoft ecosystems"
+        },
+        {
+          "text": "IoT devices"
+        },
+        {
+          "text": "Custom APIs"
+        },
+        {
+          "text": "Cloud services"
+        },
+        {
+          "text": "BI tools"
+        }
+      ],
+      "techApproachHeading": "Security & Reliability",
+      "techApproachText": "Integration architecture should consider:",
+      "techApproachItems": [
+        {
+          "text": "Authentication"
+        },
+        {
+          "text": "Authorization"
+        },
+        {
+          "text": "Encryption"
+        },
+        {
+          "text": "Secrets management"
+        },
+        {
+          "text": "Rate limits"
+        },
+        {
+          "text": "Error handling"
+        },
+        {
+          "text": "Retries"
+        },
+        {
+          "text": "Logging"
+        },
+        {
+          "text": "Monitoring"
+        },
+        {
+          "text": "Data validation"
+        }
+      ],
+      "aiOpportunitiesHeading": "Data Foundations",
+      "aiOpportunitiesSubtext": "Data projects may include:",
+      "aiOpportunities": [
+        {
+          "text": "Operational data consolidation"
+        },
+        {
+          "text": "Reporting pipelines"
+        },
+        {
+          "text": "Dashboards"
+        },
+        {
+          "text": "Data transformation"
+        },
+        {
+          "text": "Business intelligence integration"
+        },
+        {
+          "text": "API-based data exchange"
+        },
+        {
+          "text": "Preparing data for AI use cases"
+        }
+      ],
+      "secondaryNarrativeHeading": "Cloud Approach",
+      "secondaryNarrativeText": "Cloud choices may involve application hosting, databases, object storage, serverless components, containers, managed services, CDN, monitoring, backup and disaster recovery. Architecture should reflect actual workload and business needs rather than unnecessary cloud complexity.",
+      "modernisationItems": [],
+      "relatedResources": [],
+      "faqs": [
+        {
+          "question": "Can Metaphi integrate with our existing ERP?",
+          "answer": "Potentially, depending on the ERP’s APIs, database access and integration options."
+        },
+        {
+          "question": "Can you integrate older systems without APIs?",
+          "answer": "Sometimes. Alternatives may include database integration, file exchange, middleware or controlled custom interfaces, depending on technical feasibility and security."
+        },
+        {
+          "question": "Do we need to move everything to the cloud?",
+          "answer": "No. Cloud migration should be based on business and technical requirements, not treated as an automatic objective."
+        },
+        {
+          "question": "Can you create APIs for our existing application?",
+          "answer": "Yes, where the underlying system can support a secure integration layer."
+        },
+        {
+          "question": "Can data from multiple systems be consolidated for reporting?",
+          "answer": "Yes. Data integration and reporting architectures can combine information from multiple business systems where suitable access exists."
+        }
+      ],
+      "finalCtaHeading": "If your systems don’t talk to each other, your teams usually end up doing the integration manually.",
+      "finalCtaButtonLabel": "Discuss Your Integration Requirement",
+      "seo": {
+        "metaTitle": "",
+        "metaDescription": ""
+      }
+    },
+    {
+      "title": "Application & Cloud Managed Services",
+      "modelType": "custom",
+      "order": 5,
+      "heroHeadline": "Keep Critical Applications Reliable, Secure and Evolving",
+      "summary": "Metaphi provides ongoing application, cloud and engineering support for organisations that need technology to keep working, improving and adapting after launch.",
+      "ctaLabel": "Discuss Your Managed Services Requirement",
+      "problemHeading": "Why Managed Services",
+      "problemText": "Software implementation is not the end of the technology lifecycle. Business applications require monitoring, support, issue resolution, security updates, infrastructure maintenance, integrations, enhancements, performance improvement, releases and user support. Without structured ownership, systems gradually become harder to maintain and less aligned with the business.",
+      "problemItems": [],
+      "offeringsHeading": "What We Support",
+      "offerings": [
+        {
+          "title": "Application Support",
+          "description": "Resolve functional and technical issues across business-critical applications."
+        },
+        {
+          "title": "Software Maintenance",
+          "description": "Maintain codebases, dependencies and application functionality."
+        },
+        {
+          "title": "Enhancements",
+          "description": "Introduce new features, workflows and integrations as requirements evolve."
+        },
+        {
+          "title": "Cloud Operations",
+          "description": "Support infrastructure, deployments, backups and operational monitoring."
+        },
+        {
+          "title": "DevOps",
+          "description": "Improve release automation, environments, deployment consistency and engineering operations."
+        },
+        {
+          "title": "Performance Optimisation",
+          "description": "Identify and address application or infrastructure bottlenecks."
+        },
+        {
+          "title": "Integration Support",
+          "description": "Maintain APIs, third-party connections and system interfaces."
+        }
+      ],
+      "useCasesHeading": "Engagement Scenarios",
+      "useCasesSubtext": "Managed Services may be relevant when:",
+      "useCases": [
+        {
+          "text": "Metaphi built the original application"
+        },
+        {
+          "text": "An application requires ongoing enhancement"
+        },
+        {
+          "text": "Internal teams need additional technical capacity"
+        },
+        {
+          "text": "A critical platform lacks clear ownership"
+        },
+        {
+          "text": "Cloud infrastructure needs continuous operational support"
+        },
+        {
+          "text": "Legacy systems require maintenance while modernisation is planned"
+        }
+      ],
+      "outcomesHeading": "Typical Services",
+      "outcomes": [
+        {
+          "text": "Incident support"
+        },
+        {
+          "text": "Bug fixes"
+        },
+        {
+          "text": "Application monitoring"
+        },
+        {
+          "text": "Infrastructure monitoring"
+        },
+        {
+          "text": "Deployment management"
+        },
+        {
+          "text": "Backup checks"
+        },
+        {
+          "text": "Dependency updates"
+        },
+        {
+          "text": "Security patch coordination"
+        },
+        {
+          "text": "Performance improvements"
+        },
+        {
+          "text": "Minor enhancements"
+        },
+        {
+          "text": "Feature releases"
+        },
+        {
+          "text": "Integration maintenance"
+        },
+        {
+          "text": "Technical documentation"
+        }
+      ],
+      "industryTitles": [
+        "Managed Services can support organisations across all Metaphi industry groups where applications have become business-critical."
+      ],
+      "approachHeading": "Operating Model",
+      "approachSteps": [
+        {
+          "title": "Scope",
+          "description": "What applications, environments and responsibilities are included."
+        },
+        {
+          "title": "Priority",
+          "description": "How incidents, requests and changes are classified."
+        },
+        {
+          "title": "Ownership",
+          "description": "Who is responsible for application, infrastructure and business decisions."
+        },
+        {
+          "title": "Service Process",
+          "description": "How requests enter, are reviewed, prioritised and delivered."
+        },
+        {
+          "title": "Reporting",
+          "description": "How support activity, incidents and improvements are communicated."
+        }
+      ],
+      "capabilitiesHeading": "Cloud & DevOps",
+      "capabilitiesSubtext": "Support may include:",
+      "capabilities": [
+        {
+          "text": "Environment management"
+        },
+        {
+          "text": "Deployments"
+        },
+        {
+          "text": "CI/CD"
+        },
+        {
+          "text": "Containers"
+        },
+        {
+          "text": "Backups"
+        },
+        {
+          "text": "Monitoring"
+        },
+        {
+          "text": "Domain/certificate management"
+        },
+        {
+          "text": "Infrastructure optimisation"
+        },
+        {
+          "text": "Production incident support"
+        }
+      ],
+      "techApproachHeading": "Security Responsibilities",
+      "techApproachText": "Managed support can include operational security activities within the agreed scope, but responsibility must be clearly defined between Metaphi, Client, Hosting provider, SaaS providers and other technology vendors. Clear ownership reduces gaps.",
+      "techApproachItems": [],
+      "aiOpportunities": [],
+      "secondaryNarrativeHeading": "Managed Services vs Staff Augmentation",
+      "secondaryNarrativeText": "Our preferred model is not simply: “Here is one developer for X hours.” Instead, where appropriate, the engagement is structured around ownership of defined technology outcomes and responsibilities. The exact commercial model can still vary based on support requirements.",
+      "modernisationHeading": "Application Modernisation",
+      "modernisationSubtext": "Managed Services can also provide a practical bridge between maintenance and transformation.",
+      "modernisationItems": [
+        {
+          "text": "Stabilise"
+        },
+        {
+          "text": "Document"
+        },
+        {
+          "text": "Reduce technical risk"
+        },
+        {
+          "text": "Modernise priority areas"
+        },
+        {
+          "text": "Introduce new capabilities"
+        }
+      ],
+      "relatedResources": [],
+      "faqs": [
+        {
+          "question": "Can Metaphi support software built by another company?",
+          "answer": "Potentially. We first need to assess code quality, documentation, architecture, dependencies and access before accepting responsibility."
+        },
+        {
+          "question": "Do you provide 24/7 support?",
+          "answer": "Support windows should be defined commercially based on business requirements. We should not claim 24/7 coverage as a standard service unless explicitly contracted and operationally supported."
+        },
+        {
+          "question": "Can managed services include new feature development?",
+          "answer": "Yes. Support engagements can include enhancement capacity depending on the commercial model."
+        },
+        {
+          "question": "Can you manage cloud infrastructure?",
+          "answer": "Yes, where infrastructure management is explicitly included within the agreed scope."
+        },
+        {
+          "question": "Do you provide fixed SLAs?",
+          "answer": "Service levels should be agreed based on application criticality, support window and engagement model."
+        }
+      ],
+      "finalCtaHeading": "Need structured ownership for an application your business depends on?",
+      "finalCtaButtonLabel": "Discuss Your Managed Services Requirement",
+      "seo": {
+        "metaTitle": "",
+        "metaDescription": ""
+      }
+    }
+  ],
+  "readySolutions": [
+    {
+      "title": "Manufacturing Operations Management",
+      "modelType": "ready-to-configure",
+      "order": 1,
+      "heroHeadline": "Configure a Digital Operating System for Your Manufacturing Business",
+      "summary": "Start with a proven manufacturing operations foundation and configure workflows, modules, reports and integrations around the way your plant and business actually operate.",
+      "ctaLabel": "Request a Solution Walkthrough",
+      "whoItIsFor": [
+        {
+          "text": "Manufacturers that have outgrown spreadsheets or disconnected applications"
+        },
+        {
+          "text": "Businesses needing better control across production and inventory"
+        },
+        {
+          "text": "Organisations wanting an integrated alternative to multiple standalone tools"
+        },
+        {
+          "text": "Manufacturers requiring significant process configuration"
+        },
+        {
+          "text": "Businesses needing accounting, sales, warehouse or shop-floor integrations"
+        },
+        {
+          "text": "Teams wanting a faster starting point than a completely new custom build"
+        }
+      ],
+      "problemHeading": "Common Problems",
+      "problemItems": [
+        {
+          "text": "Production plans disconnected from inventory"
+        },
+        {
+          "text": "Limited raw-material visibility"
+        },
+        {
+          "text": "Manual job or batch tracking"
+        },
+        {
+          "text": "Delayed production updates"
+        },
+        {
+          "text": "Fragmented procurement workflows"
+        },
+        {
+          "text": "Quality records managed separately"
+        },
+        {
+          "text": "Sales and dispatch not connected to production"
+        },
+        {
+          "text": "Weak management reporting"
+        },
+        {
+          "text": "Multiple data sources across departments"
+        },
+        {
+          "text": "Limited traceability"
+        }
+      ],
+      "solutionOverview": "The Manufacturing Operations Management foundation can support an integrated flow across sales, planning, procurement, inventory, production, quality, dispatch and management reporting. The exact implementation is configured according to the manufacturing model, products, processes, roles and reporting requirements.",
+      "exampleWorkflow": "Sales Order → Production Requirement → Material Planning → Procurement / Issue → Production → Quality → Finished Goods → Dispatch → Reporting",
+      "coreModules": [
+        {
+          "text": "Customer & Sales Orders"
+        },
+        {
+          "text": "Production Planning"
+        },
+        {
+          "text": "Bill of Materials / Product Structures"
+        },
+        {
+          "text": "Work Orders"
+        },
+        {
+          "text": "Raw Material Inventory"
+        },
+        {
+          "text": "Finished Goods Inventory"
+        },
+        {
+          "text": "Procurement"
+        },
+        {
+          "text": "Vendor Management"
+        },
+        {
+          "text": "Quality Workflows"
+        },
+        {
+          "text": "Dispatch"
+        },
+        {
+          "text": "User & Role Management"
+        },
+        {
+          "text": "Dashboards & Reporting"
+        }
+      ],
+      "whatIsAlreadyAvailable": [
+        {
+          "text": "Core master structures"
+        },
+        {
+          "text": "Role-based workflows"
+        },
+        {
+          "text": "Common inventory patterns"
+        },
+        {
+          "text": "Sales-to-production flow"
+        },
+        {
+          "text": "Procurement structures"
+        },
+        {
+          "text": "Production recording"
+        },
+        {
+          "text": "Approval mechanisms"
+        },
+        {
+          "text": "Dashboard structures"
+        },
+        {
+          "text": "Reporting foundations"
+        }
+      ],
+      "whatCanBeConfigured": [
+        {
+          "text": "Production stages"
+        },
+        {
+          "text": "Approval rules"
+        },
+        {
+          "text": "Product structures"
+        },
+        {
+          "text": "Batch/job logic"
+        },
+        {
+          "text": "User roles"
+        },
+        {
+          "text": "Inventory rules"
+        },
+        {
+          "text": "Quality checkpoints"
+        },
+        {
+          "text": "Reports"
+        },
+        {
+          "text": "Dashboards"
+        },
+        {
+          "text": "Alerts"
+        },
+        {
+          "text": "Document formats"
+        }
+      ],
+      "whatCanBeExtended": [
+        {
+          "text": "Additional modules"
+        },
+        {
+          "text": "Mobile workflows"
+        },
+        {
+          "text": "Device integrations"
+        },
+        {
+          "text": "Custom planning logic"
+        },
+        {
+          "text": "Customer/dealer portals"
+        },
+        {
+          "text": "Specialised quality processes"
+        },
+        {
+          "text": "Advanced analytics"
+        },
+        {
+          "text": "AI-enabled capabilities"
+        }
+      ],
+      "capabilitiesHeading": "Integrations",
+      "capabilities": [
+        {
+          "text": "Tally / accounting"
+        },
+        {
+          "text": "ERP platforms"
+        },
+        {
+          "text": "Barcode systems"
+        },
+        {
+          "text": "Weighing scales"
+        },
+        {
+          "text": "IoT devices"
+        },
+        {
+          "text": "CRM"
+        },
+        {
+          "text": "Ecommerce"
+        },
+        {
+          "text": "Logistics providers"
+        },
+        {
+          "text": "BI platforms"
+        },
+        {
+          "text": "Third-party APIs"
+        }
+      ],
+      "aiOpportunitiesHeading": "AI & Automation Opportunities",
+      "aiOpportunities": [
+        {
+          "text": "Demand forecasting"
+        },
+        {
+          "text": "Inventory recommendations"
+        },
+        {
+          "text": "Production-planning support"
+        },
+        {
+          "text": "Quality anomaly detection"
+        },
+        {
+          "text": "Intelligent document processing"
+        },
+        {
+          "text": "Operations assistant"
+        },
+        {
+          "text": "Exception summaries"
+        },
+        {
+          "text": "Management reporting assistance"
+        }
+      ],
+      "industryTitles": [
+        "Manufacturing",
+        "Chemicals",
+        "Agrochemicals",
+        "Decorative materials",
+        "Consumer goods",
+        "Engineering businesses",
+        "Industrial products"
+      ],
+      "relatedResources": [
+        {
+          "text": "Manufacturing Industry Playbook"
+        },
+        {
+          "text": "ERP Readiness Guide"
+        },
+        {
+          "text": "Manufacturing Digital Transformation Guide"
+        }
+      ],
+      "faqs": [
+        {
+          "question": "Is this a standard ERP product?",
+          "answer": ""
+        },
+        {
+          "question": "Can we implement only selected modules?",
+          "answer": ""
+        },
+        {
+          "question": "Can it integrate with our existing accounting system?",
+          "answer": ""
+        },
+        {
+          "question": "Can we retain some existing software?",
+          "answer": ""
+        },
+        {
+          "question": "Is this suitable for every manufacturer?",
+          "answer": ""
+        }
+      ],
+      "finalCtaHeading": "Want to see how the manufacturing foundation can be configured around your operations?",
+      "seo": {
+        "metaTitle": "",
+        "metaDescription": ""
+      }
+    },
+    {
+      "title": "Inventory & Distribution Management",
+      "modelType": "ready-to-configure",
+      "order": 2,
+      "heroHeadline": "Gain Control From Inventory to Dispatch",
+      "summary": "Configure a proven inventory and distribution foundation around your warehouses, products, orders, stock movements, approvals and dispatch workflows.",
+      "ctaLabel": "Request an Inventory & Distribution Solution Walkthrough",
+      "whoItIsFor": [
+        {
+          "text": "Businesses managing multiple products or SKUs"
+        },
+        {
+          "text": "Multiple warehouses or locations"
+        },
+        {
+          "text": "Stock movement and sales orders"
+        },
+        {
+          "text": "Purchase orders and dispatch"
+        },
+        {
+          "text": "Distribution partners"
+        },
+        {
+          "text": "Returns and inventory reporting"
+        }
+      ],
+      "problemHeading": "Common Problems",
+      "problemItems": [
+        {
+          "text": "Stock levels maintained in spreadsheets"
+        },
+        {
+          "text": "Inaccurate inventory availability"
+        },
+        {
+          "text": "Duplicate data entry"
+        },
+        {
+          "text": "Poor warehouse visibility"
+        },
+        {
+          "text": "Manual order processing"
+        },
+        {
+          "text": "Delayed dispatch"
+        },
+        {
+          "text": "Difficulty tracking stock movements"
+        },
+        {
+          "text": "Limited ageing or stock analysis"
+        },
+        {
+          "text": "Disconnected sales and inventory systems"
+        }
+      ],
+      "solutionOverview": "The solution foundation connects Purchase → Receipt → Inventory → Order → Allocation → Dispatch → Delivery / Return → Reporting, while allowing business-specific workflows and rules to be configured.",
+      "exampleWorkflow": "Sales Order → Stock Availability → Reservation → Picking → Packing → Dispatch → Delivery → Inventory Update",
+      "coreModules": [
+        {
+          "text": "Item Master"
+        },
+        {
+          "text": "Supplier Management"
+        },
+        {
+          "text": "Purchase Orders"
+        },
+        {
+          "text": "Goods Receipt"
+        },
+        {
+          "text": "Inventory"
+        },
+        {
+          "text": "Warehouse / Location"
+        },
+        {
+          "text": "Stock Transfers"
+        },
+        {
+          "text": "Sales Orders"
+        },
+        {
+          "text": "Allocation"
+        },
+        {
+          "text": "Dispatch"
+        },
+        {
+          "text": "Returns"
+        },
+        {
+          "text": "Adjustments"
+        },
+        {
+          "text": "Reporting"
+        },
+        {
+          "text": "User & Role Management"
+        }
+      ],
+      "whatIsAlreadyAvailable": [
+        {
+          "text": "Stock transaction framework"
+        },
+        {
+          "text": "Multi-location inventory"
+        },
+        {
+          "text": "Order structures"
+        },
+        {
+          "text": "Warehouse movements"
+        },
+        {
+          "text": "Role-based access"
+        },
+        {
+          "text": "Dispatch workflow"
+        },
+        {
+          "text": "Reports and dashboards"
+        },
+        {
+          "text": "Approval structures"
+        }
+      ],
+      "whatCanBeConfigured": [
+        {
+          "text": "Stock rules"
+        },
+        {
+          "text": "Location hierarchy"
+        },
+        {
+          "text": "Order approvals"
+        },
+        {
+          "text": "SKU attributes"
+        },
+        {
+          "text": "Reservation logic"
+        },
+        {
+          "text": "Return workflows"
+        },
+        {
+          "text": "User permissions"
+        },
+        {
+          "text": "Reporting"
+        },
+        {
+          "text": "Alerts"
+        },
+        {
+          "text": "Document formats"
+        }
+      ],
+      "whatCanBeExtended": [
+        {
+          "text": "Barcode/mobile scanning"
+        },
+        {
+          "text": "Dealer portals"
+        },
+        {
+          "text": "Ecommerce"
+        },
+        {
+          "text": "Demand planning"
+        },
+        {
+          "text": "Route planning"
+        },
+        {
+          "text": "Custom warehouse logic"
+        },
+        {
+          "text": "Advanced inventory analytics"
+        }
+      ],
+      "capabilitiesHeading": "Integrations",
+      "capabilities": [
+        {
+          "text": "ERP/accounting"
+        },
+        {
+          "text": "Ecommerce"
+        },
+        {
+          "text": "Marketplaces"
+        },
+        {
+          "text": "Logistics providers"
+        },
+        {
+          "text": "Barcode systems"
+        },
+        {
+          "text": "CRM"
+        },
+        {
+          "text": "Payment systems"
+        },
+        {
+          "text": "Customer/vendor APIs"
+        }
+      ],
+      "aiOpportunitiesHeading": "AI & Automation Opportunities",
+      "aiOpportunities": [
+        {
+          "text": "Reorder recommendations"
+        },
+        {
+          "text": "Demand forecasting"
+        },
+        {
+          "text": "Slow-moving stock identification"
+        },
+        {
+          "text": "Exception detection"
+        },
+        {
+          "text": "Inventory summaries"
+        },
+        {
+          "text": "Document processing"
+        }
+      ],
+      "industryTitles": [
+        "Manufacturing",
+        "Retail & Ecommerce",
+        "Distribution",
+        "Healthcare",
+        "Laboratory/instrument businesses",
+        "Professional product businesses"
+      ],
+      "relatedResources": [],
+      "faqs": [
+        {
+          "question": "Is this SaaS?",
+          "answer": ""
+        },
+        {
+          "question": "Can it handle multiple warehouses?",
+          "answer": ""
+        },
+        {
+          "question": "Can it integrate with ecommerce?",
+          "answer": ""
+        },
+        {
+          "question": "Can barcode scanning be added?",
+          "answer": ""
+        },
+        {
+          "question": "Can inventory logic be customised?",
+          "answer": ""
+        }
+      ],
+      "finalCtaHeading": "Ready to improve inventory and distribution visibility?",
+      "seo": {
+        "metaTitle": "",
+        "metaDescription": ""
+      }
+    },
+    {
+      "title": "Warehouse & Logistics Management",
+      "modelType": "ready-to-configure",
+      "order": 3,
+      "heroHeadline": "Digitise Warehouse and Logistics Workflows",
+      "summary": "Configure inbound, storage, picking, dispatch and logistics processes around your operating model using a proven solution foundation.",
+      "ctaLabel": "Request a Warehouse & Logistics Solution Walkthrough",
+      "whoItIsFor": [
+        {
+          "text": "Warehouses"
+        },
+        {
+          "text": "Distributors"
+        },
+        {
+          "text": "Logistics businesses"
+        },
+        {
+          "text": "3PL operations"
+        },
+        {
+          "text": "Manufacturers with warehouse complexity"
+        },
+        {
+          "text": "Multi-location businesses"
+        }
+      ],
+      "problemHeading": "Common Problems",
+      "problemItems": [
+        {
+          "text": "Manual inward/outward records"
+        },
+        {
+          "text": "Poor bin/location visibility"
+        },
+        {
+          "text": "Picking errors"
+        },
+        {
+          "text": "Delayed dispatch"
+        },
+        {
+          "text": "Warehouse and transport disconnected"
+        },
+        {
+          "text": "Paper-driven operations"
+        },
+        {
+          "text": "Lack of shipment visibility"
+        },
+        {
+          "text": "Limited customer status information"
+        }
+      ],
+      "solutionOverview": "The solution can support Inbound → Putaway → Storage → Picking → Packing → Dispatch → Shipment → Delivery / Return with configuration for warehouse, logistics and customer processes.",
+      "exampleWorkflow": "Inbound → Putaway → Storage → Picking → Packing → Dispatch → Shipment → Delivery / Return",
+      "coreModules": [
+        {
+          "text": "Inbound"
+        },
+        {
+          "text": "GRN"
+        },
+        {
+          "text": "Locations / Bins"
+        },
+        {
+          "text": "Inventory"
+        },
+        {
+          "text": "Putaway"
+        },
+        {
+          "text": "Picking"
+        },
+        {
+          "text": "Packing"
+        },
+        {
+          "text": "Dispatch"
+        },
+        {
+          "text": "Shipment"
+        },
+        {
+          "text": "Delivery"
+        },
+        {
+          "text": "Returns"
+        },
+        {
+          "text": "Customer Portal"
+        },
+        {
+          "text": "Reports"
+        }
+      ],
+      "whatIsAlreadyAvailable": [],
+      "whatCanBeConfigured": [
+        {
+          "text": "Warehouse hierarchy"
+        },
+        {
+          "text": "Picking methodology"
+        },
+        {
+          "text": "Dispatch rules"
+        },
+        {
+          "text": "Role permissions"
+        },
+        {
+          "text": "Approval flows"
+        },
+        {
+          "text": "Customer-specific processes"
+        },
+        {
+          "text": "Returns"
+        },
+        {
+          "text": "Alerts"
+        },
+        {
+          "text": "Reporting"
+        }
+      ],
+      "whatCanBeExtended": [
+        {
+          "text": "Mobile scanning"
+        },
+        {
+          "text": "Barcode/QR"
+        },
+        {
+          "text": "GPS"
+        },
+        {
+          "text": "Driver workflows"
+        },
+        {
+          "text": "Route planning"
+        },
+        {
+          "text": "POD"
+        },
+        {
+          "text": "Customer tracking"
+        },
+        {
+          "text": "Freight billing"
+        }
+      ],
+      "capabilitiesHeading": "Integrations",
+      "capabilities": [
+        {
+          "text": "ERP"
+        },
+        {
+          "text": "Accounting"
+        },
+        {
+          "text": "Ecommerce"
+        },
+        {
+          "text": "GPS"
+        },
+        {
+          "text": "Logistics providers"
+        },
+        {
+          "text": "Payment systems"
+        },
+        {
+          "text": "Barcode devices"
+        },
+        {
+          "text": "Customer APIs"
+        }
+      ],
+      "aiOpportunitiesHeading": "AI & Automation Opportunities",
+      "aiOpportunities": [
+        {
+          "text": "ETA prediction"
+        },
+        {
+          "text": "Warehouse exception alerts"
+        },
+        {
+          "text": "Route optimisation support"
+        },
+        {
+          "text": "Stock recommendations"
+        },
+        {
+          "text": "Operational summaries"
+        },
+        {
+          "text": "Document extraction"
+        }
+      ],
+      "industryTitles": [
+        "Logistics & 3PL",
+        "Manufacturing",
+        "Retail & Ecommerce",
+        "Distribution"
+      ],
+      "relatedResources": [],
+      "faqs": [
+        {
+          "question": "Is this a full WMS?",
+          "answer": ""
+        },
+        {
+          "question": "Can mobile scanning be added?",
+          "answer": ""
+        },
+        {
+          "question": "Can logistics workflows be integrated?",
+          "answer": ""
+        },
+        {
+          "question": "Can customers track orders or shipments?",
+          "answer": ""
+        }
+      ],
+      "finalCtaHeading": "Want to digitise warehouse and logistics workflows?",
+      "seo": {
+        "metaTitle": "",
+        "metaDescription": ""
+      }
+    },
+    {
+      "title": "Laboratory Information Management System",
+      "modelType": "ready-to-configure",
+      "order": 4,
+      "heroHeadline": "Digitise the Complete Laboratory Sample Lifecycle",
+      "summary": "Configure a LIMS foundation around your laboratory’s samples, tests, workflows, approvals, reports, billing and customer processes.",
+      "ctaLabel": "Request a LIMS Walkthrough",
+      "whoItIsFor": [
+        {
+          "text": "Testing and analytical laboratories needing digital control over samples"
+        },
+        {
+          "text": "Laboratories managing tests, parameters and results"
+        },
+        {
+          "text": "Teams needing approval, reporting and billing workflows"
+        },
+        {
+          "text": "Laboratories requiring stronger operational visibility"
+        }
+      ],
+      "problemHeading": "Common Problems",
+      "problemItems": [
+        {
+          "text": "Manual sample registers"
+        },
+        {
+          "text": "Difficulty tracking sample status"
+        },
+        {
+          "text": "Repetitive result entry"
+        },
+        {
+          "text": "Delayed report generation"
+        },
+        {
+          "text": "Manual approval workflows"
+        },
+        {
+          "text": "Poor customer visibility"
+        },
+        {
+          "text": "Fragmented billing"
+        },
+        {
+          "text": "Limited auditability"
+        },
+        {
+          "text": "Operational bottlenecks"
+        }
+      ],
+      "solutionOverview": "Typical lifecycle: Sample Registration → Test Assignment → Testing → Result Entry → Review → Approval → Report → Delivery / Billing. The exact lifecycle can be configured around laboratory type and operating process.",
+      "exampleWorkflow": "Sample Registration → Test Assignment → Testing → Result Entry → Review → Approval → Report → Delivery / Billing",
+      "coreModules": [
+        {
+          "text": "Customer"
+        },
+        {
+          "text": "Sample Registration"
+        },
+        {
+          "text": "Test & Parameter Master"
+        },
+        {
+          "text": "Sample Assignment"
+        },
+        {
+          "text": "Testing"
+        },
+        {
+          "text": "Result Entry"
+        },
+        {
+          "text": "Review"
+        },
+        {
+          "text": "Approval"
+        },
+        {
+          "text": "Report Generation"
+        },
+        {
+          "text": "Billing"
+        },
+        {
+          "text": "Customer Portal"
+        },
+        {
+          "text": "Dashboards"
+        },
+        {
+          "text": "User/Roles"
+        }
+      ],
+      "whatIsAlreadyAvailable": [
+        {
+          "text": "Sample workflow"
+        },
+        {
+          "text": "Test master structures"
+        },
+        {
+          "text": "Status management"
+        },
+        {
+          "text": "Result capture"
+        },
+        {
+          "text": "Approval flows"
+        },
+        {
+          "text": "Report foundations"
+        },
+        {
+          "text": "User roles"
+        },
+        {
+          "text": "Customer structures"
+        },
+        {
+          "text": "Dashboard/report patterns"
+        }
+      ],
+      "whatCanBeConfigured": [
+        {
+          "text": "Test categories"
+        },
+        {
+          "text": "Parameters"
+        },
+        {
+          "text": "Units"
+        },
+        {
+          "text": "Sample workflows"
+        },
+        {
+          "text": "Approval levels"
+        },
+        {
+          "text": "Report formats"
+        },
+        {
+          "text": "Numbering conventions"
+        },
+        {
+          "text": "Customer rules"
+        },
+        {
+          "text": "Billing rules"
+        },
+        {
+          "text": "User permissions"
+        }
+      ],
+      "whatCanBeExtended": [
+        {
+          "text": "Instrument integration"
+        },
+        {
+          "text": "Barcode labels"
+        },
+        {
+          "text": "Sample pickup workflows"
+        },
+        {
+          "text": "Mobile apps"
+        },
+        {
+          "text": "Customer portals"
+        },
+        {
+          "text": "Advanced billing"
+        },
+        {
+          "text": "Specialised reports"
+        },
+        {
+          "text": "Integrations"
+        }
+      ],
+      "capabilitiesHeading": "Integrations",
+      "capabilities": [
+        {
+          "text": "Laboratory instruments"
+        },
+        {
+          "text": "Accounting"
+        },
+        {
+          "text": "Payment gateway"
+        },
+        {
+          "text": "Customer portals"
+        },
+        {
+          "text": "Messaging"
+        },
+        {
+          "text": "ERP"
+        },
+        {
+          "text": "CRM"
+        },
+        {
+          "text": "APIs"
+        }
+      ],
+      "aiOpportunitiesHeading": "AI & Automation Opportunities",
+      "aiOpportunities": [
+        {
+          "text": "Report summarisation assistance"
+        },
+        {
+          "text": "Document extraction"
+        },
+        {
+          "text": "Intelligent sample classification"
+        },
+        {
+          "text": "Operations assistants"
+        },
+        {
+          "text": "Exception detection"
+        },
+        {
+          "text": "Knowledge search"
+        },
+        {
+          "text": "Workflow alerts"
+        }
+      ],
+      "industryTitles": [
+        "Food Testing",
+        "Oil Testing",
+        "Chemical Testing",
+        "Environmental Testing",
+        "Industrial Laboratories",
+        "Other analytical laboratories subject to fit assessment"
+      ],
+      "relatedResources": [
+        {
+          "text": "LIMS Implementation Guide"
+        },
+        {
+          "text": "Laboratory Digital Transformation Checklist"
+        },
+        {
+          "text": "Healthcare & Diagnostics Playbook"
+        }
+      ],
+      "faqs": [
+        {
+          "question": "Is the LIMS already built?",
+          "answer": ""
+        },
+        {
+          "question": "Can report formats be customised?",
+          "answer": ""
+        },
+        {
+          "question": "Can test parameters vary by laboratory?",
+          "answer": ""
+        },
+        {
+          "question": "Can instruments be integrated?",
+          "answer": ""
+        },
+        {
+          "question": "Is the solution suitable for every laboratory?",
+          "answer": ""
+        }
+      ],
+      "finalCtaHeading": "Want to see how the LIMS foundation fits your laboratory workflow?",
+      "seo": {
+        "metaTitle": "",
+        "metaDescription": ""
+      }
+    },
+    {
+      "title": "Sales Force Automation",
+      "modelType": "ready-to-configure",
+      "order": 5,
+      "heroHeadline": "Give Your Sales Team a Structured Digital Workflow",
+      "summary": "Configure lead, customer, field-sales, activity, quotation and follow-up workflows around the way your sales organisation operates.",
+      "ctaLabel": "Request a Sales Force Automation Walkthrough",
+      "whoItIsFor": [
+        {
+          "text": "Businesses with field sales teams"
+        },
+        {
+          "text": "Multi-stage sales processes"
+        },
+        {
+          "text": "Distributor/dealer networks"
+        },
+        {
+          "text": "Manual follow-ups"
+        },
+        {
+          "text": "Complex quotations"
+        },
+        {
+          "text": "Territory-based sales"
+        },
+        {
+          "text": "Limited sales visibility"
+        }
+      ],
+      "problemHeading": "Common Problems",
+      "problemItems": [
+        {
+          "text": "Leads managed in spreadsheets"
+        },
+        {
+          "text": "Inconsistent follow-up"
+        },
+        {
+          "text": "Field activity not visible"
+        },
+        {
+          "text": "Customer information scattered"
+        },
+        {
+          "text": "Delayed quotations"
+        },
+        {
+          "text": "Limited pipeline visibility"
+        },
+        {
+          "text": "Poor accountability"
+        },
+        {
+          "text": "No structured visit reporting"
+        }
+      ],
+      "solutionOverview": "Typical flow: Lead → Qualification → Customer / Opportunity → Activity / Visit → Quotation → Follow-Up → Order / Closure → Reporting.",
+      "exampleWorkflow": "Lead → Qualification → Customer / Opportunity → Activity / Visit → Quotation → Follow-Up → Order / Closure → Reporting",
+      "coreModules": [
+        {
+          "text": "Lead Management"
+        },
+        {
+          "text": "Customer Management"
+        },
+        {
+          "text": "Opportunity"
+        },
+        {
+          "text": "Visit / Activity"
+        },
+        {
+          "text": "Follow-Up"
+        },
+        {
+          "text": "Quotation"
+        },
+        {
+          "text": "Territory"
+        },
+        {
+          "text": "Sales Team"
+        },
+        {
+          "text": "Order Handover"
+        },
+        {
+          "text": "Dashboard"
+        },
+        {
+          "text": "Notifications"
+        }
+      ],
+      "whatIsAlreadyAvailable": [],
+      "whatCanBeConfigured": [
+        {
+          "text": "Sales stages"
+        },
+        {
+          "text": "Lead sources"
+        },
+        {
+          "text": "Approval rules"
+        },
+        {
+          "text": "Territories"
+        },
+        {
+          "text": "Quotation logic"
+        },
+        {
+          "text": "Activity types"
+        },
+        {
+          "text": "Role hierarchy"
+        },
+        {
+          "text": "Reports"
+        },
+        {
+          "text": "Alerts"
+        }
+      ],
+      "whatCanBeExtended": [
+        {
+          "text": "Mobile app"
+        },
+        {
+          "text": "GPS-based workflows where appropriate"
+        },
+        {
+          "text": "Dealer portal"
+        },
+        {
+          "text": "Order capture"
+        },
+        {
+          "text": "Service workflows"
+        },
+        {
+          "text": "Incentive calculations"
+        },
+        {
+          "text": "Custom pricing"
+        }
+      ],
+      "capabilitiesHeading": "Integrations",
+      "capabilities": [
+        {
+          "text": "ERP"
+        },
+        {
+          "text": "Accounting"
+        },
+        {
+          "text": "Ecommerce"
+        },
+        {
+          "text": "WhatsApp/SMS/email"
+        },
+        {
+          "text": "Customer portals"
+        },
+        {
+          "text": "Payment systems"
+        },
+        {
+          "text": "APIs"
+        }
+      ],
+      "aiOpportunitiesHeading": "AI & Automation Opportunities",
+      "aiOpportunities": [
+        {
+          "text": "Lead summarisation"
+        },
+        {
+          "text": "Meeting notes"
+        },
+        {
+          "text": "Follow-up suggestions"
+        },
+        {
+          "text": "Account summaries"
+        },
+        {
+          "text": "Pipeline insights"
+        },
+        {
+          "text": "Proposal assistance"
+        },
+        {
+          "text": "Sales knowledge assistant"
+        }
+      ],
+      "industryTitles": [
+        "Manufacturing",
+        "Professional Services",
+        "Distribution",
+        "Healthcare",
+        "Retail",
+        "B2B sales organisations"
+      ],
+      "relatedResources": [],
+      "faqs": [
+        {
+          "question": "Is this a CRM?",
+          "answer": ""
+        },
+        {
+          "question": "Can field-sales mobile workflows be included?",
+          "answer": ""
+        },
+        {
+          "question": "Can quotation processes be customised?",
+          "answer": ""
+        },
+        {
+          "question": "Can this integrate with our ERP?",
+          "answer": ""
+        }
+      ],
+      "finalCtaHeading": "Want to give your sales team a more structured operating system?",
+      "seo": {
+        "metaTitle": "",
+        "metaDescription": ""
+      }
+    },
+    {
+      "title": "Project & Service Management",
+      "modelType": "ready-to-configure",
+      "order": 6,
+      "heroHeadline": "Connect Projects, Teams, Service and Commercials",
+      "summary": "Configure a proven platform foundation for project execution, tasks, service workflows, customers, billing and management visibility.",
+      "ctaLabel": "Request a Project & Service Management Walkthrough",
+      "whoItIsFor": [
+        {
+          "text": "Professional services firms"
+        },
+        {
+          "text": "Project-led businesses"
+        },
+        {
+          "text": "Service organisations"
+        },
+        {
+          "text": "Installation/service teams"
+        },
+        {
+          "text": "Agencies"
+        },
+        {
+          "text": "Consulting businesses"
+        }
+      ],
+      "problemHeading": "Common Problems",
+      "problemItems": [
+        {
+          "text": "CRM disconnected from delivery"
+        },
+        {
+          "text": "Projects tracked manually"
+        },
+        {
+          "text": "Resource visibility gaps"
+        },
+        {
+          "text": "Poor task accountability"
+        },
+        {
+          "text": "Service requests scattered"
+        },
+        {
+          "text": "Billing disconnected from work"
+        },
+        {
+          "text": "Limited project profitability visibility"
+        }
+      ],
+      "solutionOverview": "Typical lifecycle: Lead / Customer → Project / Service Request → Plan → Assign → Execute → Review → Bill → Close / Support.",
+      "exampleWorkflow": "Lead / Customer → Project / Service Request → Plan → Assign → Execute → Review → Bill → Close / Support",
+      "coreModules": [
+        {
+          "text": "Customer"
+        },
+        {
+          "text": "Project"
+        },
+        {
+          "text": "Task"
+        },
+        {
+          "text": "Team / Resource"
+        },
+        {
+          "text": "Service Request"
+        },
+        {
+          "text": "Milestone"
+        },
+        {
+          "text": "Timesheet if required"
+        },
+        {
+          "text": "Expenses"
+        },
+        {
+          "text": "Billing"
+        },
+        {
+          "text": "Documents"
+        },
+        {
+          "text": "Dashboard"
+        }
+      ],
+      "whatIsAlreadyAvailable": [],
+      "whatCanBeConfigured": [
+        {
+          "text": "Project stages"
+        },
+        {
+          "text": "Workflows"
+        },
+        {
+          "text": "Task templates"
+        },
+        {
+          "text": "Approvals"
+        },
+        {
+          "text": "Service categories"
+        },
+        {
+          "text": "Billing rules"
+        },
+        {
+          "text": "Roles"
+        },
+        {
+          "text": "Reports"
+        }
+      ],
+      "whatCanBeExtended": [
+        {
+          "text": "Customer portal"
+        },
+        {
+          "text": "Mobile field service"
+        },
+        {
+          "text": "Quotations"
+        },
+        {
+          "text": "Inventory"
+        },
+        {
+          "text": "AMC/service contracts"
+        },
+        {
+          "text": "Finance integration"
+        },
+        {
+          "text": "Automation"
+        }
+      ],
+      "capabilities": [],
+      "aiOpportunitiesHeading": "AI & Automation Opportunities",
+      "aiOpportunities": [
+        {
+          "text": "Project summaries"
+        },
+        {
+          "text": "Risk identification"
+        },
+        {
+          "text": "Meeting notes"
+        },
+        {
+          "text": "Knowledge assistance"
+        },
+        {
+          "text": "Task recommendations"
+        },
+        {
+          "text": "Proposal assistance"
+        }
+      ],
+      "industryTitles": [
+        "Professional Services",
+        "Interior / Architecture",
+        "Technology services",
+        "Installation businesses",
+        "Education/training projects",
+        "Public-sector programmes"
+      ],
+      "relatedResources": [],
+      "faqs": [
+        {
+          "question": "Can the platform handle both projects and service requests?",
+          "answer": ""
+        },
+        {
+          "question": "Can customer access be provided?",
+          "answer": ""
+        },
+        {
+          "question": "Can finance or accounting be integrated?",
+          "answer": ""
+        },
+        {
+          "question": "Can different project templates be configured?",
+          "answer": ""
+        }
+      ],
+      "finalCtaHeading": "Want to connect projects, service and commercial workflows?",
+      "seo": {
+        "metaTitle": "",
+        "metaDescription": ""
+      }
+    },
+    {
+      "title": "Customer Portal",
+      "modelType": "ready-to-configure",
+      "order": 7,
+      "heroHeadline": "Give Customers a Better Digital Service Experience",
+      "summary": "Create a secure self-service portal where customers can access information, requests, documents, transactions and services without relying on email or phone coordination.",
+      "ctaLabel": "Request a Customer Portal Solution Walkthrough",
+      "whoItIsFor": [
+        {
+          "text": "Organisations with repeated customer interactions around orders"
+        },
+        {
+          "text": "Reports and documents"
+        },
+        {
+          "text": "Support and applications"
+        },
+        {
+          "text": "Payments and requests"
+        },
+        {
+          "text": "Status updates"
+        }
+      ],
+      "problemHeading": "Common Problems",
+      "problemItems": [
+        {
+          "text": "High support volume"
+        },
+        {
+          "text": "Status enquiries"
+        },
+        {
+          "text": "Documents shared by email"
+        },
+        {
+          "text": "Customer information scattered"
+        },
+        {
+          "text": "Manual service requests"
+        },
+        {
+          "text": "Limited transparency"
+        },
+        {
+          "text": "Repetitive communication"
+        }
+      ],
+      "solutionOverview": "The portal can provide a configurable layer between customers and internal systems. Potential flow: Login → Dashboard → Transaction / Request → Status → Documents → Communication → Completion.",
+      "exampleWorkflow": "Login → Dashboard → Transaction / Request → Status → Documents → Communication → Completion",
+      "coreModules": [
+        {
+          "text": "Authentication"
+        },
+        {
+          "text": "Customer Profile"
+        },
+        {
+          "text": "Dashboard"
+        },
+        {
+          "text": "Requests"
+        },
+        {
+          "text": "Transactions"
+        },
+        {
+          "text": "Documents"
+        },
+        {
+          "text": "Status Tracking"
+        },
+        {
+          "text": "Notifications"
+        },
+        {
+          "text": "Payments"
+        },
+        {
+          "text": "Support"
+        },
+        {
+          "text": "Reports"
+        }
+      ],
+      "whatIsAlreadyAvailable": [],
+      "whatCanBeConfigured": [
+        {
+          "text": "Customer roles"
+        },
+        {
+          "text": "Workflows"
+        },
+        {
+          "text": "Request types"
+        },
+        {
+          "text": "Dashboard information"
+        },
+        {
+          "text": "Documents"
+        },
+        {
+          "text": "Permissions"
+        },
+        {
+          "text": "Communication"
+        },
+        {
+          "text": "Branding"
+        },
+        {
+          "text": "Status rules"
+        }
+      ],
+      "whatCanBeExtended": [
+        {
+          "text": "Mobile app"
+        },
+        {
+          "text": "Chat/support"
+        },
+        {
+          "text": "Ecommerce"
+        },
+        {
+          "text": "Booking"
+        },
+        {
+          "text": "Report downloads"
+        },
+        {
+          "text": "Workflow approvals"
+        },
+        {
+          "text": "Digital forms"
+        }
+      ],
+      "capabilitiesHeading": "Integrations",
+      "capabilities": [
+        {
+          "text": "ERP"
+        },
+        {
+          "text": "CRM"
+        },
+        {
+          "text": "Billing"
+        },
+        {
+          "text": "LIMS"
+        },
+        {
+          "text": "Payment gateway"
+        },
+        {
+          "text": "Support systems"
+        },
+        {
+          "text": "Document storage"
+        },
+        {
+          "text": "APIs"
+        }
+      ],
+      "aiOpportunitiesHeading": "AI & Automation Opportunities",
+      "aiOpportunities": [
+        {
+          "text": "Customer assistant"
+        },
+        {
+          "text": "Intelligent search"
+        },
+        {
+          "text": "Document summaries"
+        },
+        {
+          "text": "Automated support routing"
+        },
+        {
+          "text": "Knowledge assistant"
+        }
+      ],
+      "industryTitles": [
+        "Healthcare & Diagnostics",
+        "Manufacturing",
+        "Financial Services",
+        "Professional Services",
+        "Logistics",
+        "Government",
+        "Education"
+      ],
+      "relatedResources": [],
+      "faqs": [
+        {
+          "question": "Can the portal connect to our existing ERP?",
+          "answer": ""
+        },
+        {
+          "question": "Can each customer see only their own data?",
+          "answer": ""
+        },
+        {
+          "question": "Can payments be enabled?",
+          "answer": ""
+        },
+        {
+          "question": "Can it support mobile users?",
+          "answer": ""
+        }
+      ],
+      "finalCtaHeading": "Want to give customers a better self-service experience?",
+      "seo": {
+        "metaTitle": "",
+        "metaDescription": ""
+      }
+    },
+    {
+      "title": "Association & Membership Management",
+      "modelType": "ready-to-configure",
+      "order": 8,
+      "heroHeadline": "Manage Membership, Engagement and Community in One Place",
+      "summary": "Configure membership, chapters, networking, events, communication and engagement workflows around your association or professional community.",
+      "ctaLabel": "Request an Association & Membership Solution Walkthrough",
+      "whoItIsFor": [
+        {
+          "text": "Business associations"
+        },
+        {
+          "text": "Professional communities"
+        },
+        {
+          "text": "Membership organisations"
+        },
+        {
+          "text": "Chapters"
+        },
+        {
+          "text": "Clubs"
+        },
+        {
+          "text": "Networking groups"
+        }
+      ],
+      "problemHeading": "Common Problems",
+      "problemItems": [
+        {
+          "text": "Member information scattered"
+        },
+        {
+          "text": "Manual renewals"
+        },
+        {
+          "text": "Poor member engagement"
+        },
+        {
+          "text": "Event data disconnected"
+        },
+        {
+          "text": "Chapter coordination challenges"
+        },
+        {
+          "text": "Referrals not tracked"
+        },
+        {
+          "text": "Communication fragmented"
+        }
+      ],
+      "solutionOverview": "Typical lifecycle: Member Onboarding → Membership → Engagement → Events / Networking → Renewals → Reporting.",
+      "exampleWorkflow": "Member Onboarding → Membership → Engagement → Events / Networking → Renewals → Reporting",
+      "coreModules": [
+        {
+          "text": "Members"
+        },
+        {
+          "text": "Membership Plans"
+        },
+        {
+          "text": "Chapters"
+        },
+        {
+          "text": "Committees"
+        },
+        {
+          "text": "Directory"
+        },
+        {
+          "text": "Networking"
+        },
+        {
+          "text": "Referrals"
+        },
+        {
+          "text": "Events"
+        },
+        {
+          "text": "Renewals"
+        },
+        {
+          "text": "Payments"
+        },
+        {
+          "text": "Communication"
+        },
+        {
+          "text": "Dashboard"
+        }
+      ],
+      "whatIsAlreadyAvailable": [],
+      "whatCanBeConfigured": [
+        {
+          "text": "Membership types"
+        },
+        {
+          "text": "Chapter rules"
+        },
+        {
+          "text": "Renewal logic"
+        },
+        {
+          "text": "Event processes"
+        },
+        {
+          "text": "Referral structures"
+        },
+        {
+          "text": "Permissions"
+        },
+        {
+          "text": "Reports"
+        },
+        {
+          "text": "Communication workflows"
+        }
+      ],
+      "whatCanBeExtended": [
+        {
+          "text": "Mobile app"
+        },
+        {
+          "text": "Matchmaking/networking"
+        },
+        {
+          "text": "Voting"
+        },
+        {
+          "text": "Resources"
+        },
+        {
+          "text": "Sponsorships"
+        },
+        {
+          "text": "Certification"
+        },
+        {
+          "text": "Event engagement"
+        }
+      ],
+      "capabilities": [],
+      "aiOpportunitiesHeading": "AI & Automation Opportunities",
+      "aiOpportunities": [
+        {
+          "text": "Member recommendations"
+        },
+        {
+          "text": "Networking matches"
+        },
+        {
+          "text": "Event recommendations"
+        },
+        {
+          "text": "Community knowledge assistant"
+        },
+        {
+          "text": "Engagement insights"
+        }
+      ],
+      "industryTitles": [
+        "Associations & Communities",
+        "Professional networks",
+        "Business chambers",
+        "Clubs and member organisations"
+      ],
+      "relatedResources": [],
+      "faqs": [
+        {
+          "question": "Can it support multiple chapters?",
+          "answer": ""
+        },
+        {
+          "question": "Can membership renewals and payments be included?",
+          "answer": ""
+        },
+        {
+          "question": "Can networking or referral workflows be configured?",
+          "answer": ""
+        },
+        {
+          "question": "Can a mobile app be added?",
+          "answer": ""
+        }
+      ],
+      "finalCtaHeading": "Want to modernise your membership and community operations?",
+      "seo": {
+        "metaTitle": "",
+        "metaDescription": ""
+      }
+    },
+    {
+      "title": "Financial Operations Management",
+      "modelType": "ready-to-configure",
+      "order": 9,
+      "heroHeadline": "Digitise Complex Financial and Commercial Workflows",
+      "summary": "Configure transaction, partner, approval, documentation and operational workflows using a proven financial operations foundation.",
+      "ctaLabel": "Request a Financial Operations Solution Walkthrough",
+      "whoItIsFor": [
+        {
+          "text": "FinTech companies"
+        },
+        {
+          "text": "Financial intermediaries"
+        },
+        {
+          "text": "Trading businesses"
+        },
+        {
+          "text": "Lending platforms"
+        },
+        {
+          "text": "Partner-led financial businesses"
+        },
+        {
+          "text": "Commercial finance operations"
+        }
+      ],
+      "problemHeading": "Common Problems",
+      "problemItems": [
+        {
+          "text": "Manual onboarding"
+        },
+        {
+          "text": "Disconnected transaction workflows"
+        },
+        {
+          "text": "Document-heavy operations"
+        },
+        {
+          "text": "Partner management challenges"
+        },
+        {
+          "text": "Approvals outside systems"
+        },
+        {
+          "text": "Reconciliation effort"
+        },
+        {
+          "text": "Limited operational visibility"
+        }
+      ],
+      "solutionOverview": "Rather than being a single fixed financial product, this foundation provides reusable patterns for users, partners, transactions, documents, approvals, workflows, reporting and dashboards that can be configured to a specific financial operating model.",
+      "coreModules": [
+        {
+          "text": "Customer / Partner"
+        },
+        {
+          "text": "Onboarding"
+        },
+        {
+          "text": "Transactions"
+        },
+        {
+          "text": "Documents"
+        },
+        {
+          "text": "Approvals"
+        },
+        {
+          "text": "Account Management"
+        },
+        {
+          "text": "Reconciliation"
+        },
+        {
+          "text": "Billing / Charges"
+        },
+        {
+          "text": "Reports"
+        },
+        {
+          "text": "Dashboard"
+        },
+        {
+          "text": "Roles / Permissions"
+        }
+      ],
+      "whatIsAlreadyAvailable": [],
+      "whatCanBeConfigured": [
+        {
+          "text": "Workflow stages"
+        },
+        {
+          "text": "User roles"
+        },
+        {
+          "text": "Approval matrices"
+        },
+        {
+          "text": "Transaction types"
+        },
+        {
+          "text": "Document requirements"
+        },
+        {
+          "text": "Reporting"
+        },
+        {
+          "text": "Partner structures"
+        },
+        {
+          "text": "Business rules"
+        }
+      ],
+      "whatCanBeExtended": [
+        {
+          "text": "KYC integrations"
+        },
+        {
+          "text": "Payments"
+        },
+        {
+          "text": "External financial APIs"
+        },
+        {
+          "text": "Customer portals"
+        },
+        {
+          "text": "Mobile experiences"
+        },
+        {
+          "text": "Specialised transaction modules"
+        }
+      ],
+      "capabilitiesHeading": "Integrations",
+      "capabilities": [
+        {
+          "text": "KYC services"
+        },
+        {
+          "text": "Banking APIs"
+        },
+        {
+          "text": "Accounting"
+        },
+        {
+          "text": "Payment gateways"
+        },
+        {
+          "text": "Market/data services"
+        },
+        {
+          "text": "CRM"
+        },
+        {
+          "text": "Messaging"
+        },
+        {
+          "text": "Analytics"
+        }
+      ],
+      "aiOpportunitiesHeading": "AI & Automation Opportunities",
+      "aiOpportunities": [
+        {
+          "text": "Document extraction"
+        },
+        {
+          "text": "Workflow assistance"
+        },
+        {
+          "text": "Knowledge search"
+        },
+        {
+          "text": "Anomaly support"
+        },
+        {
+          "text": "Operations summaries"
+        },
+        {
+          "text": "Classification"
+        }
+      ],
+      "industryTitles": [
+        "Financial Services & FinTech",
+        "Trading businesses",
+        "Partner-led financial networks",
+        "Commercial finance operations"
+      ],
+      "relatedResources": [],
+      "faqs": [
+        {
+          "question": "Is this a complete core banking or lending product?",
+          "answer": ""
+        },
+        {
+          "question": "Can KYC workflows be integrated?",
+          "answer": ""
+        },
+        {
+          "question": "Can complex approvals be configured?",
+          "answer": ""
+        },
+        {
+          "question": "Can partner networks be managed?",
+          "answer": ""
+        }
+      ],
+      "finalCtaHeading": "Want to digitise complex financial operations without starting from zero?",
+      "seo": {
+        "metaTitle": "",
+        "metaDescription": ""
+      }
+    },
+    {
+      "title": "Healthcare Operations Management",
+      "modelType": "ready-to-configure",
+      "order": 10,
+      "heroHeadline": "Connect Healthcare Operations Through One Digital Platform",
+      "summary": "Configure patient, service, administrative and operational workflows around your healthcare or diagnostic organisation.",
+      "ctaLabel": "Request a Healthcare Operations Solution Walkthrough",
+      "whoItIsFor": [
+        {
+          "text": "Diagnostic businesses"
+        },
+        {
+          "text": "Clinics"
+        },
+        {
+          "text": "Healthcare service providers"
+        },
+        {
+          "text": "Multi-location healthcare organisations"
+        },
+        {
+          "text": "Healthcare operations teams"
+        }
+      ],
+      "problemHeading": "Common Problems",
+      "problemItems": [
+        {
+          "text": "Patient workflows fragmented"
+        },
+        {
+          "text": "Manual scheduling"
+        },
+        {
+          "text": "Disconnected service teams"
+        },
+        {
+          "text": "Customer communication gaps"
+        },
+        {
+          "text": "Operational information spread across tools"
+        },
+        {
+          "text": "Limited multi-location visibility"
+        },
+        {
+          "text": "Reporting delays"
+        }
+      ],
+      "solutionOverview": "The platform foundation can connect Customer / Patient → Appointment / Request → Service Workflow → Operational Completion → Billing / Report → Communication. The exact model depends on the healthcare service being delivered.",
+      "exampleWorkflow": "Customer / Patient → Appointment / Request → Service Workflow → Operational Completion → Billing / Report → Communication",
+      "coreModules": [
+        {
+          "text": "Patient / Customer"
+        },
+        {
+          "text": "Appointment"
+        },
+        {
+          "text": "Service"
+        },
+        {
+          "text": "Location"
+        },
+        {
+          "text": "Staff"
+        },
+        {
+          "text": "Workflow"
+        },
+        {
+          "text": "Billing"
+        },
+        {
+          "text": "Documents"
+        },
+        {
+          "text": "Communication"
+        },
+        {
+          "text": "Customer Portal"
+        },
+        {
+          "text": "Dashboard"
+        }
+      ],
+      "whatIsAlreadyAvailable": [],
+      "whatCanBeConfigured": [
+        {
+          "text": "Service workflows"
+        },
+        {
+          "text": "Appointment rules"
+        },
+        {
+          "text": "Roles"
+        },
+        {
+          "text": "Locations"
+        },
+        {
+          "text": "Status processes"
+        },
+        {
+          "text": "Billing structures"
+        },
+        {
+          "text": "Communications"
+        },
+        {
+          "text": "Dashboards"
+        },
+        {
+          "text": "Reports"
+        }
+      ],
+      "whatCanBeExtended": [
+        {
+          "text": "Patient app"
+        },
+        {
+          "text": "Teleconsultation integration"
+        },
+        {
+          "text": "LIMS"
+        },
+        {
+          "text": "Inventory"
+        },
+        {
+          "text": "Payments"
+        },
+        {
+          "text": "Specialist workflows"
+        },
+        {
+          "text": "External healthcare systems"
+        }
+      ],
+      "capabilitiesHeading": "Integrations",
+      "capabilities": [
+        {
+          "text": "LIMS"
+        },
+        {
+          "text": "Payment gateway"
+        },
+        {
+          "text": "Messaging"
+        },
+        {
+          "text": "CRM"
+        },
+        {
+          "text": "Accounting"
+        },
+        {
+          "text": "Healthcare platforms"
+        },
+        {
+          "text": "Customer portals"
+        },
+        {
+          "text": "APIs"
+        }
+      ],
+      "aiOpportunitiesHeading": "AI & Automation Opportunities",
+      "aiOpportunities": [
+        {
+          "text": "Workflow assistants"
+        },
+        {
+          "text": "Document processing"
+        },
+        {
+          "text": "Customer-support assistants"
+        },
+        {
+          "text": "Operational analytics"
+        },
+        {
+          "text": "Knowledge search"
+        },
+        {
+          "text": "Scheduling assistance"
+        }
+      ],
+      "industryTitles": [
+        "Healthcare & Diagnostics",
+        "Diagnostic businesses",
+        "Clinics",
+        "Healthcare service providers",
+        "Multi-location healthcare organisations"
+      ],
+      "relatedResources": [],
+      "faqs": [
+        {
+          "question": "Is this a hospital management system?",
+          "answer": ""
+        },
+        {
+          "question": "Can it support multiple locations?",
+          "answer": ""
+        },
+        {
+          "question": "Can it connect with a LIMS?",
+          "answer": ""
+        },
+        {
+          "question": "Can patient-facing functionality be included?",
+          "answer": ""
+        }
+      ],
+      "finalCtaHeading": "Want to connect healthcare operations through one digital platform?",
+      "seo": {
+        "metaTitle": "",
+        "metaDescription": ""
+      }
+    }
+  ],
+  "saasHub": {
+    "heroHeading": "Purpose-Built SaaS for Everyday Business Operations",
+    "heroSubtext": "Metaphi develops focused SaaS products for business needs where organisations can benefit from standardised software without commissioning a custom implementation.",
+    "heroAnchorLabel": "Explore Our Products",
+    "whySaasHeading": "Why SaaS",
+    "whySaasSubtext": "Not every business requirement needs custom software. When the underlying problem is common across many businesses and does not require significant process engineering, a standardised SaaS product can provide a faster and simpler path to adoption. Metaphi’s SaaS portfolio is designed around that principle.",
+    "otherModels": {
+      "heading": "The Metaphi Solution Model",
+      "subtext": "If workflows require substantial configuration, specialised modules or deep integrations, visitors should be routed to Ready-to-Configure Solutions. If the requirement is strategically unique, visitors should be routed to Custom Solutions.",
+      "items": [
+        {
+          "title": "SaaS Products",
+          "description": "best when the requirement is relatively standard and minimal implementation complexity is preferred."
+        },
+        {
+          "title": "Ready-to-Configure",
+          "description": "best when a proven foundation exists but workflows, modules and integrations still require substantial business-specific configuration."
+        },
+        {
+          "title": "Custom Solutions",
+          "description": "best when technology must be designed primarily around unique workflows, products, integrations or strategic requirements."
+        }
+      ]
+    },
+    "finalCta": {
+      "heading": "Find the Right Technology Model for Your Requirement",
+      "ctaLabel": "Explore Metaphi Products",
+      "secondaryCtaLabel": "Discuss Your Technology Initiative"
+    }
+  },
+  "saasProducts": [
+    {
+      "title": "Stockiphi",
+      "modelType": "saas",
+      "order": 1,
+      "heroHeadline": "Simplify Inventory and Everyday Operations With Stockiphi",
+      "summary": "Bring greater structure and visibility to inventory-related operations through a focused SaaS platform designed for everyday business use.",
+      "ctaLabel": "Explore Stockiphi",
+      "problemHeading": "The Problem",
+      "problemText": "Inventory often becomes difficult to manage long before a business believes it needs a large enterprise system. Stock information may live across spreadsheets, handwritten records or multiple applications. Teams spend time verifying availability, reconciling movements and coordinating basic operational information. Stockiphi is intended to make this everyday inventory management simpler.",
+      "secondaryNarrativeHeading": "What Stockiphi Is",
+      "secondaryNarrativeText": "Stockiphi is a standardised Metaphi SaaS product, not a bespoke implementation. Businesses adopt a common product experience rather than commissioning Metaphi to redesign the software around their specific operating model. Where substantially different workflows or integrations are required, Metaphi’s Inventory & Distribution Ready-to-Configure Solution or Custom Business Applications offering may be a better fit.",
+      "approachSteps": [],
+      "offeringsHeading": "Core Value Proposition",
+      "offerings": [
+        {
+          "title": "Better Inventory Visibility",
+          "description": "give teams a clearer view of inventory information from one system."
+        },
+        {
+          "title": "More Structured Stock Operations",
+          "description": "replace informal or spreadsheet-led stock processes with defined digital workflows."
+        },
+        {
+          "title": "Easier Day-to-Day Control",
+          "description": "provide teams with a consistent operational system rather than maintaining multiple records."
+        },
+        {
+          "title": "Lower Implementation Complexity",
+          "description": "adopt a SaaS product where standardised inventory management is sufficient."
+        }
+      ],
+      "whoItIsForText": "Stockiphi should primarily be positioned toward small and growing businesses that need inventory control without the scope or cost structure of a custom enterprise-software implementation. Detailed ICP, vertical targeting and qualification criteria should be frozen separately in the Stockiphi GTM exercise.",
+      "notRightFitHeading": "When Stockiphi May Not Be the Right Fit",
+      "notRightFitText": "If an organisation requires complex manufacturing, specialised warehouse logic, extensive system integration, unusual inventory rules or highly customised workflows, a SaaS product may create too many compromises. In those situations, direct the visitor to Inventory & Distribution Management Solution or Custom Business Applications.",
+      "faqs": [
+        {
+          "question": "Is Stockiphi custom software?",
+          "answer": "No. Stockiphi is a standardised SaaS product."
+        },
+        {
+          "question": "Can Metaphi customise Stockiphi extensively?",
+          "answer": "If substantial configuration or custom engineering is required, a Ready-to-Configure or Custom Solution may be more appropriate."
+        },
+        {
+          "question": "Is Stockiphi suitable for manufacturing?",
+          "answer": "It may suit relatively straightforward inventory requirements, but manufacturers with production, procurement, quality and specialised workflows should evaluate Manufacturing Operations or Inventory & Distribution solutions instead."
+        },
+        {
+          "question": "Can Stockiphi integrate with other systems?",
+          "answer": "Publish only verified, currently supported integrations."
+        },
+        {
+          "question": "How is Stockiphi priced?",
+          "answer": "Add pricing only after the commercial model is finalised."
+        }
+      ],
+      "finalCtaHeading": "Looking for a simpler way to manage inventory?",
+      "finalCtaButtonLabel": "Explore Stockiphi",
+      "finalCtaSecondaryLabel": "Need More Flexibility? Explore Inventory & Distribution Solutions",
+      "seo": {
+        "metaTitle": "",
+        "metaDescription": ""
+      }
+    },
+    {
+      "title": "Taskiphi",
+      "modelType": "saas",
+      "order": 2,
+      "heroHeadline": "Keep Work Visible, Accountable and Moving",
+      "summary": "Give teams a structured place to organise responsibilities, follow work and maintain clearer visibility over what needs to get done.",
+      "ctaLabel": "Explore Taskiphi",
+      "problemHeading": "The Problem",
+      "problemText": "Everyday work often gets scattered across email, chat messages, spreadsheets, meetings and individual follow-up. As teams grow, it becomes harder to answer simple questions: What needs to be done? Who owns it? What is pending? What requires attention? Taskiphi is intended to create a more structured operating layer for everyday work.",
+      "secondaryNarrativeHeading": "What Taskiphi Is",
+      "secondaryNarrativeText": "Taskiphi is a standardised SaaS product focused on task and team-work management. It should remain deliberately simpler than Metaphi’s Ready-to-Configure Project & Service Management Solution.",
+      "approachHeading": "Positioning Boundary",
+      "approachSteps": [
+        {
+          "title": "Taskiphi",
+          "description": "standardised task/work management."
+        },
+        {
+          "title": "Project & Service Management Solution",
+          "description": "configurable workflows across projects, customers, services, resources, billing and broader operations."
+        },
+        {
+          "title": "Custom Business Application",
+          "description": "bespoke system where the organisation’s operating model itself needs to be engineered into software."
+        }
+      ],
+      "offeringsHeading": "Core Value Proposition",
+      "offerings": [
+        {
+          "title": "Clear Ownership",
+          "description": "make responsibilities easier to assign and understand."
+        },
+        {
+          "title": "Better Work Visibility",
+          "description": "give teams a common view of outstanding and completed work."
+        },
+        {
+          "title": "Structured Follow-Through",
+          "description": "reduce dependency on memory, messages and informal follow-up."
+        },
+        {
+          "title": "Simpler Team Coordination",
+          "description": "provide a dedicated system for day-to-day execution."
+        }
+      ],
+      "whoItIsForText": "The product should broadly target teams that need better task visibility and accountability without implementing a larger project-management or enterprise-workflow platform. Exact ICP, team-size positioning and vertical targeting should be frozen separately during the Taskiphi GTM exercise.",
+      "notRightFitHeading": "When Taskiphi May Not Be Enough",
+      "notRightFitText": "Organisations requiring complex project stages, resource planning, billing, service contracts, customer portals or specialised workflow rules should evaluate Project & Service Management Solution. Businesses requiring entirely unique workflow technology should consider Custom Business Applications.",
+      "faqs": [
+        {
+          "question": "Is Taskiphi a project-management system?",
+          "answer": "It is positioned primarily around task and work management. Deeper project, service and commercial workflows should use the configurable Project & Service Management Solution."
+        },
+        {
+          "question": "Can Taskiphi be customised?",
+          "answer": "Taskiphi should remain a standardised SaaS product. Substantial customisation should be routed to another Metaphi solution model."
+        },
+        {
+          "question": "Is Taskiphi suitable for large enterprises?",
+          "answer": "Do not claim this broadly until product scaling, administration and governance capabilities are explicitly validated."
+        },
+        {
+          "question": "Does Taskiphi integrate with other platforms?",
+          "answer": "Publish only verified integrations."
+        },
+        {
+          "question": "What does Taskiphi cost?",
+          "answer": "Add pricing after the commercial model is finalised."
+        }
+      ],
+      "finalCtaHeading": "Want a clearer way to organise everyday team execution?",
+      "finalCtaButtonLabel": "Explore Taskiphi",
+      "finalCtaSecondaryLabel": "Need Deeper Workflows? Explore Project & Service Management",
+      "seo": {
+        "metaTitle": "",
+        "metaDescription": ""
+      }
+    }
+  ]
+}

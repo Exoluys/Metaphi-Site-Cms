@@ -19,7 +19,6 @@
     },
     "answer": {
       "type": "text",
-      "maxLength": 160,
       "required": true
     },
     "faqCategory": {
