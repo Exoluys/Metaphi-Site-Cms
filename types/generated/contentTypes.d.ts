@@ -1661,14 +1661,19 @@ export interface ApiSolutionSolution extends Struct.CollectionTypeSchema {
       'manyToMany',
       'api::case-study.case-study'
     >;
+    caseStudiesHeading: Schema.Attribute.String;
+    configurationHeading: Schema.Attribute.String;
     coreModules: Schema.Attribute.Component<'hub.string-item', true>;
+    coreModulesHeading: Schema.Attribute.String;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     ctaLabel: Schema.Attribute.String & Schema.Attribute.Required;
     ctaSecondaryLabel: Schema.Attribute.String;
     exampleWorkflow: Schema.Attribute.Text;
+    exampleWorkflowHeading: Schema.Attribute.String;
     faqs: Schema.Attribute.Relation<'manyToMany', 'api::faq.faq'>;
+    featureImage: Schema.Attribute.Media<'images'>;
     finalCtaButtonLabel: Schema.Attribute.String;
     finalCtaHeading: Schema.Attribute.String;
     finalCtaSecondaryLabel: Schema.Attribute.String;
@@ -1679,6 +1684,7 @@ export interface ApiSolutionSolution extends Struct.CollectionTypeSchema {
       'manyToMany',
       'api::industry.industry'
     >;
+    industriesHeading: Schema.Attribute.String;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -1711,14 +1717,17 @@ export interface ApiSolutionSolution extends Struct.CollectionTypeSchema {
     problemHeading: Schema.Attribute.String;
     problemItems: Schema.Attribute.Component<'hub.string-item', true>;
     problemText: Schema.Attribute.Text;
+    productExperienceHeading: Schema.Attribute.String;
     productScreenshots: Schema.Attribute.Media<'images', true>;
     publishedAt: Schema.Attribute.DateTime;
     relatedResources: Schema.Attribute.Component<'hub.string-item', true>;
+    relatedResourcesHeading: Schema.Attribute.String;
     secondaryNarrativeHeading: Schema.Attribute.String;
     secondaryNarrativeText: Schema.Attribute.Text;
     seo: Schema.Attribute.Component<'shared.seo', false>;
     slug: Schema.Attribute.UID<'title'>;
     solutionOverview: Schema.Attribute.Text;
+    solutionOverviewHeading: Schema.Attribute.String;
     summary: Schema.Attribute.Text;
     techApproachHeading: Schema.Attribute.String;
     techApproachItems: Schema.Attribute.Component<'hub.string-item', true>;
@@ -1733,9 +1742,13 @@ export interface ApiSolutionSolution extends Struct.CollectionTypeSchema {
     useCasesHeading: Schema.Attribute.String;
     useCasesSubtext: Schema.Attribute.Text;
     whatCanBeConfigured: Schema.Attribute.Component<'hub.string-item', true>;
+    whatCanBeConfiguredHeading: Schema.Attribute.String;
     whatCanBeExtended: Schema.Attribute.Component<'hub.string-item', true>;
+    whatCanBeExtendedHeading: Schema.Attribute.String;
     whatIsAlreadyAvailable: Schema.Attribute.Component<'hub.string-item', true>;
+    whatIsAlreadyAvailableHeading: Schema.Attribute.String;
     whoItIsFor: Schema.Attribute.Component<'hub.string-item', true>;
+    whoItIsForHeading: Schema.Attribute.String;
     whoItIsForText: Schema.Attribute.Text;
   };
 }

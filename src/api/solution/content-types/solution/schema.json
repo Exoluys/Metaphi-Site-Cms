@@ -100,6 +100,9 @@
       "repeatable": true,
       "component": "hub.string-item"
     },
+    "industriesHeading": {
+      "type": "string"
+    },
     "industries": {
       "type": "relation",
       "relation": "manyToMany",
@@ -156,6 +159,14 @@
     "secondaryNarrativeText": {
       "type": "text"
     },
+    "featureImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
     "modernisationHeading": {
       "type": "string"
     },
@@ -167,31 +178,55 @@
       "repeatable": true,
       "component": "hub.string-item"
     },
+    "whoItIsForHeading": {
+      "type": "string"
+    },
     "whoItIsFor": {
       "type": "component",
       "repeatable": true,
       "component": "hub.string-item"
     },
+    "solutionOverviewHeading": {
+      "type": "string"
+    },
     "solutionOverview": {
       "type": "text"
     },
+    "exampleWorkflowHeading": {
+      "type": "string"
+    },
     "exampleWorkflow": {
       "type": "text"
+    },
+    "coreModulesHeading": {
+      "type": "string"
     },
     "coreModules": {
       "type": "component",
       "repeatable": true,
       "component": "hub.string-item"
     },
+    "configurationHeading": {
+      "type": "string"
+    },
+    "whatIsAlreadyAvailableHeading": {
+      "type": "string"
+    },
     "whatIsAlreadyAvailable": {
       "type": "component",
       "repeatable": true,
       "component": "hub.string-item"
     },
+    "whatCanBeConfiguredHeading": {
+      "type": "string"
+    },
     "whatCanBeConfigured": {
       "type": "component",
       "repeatable": true,
       "component": "hub.string-item"
+    },
+    "whatCanBeExtendedHeading": {
+      "type": "string"
     },
     "whatCanBeExtended": {
       "type": "component",
@@ -207,6 +242,9 @@
     "notRightFitText": {
       "type": "text"
     },
+    "productExperienceHeading": {
+      "type": "string"
+    },
     "productScreenshots": {
       "type": "media",
       "multiple": true,
@@ -215,11 +253,17 @@
         "images"
       ]
     },
+    "caseStudiesHeading": {
+      "type": "string"
+    },
     "caseStudies": {
       "type": "relation",
       "relation": "manyToMany",
       "target": "api::case-study.case-study",
       "mappedBy": "solutions"
+    },
+    "relatedResourcesHeading": {
+      "type": "string"
     },
     "relatedResources": {
       "type": "component",
