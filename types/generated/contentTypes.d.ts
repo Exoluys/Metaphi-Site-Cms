@@ -1174,6 +1174,7 @@ export interface ApiIndustriesHubIndustriesHub extends Struct.SingleTypeSchema {
       Schema.Attribute.Required;
     relevantSolutions: Schema.Attribute.Component<'hub.info-block', false>;
     resources: Schema.Attribute.Component<'hub.info-block', false>;
+    seo: Schema.Attribute.Component<'shared.seo', false>;
     servedIndustriesHeading: Schema.Attribute.String &
       Schema.Attribute.SetMinMaxLength<{
         maxLength: 160;
@@ -1198,11 +1199,14 @@ export interface ApiIndustryIndustry extends Struct.CollectionTypeSchema {
   };
   attributes: {
     aiOpportunities: Schema.Attribute.Component<'hub.string-item', true>;
+    aiOpportunitiesHeading: Schema.Attribute.String;
     caseStudies: Schema.Attribute.Relation<
       'manyToMany',
       'api::case-study.case-study'
     >;
+    caseStudiesHeading: Schema.Attribute.String;
     commonChallenges: Schema.Attribute.Component<'hub.string-item', true>;
+    commonChallengesHeading: Schema.Attribute.String;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1213,9 +1217,13 @@ export interface ApiIndustryIndustry extends Struct.CollectionTypeSchema {
     heroImage: Schema.Attribute.Media<'images'>;
     heroSubtext: Schema.Attribute.Text;
     howMetaphiHelps: Schema.Attribute.Component<'hub.string-item', true>;
+    howMetaphiHelpsHeading: Schema.Attribute.String;
     industryContext: Schema.Attribute.Text;
+    industryContextHeading: Schema.Attribute.String;
     integrations: Schema.Attribute.Component<'hub.string-item', true>;
+    integrationsHeading: Schema.Attribute.String;
     keyUseCases: Schema.Attribute.Component<'hub.string-item', true>;
+    keyUseCasesHeading: Schema.Attribute.String;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -1230,6 +1238,7 @@ export interface ApiIndustryIndustry extends Struct.CollectionTypeSchema {
         number
       > &
       Schema.Attribute.DefaultTo<0>;
+    playbookCtaLabel: Schema.Attribute.String;
     playbookHeading: Schema.Attribute.String;
     playbookSubtext: Schema.Attribute.Text;
     primarySeoTheme: Schema.Attribute.String;
@@ -1238,10 +1247,12 @@ export interface ApiIndustryIndustry extends Struct.CollectionTypeSchema {
       'manyToMany',
       'api::solution.solution'
     >;
+    readyToConfigureSolutionsHeading: Schema.Attribute.String;
     relevantCustomSolutions: Schema.Attribute.Component<
       'hub.title-description',
       true
     >;
+    relevantCustomSolutionsHeading: Schema.Attribute.String;
     seo: Schema.Attribute.Component<'shared.seo', false>;
     slug: Schema.Attribute.UID<'title'>;
     solutions: Schema.Attribute.Relation<
@@ -1253,9 +1264,11 @@ export interface ApiIndustryIndustry extends Struct.CollectionTypeSchema {
         maxLength: 300;
       }>;
     techOpportunities: Schema.Attribute.Text;
+    techOpportunitiesHeading: Schema.Attribute.String;
     title: Schema.Attribute.String &
       Schema.Attribute.Required &
       Schema.Attribute.Unique;
+    transformationApproachCtaLabel: Schema.Attribute.String;
     transformationApproachHeading: Schema.Attribute.String;
     transformationApproachText: Schema.Attribute.Text;
     updatedAt: Schema.Attribute.DateTime;

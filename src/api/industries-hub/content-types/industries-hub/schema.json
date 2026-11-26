@@ -98,6 +98,11 @@
     "servedIndustriesHeading": {
       "type": "string",
       "maxLength": 160
+    },
+    "seo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.seo"
     }
   }
 }

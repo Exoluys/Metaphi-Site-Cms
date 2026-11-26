@@ -52,46 +52,76 @@
     "ctaSecondaryLabel": {
       "type": "string"
     },
+    "industryContextHeading": {
+      "type": "string"
+    },
     "industryContext": {
       "type": "text"
+    },
+    "commonChallengesHeading": {
+      "type": "string"
     },
     "commonChallenges": {
       "type": "component",
       "repeatable": true,
       "component": "hub.string-item"
     },
+    "techOpportunitiesHeading": {
+      "type": "string"
+    },
     "techOpportunities": {
       "type": "text"
+    },
+    "howMetaphiHelpsHeading": {
+      "type": "string"
     },
     "howMetaphiHelps": {
       "type": "component",
       "repeatable": true,
       "component": "hub.string-item"
     },
+    "relevantCustomSolutionsHeading": {
+      "type": "string"
+    },
     "relevantCustomSolutions": {
       "type": "component",
       "repeatable": true,
       "component": "hub.title-description"
+    },
+    "readyToConfigureSolutionsHeading": {
+      "type": "string"
     },
     "readyToConfigureSolutions": {
       "type": "relation",
       "relation": "manyToMany",
       "target": "api::solution.solution"
     },
+    "keyUseCasesHeading": {
+      "type": "string"
+    },
     "keyUseCases": {
       "type": "component",
       "repeatable": true,
       "component": "hub.string-item"
+    },
+    "aiOpportunitiesHeading": {
+      "type": "string"
     },
     "aiOpportunities": {
       "type": "component",
       "repeatable": true,
       "component": "hub.string-item"
     },
+    "integrationsHeading": {
+      "type": "string"
+    },
     "integrations": {
       "type": "component",
       "repeatable": true,
       "component": "hub.string-item"
+    },
+    "caseStudiesHeading": {
+      "type": "string"
     },
     "caseStudies": {
       "type": "relation",
@@ -104,11 +134,17 @@
     "transformationApproachText": {
       "type": "text"
     },
+    "transformationApproachCtaLabel": {
+      "type": "string"
+    },
     "playbookHeading": {
       "type": "string"
     },
     "playbookSubtext": {
       "type": "text"
+    },
+    "playbookCtaLabel": {
+      "type": "string"
     },
     "faqs": {
       "type": "relation",
