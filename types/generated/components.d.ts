@@ -254,44 +254,11 @@ export interface HubComparisonMatrix extends Struct.ComponentSchema {
     icon: 'apps';
   };
   attributes: {
-    customCategory: Schema.Attribute.String;
-    customColumn: Schema.Attribute.Text &
-      Schema.Attribute.Required &
-      Schema.Attribute.SetMinMaxLength<{
-        maxLength: 160;
-      }>;
-    customFooter: Schema.Attribute.String;
-    customMetric1Label: Schema.Attribute.String;
-    customMetric1Value: Schema.Attribute.String;
-    customMetric2Label: Schema.Attribute.String;
-    customMetric2Value: Schema.Attribute.String;
+    customColumn: Schema.Attribute.Text & Schema.Attribute.Required;
     heading: Schema.Attribute.String & Schema.Attribute.Required;
-    readyCategory: Schema.Attribute.String;
-    readyColumn: Schema.Attribute.Text &
-      Schema.Attribute.Required &
-      Schema.Attribute.SetMinMaxLength<{
-        maxLength: 160;
-      }>;
-    readyFooter: Schema.Attribute.String;
-    readyMetric1Label: Schema.Attribute.String;
-    readyMetric1Value: Schema.Attribute.String;
-    readyMetric2Label: Schema.Attribute.String;
-    readyMetric2Value: Schema.Attribute.String;
-    saasCategory: Schema.Attribute.String;
-    saasColumn: Schema.Attribute.Text &
-      Schema.Attribute.Required &
-      Schema.Attribute.SetMinMaxLength<{
-        maxLength: 160;
-      }>;
-    saasFooter: Schema.Attribute.String;
-    saasMetric1Label: Schema.Attribute.String;
-    saasMetric1Value: Schema.Attribute.String;
-    saasMetric2Label: Schema.Attribute.String;
-    saasMetric2Value: Schema.Attribute.String;
-    subtext: Schema.Attribute.Text &
-      Schema.Attribute.SetMinMaxLength<{
-        maxLength: 160;
-      }>;
+    readyColumn: Schema.Attribute.Text & Schema.Attribute.Required;
+    saasColumn: Schema.Attribute.Text & Schema.Attribute.Required;
+    subtext: Schema.Attribute.Text;
   };
 }
 
@@ -316,19 +283,10 @@ export interface HubCustomFinalCta extends Struct.ComponentSchema {
     icon: 'cursor';
   };
   attributes: {
-    ctaLabel: Schema.Attribute.String &
-      Schema.Attribute.SetMinMaxLength<{
-        maxLength: 60;
-      }>;
+    ctaLabel: Schema.Attribute.String;
     heading: Schema.Attribute.String & Schema.Attribute.Required;
-    secondaryCtaLabel: Schema.Attribute.String &
-      Schema.Attribute.SetMinMaxLength<{
-        maxLength: 60;
-      }>;
-    subtext: Schema.Attribute.Text &
-      Schema.Attribute.SetMinMaxLength<{
-        maxLength: 160;
-      }>;
+    secondaryCtaLabel: Schema.Attribute.String;
+    subtext: Schema.Attribute.Text;
   };
 }
 
@@ -340,15 +298,9 @@ export interface HubFinalCta extends Struct.ComponentSchema {
     icon: 'cursor';
   };
   attributes: {
-    ctaLabel: Schema.Attribute.String &
-      Schema.Attribute.SetMinMaxLength<{
-        maxLength: 60;
-      }>;
+    ctaLabel: Schema.Attribute.String;
     heading: Schema.Attribute.String & Schema.Attribute.Required;
-    subtext: Schema.Attribute.Text &
-      Schema.Attribute.SetMinMaxLength<{
-        maxLength: 160;
-      }>;
+    subtext: Schema.Attribute.Text;
   };
 }
 
@@ -361,41 +313,17 @@ export interface HubHowToChoose extends Struct.ComponentSchema {
   };
   attributes: {
     ctaLabel: Schema.Attribute.String & Schema.Attribute.Required;
-    customRule: Schema.Attribute.Text &
-      Schema.Attribute.Required &
-      Schema.Attribute.SetMinMaxLength<{
-        maxLength: 160;
-      }>;
+    customRule: Schema.Attribute.Text & Schema.Attribute.Required;
     customRuleTitle: Schema.Attribute.String;
-    customSummary: Schema.Attribute.Text &
-      Schema.Attribute.SetMinMaxLength<{
-        maxLength: 200;
-      }>;
+    customSummary: Schema.Attribute.Text;
     heading: Schema.Attribute.String & Schema.Attribute.Required;
-    readyRule: Schema.Attribute.Text &
-      Schema.Attribute.Required &
-      Schema.Attribute.SetMinMaxLength<{
-        maxLength: 160;
-      }>;
+    readyRule: Schema.Attribute.Text & Schema.Attribute.Required;
     readyRuleTitle: Schema.Attribute.String;
-    readySummary: Schema.Attribute.Text &
-      Schema.Attribute.SetMinMaxLength<{
-        maxLength: 200;
-      }>;
-    saasRule: Schema.Attribute.Text &
-      Schema.Attribute.Required &
-      Schema.Attribute.SetMinMaxLength<{
-        maxLength: 160;
-      }>;
+    readySummary: Schema.Attribute.Text;
+    saasRule: Schema.Attribute.Text & Schema.Attribute.Required;
     saasRuleTitle: Schema.Attribute.String;
-    saasSummary: Schema.Attribute.Text &
-      Schema.Attribute.SetMinMaxLength<{
-        maxLength: 200;
-      }>;
-    subtext: Schema.Attribute.Text &
-      Schema.Attribute.SetMinMaxLength<{
-        maxLength: 160;
-      }>;
+    saasSummary: Schema.Attribute.Text;
+    subtext: Schema.Attribute.Text;
   };
 }
 
@@ -411,10 +339,7 @@ export interface HubInfoBlock extends Struct.ComponentSchema {
     heading: Schema.Attribute.String & Schema.Attribute.Required;
     highlight: Schema.Attribute.String & Schema.Attribute.Required;
     image: Schema.Attribute.Media<'images'>;
-    subtext: Schema.Attribute.Text &
-      Schema.Attribute.SetMinMaxLength<{
-        maxLength: 160;
-      }>;
+    subtext: Schema.Attribute.Text;
   };
 }
 
@@ -505,10 +430,7 @@ export interface HubProcessFlow extends Struct.ComponentSchema {
         },
         number
       >;
-    subtext: Schema.Attribute.Text &
-      Schema.Attribute.SetMinMaxLength<{
-        maxLength: 160;
-      }>;
+    subtext: Schema.Attribute.Text;
   };
 }
 
@@ -526,10 +448,7 @@ export interface HubProofBlock extends Struct.ComponentSchema {
     >;
     ctaLabel: Schema.Attribute.String & Schema.Attribute.Required;
     heading: Schema.Attribute.String & Schema.Attribute.Required;
-    subtext: Schema.Attribute.Text &
-      Schema.Attribute.SetMinMaxLength<{
-        maxLength: 160;
-      }>;
+    subtext: Schema.Attribute.Text;
   };
 }
 
@@ -556,10 +475,7 @@ export interface HubReadyProcessFlow extends Struct.ComponentSchema {
         },
         number
       >;
-    subtext: Schema.Attribute.Text &
-      Schema.Attribute.SetMinMaxLength<{
-        maxLength: 160;
-      }>;
+    subtext: Schema.Attribute.Text;
   };
 }
 
@@ -577,10 +493,7 @@ export interface HubReadyProofBlock extends Struct.ComponentSchema {
     >;
     ctaLabel: Schema.Attribute.String & Schema.Attribute.Required;
     heading: Schema.Attribute.String & Schema.Attribute.Required;
-    subtext: Schema.Attribute.Text &
-      Schema.Attribute.SetMinMaxLength<{
-        maxLength: 160;
-      }>;
+    subtext: Schema.Attribute.Text;
   };
 }
 
@@ -649,22 +562,8 @@ export interface HubSolutionModel extends Struct.ComponentSchema {
     icon: 'apps';
   };
   attributes: {
-    badge: Schema.Attribute.String &
-      Schema.Attribute.SetMinMaxLength<{
-        maxLength: 60;
-      }>;
-    description: Schema.Attribute.Text &
-      Schema.Attribute.SetMinMaxLength<{
-        maxLength: 160;
-      }>;
-    keyFit: Schema.Attribute.Text &
-      Schema.Attribute.SetMinMaxLength<{
-        maxLength: 160;
-      }>;
-    tagline: Schema.Attribute.String &
-      Schema.Attribute.SetMinMaxLength<{
-        maxLength: 160;
-      }>;
+    description: Schema.Attribute.Text;
+    tagline: Schema.Attribute.String;
     title: Schema.Attribute.String;
   };
 }

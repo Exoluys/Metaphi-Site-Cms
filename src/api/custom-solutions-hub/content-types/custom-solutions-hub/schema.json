@@ -17,7 +17,6 @@
     },
     "heroSubtext": {
       "type": "text",
-      "maxLength": 160,
       "required": false
     },
     "heroImage": {
@@ -27,14 +26,6 @@
       "allowedTypes": [
         "images"
       ]
-    },
-    "heroEyebrow": {
-      "type": "string",
-      "required": false
-    },
-    "heroMetric": {
-      "type": "string",
-      "required": false
     },
     "heroAnchorLabel": {
       "type": "string",
@@ -50,8 +41,7 @@
       "required": true
     },
     "capabilitiesSubtext": {
-      "type": "text",
-      "maxLength": 160
+      "type": "text"
     },
     "businessOutcomes": {
       "type": "component",

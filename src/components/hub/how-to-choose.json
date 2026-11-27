@@ -13,8 +13,7 @@
     },
     "subtext": {
       "type": "text",
-      "required": false,
-      "maxLength": 160
+      "required": false
     },
     "customRuleTitle": {
       "type": "string",
@@ -22,13 +21,11 @@
     },
     "customRule": {
       "type": "text",
-      "required": true,
-      "maxLength": 160
+      "required": true
     },
     "customSummary": {
       "type": "text",
-      "required": false,
-      "maxLength": 200
+      "required": false
     },
     "readyRuleTitle": {
       "type": "string",
@@ -36,13 +33,11 @@
     },
     "readyRule": {
       "type": "text",
-      "required": true,
-      "maxLength": 160
+      "required": true
     },
     "readySummary": {
       "type": "text",
-      "required": false,
-      "maxLength": 200
+      "required": false
     },
     "saasRuleTitle": {
       "type": "string",
@@ -50,13 +45,11 @@
     },
     "saasRule": {
       "type": "text",
-      "required": true,
-      "maxLength": 160
+      "required": true
     },
     "saasSummary": {
       "type": "text",
-      "required": false,
-      "maxLength": 200
+      "required": false
     },
     "ctaLabel": {
       "type": "string",

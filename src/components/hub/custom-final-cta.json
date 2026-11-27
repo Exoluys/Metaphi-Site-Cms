@@ -13,17 +13,14 @@
     },
     "subtext": {
       "type": "text",
-      "maxLength": 160,
       "required": false
     },
     "ctaLabel": {
       "type": "string",
-      "maxLength": 60,
       "required": false
     },
     "secondaryCtaLabel": {
       "type": "string",
-      "maxLength": 60,
       "required": false
     }
   }

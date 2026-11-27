@@ -22,8 +22,7 @@
       "maxLength": 20
     },
     "heroDescription": {
-      "type": "text",
-      "maxLength": 120
+      "type": "text"
     },
     "primaryButtonLabel": {
       "type": "string",
@@ -56,8 +55,7 @@
       "required": true
     },
     "testimonialsSubtitle": {
-      "type": "text",
-      "maxLength": 160
+      "type": "text"
     },
     "testimonialsCtaLabel": {
       "type": "string",
@@ -72,8 +70,7 @@
       "required": true
     },
     "faqSubtitle": {
-      "type": "text",
-      "maxLength": 160
+      "type": "text"
     },
     "trustHeading": {
       "type": "string",
@@ -84,8 +81,7 @@
       "required": true
     },
     "trustSubtext": {
-      "type": "text",
-      "maxLength": 160
+      "type": "text"
     },
     "trustPills": {
       "type": "component",
@@ -102,8 +98,7 @@
       "required": true
     },
     "businessProblemsSubtext": {
-      "type": "text",
-      "maxLength": 160
+      "type": "text"
     },
     "businessProblems": {
       "type": "component",
@@ -120,8 +115,7 @@
       "required": true
     },
     "solutionModelsSubtext": {
-      "type": "text",
-      "maxLength": 160
+      "type": "text"
     },
     "industriesSection": {
       "type": "component",
@@ -151,8 +145,7 @@
       "required": true
     },
     "deliveryApproachSubtext": {
-      "type": "text",
-      "maxLength": 160
+      "type": "text"
     },
     "insightsResourcesSection": {
       "type": "component",
@@ -199,8 +192,7 @@
       "required": true
     },
     "workShowcaseIntro": {
-      "type": "text",
-      "maxLength": 160
+      "type": "text"
     },
     "solutionModelsEyebrow": {
       "type": "string"

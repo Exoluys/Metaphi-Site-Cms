@@ -17,7 +17,6 @@
     },
     "subtext": {
       "type": "text",
-      "maxLength": 160,
       "required": false
     },
     "caseStudy": {

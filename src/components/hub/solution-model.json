@@ -11,24 +11,12 @@
       "type": "string",
       "required": false
     },
-    "badge": {
-      "type": "string",
-      "maxLength": 60,
-      "required": false
-    },
     "tagline": {
       "type": "string",
-      "required": false,
-      "maxLength": 160
+      "required": false
     },
     "description": {
       "type": "text",
-      "required": false,
-      "maxLength": 160
-    },
-    "keyFit": {
-      "type": "text",
-      "maxLength": 160,
       "required": false
     }
   }

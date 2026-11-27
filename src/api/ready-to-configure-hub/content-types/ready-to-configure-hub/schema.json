@@ -17,7 +17,6 @@
     },
     "heroSubtext": {
       "type": "text",
-      "maxLength": 160,
       "required": false
     },
     "heroImage": {
@@ -28,14 +27,6 @@
         "images"
       ]
     },
-    "heroEyebrow": {
-      "type": "string",
-      "required": false
-    },
-    "heroMetric": {
-      "type": "string",
-      "required": false
-    },
     "heroAnchorLabel": {
       "type": "string",
       "required": false
@@ -45,8 +36,7 @@
       "required": true
     },
     "whatItMeansSubtext": {
-      "type": "text",
-      "maxLength": 160
+      "type": "text"
     },
     "whatItMeans": {
       "type": "component",
@@ -66,7 +56,6 @@
     },
     "portfolioSubtext": {
       "type": "text",
-      "maxLength": 160,
       "required": false
     },
     "implementationFlow": {

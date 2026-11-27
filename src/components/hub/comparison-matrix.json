@@ -13,77 +13,19 @@
     },
     "subtext": {
       "type": "text",
-      "maxLength": 160,
       "required": false
     },
     "saasColumn": {
       "type": "text",
-      "maxLength": 160,
       "required": true
     },
     "readyColumn": {
       "type": "text",
-      "maxLength": 160,
       "required": true
     },
     "customColumn": {
       "type": "text",
-      "maxLength": 160,
       "required": true
-    },
-    "saasCategory": {
-      "type": "string"
-    },
-    "saasMetric1Label": {
-      "type": "string"
-    },
-    "saasMetric1Value": {
-      "type": "string"
-    },
-    "saasMetric2Label": {
-      "type": "string"
-    },
-    "saasMetric2Value": {
-      "type": "string"
-    },
-    "saasFooter": {
-      "type": "string"
-    },
-    "readyCategory": {
-      "type": "string"
-    },
-    "readyMetric1Label": {
-      "type": "string"
-    },
-    "readyMetric1Value": {
-      "type": "string"
-    },
-    "readyMetric2Label": {
-      "type": "string"
-    },
-    "readyMetric2Value": {
-      "type": "string"
-    },
-    "readyFooter": {
-      "type": "string"
-    },
-    "customCategory": {
-      "type": "string"
-    },
-    "customMetric1Label": {
-      "type": "string"
-    },
-    "customMetric1Value": {
-      "type": "string"
-    },
-    "customMetric2Label": {
-      "type": "string"
-    },
-    "customMetric2Value": {
-      "type": "string"
-    },
-    "customFooter": {
-      "type": "string"
     }
   }
 }

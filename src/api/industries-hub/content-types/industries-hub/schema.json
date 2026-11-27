@@ -11,18 +11,12 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "heroEyebrow": {
-      "type": "string",
-      "maxLength": 100,
-      "required": false
-    },
     "heroHeading": {
       "type": "string",
       "required": true
     },
     "heroSubtext": {
       "type": "text",
-      "maxLength": 160,
       "required": false
     },
     "heroCtaLabel": {
@@ -63,32 +57,16 @@
       "component": "hub.final-cta",
       "repeatable": false
     },
-    "gridEyebrow": {
-      "type": "string",
-      "maxLength": 100,
-      "required": false
-    },
     "gridHeading": {
       "type": "string",
       "required": true
     },
     "gridSubtext": {
-      "type": "text",
-      "maxLength": 160
-    },
-    "gridCardLabel": {
-      "type": "string",
-      "maxLength": 60,
-      "required": false
+      "type": "text"
     },
     "gridCardActionLabel": {
       "type": "string",
       "maxLength": 60,
-      "required": false
-    },
-    "relatedSolutionsEyebrow": {
-      "type": "string",
-      "maxLength": 100,
       "required": false
     },
     "relatedSolutionsHeading": {
@@ -96,8 +74,7 @@
       "required": true
     },
     "servedIndustriesHeading": {
-      "type": "string",
-      "maxLength": 160
+      "type": "string"
     },
     "seo": {
       "type": "component",

@@ -13,7 +13,6 @@
     },
     "subtext": {
       "type": "text",
-      "maxLength": 160,
       "required": false
     },
     "phase1Title": {

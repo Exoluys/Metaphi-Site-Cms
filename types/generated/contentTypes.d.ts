@@ -765,24 +765,16 @@ export interface ApiCustomSolutionsHubCustomSolutionsHub
   attributes: {
     businessOutcomes: Schema.Attribute.Component<'hub.checklist', false>;
     capabilitiesHeading: Schema.Attribute.String & Schema.Attribute.Required;
-    capabilitiesSubtext: Schema.Attribute.Text &
-      Schema.Attribute.SetMinMaxLength<{
-        maxLength: 160;
-      }>;
+    capabilitiesSubtext: Schema.Attribute.Text;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     deliveryProcess: Schema.Attribute.Component<'hub.process-flow', false>;
     finalCta: Schema.Attribute.Component<'hub.custom-final-cta', false>;
     heroAnchorLabel: Schema.Attribute.String;
-    heroEyebrow: Schema.Attribute.String;
     heroHeading: Schema.Attribute.String & Schema.Attribute.Required;
     heroImage: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
-    heroMetric: Schema.Attribute.String;
-    heroSubtext: Schema.Attribute.Text &
-      Schema.Attribute.SetMinMaxLength<{
-        maxLength: 160;
-      }>;
+    heroSubtext: Schema.Attribute.Text;
     industriesBlock: Schema.Attribute.Component<'hub.info-block', false>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
@@ -974,10 +966,7 @@ export interface ApiHomePageHomePage extends Struct.SingleTypeSchema {
       Schema.Attribute.Required;
     businessProblemsHighlight: Schema.Attribute.String &
       Schema.Attribute.Required;
-    businessProblemsSubtext: Schema.Attribute.Text &
-      Schema.Attribute.SetMinMaxLength<{
-        maxLength: 160;
-      }>;
+    businessProblemsSubtext: Schema.Attribute.Text;
     certificationsEmptyStateText: Schema.Attribute.Text;
     clientLogos: Schema.Attribute.Component<'home.client-logo', true> &
       Schema.Attribute.Required &
@@ -1003,24 +992,15 @@ export interface ApiHomePageHomePage extends Struct.SingleTypeSchema {
       Schema.Attribute.Required;
     deliveryApproachHighlight: Schema.Attribute.String &
       Schema.Attribute.Required;
-    deliveryApproachSubtext: Schema.Attribute.Text &
-      Schema.Attribute.SetMinMaxLength<{
-        maxLength: 160;
-      }>;
+    deliveryApproachSubtext: Schema.Attribute.Text;
     faqEmptyStateText: Schema.Attribute.Text;
     faqEyebrow: Schema.Attribute.String;
     faqHeading: Schema.Attribute.String & Schema.Attribute.Required;
     faqHighlight: Schema.Attribute.String & Schema.Attribute.Required;
     faqLinkLabel: Schema.Attribute.String & Schema.Attribute.Required;
-    faqSubtitle: Schema.Attribute.Text &
-      Schema.Attribute.SetMinMaxLength<{
-        maxLength: 160;
-      }>;
+    faqSubtitle: Schema.Attribute.Text;
     finalCta: Schema.Attribute.Component<'hub.final-cta', false>;
-    heroDescription: Schema.Attribute.Text &
-      Schema.Attribute.SetMinMaxLength<{
-        maxLength: 120;
-      }>;
+    heroDescription: Schema.Attribute.Text;
     heroHighlight: Schema.Attribute.String &
       Schema.Attribute.Required &
       Schema.Attribute.SetMinMaxLength<{
@@ -1063,19 +1043,13 @@ export interface ApiHomePageHomePage extends Struct.SingleTypeSchema {
       Schema.Attribute.Required;
     solutionModelsLinkLabel: Schema.Attribute.String &
       Schema.Attribute.Required;
-    solutionModelsSubtext: Schema.Attribute.Text &
-      Schema.Attribute.SetMinMaxLength<{
-        maxLength: 160;
-      }>;
+    solutionModelsSubtext: Schema.Attribute.Text;
     testimonialsCtaLabel: Schema.Attribute.String & Schema.Attribute.Required;
     testimonialsEmptyStateText: Schema.Attribute.Text;
     testimonialsEyebrow: Schema.Attribute.String;
     testimonialsHeading: Schema.Attribute.String & Schema.Attribute.Required;
     testimonialsHighlight: Schema.Attribute.String & Schema.Attribute.Required;
-    testimonialsSubtitle: Schema.Attribute.Text &
-      Schema.Attribute.SetMinMaxLength<{
-        maxLength: 160;
-      }>;
+    testimonialsSubtitle: Schema.Attribute.Text;
     trustedByHighlight: Schema.Attribute.String & Schema.Attribute.Required;
     trustedByText: Schema.Attribute.String & Schema.Attribute.Required;
     trustHeading: Schema.Attribute.String & Schema.Attribute.Required;
@@ -1087,10 +1061,7 @@ export interface ApiHomePageHomePage extends Struct.SingleTypeSchema {
         },
         number
       >;
-    trustSubtext: Schema.Attribute.Text &
-      Schema.Attribute.SetMinMaxLength<{
-        maxLength: 160;
-      }>;
+    trustSubtext: Schema.Attribute.Text;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1104,10 +1075,7 @@ export interface ApiHomePageHomePage extends Struct.SingleTypeSchema {
     workShowcaseEyebrow: Schema.Attribute.String;
     workShowcaseHeading: Schema.Attribute.String & Schema.Attribute.Required;
     workShowcaseHighlight: Schema.Attribute.String & Schema.Attribute.Required;
-    workShowcaseIntro: Schema.Attribute.Text &
-      Schema.Attribute.SetMinMaxLength<{
-        maxLength: 160;
-      }>;
+    workShowcaseIntro: Schema.Attribute.Text;
     workShowcaseLinkLabel: Schema.Attribute.String & Schema.Attribute.Required;
   };
 }
@@ -1131,33 +1099,15 @@ export interface ApiIndustriesHubIndustriesHub extends Struct.SingleTypeSchema {
       Schema.Attribute.SetMinMaxLength<{
         maxLength: 60;
       }>;
-    gridCardLabel: Schema.Attribute.String &
-      Schema.Attribute.SetMinMaxLength<{
-        maxLength: 60;
-      }>;
-    gridEyebrow: Schema.Attribute.String &
-      Schema.Attribute.SetMinMaxLength<{
-        maxLength: 100;
-      }>;
     gridHeading: Schema.Attribute.String & Schema.Attribute.Required;
-    gridSubtext: Schema.Attribute.Text &
-      Schema.Attribute.SetMinMaxLength<{
-        maxLength: 160;
-      }>;
+    gridSubtext: Schema.Attribute.Text;
     heroCtaLabel: Schema.Attribute.String &
       Schema.Attribute.SetMinMaxLength<{
         maxLength: 60;
       }>;
-    heroEyebrow: Schema.Attribute.String &
-      Schema.Attribute.SetMinMaxLength<{
-        maxLength: 100;
-      }>;
     heroHeading: Schema.Attribute.String & Schema.Attribute.Required;
     heroImage: Schema.Attribute.Media<'images'>;
-    heroSubtext: Schema.Attribute.Text &
-      Schema.Attribute.SetMinMaxLength<{
-        maxLength: 160;
-      }>;
+    heroSubtext: Schema.Attribute.Text;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -1166,19 +1116,12 @@ export interface ApiIndustriesHubIndustriesHub extends Struct.SingleTypeSchema {
       Schema.Attribute.Private;
     proof: Schema.Attribute.Component<'hub.proof-block', false>;
     publishedAt: Schema.Attribute.DateTime;
-    relatedSolutionsEyebrow: Schema.Attribute.String &
-      Schema.Attribute.SetMinMaxLength<{
-        maxLength: 100;
-      }>;
     relatedSolutionsHeading: Schema.Attribute.String &
       Schema.Attribute.Required;
     relevantSolutions: Schema.Attribute.Component<'hub.info-block', false>;
     resources: Schema.Attribute.Component<'hub.info-block', false>;
     seo: Schema.Attribute.Component<'shared.seo', false>;
-    servedIndustriesHeading: Schema.Attribute.String &
-      Schema.Attribute.SetMinMaxLength<{
-        maxLength: 160;
-      }>;
+    servedIndustriesHeading: Schema.Attribute.String;
     transformationThemes: Schema.Attribute.Component<'hub.checklist', false>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -1449,14 +1392,9 @@ export interface ApiReadyToConfigureHubReadyToConfigureHub
       Schema.Attribute.Private;
     finalCta: Schema.Attribute.Component<'hub.final-cta', false>;
     heroAnchorLabel: Schema.Attribute.String;
-    heroEyebrow: Schema.Attribute.String;
     heroHeading: Schema.Attribute.String & Schema.Attribute.Required;
     heroImage: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
-    heroMetric: Schema.Attribute.String;
-    heroSubtext: Schema.Attribute.Text &
-      Schema.Attribute.SetMinMaxLength<{
-        maxLength: 160;
-      }>;
+    heroSubtext: Schema.Attribute.Text;
     implementationFlow: Schema.Attribute.Component<
       'hub.ready-process-flow',
       false
@@ -1468,10 +1406,7 @@ export interface ApiReadyToConfigureHubReadyToConfigureHub
     > &
       Schema.Attribute.Private;
     portfolioHeading: Schema.Attribute.String;
-    portfolioSubtext: Schema.Attribute.Text &
-      Schema.Attribute.SetMinMaxLength<{
-        maxLength: 160;
-      }>;
+    portfolioSubtext: Schema.Attribute.Text;
     proof: Schema.Attribute.Component<'hub.ready-proof-block', false>;
     publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
@@ -1486,10 +1421,7 @@ export interface ApiReadyToConfigureHubReadyToConfigureHub
         number
       >;
     whatItMeansHeading: Schema.Attribute.String & Schema.Attribute.Required;
-    whatItMeansSubtext: Schema.Attribute.Text &
-      Schema.Attribute.SetMinMaxLength<{
-        maxLength: 160;
-      }>;
+    whatItMeansSubtext: Schema.Attribute.Text;
   };
 }
 
@@ -1553,10 +1485,8 @@ export interface ApiSaasProductsHubSaasProductsHub
       Schema.Attribute.Private;
     finalCta: Schema.Attribute.Component<'hub.saas-final-cta', false>;
     heroAnchorLabel: Schema.Attribute.String;
-    heroEyebrow: Schema.Attribute.String;
     heroHeading: Schema.Attribute.String & Schema.Attribute.Required;
     heroImage: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
-    heroMetric: Schema.Attribute.String;
     heroSubtext: Schema.Attribute.Text;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
@@ -1572,16 +1502,7 @@ export interface ApiSaasProductsHubSaasProductsHub
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    whySaasBenefits: Schema.Attribute.Component<'hub.title-description', true> &
-      Schema.Attribute.SetMinMax<
-        {
-          max: 6;
-          min: 2;
-        },
-        number
-      >;
     whySaasHeading: Schema.Attribute.String;
-    whySaasSla: Schema.Attribute.String;
     whySaasSubtext: Schema.Attribute.Text;
   };
 }
@@ -1788,16 +1709,9 @@ export interface ApiSolutionsHubSolutionsHub extends Struct.SingleTypeSchema {
       Schema.Attribute.SetMinMaxLength<{
         maxLength: 60;
       }>;
-    heroEyebrow: Schema.Attribute.String &
-      Schema.Attribute.SetMinMaxLength<{
-        maxLength: 100;
-      }>;
     heroHeading: Schema.Attribute.String & Schema.Attribute.Required;
     heroImage: Schema.Attribute.Media<'images'>;
-    heroSubtext: Schema.Attribute.Text &
-      Schema.Attribute.SetMinMaxLength<{
-        maxLength: 160;
-      }>;
+    heroSubtext: Schema.Attribute.Text;
     howToChoose: Schema.Attribute.Component<'hub.how-to-choose', false>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
@@ -1806,10 +1720,7 @@ export interface ApiSolutionsHubSolutionsHub extends Struct.SingleTypeSchema {
     > &
       Schema.Attribute.Private;
     modelsHeading: Schema.Attribute.String & Schema.Attribute.Required;
-    modelsSubtext: Schema.Attribute.Text &
-      Schema.Attribute.SetMinMaxLength<{
-        maxLength: 160;
-      }>;
+    modelsSubtext: Schema.Attribute.Text;
     proof: Schema.Attribute.Component<'hub.proof-block', false>;
     publishedAt: Schema.Attribute.DateTime;
     readyModel: Schema.Attribute.Component<'hub.solution-model', false>;

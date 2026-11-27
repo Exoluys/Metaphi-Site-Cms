@@ -12,9 +12,9 @@ const appDir = path.resolve(__dirname, '..');
 require('dotenv').config({ path: path.join(appDir, '.env') });
 
 const DEFAULT_INDUSTRY_HEADINGS = {
-  industry_context_heading: 'Navigating operational complexity and legacy friction.',
+  industry_context_heading: 'Industry Context',
   tech_opportunities_heading: 'Technology Opportunities',
-  common_challenges_heading: 'Common Operational Challenges',
+  common_challenges_heading: 'Common Challenges',
   how_metaphi_helps_heading: 'How Metaphi Helps',
   relevant_custom_solutions_heading: 'Relevant Custom Solutions',
   ready_to_configure_solutions_heading: 'Ready-to-Configure Platforms',
