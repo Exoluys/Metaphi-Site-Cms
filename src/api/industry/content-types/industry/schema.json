@@ -75,6 +75,14 @@
     "howMetaphiHelpsHeading": {
       "type": "string"
     },
+    "howMetaphiHelpsImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
     "howMetaphiHelps": {
       "type": "component",
       "repeatable": true,
@@ -90,6 +98,14 @@
     },
     "readyToConfigureSolutionsHeading": {
       "type": "string"
+    },
+    "readyToConfigureSolutionsImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
     },
     "readyToConfigureSolutions": {
       "type": "relation",

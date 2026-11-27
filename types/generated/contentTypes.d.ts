@@ -1218,6 +1218,7 @@ export interface ApiIndustryIndustry extends Struct.CollectionTypeSchema {
     heroSubtext: Schema.Attribute.Text;
     howMetaphiHelps: Schema.Attribute.Component<'hub.string-item', true>;
     howMetaphiHelpsHeading: Schema.Attribute.String;
+    howMetaphiHelpsImage: Schema.Attribute.Media<'images'>;
     industryContext: Schema.Attribute.Text;
     industryContextHeading: Schema.Attribute.String;
     integrations: Schema.Attribute.Component<'hub.string-item', true>;
@@ -1248,6 +1249,7 @@ export interface ApiIndustryIndustry extends Struct.CollectionTypeSchema {
       'api::solution.solution'
     >;
     readyToConfigureSolutionsHeading: Schema.Attribute.String;
+    readyToConfigureSolutionsImage: Schema.Attribute.Media<'images'>;
     relevantCustomSolutions: Schema.Attribute.Component<
       'hub.title-description',
       true
