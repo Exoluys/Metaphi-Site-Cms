@@ -1,96 +1,72 @@
 /**
  * scripts/update-industries-headings.cjs
  *
- * Populates the newly added section heading & CTA label fields on all Industry
- * entries (without overwriting existing content, images, or relations) and
- * adds SEO metadata to Industries Hub.
+ * Populates missing section heading & CTA label columns on all Industry rows
+ * in Postgres (both draft and published) without overwriting existing values.
  */
 
-const { createStrapi } = require('@strapi/strapi');
 const path = require('path');
+const { Client } = require('pg');
 
 const appDir = path.resolve(__dirname, '..');
 require('dotenv').config({ path: path.join(appDir, '.env') });
 
 const DEFAULT_INDUSTRY_HEADINGS = {
-  industryContextHeading: 'Navigating operational complexity and legacy friction.',
-  techOpportunitiesHeading: 'Technology Opportunities',
-  commonChallengesHeading: 'Common Operational Challenges',
-  howMetaphiHelpsHeading: 'How Metaphi Helps',
-  relevantCustomSolutionsHeading: 'Relevant Custom Solutions',
-  readyToConfigureSolutionsHeading: 'Ready-to-Configure Platforms',
-  keyUseCasesHeading: 'Key Operational Use Cases',
-  aiOpportunitiesHeading: 'AI & Automation Opportunities',
-  integrationsHeading: 'Integration Opportunities',
-  caseStudiesHeading: 'Relevant Case Studies',
-  transformationApproachCtaLabel: 'Discuss Your Approach',
-  playbookCtaLabel: 'Request Playbook',
+  industry_context_heading: 'Navigating operational complexity and legacy friction.',
+  tech_opportunities_heading: 'Technology Opportunities',
+  common_challenges_heading: 'Common Operational Challenges',
+  how_metaphi_helps_heading: 'How Metaphi Helps',
+  relevant_custom_solutions_heading: 'Relevant Custom Solutions',
+  ready_to_configure_solutions_heading: 'Ready-to-Configure Platforms',
+  key_use_cases_heading: 'Key Operational Use Cases',
+  ai_opportunities_heading: 'AI & Automation Opportunities',
+  integrations_heading: 'Integration Opportunities',
+  case_studies_heading: 'Relevant Case Studies',
+  transformation_approach_cta_label: 'Discuss Your Approach',
+  playbook_cta_label: 'Request Playbook',
 };
 
 async function run() {
-  const strapi = await createStrapi({
-    appDir,
-    distDir: path.join(appDir, 'dist'),
-  }).load();
+  const client = new Client({
+    host: process.env.DATABASE_HOST,
+    port: Number(process.env.DATABASE_PORT || 5432),
+    database: process.env.DATABASE_NAME,
+    user: process.env.DATABASE_USERNAME,
+    password: process.env.DATABASE_PASSWORD,
+    ssl: process.env.DATABASE_SSL === 'true' ? { rejectUnauthorized: false } : false,
+  });
+
+  await client.connect();
 
   try {
-    // 1. Update Industries Hub SEO if missing
-    const indHubSvc = strapi.documents('api::industries-hub.industries-hub');
-    const hub = await indHubSvc.findFirst({
-      status: 'draft',
-      populate: ['seo'],
-    });
+    const colRes = await client.query(
+      "SELECT column_name FROM information_schema.columns WHERE table_name = 'industries'"
+    );
+    const existingCols = new Set(colRes.rows.map((r) => r.column_name));
 
-    if (hub) {
-      const hasSeo = hub.seo && (hub.seo.metaTitle || hub.seo.metaDescription);
-      if (!hasSeo) {
-        await indHubSvc.update({
-          documentId: hub.documentId,
-          data: {
-            seo: {
-              metaTitle: 'Industry-Specific Software & AI Solutions | Metaphi',
-              metaDescription:
-                hub.heroSubtext ||
-                'Explore how Metaphi engineers custom software, AI, and connected platforms across industries.',
-            },
-          },
-        });
-        await indHubSvc.publish({ documentId: hub.documentId });
-        console.log('✓ Updated Industries Hub SEO');
-      } else {
-        console.log('• Industries Hub SEO already present, skipped');
+    let totalUpdated = 0;
+    for (const [col, val] of Object.entries(DEFAULT_INDUSTRY_HEADINGS)) {
+      if (!existingCols.has(col)) {
+        console.warn(`! Column missing in industries table: ${col}`);
+        continue;
+      }
+      const res = await client.query(
+        `UPDATE industries SET "${col}" = $1 WHERE "${col}" IS NULL OR BTRIM("${col}") = ''`,
+        [val]
+      );
+      if (res.rowCount > 0) {
+        totalUpdated += res.rowCount;
+        console.log(`✓ [industries] ${col} -> updated ${res.rowCount} rows`);
       }
     }
 
-    // 2. Update all Industries with section headings & CTA labels where missing
-    const indSvc = strapi.documents('api::industry.industry');
-    const industries = await indSvc.findMany({ status: 'draft', limit: 100 });
-
-    for (const ind of industries) {
-      const patch = {};
-      for (const [key, defaultVal] of Object.entries(DEFAULT_INDUSTRY_HEADINGS)) {
-        if (!ind[key] || String(ind[key]).trim() === '') {
-          patch[key] = defaultVal;
-        }
-      }
-
-      if (Object.keys(patch).length > 0) {
-        await indSvc.update({
-          documentId: ind.documentId,
-          data: patch,
-        });
-        await indSvc.publish({ documentId: ind.documentId });
-        console.log(
-          `✓ Updated Industry: ${ind.title} (${Object.keys(patch).length} fields)`
-        );
-      } else {
-        console.log(`• Industry ${ind.title} already has all headings`);
-      }
+    if (totalUpdated === 0) {
+      console.log('• All industry rows already have all heading & CTA fields populated.');
+    } else {
+      console.log(`\n🎉 Updated ${totalUpdated} missing industry heading/CTA fields!`);
     }
-
-    console.log('\n🎉 Industries Strapi update complete!');
   } finally {
-    await strapi.destroy();
+    await client.end();
   }
 }
 
